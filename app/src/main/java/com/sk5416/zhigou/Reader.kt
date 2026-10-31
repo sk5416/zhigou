@@ -15,6 +15,7 @@ import androidx.webkit.WebViewAssetLoader
 import com.sk5416.zhigou.data.*
 import java.io.ByteArrayInputStream
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable fun Reader(c: Chapter, anchor: String, state: LearningState, dark: Boolean, vm: LearningViewModel, open: (String, String) -> Unit, practice: () -> Unit) {
     val r = state.readings.find { it.chapterId == c.id } ?: Reading(c.id)
     LaunchedEffect(c.id) { vm.read(c.id) }
@@ -85,9 +86,9 @@ import java.io.ByteArrayInputStream
             TextButton({ open(chapters[i + 1].id, "") }, enabled = i >= 0 && i < chapters.lastIndex) { Text("下一章") }
         }
         val links = (c.prerequisites + c.related).distinct().filter { id -> chapters.any { it.id == id } }
-        if (links.isNotEmpty()) Row(Modifier.padding(horizontal = 8.dp)) {
+        if (links.isNotEmpty()) FlowRow(Modifier.fillMaxWidth().padding(horizontal = 8.dp)) {
             Text("关联", Modifier.padding(top = 12.dp))
-            links.take(5).forEach { id -> TextButton({ open(id, "") }) { Text(id) } }
+            links.forEach { id -> TextButton({ open(id, "") }) { Text(id) } }
         }
     }
 }

@@ -62,6 +62,8 @@ class UiSmokeTest {
             device.findObject(By.textStartsWith("C24 ·")).click()
             assertTrue("new database lesson must show its local SQL", device.wait(Until.hasObject(By.textContains("UPDATE stock")), 15_000))
             screenshot(device, "database-reader")
+            val relation = requireNotNull(device.findObject(By.text("C26")))
+            assertTrue("related chapter code should fit on one line on a small screen", relation.visibleBounds.width() >= relation.visibleBounds.height())
             device.findObject(By.text("本章练习")).click()
             assertTrue("new question bank must be usable offline", device.wait(Until.hasObject(By.textContains("关于事务的原子性")), 10_000))
             screenshot(device, "database-practice")
