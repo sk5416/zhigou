@@ -70,7 +70,7 @@ jobs:
           disable-animations: true
           script: |
             ./gradlew connectedDebugAndroidTest
-            adb pull /sdcard/Android/data/com.sk5416.zhigou/files/screenshots device-screenshots
+            adb pull /sdcard/Pictures/zhigou-tests device-screenshots
       - uses: actions/upload-artifact@v4
         if: always()
         with:
