@@ -1,0 +1,1577 @@
+{
+  "version": "2026.10-sample.1",
+  "chapters": [
+    {
+      "id": "C00",
+      "title": "AI 能写代码，为什么还不等于能交付系统",
+      "part": "第0篇｜导学与能力地图",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [
+        "C02",
+        "C12"
+      ],
+      "knowledge": [
+        "C00-K01",
+        "C00-K02",
+        "C00-K03",
+        "C00-K04",
+        "C00-K05",
+        "C00-K06",
+        "C00-K07",
+        "C00-K08"
+      ],
+      "published": true
+    },
+    {
+      "id": "C01",
+      "title": "技术型 PM 的知识地图和学习方法",
+      "part": "第0篇｜导学与能力地图",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C01-K01",
+        "C01-K02",
+        "C01-K03",
+        "C01-K04",
+        "C01-K05",
+        "C01-K06",
+        "C01-K07",
+        "C01-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C02",
+      "title": "一个网页应用由什么组成",
+      "part": "第1篇｜先看懂完整的软件系统",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [
+        "C00"
+      ],
+      "related": [
+        "C00",
+        "C12"
+      ],
+      "knowledge": [
+        "C02-K01",
+        "C02-K02",
+        "C02-K03",
+        "C02-K04",
+        "C02-K05",
+        "C02-K06",
+        "C02-K07",
+        "C02-K08"
+      ],
+      "published": true
+    },
+    {
+      "id": "C03",
+      "title": "代码如何运行，以及为什么换电脑就坏",
+      "part": "第1篇｜先看懂完整的软件系统",
+      "depth": "L2",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C03-K01",
+        "C03-K02",
+        "C03-K03",
+        "C03-K04",
+        "C03-K05",
+        "C03-K06",
+        "C03-K07",
+        "C03-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C04",
+      "title": "开发、测试、生产与数据隔离",
+      "part": "第1篇｜先看懂完整的软件系统",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C04-K01",
+        "C04-K02",
+        "C04-K03",
+        "C04-K04",
+        "C04-K05",
+        "C04-K06",
+        "C04-K07",
+        "C04-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C05",
+      "title": "单体、模块化单体、分布式与微服务",
+      "part": "第1篇｜先看懂完整的软件系统",
+      "depth": "L1",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C05-K01",
+        "C05-K02",
+        "C05-K03",
+        "C05-K04",
+        "C05-K05",
+        "C05-K06",
+        "C05-K07",
+        "C05-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C06",
+      "title": "读懂变量、条件、循环、函数和数据结构",
+      "part": "第2篇｜读代码与掌握最少的编程基础",
+      "depth": "L2",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C06-K01",
+        "C06-K02",
+        "C06-K03",
+        "C06-K04",
+        "C06-K05",
+        "C06-K06",
+        "C06-K07",
+        "C06-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C07",
+      "title": "对象、模块、分层与项目目录",
+      "part": "第2篇｜读代码与掌握最少的编程基础",
+      "depth": "L2",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C07-K01",
+        "C07-K02",
+        "C07-K03",
+        "C07-K04",
+        "C07-K05",
+        "C07-K06",
+        "C07-K07",
+        "C07-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C08",
+      "title": "异常处理、日志与调试",
+      "part": "第2篇｜读代码与掌握最少的编程基础",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C08-K01",
+        "C08-K02",
+        "C08-K03",
+        "C08-K04",
+        "C08-K05",
+        "C08-K06",
+        "C08-K07",
+        "C08-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C09",
+      "title": "同步、异步、定时任务与消息队列",
+      "part": "第2篇｜读代码与掌握最少的编程基础",
+      "depth": "L2",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C09-K01",
+        "C09-K02",
+        "C09-K03",
+        "C09-K04",
+        "C09-K05",
+        "C09-K06",
+        "C09-K07",
+        "C09-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C10",
+      "title": "IP、域名、DNS、端口与内网边界",
+      "part": "第3篇｜网络、Web 与 API",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [
+        "C02"
+      ],
+      "related": [],
+      "knowledge": [
+        "C10-K01",
+        "C10-K02",
+        "C10-K03",
+        "C10-K04",
+        "C10-K05",
+        "C10-K06",
+        "C10-K07",
+        "C10-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C11",
+      "title": "HTTP 请求、响应与浏览器机制",
+      "part": "第3篇｜网络、Web 与 API",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [
+        "C02"
+      ],
+      "related": [],
+      "knowledge": [
+        "C11-K01",
+        "C11-K02",
+        "C11-K03",
+        "C11-K04",
+        "C11-K05",
+        "C11-K06",
+        "C11-K07",
+        "C11-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C12",
+      "title": "HTTPS、TLS 证书和代理",
+      "part": "第3篇｜网络、Web 与 API",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [
+        "C11"
+      ],
+      "related": [
+        "C02",
+        "C43"
+      ],
+      "knowledge": [
+        "C12-K01",
+        "C12-K02",
+        "C12-K03",
+        "C12-K04",
+        "C12-K05",
+        "C12-K06",
+        "C12-K07",
+        "C12-K08"
+      ],
+      "published": true
+    },
+    {
+      "id": "C13",
+      "title": "REST API 与接口契约",
+      "part": "第3篇｜网络、Web 与 API",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [
+        "C11"
+      ],
+      "related": [],
+      "knowledge": [
+        "C13-K01",
+        "C13-K02",
+        "C13-K03",
+        "C13-K04",
+        "C13-K05",
+        "C13-K06",
+        "C13-K07",
+        "C13-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C14",
+      "title": "超时、重试、幂等与限流",
+      "part": "第3篇｜网络、Web 与 API",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [
+        "C13"
+      ],
+      "related": [],
+      "knowledge": [
+        "C14-K01",
+        "C14-K02",
+        "C14-K03",
+        "C14-K04",
+        "C14-K05",
+        "C14-K06",
+        "C14-K07",
+        "C14-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C15",
+      "title": "Webhook、轮询、定时与增量同步",
+      "part": "第3篇｜网络、Web 与 API",
+      "depth": "L2",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C15-K01",
+        "C15-K02",
+        "C15-K03",
+        "C15-K04",
+        "C15-K05",
+        "C15-K06",
+        "C15-K07",
+        "C15-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C16",
+      "title": "Git 到底解决什么问题",
+      "part": "第4篇｜Git、代码协作与可追溯变更",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C16-K01",
+        "C16-K02",
+        "C16-K03",
+        "C16-K04",
+        "C16-K05",
+        "C16-K06",
+        "C16-K07",
+        "C16-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C17",
+      "title": "常见 Git 操作与忽略规则",
+      "part": "第4篇｜Git、代码协作与可追溯变更",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C17-K01",
+        "C17-K02",
+        "C17-K03",
+        "C17-K04",
+        "C17-K05",
+        "C17-K06",
+        "C17-K07",
+        "C17-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C18",
+      "title": "分支、合并、冲突与回退",
+      "part": "第4篇｜Git、代码协作与可追溯变更",
+      "depth": "L2",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C18-K01",
+        "C18-K02",
+        "C18-K03",
+        "C18-K04",
+        "C18-K05",
+        "C18-K06",
+        "C18-K07",
+        "C18-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C19",
+      "title": "Issue、Pull Request、Review 与发布版本",
+      "part": "第4篇｜Git、代码协作与可追溯变更",
+      "depth": "L2",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C19-K01",
+        "C19-K02",
+        "C19-K03",
+        "C19-K04",
+        "C19-K05",
+        "C19-K06",
+        "C19-K07",
+        "C19-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C20",
+      "title": "个人开发也需要的轻量 Git 工作流",
+      "part": "第4篇｜Git、代码协作与可追溯变更",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C20-K01",
+        "C20-K02",
+        "C20-K03",
+        "C20-K04",
+        "C20-K05",
+        "C20-K06",
+        "C20-K07",
+        "C20-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C21",
+      "title": "关系型数据库与数据关系",
+      "part": "第5篇｜数据库与数据工程基础",
+      "depth": "L2",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C21-K01",
+        "C21-K02",
+        "C21-K03",
+        "C21-K04",
+        "C21-K05",
+        "C21-K06",
+        "C21-K07",
+        "C21-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C22",
+      "title": "设计可靠的业务表",
+      "part": "第5篇｜数据库与数据工程基础",
+      "depth": "L3",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C22-K01",
+        "C22-K02",
+        "C22-K03",
+        "C22-K04",
+        "C22-K05",
+        "C22-K06",
+        "C22-K07",
+        "C22-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C23",
+      "title": "索引、查询计划与慢 SQL",
+      "part": "第5篇｜数据库与数据工程基础",
+      "depth": "L2",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C23-K01",
+        "C23-K02",
+        "C23-K03",
+        "C23-K04",
+        "C23-K05",
+        "C23-K06",
+        "C23-K07",
+        "C23-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C24",
+      "title": "事务、锁、并发与数据一致性",
+      "part": "第5篇｜数据库与数据工程基础",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C24-K01",
+        "C24-K02",
+        "C24-K03",
+        "C24-K04",
+        "C24-K05",
+        "C24-K06",
+        "C24-K07",
+        "C24-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C25",
+      "title": "历史记录、版本与操作审计",
+      "part": "第5篇｜数据库与数据工程基础",
+      "depth": "L2",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C25-K01",
+        "C25-K02",
+        "C25-K03",
+        "C25-K04",
+        "C25-K05",
+        "C25-K06",
+        "C25-K07",
+        "C25-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C26",
+      "title": "数据库迁移、备份和恢复",
+      "part": "第5篇｜数据库与数据工程基础",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C26-K01",
+        "C26-K02",
+        "C26-K03",
+        "C26-K04",
+        "C26-K05",
+        "C26-K06",
+        "C26-K07",
+        "C26-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C27",
+      "title": "HTML、CSS、JavaScript 与浏览器",
+      "part": "第6篇｜前端与交互的必要技术",
+      "depth": "L2",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C27-K01",
+        "C27-K02",
+        "C27-K03",
+        "C27-K04",
+        "C27-K05",
+        "C27-K06",
+        "C27-K07",
+        "C27-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C28",
+      "title": "服务端渲染与前后端分离",
+      "part": "第6篇｜前端与交互的必要技术",
+      "depth": "L1",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C28-K01",
+        "C28-K02",
+        "C28-K03",
+        "C28-K04",
+        "C28-K05",
+        "C28-K06",
+        "C28-K07",
+        "C28-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C29",
+      "title": "表单、批量导入与校验",
+      "part": "第6篇｜前端与交互的必要技术",
+      "depth": "L3",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C29-K01",
+        "C29-K02",
+        "C29-K03",
+        "C29-K04",
+        "C29-K05",
+        "C29-K06",
+        "C29-K07",
+        "C29-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C30",
+      "title": "页面状态、可用性与权限边界",
+      "part": "第6篇｜前端与交互的必要技术",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C30-K01",
+        "C30-K02",
+        "C30-K03",
+        "C30-K04",
+        "C30-K05",
+        "C30-K06",
+        "C30-K07",
+        "C30-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C31",
+      "title": "脚本、单机工具、低代码、Web 系统的选型边界",
+      "part": "第7篇｜技术选型与架构判断",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C31-K01",
+        "C31-K02",
+        "C31-K03",
+        "C31-K04",
+        "C31-K05",
+        "C31-K06",
+        "C31-K07",
+        "C31-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C32",
+      "title": "前端、后端、数据库与框架怎么比较",
+      "part": "第7篇｜技术选型与架构判断",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C32-K01",
+        "C32-K02",
+        "C32-K03",
+        "C32-K04",
+        "C32-K05",
+        "C32-K06",
+        "C32-K07",
+        "C32-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C33",
+      "title": "缓存、Redis 与消息队列为何存在",
+      "part": "第7篇｜技术选型与架构判断",
+      "depth": "L1",
+      "priority": "P2",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C33-K01",
+        "C33-K02",
+        "C33-K03",
+        "C33-K04",
+        "C33-K05",
+        "C33-K06",
+        "C33-K07",
+        "C33-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C34",
+      "title": "文件存储、对象存储与搜索",
+      "part": "第7篇｜技术选型与架构判断",
+      "depth": "L1",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C34-K01",
+        "C34-K02",
+        "C34-K03",
+        "C34-K04",
+        "C34-K05",
+        "C34-K06",
+        "C34-K07",
+        "C34-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C35",
+      "title": "容量、性能、扩展性与高可用",
+      "part": "第7篇｜技术选型与架构判断",
+      "depth": "L2",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C35-K01",
+        "C35-K02",
+        "C35-K03",
+        "C35-K04",
+        "C35-K05",
+        "C35-K06",
+        "C35-K07",
+        "C35-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C36",
+      "title": "架构决策记录与技术债",
+      "part": "第7篇｜技术选型与架构判断",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C36-K01",
+        "C36-K02",
+        "C36-K03",
+        "C36-K04",
+        "C36-K05",
+        "C36-K06",
+        "C36-K07",
+        "C36-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C37",
+      "title": "Linux/Windows 服务器基本操作",
+      "part": "第8篇｜服务器、部署与发布",
+      "depth": "L2",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C37-K01",
+        "C37-K02",
+        "C37-K03",
+        "C37-K04",
+        "C37-K05",
+        "C37-K06",
+        "C37-K07",
+        "C37-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C38",
+      "title": "容器、镜像与虚拟机",
+      "part": "第8篇｜服务器、部署与发布",
+      "depth": "L2",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C38-K01",
+        "C38-K02",
+        "C38-K03",
+        "C38-K04",
+        "C38-K05",
+        "C38-K06",
+        "C38-K07",
+        "C38-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C39",
+      "title": "多服务应用与运行依赖",
+      "part": "第8篇｜服务器、部署与发布",
+      "depth": "L2",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C39-K01",
+        "C39-K02",
+        "C39-K03",
+        "C39-K04",
+        "C39-K05",
+        "C39-K06",
+        "C39-K07",
+        "C39-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C40",
+      "title": "配置、环境变量、密钥与环境隔离",
+      "part": "第8篇｜服务器、部署与发布",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C40-K01",
+        "C40-K02",
+        "C40-K03",
+        "C40-K04",
+        "C40-K05",
+        "C40-K06",
+        "C40-K07",
+        "C40-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C41",
+      "title": "域名、内网发布、证书与防火墙",
+      "part": "第8篇｜服务器、部署与发布",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C41-K01",
+        "C41-K02",
+        "C41-K03",
+        "C41-K04",
+        "C41-K05",
+        "C41-K06",
+        "C41-K07",
+        "C41-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C42",
+      "title": "构建、CI/CD、上线、回滚",
+      "part": "第8篇｜服务器、部署与发布",
+      "depth": "L2",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C42-K01",
+        "C42-K02",
+        "C42-K03",
+        "C42-K04",
+        "C42-K05",
+        "C42-K06",
+        "C42-K07",
+        "C42-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C43",
+      "title": "认证、授权、角色与数据权限",
+      "part": "第9篇｜身份认证、权限与安全",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [
+        "C11",
+        "C12"
+      ],
+      "related": [],
+      "knowledge": [
+        "C43-K01",
+        "C43-K02",
+        "C43-K03",
+        "C43-K04",
+        "C43-K05",
+        "C43-K06",
+        "C43-K07",
+        "C43-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C44",
+      "title": "Session、Cookie、JWT、OAuth 2.0、OIDC 与 SSO",
+      "part": "第9篇｜身份认证、权限与安全",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C44-K01",
+        "C44-K02",
+        "C44-K03",
+        "C44-K04",
+        "C44-K05",
+        "C44-K06",
+        "C44-K07",
+        "C44-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C45",
+      "title": "常见 Web 攻击与安全边界",
+      "part": "第9篇｜身份认证、权限与安全",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C45-K01",
+        "C45-K02",
+        "C45-K03",
+        "C45-K04",
+        "C45-K05",
+        "C45-K06",
+        "C45-K07",
+        "C45-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C46",
+      "title": "接口安全、凭据保护与第三方集成",
+      "part": "第9篇｜身份认证、权限与安全",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C46-K01",
+        "C46-K02",
+        "C46-K03",
+        "C46-K04",
+        "C46-K05",
+        "C46-K06",
+        "C46-K07",
+        "C46-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C47",
+      "title": "敏感数据、日志、导出与合规意识",
+      "part": "第9篇｜身份认证、权限与安全",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C47-K01",
+        "C47-K02",
+        "C47-K03",
+        "C47-K04",
+        "C47-K05",
+        "C47-K06",
+        "C47-K07",
+        "C47-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C48",
+      "title": "测试不仅是点通页面",
+      "part": "第10篇｜测试、质量与交付验收",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C48-K01",
+        "C48-K02",
+        "C48-K03",
+        "C48-K04",
+        "C48-K05",
+        "C48-K06",
+        "C48-K07",
+        "C48-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C49",
+      "title": "单元、接口、集成和端到端测试",
+      "part": "第10篇｜测试、质量与交付验收",
+      "depth": "L2",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C49-K01",
+        "C49-K02",
+        "C49-K03",
+        "C49-K04",
+        "C49-K05",
+        "C49-K06",
+        "C49-K07",
+        "C49-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C50",
+      "title": "权限、并发、批量、性能和安全专项测试",
+      "part": "第10篇｜测试、质量与交付验收",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C50-K01",
+        "C50-K02",
+        "C50-K03",
+        "C50-K04",
+        "C50-K05",
+        "C50-K06",
+        "C50-K07",
+        "C50-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C51",
+      "title": "上线验收、灰度、应急与回滚",
+      "part": "第10篇｜测试、质量与交付验收",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C51-K01",
+        "C51-K02",
+        "C51-K03",
+        "C51-K04",
+        "C51-K05",
+        "C51-K06",
+        "C51-K07",
+        "C51-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C52",
+      "title": "日志如何帮助定位问题",
+      "part": "第11篇｜日志、监控、备份与运维",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C52-K01",
+        "C52-K02",
+        "C52-K03",
+        "C52-K04",
+        "C52-K05",
+        "C52-K06",
+        "C52-K07",
+        "C52-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C53",
+      "title": "监控、健康检查与告警",
+      "part": "第11篇｜日志、监控、备份与运维",
+      "depth": "L2",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C53-K01",
+        "C53-K02",
+        "C53-K03",
+        "C53-K04",
+        "C53-K05",
+        "C53-K06",
+        "C53-K07",
+        "C53-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C54",
+      "title": "备份、恢复、RPO 与 RTO",
+      "part": "第11篇｜日志、监控、备份与运维",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C54-K01",
+        "C54-K02",
+        "C54-K03",
+        "C54-K04",
+        "C54-K05",
+        "C54-K06",
+        "C54-K07",
+        "C54-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C55",
+      "title": "故障处理、运维手册和交接",
+      "part": "第11篇｜日志、监控、备份与运维",
+      "depth": "L2",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C55-K01",
+        "C55-K02",
+        "C55-K03",
+        "C55-K04",
+        "C55-K05",
+        "C55-K06",
+        "C55-K07",
+        "C55-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C56",
+      "title": "成本、存储增长、版本更新和系统生命周期",
+      "part": "第11篇｜日志、监控、备份与运维",
+      "depth": "L1",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C56-K01",
+        "C56-K02",
+        "C56-K03",
+        "C56-K04",
+        "C56-K05",
+        "C56-K06",
+        "C56-K07",
+        "C56-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C57",
+      "title": "系统边界、主数据与权威来源",
+      "part": "第12篇｜企业系统集成与数据一致性",
+      "depth": "L3",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C57-K01",
+        "C57-K02",
+        "C57-K03",
+        "C57-K04",
+        "C57-K05",
+        "C57-K06",
+        "C57-K07",
+        "C57-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C58",
+      "title": "全量、增量、实时和批量同步",
+      "part": "第12篇｜企业系统集成与数据一致性",
+      "depth": "L3",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C58-K01",
+        "C58-K02",
+        "C58-K03",
+        "C58-K04",
+        "C58-K05",
+        "C58-K06",
+        "C58-K07",
+        "C58-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C59",
+      "title": "同步状态机、幂等、重试和补偿",
+      "part": "第12篇｜企业系统集成与数据一致性",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C59-K01",
+        "C59-K02",
+        "C59-K03",
+        "C59-K04",
+        "C59-K05",
+        "C59-K06",
+        "C59-K07",
+        "C59-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C60",
+      "title": "对账、修复、历史回填与数据治理",
+      "part": "第12篇｜企业系统集成与数据一致性",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C60-K01",
+        "C60-K02",
+        "C60-K03",
+        "C60-K04",
+        "C60-K05",
+        "C60-K06",
+        "C60-K07",
+        "C60-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C61",
+      "title": "上下游变更、API 版本和兼容性",
+      "part": "第12篇｜企业系统集成与数据一致性",
+      "depth": "L2",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C61-K01",
+        "C61-K02",
+        "C61-K03",
+        "C61-K04",
+        "C61-K05",
+        "C61-K06",
+        "C61-K07",
+        "C61-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C62",
+      "title": "如何向 AI 提交一个完整的软件需求",
+      "part": "第13篇｜AI 辅助开发的工程化方法",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C62-K01",
+        "C62-K02",
+        "C62-K03",
+        "C62-K04",
+        "C62-K05",
+        "C62-K06",
+        "C62-K07",
+        "C62-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C63",
+      "title": "Plan、任务边界、上下文和文档化",
+      "part": "第13篇｜AI 辅助开发的工程化方法",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C63-K01",
+        "C63-K02",
+        "C63-K03",
+        "C63-K04",
+        "C63-K05",
+        "C63-K06",
+        "C63-K07",
+        "C63-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C64",
+      "title": "如何审查 AI 给出的方案",
+      "part": "第13篇｜AI 辅助开发的工程化方法",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C64-K01",
+        "C64-K02",
+        "C64-K03",
+        "C64-K04",
+        "C64-K05",
+        "C64-K06",
+        "C64-K07",
+        "C64-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C65",
+      "title": "如何审查 AI 写出的代码与依赖",
+      "part": "第13篇｜AI 辅助开发的工程化方法",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C65-K01",
+        "C65-K02",
+        "C65-K03",
+        "C65-K04",
+        "C65-K05",
+        "C65-K06",
+        "C65-K07",
+        "C65-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C66",
+      "title": "Codex、Git 与持续迭代的边界管理",
+      "part": "第13篇｜AI 辅助开发的工程化方法",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C66-K01",
+        "C66-K02",
+        "C66-K03",
+        "C66-K04",
+        "C66-K05",
+        "C66-K06",
+        "C66-K07",
+        "C66-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C67",
+      "title": "从业务要求拆出系统边界与非功能要求",
+      "part": "第14篇｜贯穿式综合案例：企业物料同步系统",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C67-K01",
+        "C67-K02",
+        "C67-K03",
+        "C67-K04",
+        "C67-K05",
+        "C67-K06",
+        "C67-K07",
+        "C67-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C68",
+      "title": "从数据模型走到接口与批量处理",
+      "part": "第14篇｜贯穿式综合案例：企业物料同步系统",
+      "depth": "L3",
+      "priority": "P1",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C68-K01",
+        "C68-K02",
+        "C68-K03",
+        "C68-K04",
+        "C68-K05",
+        "C68-K06",
+        "C68-K07",
+        "C68-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C69",
+      "title": "处理重复、超时、重试与对账",
+      "part": "第14篇｜贯穿式综合案例：企业物料同步系统",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C69-K01",
+        "C69-K02",
+        "C69-K03",
+        "C69-K04",
+        "C69-K05",
+        "C69-K06",
+        "C69-K07",
+        "C69-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C70",
+      "title": "把权限、测试、审计和安全补进去",
+      "part": "第14篇｜贯穿式综合案例：企业物料同步系统",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C70-K01",
+        "C70-K02",
+        "C70-K03",
+        "C70-K04",
+        "C70-K05",
+        "C70-K06",
+        "C70-K07",
+        "C70-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C71",
+      "title": "理解内部应用发布、运维与恢复",
+      "part": "第14篇｜贯穿式综合案例：企业物料同步系统",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C71-K01",
+        "C71-K02",
+        "C71-K03",
+        "C71-K04",
+        "C71-K05",
+        "C71-K06",
+        "C71-K07",
+        "C71-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "C72",
+      "title": "从 AI 原型走向可交接的企业应用",
+      "part": "第14篇｜贯穿式综合案例：企业物料同步系统",
+      "depth": "L3",
+      "priority": "P0",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [
+        "C72-K01",
+        "C72-K02",
+        "C72-K03",
+        "C72-K04",
+        "C72-K05",
+        "C72-K06",
+        "C72-K07",
+        "C72-K08"
+      ],
+      "published": false
+    },
+    {
+      "id": "AA",
+      "title": "常用技术词汇与概念关系速查",
+      "part": "附录｜随手查阅",
+      "depth": "",
+      "priority": "",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [],
+      "published": false
+    },
+    {
+      "id": "AB",
+      "title": "技术选型评审清单",
+      "part": "附录｜随手查阅",
+      "depth": "",
+      "priority": "",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [],
+      "published": false
+    },
+    {
+      "id": "AC",
+      "title": "内网应用上线前的非功能需求清单",
+      "part": "附录｜随手查阅",
+      "depth": "",
+      "priority": "",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [],
+      "published": false
+    },
+    {
+      "id": "AD",
+      "title": "API 和企业集成评审清单",
+      "part": "附录｜随手查阅",
+      "depth": "",
+      "priority": "",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [],
+      "published": false
+    },
+    {
+      "id": "AE",
+      "title": "数据库与数据处理评审清单",
+      "part": "附录｜随手查阅",
+      "depth": "",
+      "priority": "",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [],
+      "published": false
+    },
+    {
+      "id": "AF",
+      "title": "测试、发布、故障与回滚清单",
+      "part": "附录｜随手查阅",
+      "depth": "",
+      "priority": "",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [],
+      "published": false
+    },
+    {
+      "id": "AG",
+      "title": "Vibe Coding / AI 方案与代码审查清单",
+      "part": "附录｜随手查阅",
+      "depth": "",
+      "priority": "",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [],
+      "published": false
+    },
+    {
+      "id": "AH",
+      "title": "术语与知识地图索引",
+      "part": "附录｜随手查阅",
+      "depth": "",
+      "priority": "",
+      "prerequisites": [],
+      "related": [],
+      "knowledge": [],
+      "published": false
+    }
+  ]
+}

@@ -1,0 +1,309 @@
+[
+  {
+    "id": "C00-Q01",
+    "chapterId": "C00",
+    "revision": 1,
+    "type": "single",
+    "stem": "管理员演示订单查询正确且页面流畅，以下哪项结论有证据支持？",
+    "options": [
+      {
+        "id": "A",
+        "text": "所有员工权限都已验证",
+        "explanation": "管理员账号不能代表普通用户的数据范围。"
+      },
+      {
+        "id": "B",
+        "text": "演示条件下该查询正常运行",
+        "explanation": "演示仅支持所覆盖的身份、输入与环境下功能正常。"
+      },
+      {
+        "id": "C",
+        "text": "数据库备份可以恢复",
+        "explanation": "恢复必须实际检查备份范围并演练。"
+      },
+      {
+        "id": "D",
+        "text": "系统具备正式上线条件",
+        "explanation": "上线还需核验权限、异常、运行和交接条件。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C00-K01"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "功能演示的结论不能扩大到未验证条件。"
+  },
+  {
+    "id": "C00-Q02",
+    "chapterId": "C00",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟订单网站要求“只允许本部门查询”。最有效的反例测试是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "检查部门下拉框颜色",
+        "explanation": "样式与数据授权无关。"
+      },
+      {
+        "id": "B",
+        "text": "确认管理员能查全部订单",
+        "explanation": "管理员成功路径不能证明普通账号被限制。"
+      },
+      {
+        "id": "C",
+        "text": "使用普通账号直接请求其他部门订单",
+        "explanation": "直接构造越权请求能检验服务端的数据范围控制。"
+      },
+      {
+        "id": "D",
+        "text": "统计登录页面按钮数量",
+        "explanation": "按钮数量不能验证接口授权。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C00-K02"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "前端限制不能替代服务端授权。"
+  },
+  {
+    "id": "C00-Q03",
+    "chapterId": "C00",
+    "revision": 1,
+    "type": "single",
+    "stem": "一个仅由你使用的本机文件转换工具，方案取舍最合理的是？",
+    "options": [
+      {
+        "id": "A",
+        "text": "围绕误覆盖和异常输入设计保护",
+        "explanation": "与工具实际风险匹配，避免损失源文件并反馈错误。"
+      },
+      {
+        "id": "B",
+        "text": "默认部署微服务来保证专业性",
+        "explanation": "额外服务可能增加维护成本，需要实际需求支撑。"
+      },
+      {
+        "id": "C",
+        "text": "因单机使用取消错误处理",
+        "explanation": "单机仍可能造成不可恢复的数据损失。"
+      },
+      {
+        "id": "D",
+        "text": "必须先接入企业 SSO 才能使用",
+        "explanation": "没有相应身份需求时 SSO 可能是额外复杂度。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C00-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "风险控制与使用场景匹配，不按技术名词数量评估质量。"
+  },
+  {
+    "id": "C00-Q04",
+    "chapterId": "C00",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "以下哪些要求能补充订单查询的工程验收？",
+    "options": [
+      {
+        "id": "A",
+        "text": "数据库超时后有限等待并明确反馈",
+        "explanation": "描述故障路径，可通过超时模拟验证。"
+      },
+      {
+        "id": "B",
+        "text": "界面用了某个流行框架即可上线",
+        "explanation": "框架名称不能证明可用性和安全。"
+      },
+      {
+        "id": "C",
+        "text": "验证非授权账号不能读取订单",
+        "explanation": "描述权限边界，需要反例测试。"
+      },
+      {
+        "id": "D",
+        "text": "AI 宣称完成就无需测试证据",
+        "explanation": "声明不能替代实际测试对象与结果。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C00-K04"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "验收需要可观察行为，而不是框架或口头承诺。"
+  },
+  {
+    "id": "C00-Q05",
+    "chapterId": "C00",
+    "revision": 1,
+    "type": "single",
+    "stem": "AI 提供每日备份脚本，怎样进一步核验“可恢复”？",
+    "options": [
+      {
+        "id": "A",
+        "text": "查看文件名含日期即可",
+        "explanation": "存在文件不代表内容完整有效。"
+      },
+      {
+        "id": "B",
+        "text": "确保脚本有很多注释",
+        "explanation": "注释有助理解但不能证明恢复能力。"
+      },
+      {
+        "id": "C",
+        "text": "只让 AI 描述理论过程",
+        "explanation": "理论步骤未覆盖真实数据和环境差异。"
+      },
+      {
+        "id": "D",
+        "text": "在隔离环境实际恢复并核对数据与耗时",
+        "explanation": "演练可暴露缺失范围、依赖和恢复时间问题。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C00-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "备份存在不等于恢复经过验证。"
+  },
+  {
+    "id": "C00-Q06",
+    "chapterId": "C00",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟系统从本地迁移到服务器后失败，交付评审应首先补问哪项？",
+    "options": [
+      {
+        "id": "A",
+        "text": "开发机器桌面壁纸是什么",
+        "explanation": "与运行故障无关。"
+      },
+      {
+        "id": "B",
+        "text": "运行依赖、配置与服务监听位置是否明确",
+        "explanation": "环境与监听信息是定位差异和交接的基本事实。"
+      },
+      {
+        "id": "C",
+        "text": "能否先删除全部错误日志",
+        "explanation": "删除日志会丢失证据，还可能掩盖故障。"
+      },
+      {
+        "id": "D",
+        "text": "能否跳过失败路径直接验收",
+        "explanation": "部署失败本身就是必须核查的交付问题。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C00-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "本地能跑不证明目标环境已具备运行条件。"
+  },
+  {
+    "id": "C00-Q07",
+    "chapterId": "C00",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "向 AI 委派开发时，哪些信息应写入任务说明？",
+    "options": [
+      {
+        "id": "A",
+        "text": "用户与数据访问边界",
+        "explanation": "帮助约束身份和授权设计。"
+      },
+      {
+        "id": "B",
+        "text": "不接真实企业系统等非目标",
+        "explanation": "明确不做什么可以控制范围与外部依赖。"
+      },
+      {
+        "id": "C",
+        "text": "允许 AI 默认使用任何生产凭据",
+        "explanation": "生产凭据不是可由 AI 自行假定的资源。"
+      },
+      {
+        "id": "D",
+        "text": "失败场景与验收方式",
+        "explanation": "让交付有可观察的质量目标。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C00-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "需要明确约束和授权范围，不能让 AI 自行扩大事实与权限。"
+  },
+  {
+    "id": "C00-Q08",
+    "chapterId": "C00",
+    "revision": 1,
+    "type": "single",
+    "stem": "AI 报告“测试全部通过”，作为 PM 最合适的下一步是？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只看最终截图",
+        "explanation": "截图无法证明权限和异常路径。"
+      },
+      {
+        "id": "B",
+        "text": "因为有自动测试就取消人工评审",
+        "explanation": "自动测试的覆盖范围仍需审查。"
+      },
+      {
+        "id": "C",
+        "text": "核对测试范围、环境、结果和未覆盖风险",
+        "explanation": "证据必须对应实际需求，并明确缺失项。"
+      },
+      {
+        "id": "D",
+        "text": "把测试数量直接等同系统质量",
+        "explanation": "数量不能代表断言有效性和风险覆盖。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C00-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "评审测试的有效范围，而不是只看“通过”字样。"
+  }
+]

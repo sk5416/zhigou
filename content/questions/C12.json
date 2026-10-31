@@ -1,0 +1,309 @@
+[
+  {
+    "id": "C12-Q01",
+    "chapterId": "C12",
+    "revision": 1,
+    "type": "single",
+    "stem": "员工通过 HTTPS 登录，开发工具 Request Body 可见密码。最准确的判断是？",
+    "options": [
+      {
+        "id": "A",
+        "text": "网络传输一定是明文",
+        "explanation": "发送端在加密前能处理内容，不能据此推断链路明文。"
+      },
+      {
+        "id": "B",
+        "text": "已经无需核查其他安全风险",
+        "explanation": "TLS 不能代替所有应用安全控制。"
+      },
+      {
+        "id": "C",
+        "text": "本地可见不等于网络明文，还需核查日志、存储与会话",
+        "explanation": "区分了传输视角和端点风险。"
+      },
+      {
+        "id": "D",
+        "text": "普通 SHA-256 可替代 HTTPS",
+        "explanation": "普通哈希不提供完整的安全传输或合适的口令协议。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C12-K01"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "开发工具展示的是端点数据，不是旁观者读取到的链路明文。"
+  },
+  {
+    "id": "C12-Q02",
+    "chapterId": "C12",
+    "revision": 1,
+    "type": "single",
+    "stem": "代理终止 HTTPS 后，用 HTTP 跨越不可信网络连接后端。应如何评估？",
+    "options": [
+      {
+        "id": "A",
+        "text": "浏览器有锁图标，所以全链路已保护",
+        "explanation": "锁图标不证明代理后的连接。"
+      },
+      {
+        "id": "B",
+        "text": "单独评估并保护代理到后端的连接",
+        "explanation": "TLS 终止后属于新的传输段，需要独立保护。"
+      },
+      {
+        "id": "C",
+        "text": "忽略后端连接，因为代理是服务器",
+        "explanation": "服务器之间的通信同样可能被观察或篡改。"
+      },
+      {
+        "id": "D",
+        "text": "让页面隐藏接口地址就能加密",
+        "explanation": "隐藏地址不是传输加密。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C12-K02"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "每段连接都有自己的加密与信任终点。"
+  },
+  {
+    "id": "C12-Q03",
+    "chapterId": "C12",
+    "revision": 1,
+    "type": "single",
+    "stem": "证书名称不匹配导致连接被拒绝，正式环境应怎样处理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "永久启用信任所有证书",
+        "explanation": "绕过校验破坏服务端身份验证。"
+      },
+      {
+        "id": "B",
+        "text": "用截图告诉员工忽略警告",
+        "explanation": "人为忽略警告无法修复错误信任关系。"
+      },
+      {
+        "id": "C",
+        "text": "改回 HTTP 就不再需要评估风险",
+        "explanation": "取消保护不是对证书错误的合格修复。"
+      },
+      {
+        "id": "D",
+        "text": "修复访问域名、证书或信任配置并重新验证",
+        "explanation": "恢复正确的服务身份与可信链是针对原因的修复。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C12-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "证书错误应修复其原因，不以关闭校验消除症状。"
+  },
+  {
+    "id": "C12-Q04",
+    "chapterId": "C12",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "正确配置 HTTPS 后，哪些问题仍需要独立处理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "日志记录完整密码",
+        "explanation": "TLS 不约束应用把数据写入日志。"
+      },
+      {
+        "id": "B",
+        "text": "登录用户越权读取其他部门数据",
+        "explanation": "授权属于应用和数据范围控制。"
+      },
+      {
+        "id": "C",
+        "text": "网络中 HTTP 请求体已经完全不需要 TLS",
+        "explanation": "HTTPS 正是依靠 TLS 保护传输，不能据此取消它。"
+      },
+      {
+        "id": "D",
+        "text": "数据库保存口令验证数据的方式",
+        "explanation": "传输保护不等于存储保护。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C12-K04"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "传输、存储、日志与授权是不同控制面。"
+  },
+  {
+    "id": "C12-Q05",
+    "chapterId": "C12",
+    "revision": 1,
+    "type": "single",
+    "stem": "前端普通哈希作为固定登录凭据，经 HTTP 发送。最关键的问题是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "哈希可能成为可直接重放的等价秘密，也不能替代 TLS",
+        "explanation": "如果持有该值即可登录，窃取者可能直接重放。"
+      },
+      {
+        "id": "B",
+        "text": "只要不是原密码就自动无法重放",
+        "explanation": "不可逆不等于不可重放。"
+      },
+      {
+        "id": "C",
+        "text": "哈希输出看不懂就代表链路加密",
+        "explanation": "编码后的字节仍会在无保护连接中传输。"
+      },
+      {
+        "id": "D",
+        "text": "服务器可以因此不验证身份",
+        "explanation": "身份验证和安全传输仍需正确设计。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C12-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "不可逆哈希、加密传输和防重放不能混为一谈。"
+  },
+  {
+    "id": "C12-Q06",
+    "chapterId": "C12",
+    "revision": 1,
+    "type": "single",
+    "stem": "内网网站使用组织自建 CA，哪项运维事项不能省略？",
+    "options": [
+      {
+        "id": "A",
+        "text": "要求员工永久关闭所有证书校验",
+        "explanation": "关闭校验会破坏信任机制。"
+      },
+      {
+        "id": "B",
+        "text": "把 CA 私钥打包到前端",
+        "explanation": "CA 私钥泄露会危及整个信任体系。"
+      },
+      {
+        "id": "C",
+        "text": "管理客户端信任分发、证书更新与责任人",
+        "explanation": "自建体系需要受控的信任部署和生命周期管理。"
+      },
+      {
+        "id": "D",
+        "text": "因为内网地址就不需要校验名称",
+        "explanation": "目标名称仍是服务身份校验的重要条件。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C12-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "内网不会自动建立可信证书体系。"
+  },
+  {
+    "id": "C12-Q07",
+    "chapterId": "C12",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "关于 TLS 的保护范围，哪些说法正确？",
+    "options": [
+      {
+        "id": "A",
+        "text": "正确配置下保护连接上传输内容的机密性和完整性",
+        "explanation": "这是受保护传输的核心作用。"
+      },
+      {
+        "id": "B",
+        "text": "确保浏览器终端绝不会被恶意程序控制",
+        "explanation": "TLS 不负责端点设备本身的全部安全。"
+      },
+      {
+        "id": "C",
+        "text": "正常证书校验帮助客户端确认服务端身份",
+        "explanation": "证书验证是建立可信服务连接的重要环节。"
+      },
+      {
+        "id": "D",
+        "text": "自动证明登录用户能访问全部订单",
+        "explanation": "业务数据授权需要应用另行执行。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C12-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "连接安全不能扩大解释为终端安全或业务授权。"
+  },
+  {
+    "id": "C12-Q08",
+    "chapterId": "C12",
+    "revision": 1,
+    "type": "single",
+    "stem": "入口启用 HTTPS，但应用 HTTP 端口对员工可直接访问。应优先补查什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只把首页链接改为 HTTPS",
+        "explanation": "入口链接不能禁止用户直接访问后端。"
+      },
+      {
+        "id": "B",
+        "text": "应用端口访问限制及绕过代理的路径",
+        "explanation": "需明确实际访问边界，防止绕过预期保护。"
+      },
+      {
+        "id": "C",
+        "text": "登录按钮是否变成绿色",
+        "explanation": "颜色不提供访问控制。"
+      },
+      {
+        "id": "D",
+        "text": "把所有请求头原样记录到日志",
+        "explanation": "可能记录口令、令牌等敏感数据。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C12-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "配置了安全入口，还需控制旁路访问。"
+  }
+]

@@ -1,0 +1,16 @@
+.gradle/
+**/build/
+local.properties
+.idea/
+*.iml
+.kotlin/
+__pycache__/
+*.pyc
+.tools/
+.artifacts/
+*.jks
+*.keystore
+keystore.properties
+*.backup.json
+signing.properties
+!gradle/wrapper/gradle-wrapper.jar

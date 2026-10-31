@@ -1,0 +1,309 @@
+[
+  {
+    "id": "C02-Q01",
+    "chapterId": "C02",
+    "revision": 1,
+    "type": "single",
+    "stem": "员工网页查询订单时，哪种职责分配最合理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "浏览器保存数据库管理员密码后直接查询",
+        "explanation": "客户端容易被提取凭据且权限过大。"
+      },
+      {
+        "id": "B",
+        "text": "前端负责唯一的数据授权校验",
+        "explanation": "客户端可被修改和绕开。"
+      },
+      {
+        "id": "C",
+        "text": "后端验证身份及数据范围后访问数据库",
+        "explanation": "后端处于可信业务执行位置，同时仍需数据库约束。"
+      },
+      {
+        "id": "D",
+        "text": "数据库存在就无需后端业务规则",
+        "explanation": "数据库约束不能覆盖所有业务与用户授权。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C02-K01"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "展示入口不能持有数据库高权限或承担唯一授权。"
+  },
+  {
+    "id": "C02-Q02",
+    "chapterId": "C02",
+    "revision": 1,
+    "type": "single",
+    "stem": "网站首页能打开，但订单查询接口失败，说明什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "静态资源可用不能证明动态查询链路可用",
+        "explanation": "页面资源和动态请求依赖不同，需沿接口排查。"
+      },
+      {
+        "id": "B",
+        "text": "浏览器显示页面就证明数据库正常",
+        "explanation": "页面可能由静态文件或缓存提供。"
+      },
+      {
+        "id": "C",
+        "text": "所有错误一定发生在 CSS",
+        "explanation": "需看网络请求与日志，不能先归因样式。"
+      },
+      {
+        "id": "D",
+        "text": "必须立即重装服务器",
+        "explanation": "破坏性操作前应保留证据并定位。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C02-K02"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "不同组件和请求的成功不能互相替代证明。"
+  },
+  {
+    "id": "C02-Q03",
+    "chapterId": "C02",
+    "revision": 1,
+    "type": "single",
+    "stem": "关于前后端与部署，下列哪项正确？",
+    "options": [
+      {
+        "id": "A",
+        "text": "分工不同就必须使用不同物理服务器",
+        "explanation": "职责边界不直接决定物理部署。"
+      },
+      {
+        "id": "B",
+        "text": "有 API 就必须采用微服务",
+        "explanation": "API 是接口方式，不等同微服务架构。"
+      },
+      {
+        "id": "C",
+        "text": "同一机器上的组件无需任何权限边界",
+        "explanation": "同机进程和数据库也存在权限与凭据边界。"
+      },
+      {
+        "id": "D",
+        "text": "多个逻辑角色可以部署在同一台机器",
+        "explanation": "逻辑角色和部署位置应分别表达。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C02-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "组件分工、进程和服务器数量是不同维度。"
+  },
+  {
+    "id": "C02-Q04",
+    "chapterId": "C02",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "系统图中应明确哪些信息，以便评审风险？",
+    "options": [
+      {
+        "id": "A",
+        "text": "请求与数据流方向",
+        "explanation": "说明数据如何流转，帮助定位故障与泄露点。"
+      },
+      {
+        "id": "B",
+        "text": "外部身份和 ERP 依赖",
+        "explanation": "外部依赖影响可用性、凭据和责任。"
+      },
+      {
+        "id": "C",
+        "text": "仅画产品 Logo 不标连接",
+        "explanation": "缺少箭头和身份无法判断通信关系。"
+      },
+      {
+        "id": "D",
+        "text": "跨边界使用的身份和授权位置",
+        "explanation": "有助识别客户端参数是否被过度信任。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C02-K04"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "系统图需要描述行为和边界，不只是组件名称。"
+  },
+  {
+    "id": "C02-Q05",
+    "chapterId": "C02",
+    "revision": 1,
+    "type": "single",
+    "stem": "网页传入 departmentId=20，后端最合理的处理是？",
+    "options": [
+      {
+        "id": "A",
+        "text": "按参数直接返回对应部门全部数据",
+        "explanation": "请求参数是客户端输入，不能当授权依据。"
+      },
+      {
+        "id": "B",
+        "text": "根据可信身份核验是否允许访问该部门",
+        "explanation": "服务端应基于可信身份执行数据权限。"
+      },
+      {
+        "id": "C",
+        "text": "只检查前端是否隐藏部门下拉框",
+        "explanation": "直接请求可绕过页面。"
+      },
+      {
+        "id": "D",
+        "text": "让数据库管理员账号跳过校验",
+        "explanation": "数据库高权限不能替代用户层业务授权。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C02-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "输入参数表达请求，不证明调用者有权访问。"
+  },
+  {
+    "id": "C02-Q06",
+    "chapterId": "C02",
+    "revision": 1,
+    "type": "single",
+    "stem": "应用日志显示数据库连接超时，下一步应核查什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "先重做登录页配色",
+        "explanation": "样式不能修复数据库连接。"
+      },
+      {
+        "id": "B",
+        "text": "只统计源代码文件数量",
+        "explanation": "文件数量无法定位运行故障。"
+      },
+      {
+        "id": "C",
+        "text": "应用到数据库的地址、网络、账号及连接配置",
+        "explanation": "日志已将排查范围缩小到该段连接及依赖。"
+      },
+      {
+        "id": "D",
+        "text": "把接口统一改为成功状态",
+        "explanation": "伪造成功掩盖错误并误导用户。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C02-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "根据证据逐段缩小故障范围。"
+  },
+  {
+    "id": "C02-Q07",
+    "chapterId": "C02",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "关于静态资源与动态数据，哪些判断合理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "缓存页面可能显示旧内容",
+        "explanation": "缓存可能使页面与后端实时状态不一致。"
+      },
+      {
+        "id": "B",
+        "text": "JSON 一定是浏览器直接从数据库取得",
+        "explanation": "通常由服务端接口取得，不应让浏览器持有数据库凭据。"
+      },
+      {
+        "id": "C",
+        "text": "有些应用由服务端生成带数据 HTML",
+        "explanation": "服务端渲染是有效架构选项。"
+      },
+      {
+        "id": "D",
+        "text": "HTTP 200 保证业务数据授权正确",
+        "explanation": "传输成功不代表数据范围与业务口径正确。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C02-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "静态/动态、渲染方式与授权正确性应分别判断。"
+  },
+  {
+    "id": "C02-Q08",
+    "chapterId": "C02",
+    "revision": 1,
+    "type": "single",
+    "stem": "本地开发服务地址为 localhost，员工手机访问时应怎样理解？",
+    "options": [
+      {
+        "id": "A",
+        "text": "手机的 localhost 指手机自己，需要核对实际服务地址与可达性",
+        "explanation": "localhost 是当前设备的回环地址，跨设备访问需明确地址与监听。"
+      },
+      {
+        "id": "B",
+        "text": "任何设备的 localhost 都指开发者电脑",
+        "explanation": "回环地址不共享指向某台开发电脑。"
+      },
+      {
+        "id": "C",
+        "text": "能看到源代码就代表服务已监听",
+        "explanation": "磁盘文件与运行进程不是一回事。"
+      },
+      {
+        "id": "D",
+        "text": "更换页面标题就会修复连接",
+        "explanation": "展示文案不影响服务的网络可达性。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C02-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "运行位置和请求发起设备必须明确。"
+  }
+]
