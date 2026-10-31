@@ -2,10 +2,14 @@ package com.sk5416.zhigou
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.selection.selectable
+import androidx.compose.foundation.selection.selectableGroup
+import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import com.sk5416.zhigou.data.*
 
@@ -21,13 +25,18 @@ import com.sk5416.zhigou.data.*
         if (!compatible) Text("此会话含旧版题目，原始答案和解析保留供回顾。请从课程目录新建练习。")
         Text("${q.chapterId} · ${if (q.type == "multiple") "多选题 · 可选多个答案，全对得分" else "单选题"} · 修订 ${q.revision}", style = MaterialTheme.typography.bodySmall)
         Text(q.stem, style = MaterialTheme.typography.titleMedium)
+        Column(if (q.type == "single") Modifier.selectableGroup() else Modifier, verticalArrangement = Arrangement.spacedBy(12.dp)) {
         q.options.forEach { option ->
-            OutlinedCard(onClick = { vm.select(s.id, q.id, option.id) }, enabled = !revealed && !busy && compatible, modifier = Modifier.fillMaxWidth()) {
+            val enabled = !revealed && !busy && compatible
+            val selection = if (q.type == "multiple") Modifier.toggleable(value = option.id in chosen, enabled = enabled, role = Role.Checkbox, onValueChange = { vm.select(s.id, q.id, option.id) })
+                else Modifier.selectable(selected = option.id in chosen, enabled = enabled, role = Role.RadioButton, onClick = { vm.select(s.id, q.id, option.id) })
+            OutlinedCard(modifier = Modifier.fillMaxWidth().then(selection)) {
                 Row(Modifier.padding(12.dp)) {
                     if (q.type == "multiple") Checkbox(option.id in chosen, null) else RadioButton(option.id in chosen, null)
                     Text("${option.id}. ${option.text}", Modifier.padding(start = 8.dp))
                 }
             }
+        }
         }
         if (revealed) {
             Text(if (LearningRules.correct(q, chosen)) "回答正确" else "回答有误 · 你的答案：${chosen.sorted().joinToString().ifEmpty { "未答" }}", color = MaterialTheme.colorScheme.primary)

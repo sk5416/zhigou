@@ -32,6 +32,16 @@ class BackupFilesTest {
         try { BackupFiles.decode(stream); fail() }
         catch (e: IllegalArgumentException) { assertTrue(e.message!!.contains("20MB")) }
     }
+    @Test fun malformedNestedSessionDoesNotEchoItsContents() {
+        val secret = "PRIVATE-NESTED-FIXTURE"
+        val catalog = Catalog("v", listOf(Chapter("C24", "title", "part", body = "body", html = "chapters/C24.html")), emptyList())
+        val malformed = backup().copy(sessions = listOf(SessionRow("s", "{$secret}", 1)))
+        try { LearningRules.validate(malformed, catalog); fail() }
+        catch (e: IllegalArgumentException) {
+            assertTrue(e.message!!.contains("记录损坏"))
+            assertFalse(e.message!!.contains(secret))
+        }
+    }
     @Test fun interruptedInputCannotBecomeAValidBackup() {
         val failure = IOException("fixture disconnected")
         try { BackupFiles.decode(object : InputStream() { override fun read(): Int = throw failure }); fail() }

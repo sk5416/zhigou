@@ -63,6 +63,12 @@ object LearningRules {
         return session.questions.all { current[it.id]?.revision == it.revision }
     }
     fun validate(backup: Backup, catalog: Catalog) {
+        try { validateContents(backup, catalog) }
+        catch (_: kotlinx.serialization.SerializationException) {
+            throw IllegalArgumentException("备份中的练习或作答记录损坏，未修改当前数据")
+        }
+    }
+    private fun validateContents(backup: Backup, catalog: Catalog) {
         require(backup.format == 1 && backup.app == "com.sk5416.zhigou") { "备份格式或应用不兼容" }
         require(backup.preferences.theme in setOf("system", "light", "dark") && backup.preferences.font in 14..28) { "阅读设置无效" }
         val chapters = catalog.chapters.map { it.id }.toSet()
