@@ -1,0 +1,313 @@
+[
+  {
+    "id": "C33-Q01",
+    "chapterId": "C33",
+    "revision": 1,
+    "type": "single",
+    "stem": "缓存与队列的主要职责区别是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "二者都保证远程业务只执行一次",
+        "explanation": "没有这种自动业务保证。"
+      },
+      {
+        "id": "B",
+        "text": "缓存复用结果，队列安排待处理工作",
+        "explanation": "仍需分别设计失效、一致性和故障策略。"
+      },
+      {
+        "id": "C",
+        "text": "引入任一个都能提高下游永久处理能力",
+        "explanation": "排队和复用不自动消除最终资源瓶颈。"
+      },
+      {
+        "id": "D",
+        "text": "缓存保存全部唯一事实，队列保存页面样式",
+        "explanation": "混淆权威数据和工作调度。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C33-K01"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "组件解决的问题不同。"
+  },
+  {
+    "id": "C33-Q02",
+    "chapterId": "C33",
+    "revision": 1,
+    "type": "single",
+    "stem": "TTL与容量淘汰应怎样理解？",
+    "options": [
+      {
+        "id": "A",
+        "text": "TTL相同意味着所有键只在同一时刻淘汰",
+        "explanation": "容量策略和过期不是同一机制。"
+      },
+      {
+        "id": "B",
+        "text": "过期与内存压力下的淘汰是不同策略",
+        "explanation": "还要确认拒绝写入、回源和重建行为。"
+      },
+      {
+        "id": "C",
+        "text": "缓存键一定会永久保留到业务删除",
+        "explanation": "过期、淘汰或故障都可能使副本不可用。"
+      },
+      {
+        "id": "D",
+        "text": "有TTL就保证过期前数据实时正确",
+        "explanation": "权威数据更新可能令缓存陈旧。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C33-K02",
+      "C33-K04"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "可重建副本要按失效和故障处理。"
+  },
+  {
+    "id": "C33-Q03",
+    "chapterId": "C33",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "组织报表缓存键应考虑哪些因素？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "命中后可以跳过全部授权判断",
+        "explanation": "缓存不改变服务端授权责任。"
+      },
+      {
+        "id": "B",
+        "text": "权限或数据版本变化时的更新策略",
+        "explanation": "同一键的可见与新鲜边界需要设计。"
+      },
+      {
+        "id": "C",
+        "text": "可信组织范围及影响结果的查询条件",
+        "explanation": "不能让不同授权范围错误共享结果。"
+      },
+      {
+        "id": "D",
+        "text": "只用report一个固定名称最省空间",
+        "explanation": "可能混合不同用户和条件的数据。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C33-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "缓存键和失效也属于数据隔离设计。"
+  },
+  {
+    "id": "C33-Q04",
+    "chapterId": "C33",
+    "revision": 1,
+    "type": "single",
+    "stem": "RabbitMQ发布者确认应如何解释？",
+    "options": [
+      {
+        "id": "A",
+        "text": "证明消费者永不会收到重复消息",
+        "explanation": "确认丢失和重投等仍需考虑。"
+      },
+      {
+        "id": "B",
+        "text": "可据此删除全部业务状态记录",
+        "explanation": "仍需要持久进度和失败核对。"
+      },
+      {
+        "id": "C",
+        "text": "是发布侧的确认边界，不证明消费者业务完成",
+        "explanation": "消费者处理与确认是另一条边界。"
+      },
+      {
+        "id": "D",
+        "text": "证明ERP已经完成全部物料创建",
+        "explanation": "代理发布确认不感知这种业务完成。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C33-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "发布确认不是端到端业务完成证明。"
+  },
+  {
+    "id": "C33-Q05",
+    "chapterId": "C33",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "缓存突然不可用时，哪些准备合理？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "所有请求同时无上限回源",
+        "explanation": "可能进一步压垮数据库。"
+      },
+      {
+        "id": "B",
+        "text": "观察命中率、回源负载及维护成本",
+        "explanation": "判断组件是否真正有收益。"
+      },
+      {
+        "id": "C",
+        "text": "限流、并发保护和可解释降级",
+        "explanation": "要控制失效对权威数据源的冲击。"
+      },
+      {
+        "id": "D",
+        "text": "把所有缓存错误显示成成功空结果",
+        "explanation": "会混淆失败与真实业务结果。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C33-K05",
+      "C33-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "正常命中以外的路径也要设计。"
+  },
+  {
+    "id": "C33-Q06",
+    "chapterId": "C33",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟消费者已提交业务、确认前退出，最重要的处理是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "每次重投都生成新业务ID",
+        "explanation": "会削弱防重并重复副作用。"
+      },
+      {
+        "id": "B",
+        "text": "按稳定事件身份处理重投并保证业务防重",
+        "explanation": "确认可能丢失，重复需要业务层有明确处理。"
+      },
+      {
+        "id": "C",
+        "text": "认定代理会自动知道数据库已提交",
+        "explanation": "两个系统之间没有这种自动感知。"
+      },
+      {
+        "id": "D",
+        "text": "先确认再做业务以避免重复",
+        "explanation": "可能在确认后失败导致工作丢失。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C33-K06",
+      "C33-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "业务提交与消息确认之间存在失败窗口。"
+  },
+  {
+    "id": "C33-Q07",
+    "chapterId": "C33",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟队列持续积压、一个坏消息无限重试，应怎样调整？",
+    "options": [
+      {
+        "id": "A",
+        "text": "把入队成功全部显示成业务完成",
+        "explanation": "掩盖用户实际等待的结果。"
+      },
+      {
+        "id": "B",
+        "text": "限制重试、隔离失败并观察积压延迟",
+        "explanation": "需要可修正入口和下游能力规划。"
+      },
+      {
+        "id": "C",
+        "text": "无限增加队列长度即可证明容量足够",
+        "explanation": "排队不会增加最终消费能力。"
+      },
+      {
+        "id": "D",
+        "text": "删除全部积压消息后记交付完成",
+        "explanation": "可能丢失有效业务工作。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C33-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "积压是容量和恢复问题，不只是存储问题。"
+  },
+  {
+    "id": "C33-Q08",
+    "chapterId": "C33",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "模拟低频短任务要不要引入Redis与队列，应收集哪些依据？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "以组件数量作为系统专业程度指标",
+        "explanation": "数量本身不证明工程质量。"
+      },
+      {
+        "id": "B",
+        "text": "只要AI默认模板包含就必须保留",
+        "explanation": "模板不能替代需求与责任评估。"
+      },
+      {
+        "id": "C",
+        "text": "维护者、故障恢复与更简单替代方案",
+        "explanation": "新增组件要有足够收益承担成本。"
+      },
+      {
+        "id": "D",
+        "text": "瓶颈、复用率、任务时长和峰值证据",
+        "explanation": "明确组件解决的实际问题。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C33-K01",
+      "C33-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "先证明必要性，再承担组件成本。"
+  }
+]

@@ -72,11 +72,15 @@ jobs:
           script: |
             ./gradlew connectedDebugAndroidTest || { adb pull /sdcard/Pictures/zhigou-tests device-screenshots || true; exit 1; }
             adb pull /sdcard/Pictures/zhigou-tests device-screenshots
+            ./gradlew installDebug installDebugAndroidTest
+            python tools/run_process_recovery.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: device-test-reports-api29
+          include-hidden-files: true
           path: |
             app/build/reports/androidTests/
             app/build/outputs/androidTest-results/
             device-screenshots/
+            .artifacts/process-recovery-report.json

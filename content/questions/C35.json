@@ -1,0 +1,315 @@
+[
+  {
+    "id": "C35-Q01",
+    "chapterId": "C35",
+    "revision": 1,
+    "type": "single",
+    "stem": "100名注册用户与并发、吞吐的关系是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "固定等于100个同时查询",
+        "explanation": "注册人数不说明实际在途请求。"
+      },
+      {
+        "id": "B",
+        "text": "人数少就没有月末大导出风险",
+        "explanation": "少数重任务也可能消耗大量资源。"
+      },
+      {
+        "id": "C",
+        "text": "可直接据此确定数据库连接数100",
+        "explanation": "连接占用与架构、工作负载有关。"
+      },
+      {
+        "id": "D",
+        "text": "需分别说明活跃、在途、频率和单次处理量",
+        "explanation": "容量评估需要负载模型。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C35-K01",
+      "C35-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "用户数量不能替代负载特征。"
+  },
+  {
+    "id": "C35-Q02",
+    "chapterId": "C35",
+    "revision": 1,
+    "type": "single",
+    "stem": "SLI、SLO与SLA的区别是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "三者都是厂商无条件可用率保证",
+        "explanation": "测量、目标和协议并非同一件事。"
+      },
+      {
+        "id": "B",
+        "text": "分别是指标、目标和含责任等约定的协议",
+        "explanation": "范围和后果仍需具体定义。"
+      },
+      {
+        "id": "C",
+        "text": "有SLO即可省略测量口径",
+        "explanation": "没有口径就无法判断目标是否满足。"
+      },
+      {
+        "id": "D",
+        "text": "分别表示服务器、数据库与缓存",
+        "explanation": "这些不是服务质量术语的含义。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C35-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "区分测量、目标与约定。"
+  },
+  {
+    "id": "C35-Q03",
+    "chapterId": "C35",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "一项可验收性能目标应包含什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "负载、数据规模、窗口及延迟分位数",
+        "explanation": "指标需带有适用条件。"
+      },
+      {
+        "id": "B",
+        "text": "只报最好一次延迟",
+        "explanation": "不能覆盖代表性分布与尾部。"
+      },
+      {
+        "id": "C",
+        "text": "正确成功率口径与测量位置",
+        "explanation": "不能把错误返回很快当作性能成功。"
+      },
+      {
+        "id": "D",
+        "text": "只写页面不卡顿即可",
+        "explanation": "无法确定怎样测量和判定。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C35-K01",
+      "C35-K02"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "性能目标必须可重复测量。"
+  },
+  {
+    "id": "C35-Q04",
+    "chapterId": "C35",
+    "revision": 1,
+    "type": "single",
+    "stem": "增加应用节点后仍慢，哪项分析合理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "节点越多必定线性更快",
+        "explanation": "共享资源与协调会限制收益。"
+      },
+      {
+        "id": "B",
+        "text": "直接删除数据权限过滤",
+        "explanation": "不能以性能改变业务授权。"
+      },
+      {
+        "id": "C",
+        "text": "检查共享数据库、串行部分和下游限制",
+        "explanation": "横向增加应用不一定触及瓶颈。"
+      },
+      {
+        "id": "D",
+        "text": "说明压测用户一定设置错误",
+        "explanation": "需要证据而非归咎。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C35-K04",
+      "C35-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "扩容应针对真正的瓶颈。"
+  },
+  {
+    "id": "C35-Q05",
+    "chapterId": "C35",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "横向扩容方案应核对哪些边界？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "会话、文件与任务在多节点如何处理",
+        "explanation": "本地状态可能导致分叉或重复。"
+      },
+      {
+        "id": "B",
+        "text": "只要进程能启动就算共享正确",
+        "explanation": "运行可用不等于状态一致。"
+      },
+      {
+        "id": "C",
+        "text": "负载分配、兼容与故障切换演练",
+        "explanation": "拓扑图不能替代真实恢复证据。"
+      },
+      {
+        "id": "D",
+        "text": "两台应用便不再有任何单点",
+        "explanation": "共享数据库、存储和入口仍可能故障。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C35-K05",
+      "C35-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "多实例增加了状态和运维责任。"
+  },
+  {
+    "id": "C35-Q06",
+    "chapterId": "C35",
+    "revision": 1,
+    "type": "single",
+    "stem": "仅按30天全天时间计算，99.9%可用率对应多少不可用时间？",
+    "options": [
+      {
+        "id": "A",
+        "text": "约43.2分钟",
+        "explanation": "30×24×60×0.001，实际协议口径仍要明确。"
+      },
+      {
+        "id": "B",
+        "text": "固定3天",
+        "explanation": "将0.1%误当了10%。"
+      },
+      {
+        "id": "C",
+        "text": "约0.432分钟",
+        "explanation": "丢失了时间单位换算的比例。"
+      },
+      {
+        "id": "D",
+        "text": "约4.32分钟",
+        "explanation": "这是另一数量级，不符合本题窗口。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C35-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "可用率数字必须带分母与窗口。"
+  },
+  {
+    "id": "C35-Q07",
+    "chapterId": "C35",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟两台应用共用单数据库与单附件盘，应如何评估高可用？",
+    "options": [
+      {
+        "id": "A",
+        "text": "列出依赖故障点及检测、切换和恢复责任",
+        "explanation": "需要端到端演练，而非只看应用数。"
+      },
+      {
+        "id": "B",
+        "text": "把同步副本直接当作全部历史备份",
+        "explanation": "误操作可能同样复制过去。"
+      },
+      {
+        "id": "C",
+        "text": "首页有两个副本就说明端到端无单点",
+        "explanation": "依赖故障仍会影响全部请求。"
+      },
+      {
+        "id": "D",
+        "text": "直接承诺零停机且不需备份",
+        "explanation": "不符合现实故障和误删恢复责任。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C35-K06",
+      "C35-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "可用性与可恢复性是不同目标。"
+  },
+  {
+    "id": "C35-Q08",
+    "chapterId": "C35",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "收到“平均很快，p95小于2秒，所以所有请求小于2秒”的报告，应追问什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "尾部、样本范围和测量窗口是什么",
+        "explanation": "分位数并不描述每个请求都满足阈值。"
+      },
+      {
+        "id": "B",
+        "text": "平均值足够小就不用看失败",
+        "explanation": "快速失败可能降低延迟却损害业务。"
+      },
+      {
+        "id": "C",
+        "text": "失败、超时与正确业务结果怎样计量",
+        "explanation": "需避免只测健康页或成功样本。"
+      },
+      {
+        "id": "D",
+        "text": "把慢请求从分母删掉以保持达标",
+        "explanation": "会改变口径并掩盖实际质量。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C35-K02",
+      "C35-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "统计指标不能扩大成无条件保证。"
+  }
+]

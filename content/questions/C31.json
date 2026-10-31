@@ -1,0 +1,315 @@
+[
+  {
+    "id": "C31-Q01",
+    "chapterId": "C31",
+    "revision": 1,
+    "type": "single",
+    "stem": "脚本、单机工具与Web系统的比较，首先应明确什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "哪个方案省略的测试最多",
+        "explanation": "缺少必要证据不应作为选型收益。"
+      },
+      {
+        "id": "B",
+        "text": "哪个框架最近下载量最高",
+        "explanation": "流行度不能替代当前任务前提。"
+      },
+      {
+        "id": "C",
+        "text": "协作、数据位置、权限和运行责任",
+        "explanation": "这些约束决定形态能否满足实际需要。"
+      },
+      {
+        "id": "D",
+        "text": "界面是否看起来像商业产品",
+        "explanation": "外观不能决定协作与数据边界。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C31-K01",
+      "C31-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "先比较约束与责任，再比较交付外观。"
+  },
+  {
+    "id": "C31-Q02",
+    "chapterId": "C31",
+    "revision": 1,
+    "type": "single",
+    "stem": "单机工具的工程责任通常是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "没有服务器就无需备份和升级",
+        "explanation": "本地记录仍可能丢失或格式不兼容。"
+      },
+      {
+        "id": "B",
+        "text": "明确本地安装、权限、升级与恢复",
+        "explanation": "减少集中部署不等于取消数据责任。"
+      },
+      {
+        "id": "C",
+        "text": "自动具备多人实时共享能力",
+        "explanation": "多设备共享与并发需另外设计。"
+      },
+      {
+        "id": "D",
+        "text": "必须接入在线账号才能使用",
+        "explanation": "个人离线场景不必引入账号。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C31-K01",
+      "C31-K07"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "单机减少部分边界，也保留自身生命周期责任。"
+  },
+  {
+    "id": "C31-Q03",
+    "chapterId": "C31",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "评估低代码平台时，哪些检查合理？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "核对实际许可、配额、权限与集成能力",
+        "explanation": "平台演示不能证明本组织当前可用。"
+      },
+      {
+        "id": "B",
+        "text": "首次能搭页面就可以省略退出方案",
+        "explanation": "流程、数据和历史可能形成长期依赖。"
+      },
+      {
+        "id": "C",
+        "text": "认为所有套餐都有相同授权和接口能力",
+        "explanation": "必须按实际版本、许可及配置核查。"
+      },
+      {
+        "id": "D",
+        "text": "说明数据、流程和历史如何迁移退出",
+        "explanation": "退出成本是生命周期成本的一部分。"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "knowledge": [
+      "C31-K05",
+      "C31-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "平台降低搭建门槛，但依赖边界仍需评估。"
+  },
+  {
+    "id": "C31-Q04",
+    "chapterId": "C31",
+    "revision": 1,
+    "type": "single",
+    "stem": "需求明确完全离线且数据不得上传，某在线平台总分最高，应怎样判断？",
+    "options": [
+      {
+        "id": "A",
+        "text": "默认平台未来会增加离线能力",
+        "explanation": "未核实的未来能力不是当前证据。"
+      },
+      {
+        "id": "B",
+        "text": "只要开发速度足够快就采用",
+        "explanation": "没有满足数据与离线前提。"
+      },
+      {
+        "id": "C",
+        "text": "先验证硬条件，不满足则不能靠总分入选",
+        "explanation": "硬约束不能被其他软指标抵消。"
+      },
+      {
+        "id": "D",
+        "text": "删掉离线指标保持评分客观",
+        "explanation": "改变需求而不是解释选型。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C31-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "评分不能掩盖否决条件。"
+  },
+  {
+    "id": "C31-Q05",
+    "chapterId": "C31",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "比较交付方案总成本，应包括哪些内容？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "交接、升级及平台退出成本",
+        "explanation": "生命周期与维护者变化会影响方案价值。"
+      },
+      {
+        "id": "B",
+        "text": "把用户少视作取消授权的收益",
+        "explanation": "规模不能消除业务权限需求。"
+      },
+      {
+        "id": "C",
+        "text": "只比较首次生成页面的时间",
+        "explanation": "遗漏运行、维护和退出成本。"
+      },
+      {
+        "id": "D",
+        "text": "安装发布、订阅资源与故障恢复",
+        "explanation": "交付后仍需有人承担这些工作。"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "knowledge": [
+      "C31-K04",
+      "C31-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "总成本覆盖交付后的持续责任。"
+  },
+  {
+    "id": "C31-Q06",
+    "chapterId": "C31",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟一人离线CSV清洗工具开始要求多人实时审批，怎样继续选型？",
+    "options": [
+      {
+        "id": "A",
+        "text": "立即采用最大规模微服务架构",
+        "explanation": "新增协作不等于所有复杂组件都有必要。"
+      },
+      {
+        "id": "B",
+        "text": "仍只复制本地数据库给每个人",
+        "explanation": "独立副本不能自动保证共享批准状态。"
+      },
+      {
+        "id": "C",
+        "text": "把所有文件放共享盘便宣布并发解决",
+        "explanation": "可能覆盖、分叉且缺少对象权限。"
+      },
+      {
+        "id": "D",
+        "text": "按共享状态和权限等新要求重新比较",
+        "explanation": "原前提改变，应提出证据与适度复杂度。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C31-K02",
+      "C31-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "形态演进由实际边界变化触发。"
+  },
+  {
+    "id": "C31-Q07",
+    "chapterId": "C31",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟低代码连接器是否支持目标批量规模尚未核实，记录应怎样写？",
+    "options": [
+      {
+        "id": "A",
+        "text": "写已支持以便快速决策",
+        "explanation": "把假设当成了平台事实。"
+      },
+      {
+        "id": "B",
+        "text": "只引用产品宣传名称作为验证",
+        "explanation": "不能证明目标规模和失败路径可用。"
+      },
+      {
+        "id": "C",
+        "text": "写待核验并设计隔离样例",
+        "explanation": "应说明具体许可和配置条件下的证据。"
+      },
+      {
+        "id": "D",
+        "text": "要求真实生产凭据作为教材输入",
+        "explanation": "隔离演示无需真实企业秘密。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C31-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "未知能力应保持未知，待有证据再确认。"
+  },
+  {
+    "id": "C31-Q08",
+    "chapterId": "C31",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "模拟选择本地工具后，哪些交接内容有用？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "承诺永远不需要任何服务端",
+        "explanation": "未来需求可能改变，不能无条件保证。"
+      },
+      {
+        "id": "B",
+        "text": "当前前提与多人协作时的重评触发",
+        "explanation": "解释现在为何合适以及何时需要改变。"
+      },
+      {
+        "id": "C",
+        "text": "运行、升级、备份与替换维护者说明",
+        "explanation": "减少对原作者和聊天记忆的依赖。"
+      },
+      {
+        "id": "D",
+        "text": "删除所有备选以免以后争论",
+        "explanation": "失去取舍依据，不利于重评。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C31-K06",
+      "C31-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "决策应可接续，而非永久口号。"
+  }
+]

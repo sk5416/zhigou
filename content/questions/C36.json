@@ -1,0 +1,317 @@
+[
+  {
+    "id": "C36-Q01",
+    "chapterId": "C36",
+    "revision": 1,
+    "type": "single",
+    "stem": "ADR最主要保存什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只保存已经成功的最终截图",
+        "explanation": "无法表达前提和未知边界。"
+      },
+      {
+        "id": "B",
+        "text": "存储所有会议聊天而不整理",
+        "explanation": "不便核对一项重要取舍。"
+      },
+      {
+        "id": "C",
+        "text": "一项重要决定的前提、备选、依据与后果",
+        "explanation": "帮助后续理解及重评。"
+      },
+      {
+        "id": "D",
+        "text": "只保存最后选择的技术名称",
+        "explanation": "缺少为何选择和接受什么代价。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C36-K01",
+      "C36-K02",
+      "C36-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "决策记录要解释为什么与何时改变。"
+  },
+  {
+    "id": "C36-Q02",
+    "chapterId": "C36",
+    "revision": 1,
+    "type": "single",
+    "stem": "技术债与普通新功能待办应怎样区分？",
+    "options": [
+      {
+        "id": "A",
+        "text": "任何技术债都必须立刻整体重写",
+        "explanation": "应按风险和收益比较适当处理。"
+      },
+      {
+        "id": "B",
+        "text": "把高危问题标为债即可无限期忽略",
+        "explanation": "标签不能降低风险或免除处理。"
+      },
+      {
+        "id": "C",
+        "text": "所有未开发功能都必然是技术债",
+        "explanation": "新功能不一定是延后改进承担的工程成本。"
+      },
+      {
+        "id": "D",
+        "text": "技术债应说明延后改进的成本或风险",
+        "explanation": "还需责任人与偿还或重评条件。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C36-K04"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "债务需要可管理的责任与后果。"
+  },
+  {
+    "id": "C36-Q03",
+    "chapterId": "C36",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "一份有用的决策记录应包括哪些内容？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "把所有未验证假设写成已通过",
+        "explanation": "会误导未来维护与验收。"
+      },
+      {
+        "id": "B",
+        "text": "当时硬条件、现实备选和接受的代价",
+        "explanation": "使决定能够被理解和比较。"
+      },
+      {
+        "id": "C",
+        "text": "具体证据及未覆盖范围",
+        "explanation": "限制结论，不把小试验当全面证明。"
+      },
+      {
+        "id": "D",
+        "text": "删除被否决方案避免分心",
+        "explanation": "会失去后续重评所需的取舍背景。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C36-K02",
+      "C36-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "证据和限制应与决定一起留存。"
+  },
+  {
+    "id": "C36-Q04",
+    "chapterId": "C36",
+    "revision": 1,
+    "type": "single",
+    "stem": "负载变化使原ADR不再适用，应怎样维护历史？",
+    "options": [
+      {
+        "id": "A",
+        "text": "改写原记录说当初就知道新负载",
+        "explanation": "伪造了原先前提与证据。"
+      },
+      {
+        "id": "B",
+        "text": "追加新决定并链接被替代的旧记录",
+        "explanation": "能解释前提何时改变以及新取舍。"
+      },
+      {
+        "id": "C",
+        "text": "坚持旧方案永不重评",
+        "explanation": "忽略实际需求变化。"
+      },
+      {
+        "id": "D",
+        "text": "删除旧记录只留新技术名称",
+        "explanation": "丢失演进理由。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C36-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "历史记录应反映当时的事实。"
+  },
+  {
+    "id": "C36-Q05",
+    "chapterId": "C36",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "重构或重写之前应准备哪些证据？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "新首页正常便可删除全部旧数据",
+        "explanation": "没有解决兼容和迁移责任。"
+      },
+      {
+        "id": "B",
+        "text": "现有权限、金额、防重与恢复行为基线",
+        "explanation": "重要旧行为需要对照验证。"
+      },
+      {
+        "id": "C",
+        "text": "只比较新代码的行数",
+        "explanation": "行数不能证明行为、数据与风险保持。"
+      },
+      {
+        "id": "D",
+        "text": "局部替代、迁移步骤和回退边界",
+        "explanation": "要比较可控变化而非默认重写。"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C36-K06",
+      "C36-K07",
+      "C36-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "变化范围越大，行为和数据责任越需要明确。"
+  },
+  {
+    "id": "C36-Q06",
+    "chapterId": "C36",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟每天一次小任务原先未引入队列，半年后负载大增，应怎样评价原决定？",
+    "options": [
+      {
+        "id": "A",
+        "text": "没有队列说明当初一定不专业",
+        "explanation": "组件存在与否不能脱离需求判断。"
+      },
+      {
+        "id": "B",
+        "text": "为了证明原决定正确拒绝任何改进",
+        "explanation": "条件变化应有重评机会。"
+      },
+      {
+        "id": "C",
+        "text": "把今天的规模写回原记录",
+        "explanation": "会误导对当时决策的理解。"
+      },
+      {
+        "id": "D",
+        "text": "依据原前提和证据评价，再按新需求重评",
+        "explanation": "当时合理的选择可能需要随着条件变化演进。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C36-K02",
+      "C36-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "决策质量与前提相关，不只看事后结果。"
+  },
+  {
+    "id": "C36-Q07",
+    "chapterId": "C36",
+    "revision": 1,
+    "type": "single",
+    "stem": "AI为修复重复导入建议重写全栈并换数据库，先做什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "定位防重身份、约束和事务边界并比较局部方案",
+        "explanation": "重写需要超出局部修复的充分理由。"
+      },
+      {
+        "id": "B",
+        "text": "以新框架流行度直接同意",
+        "explanation": "没有证明重写解决真实问题。"
+      },
+      {
+        "id": "C",
+        "text": "只改文档宣称重复已解决",
+        "explanation": "不改变实际业务行为。"
+      },
+      {
+        "id": "D",
+        "text": "先删除旧系统再设计验收",
+        "explanation": "失去可工作的基线并扩大风险。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C36-K06",
+      "C36-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "先定位并比较，不能用大改替代证据。"
+  },
+  {
+    "id": "C36-Q08",
+    "chapterId": "C36",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "模拟接受一项暂缓自动恢复演练的债务，应记录什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "当前已有证据与仍未验证范围",
+        "explanation": "不能把接受风险写成验证通过。"
+      },
+      {
+        "id": "B",
+        "text": "风险、责任人及补足或重评触发",
+        "explanation": "使延后决定能够被持续管理。"
+      },
+      {
+        "id": "C",
+        "text": "把所有恢复检查标已通过以便发布",
+        "explanation": "接受缺口不等于消除了缺口。"
+      },
+      {
+        "id": "D",
+        "text": "只写以后优化，不指定任何责任",
+        "explanation": "容易永久搁置且无法追踪。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B"
+    ],
+    "knowledge": [
+      "C36-K04",
+      "C36-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "明确承担与补足责任，而非掩盖风险。"
+  }
+]

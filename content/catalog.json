@@ -1,5 +1,5 @@
 {
-  "version": "2026.10-frontend.1",
+  "version": "2026.10-architecture.1",
   "chapters": [
     {
       "id": "C00",
@@ -805,8 +805,15 @@
       "part": "第7篇｜技术选型与架构判断",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C05",
+        "C26",
+        "C30"
+      ],
+      "related": [
+        "C32",
+        "C28"
+      ],
       "knowledge": [
         "C31-K01",
         "C31-K02",
@@ -817,7 +824,7 @@
         "C31-K07",
         "C31-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C32",
@@ -825,8 +832,14 @@
       "part": "第7篇｜技术选型与架构判断",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C31"
+      ],
+      "related": [
+        "C03",
+        "C35",
+        "C36"
+      ],
       "knowledge": [
         "C32-K01",
         "C32-K02",
@@ -837,7 +850,7 @@
         "C32-K07",
         "C32-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C33",
@@ -845,8 +858,15 @@
       "part": "第7篇｜技术选型与架构判断",
       "depth": "L1",
       "priority": "P2",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C09",
+        "C14",
+        "C23"
+      ],
+      "related": [
+        "C14",
+        "C35"
+      ],
       "knowledge": [
         "C33-K01",
         "C33-K02",
@@ -857,7 +877,7 @@
         "C33-K07",
         "C33-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C34",
@@ -865,8 +885,15 @@
       "part": "第7篇｜技术选型与架构判断",
       "depth": "L1",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C21",
+        "C26",
+        "C29"
+      ],
+      "related": [
+        "C30",
+        "C35"
+      ],
       "knowledge": [
         "C34-K01",
         "C34-K02",
@@ -877,7 +904,7 @@
         "C34-K07",
         "C34-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C35",
@@ -885,8 +912,15 @@
       "part": "第7篇｜技术选型与架构判断",
       "depth": "L2",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C23",
+        "C24"
+      ],
+      "related": [
+        "C26",
+        "C33",
+        "C36"
+      ],
       "knowledge": [
         "C35-K01",
         "C35-K02",
@@ -897,7 +931,7 @@
         "C35-K07",
         "C35-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C36",
@@ -905,8 +939,15 @@
       "part": "第7篇｜技术选型与架构判断",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C20",
+        "C26",
+        "C32"
+      ],
+      "related": [
+        "C35",
+        "C37"
+      ],
       "knowledge": [
         "C36-K01",
         "C36-K02",
@@ -917,7 +958,7 @@
         "C36-K07",
         "C36-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C37",

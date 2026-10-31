@@ -1,0 +1,315 @@
+[
+  {
+    "id": "C32-Q01",
+    "chapterId": "C32",
+    "revision": 1,
+    "type": "single",
+    "stem": "比较前端、后端和数据库时，哪种方法合理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "框架越新越不需要兼容验证",
+        "explanation": "新旧都要按具体组合检验。"
+      },
+      {
+        "id": "B",
+        "text": "技术名称相同便代表部署条件一致",
+        "explanation": "版本、驱动、环境仍可能不同。"
+      },
+      {
+        "id": "C",
+        "text": "分别核对职责，再验证它们的组合",
+        "explanation": "单组件优点不能证明整体适配。"
+      },
+      {
+        "id": "D",
+        "text": "数据库跑分快就代表整套最好维护",
+        "explanation": "性能不是所有维护与安全指标。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C32-K01"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "组件与组合需要两层核验。"
+  },
+  {
+    "id": "C32-Q02",
+    "chapterId": "C32",
+    "revision": 1,
+    "type": "single",
+    "stem": "选型表中的硬条件和软评分应怎样处理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "把不易满足的硬条件改成低权重",
+        "explanation": "没有正当解决原约束。"
+      },
+      {
+        "id": "B",
+        "text": "先核验硬条件，再比较有依据的软取舍",
+        "explanation": "应明确事实、估计和未验证项。"
+      },
+      {
+        "id": "C",
+        "text": "所有未知项默认给中等分即可",
+        "explanation": "会掩盖关键证据不足。"
+      },
+      {
+        "id": "D",
+        "text": "混成总分后忽略任何单项失败",
+        "explanation": "可能选入不满足必要约束的方案。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C32-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "硬限制不能用分数稀释。"
+  },
+  {
+    "id": "C32-Q03",
+    "chapterId": "C32",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "关于技术生态与团队能力，哪些判断成立？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "插件版本、许可和支持条件需核验",
+        "explanation": "生态整体成熟不证明某组合可靠。"
+      },
+      {
+        "id": "B",
+        "text": "社区活跃就保证所有插件可维护",
+        "explanation": "不同组件的质量与生命周期有差异。"
+      },
+      {
+        "id": "C",
+        "text": "交接、培训和升级成本需要估计",
+        "explanation": "技术选择会改变长期责任。"
+      },
+      {
+        "id": "D",
+        "text": "团队熟悉某栈即可忽略其明确安全缺陷",
+        "explanation": "熟悉降低成本，但不能消除风险。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C32-K05",
+      "C32-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "维护信号是依据之一，不是质量保证。"
+  },
+  {
+    "id": "C32-Q04",
+    "chapterId": "C32",
+    "revision": 1,
+    "type": "single",
+    "stem": "选型结论对权重轻微变化就翻转，最合理的后续是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "检查敏感性和关键未知，补充证据",
+        "explanation": "结论可能取决于主观估计而非稳健差异。"
+      },
+      {
+        "id": "B",
+        "text": "隐藏权重以保持结论稳定",
+        "explanation": "掩盖不确定性不产生证据。"
+      },
+      {
+        "id": "C",
+        "text": "直接选总分小数位更多的方案",
+        "explanation": "精细数字不代表真实精度。"
+      },
+      {
+        "id": "D",
+        "text": "把未验证项目都改成已验证",
+        "explanation": "这是伪造依据。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C32-K03",
+      "C32-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "评分应反映证据置信度。"
+  },
+  {
+    "id": "C32-Q05",
+    "chapterId": "C32",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "关键风险的隔离验证应覆盖什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "固定版本和明确未验证范围",
+        "explanation": "便于复现，也避免扩大结论。"
+      },
+      {
+        "id": "B",
+        "text": "只演示静态首页就结束",
+        "explanation": "无法证明核心运行组合成立。"
+      },
+      {
+        "id": "C",
+        "text": "只看语言语法是否简短",
+        "explanation": "与系统交付风险不等价。"
+      },
+      {
+        "id": "D",
+        "text": "身份、授权、事务与升级恢复的组合路径",
+        "explanation": "选择最可能失败的实际边界。"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "knowledge": [
+      "C32-K04",
+      "C32-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "试验要验证风险，而非只展示容易成功的部分。"
+  },
+  {
+    "id": "C32-Q06",
+    "chapterId": "C32",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟新栈身份插件与目标运行时是否兼容尚未知，应如何评分？",
+    "options": [
+      {
+        "id": "A",
+        "text": "按同类插件通常可用给满分",
+        "explanation": "不能替代具体兼容证据。"
+      },
+      {
+        "id": "B",
+        "text": "标记待核验并优先验证这个边界",
+        "explanation": "关键前提未知时应影响决策置信度。"
+      },
+      {
+        "id": "C",
+        "text": "去掉身份接入要求即可通过",
+        "explanation": "这改变了必要业务需求。"
+      },
+      {
+        "id": "D",
+        "text": "只要CRUD能跑就认定认证兼容",
+        "explanation": "两个功能路径不同。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C32-K03",
+      "C32-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "未知关键条件不能用普通页面成功替代。"
+  },
+  {
+    "id": "C32-Q07",
+    "chapterId": "C32",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟已有团队能维护A，B在复杂交互更灵活但迁移成本高，应怎样下结论？",
+    "options": [
+      {
+        "id": "A",
+        "text": "所有项目都应选择B",
+        "explanation": "特定优势不等于无条件最优。"
+      },
+      {
+        "id": "B",
+        "text": "不记录代价只保留所选名称",
+        "explanation": "后续无法理解为什么接受限制。"
+      },
+      {
+        "id": "C",
+        "text": "按当前需求记录取舍与重评条件",
+        "explanation": "选择任何一方都要说明证据和成本。"
+      },
+      {
+        "id": "D",
+        "text": "所有项目都应选择A",
+        "explanation": "当前团队前提不能外推所有场景。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C32-K05",
+      "C32-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "方案结论应是条件化决策。"
+  },
+  {
+    "id": "C32-Q08",
+    "chapterId": "C32",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "收到AI给出的技术排行榜，应追问哪些依据？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "要求保证以后永不需要升级",
+        "explanation": "不能合理作出此类承诺。"
+      },
+      {
+        "id": "B",
+        "text": "只追问作者偏爱哪种语言",
+        "explanation": "个人偏好不等于系统需要。"
+      },
+      {
+        "id": "C",
+        "text": "维护者能力及最难路径的验证证据",
+        "explanation": "交接和实际运行比排名更有价值。"
+      },
+      {
+        "id": "D",
+        "text": "数据位置、兼容、许可和退出条件",
+        "explanation": "这些可能直接决定候选是否适用。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C32-K02",
+      "C32-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "用前提与证据替代品牌排名。"
+  }
+]

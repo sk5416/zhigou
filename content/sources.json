@@ -357,6 +357,79 @@
         "C30"
       ],
       "claims": "HTTP错误状态通常不使fetch直接reject；取消等待不证明服务器业务撤销。"
+    },
+    {
+      "title": "Google SRE: Simplicity",
+      "url": "https://sre.google/sre-book/simplicity/",
+      "chapters": [
+        "C31",
+        "C32"
+      ],
+      "claims": "额外复杂度与可靠交付责任的取舍基础；选型矩阵与企业案例为自编，不是厂商排行榜。"
+    },
+    {
+      "title": "Redis EXPIRE",
+      "url": "https://redis.io/docs/latest/commands/expire/",
+      "chapters": [
+        "C33"
+      ],
+      "claims": "TTL过期机制，不把TTL当实时一致性承诺；不提供生产Redis配置或未实测性能结论。"
+    },
+    {
+      "title": "Redis key eviction",
+      "url": "https://redis.io/docs/latest/develop/reference/eviction/",
+      "chapters": [
+        "C33"
+      ],
+      "claims": "容量策略与可重建副本边界，淘汰与过期不同；需按配置核对拒绝写入及恢复。"
+    },
+    {
+      "title": "RabbitMQ consumer acknowledgements and publisher confirms",
+      "url": "https://www.rabbitmq.com/docs/confirms",
+      "chapters": [
+        "C33"
+      ],
+      "claims": "核对页面4.4/AMQP0-9-1的发布确认与消费确认独立边界；不把确认推广为业务恰好一次。"
+    },
+    {
+      "title": "S3 presigned URLs",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html",
+      "chapters": [
+        "C34"
+      ],
+      "claims": "S3为特定示例，URL可在有效期内重复使用且受凭据等条件影响；应用撤权不直接等同所有URL立即失效。"
+    },
+    {
+      "title": "PostgreSQL18 full text introduction",
+      "url": "https://www.postgresql.org/docs/18/textsearch-intro.html",
+      "chapters": [
+        "C34"
+      ],
+      "claims": "全文词项、语言处理、排序与简单匹配的区别；数据库有内置能力，中文与编号需实际验证。"
+    },
+    {
+      "title": "OWASP authorization: file and search boundaries",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+      "chapters": [
+        "C34"
+      ],
+      "claims": "对象和静态资源的授权需要覆盖实际访问路径；文件与索引案例为模拟，不声称有现成平台默认实现。"
+    },
+    {
+      "title": "Google SRE: Service level objectives",
+      "url": "https://sre.google/sre-book/service-level-objectives/",
+      "chapters": [
+        "C35"
+      ],
+      "claims": "SLI/SLO/SLA、窗口及分位数测量的基础；20并发及99.9%换算均为自编示例，非厂商SLA或压测结果。"
+    },
+    {
+      "title": "Architectural Decision Records",
+      "url": "https://adr.github.io/",
+      "chapters": [
+        "C36"
+      ],
+      "claims": "一项重要决定的理由、取舍和后果；ADR-007为自编模拟，不修改App技术选型。"
     }
   ],
   "simulation": "青禾制造、员工、部门和物料同步均为虚构模拟，不代表金蝶、Salesforce 等厂商真实接口行为。",

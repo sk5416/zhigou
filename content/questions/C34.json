@@ -1,0 +1,312 @@
+[
+  {
+    "id": "C34-Q01",
+    "chapterId": "C34",
+    "revision": 1,
+    "type": "single",
+    "stem": "文件内容与业务元数据应如何理解？",
+    "options": [
+      {
+        "id": "A",
+        "text": "对象键必须等于用户输入的本地路径",
+        "explanation": "对象定位不需照搬任意客户端路径。"
+      },
+      {
+        "id": "B",
+        "text": "内容是字节，元数据描述身份、关联和处理信息",
+        "explanation": "二者应能共同核对和恢复。"
+      },
+      {
+        "id": "C",
+        "text": "存储路径可直接作为用户权限证明",
+        "explanation": "路径不是授权决策。"
+      },
+      {
+        "id": "D",
+        "text": "元数据只是原始文件名，其他都无关",
+        "explanation": "还需稳定ID、对象定位、关联和状态等信息。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C34-K01"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "稳定身份和存储位置应区分。"
+  },
+  {
+    "id": "C34-Q02",
+    "chapterId": "C34",
+    "revision": 1,
+    "type": "single",
+    "stem": "数据库、文件系统与对象存储的选择，哪项准确？",
+    "options": [
+      {
+        "id": "A",
+        "text": "任何文件放数据库都违反规则",
+        "explanation": "不存在这样的通用禁止。"
+      },
+      {
+        "id": "B",
+        "text": "对象存储会自动解决全部业务权限",
+        "explanation": "仍需按用户与业务对象设计访问。"
+      },
+      {
+        "id": "C",
+        "text": "按规模、事务和恢复维护成本比较",
+        "explanation": "少量小附件与海量大文件不一定同一答案。"
+      },
+      {
+        "id": "D",
+        "text": "本地文件无需备份因为路径已存数据库",
+        "explanation": "路径不能恢复丢失的文件字节。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C34-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "存储取舍需要完整业务与运维前提。"
+  },
+  {
+    "id": "C34-Q03",
+    "chapterId": "C34",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "文件下载安全应覆盖哪些入口？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "只给文件改随机名即可",
+        "explanation": "难猜名称不能代替授权。"
+      },
+      {
+        "id": "B",
+        "text": "下载、预览、缩略图与导出",
+        "explanation": "每种内容访问路径都应遵守权限。"
+      },
+      {
+        "id": "C",
+        "text": "搜索命中和摘要生成",
+        "explanation": "片段本身也可能暴露敏感内容。"
+      },
+      {
+        "id": "D",
+        "text": "只在合同列表隐藏无权行",
+        "explanation": "预览、直链和搜索仍可能泄露。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C34-K04",
+      "C34-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "数据权限不只保护最终正文页。"
+  },
+  {
+    "id": "C34-Q04",
+    "chapterId": "C34",
+    "revision": 1,
+    "type": "single",
+    "stem": "S3预签名下载URL的边界应怎样描述？",
+    "options": [
+      {
+        "id": "A",
+        "text": "应用撤销员工角色一定立即撤销所有已签链接",
+        "explanation": "应用角色与已签凭据边界需分别核查。"
+      },
+      {
+        "id": "B",
+        "text": "提供限时特定访问，须核对期限与撤销条件",
+        "explanation": "链接本身也需要防止泄露。"
+      },
+      {
+        "id": "C",
+        "text": "签发后永久有效",
+        "explanation": "有期限且受凭据和策略等条件影响。"
+      },
+      {
+        "id": "D",
+        "text": "所有URL都严格只能使用一次",
+        "explanation": "官方机制可在有效期内重复使用。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C34-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "临时链接不是无条件的一次性授权。"
+  },
+  {
+    "id": "C34-Q05",
+    "chapterId": "C34",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "引入全文搜索前，哪些判断合理？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "搜索找到便可跳过详情授权",
+        "explanation": "索引命中不证明当前用户有权查看。"
+      },
+      {
+        "id": "B",
+        "text": "先核对数据库已有能力与实际检索需求",
+        "explanation": "并非一开始就需要独立搜索引擎。"
+      },
+      {
+        "id": "C",
+        "text": "LIKE与所有全文检索完全等价",
+        "explanation": "分词、语言、排序和访问路径可能不同。"
+      },
+      {
+        "id": "D",
+        "text": "验证中文、编号和权限变化下的行为",
+        "explanation": "索引和片段可能延迟或泄露。"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C34-K06",
+      "C34-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "搜索能力与权限一致性都要有证据。"
+  },
+  {
+    "id": "C34-Q06",
+    "chapterId": "C34",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟对象上传成功但元数据写入失败，应如何设计后续？",
+    "options": [
+      {
+        "id": "A",
+        "text": "记录路径后就把上传显示ready",
+        "explanation": "可能仍无有效业务关联。"
+      },
+      {
+        "id": "B",
+        "text": "保留明确状态并对账、重试或受控清理",
+        "explanation": "要区分孤儿和仍在进行的工作。"
+      },
+      {
+        "id": "C",
+        "text": "立刻删掉所有暂时无引用对象",
+        "explanation": "可能误删未完成或需恢复的数据。"
+      },
+      {
+        "id": "D",
+        "text": "默认跨存储自动回滚所有字节",
+        "explanation": "不同系统未必处于同一事务。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C34-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "跨存储操作需要显式的一致性和恢复策略。"
+  },
+  {
+    "id": "C34-Q07",
+    "chapterId": "C34",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟恢复合同库只恢复了数据库，附件盘丢失，能作何结论？",
+    "options": [
+      {
+        "id": "A",
+        "text": "还需恢复对象、密钥并核对关联与校验值",
+        "explanation": "可用业务需要完整资产链。"
+      },
+      {
+        "id": "B",
+        "text": "数据库行完整说明合同全部恢复",
+        "explanation": "行和路径不能替代文件字节。"
+      },
+      {
+        "id": "C",
+        "text": "应把文件缺失统一显示为空合同",
+        "explanation": "会掩盖恢复失败。"
+      },
+      {
+        "id": "D",
+        "text": "搜索索引中有标题便等于原件可恢复",
+        "explanation": "索引通常不是完整原始附件。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C34-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "恢复对象是业务资产，而不只是一张表。"
+  },
+  {
+    "id": "C34-Q08",
+    "chapterId": "C34",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "模拟合同撤权后的搜索验收，应包括哪些场景？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "旧索引摘要是否仍向无权用户返回",
+        "explanation": "即使详情拒绝，摘要也可能泄露。"
+      },
+      {
+        "id": "B",
+        "text": "直接下载、旧链接和详情再次校验",
+        "explanation": "权限与链接失效边界需分别确认。"
+      },
+      {
+        "id": "C",
+        "text": "要求所有存储服务都自动理解组织权限",
+        "explanation": "业务权限需由明确策略落实。"
+      },
+      {
+        "id": "D",
+        "text": "只确认列表隐藏便认为通过",
+        "explanation": "未验证其他入口。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B"
+    ],
+    "knowledge": [
+      "C34-K04",
+      "C34-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "撤权要覆盖副本和已发访问路径。"
+  }
+]

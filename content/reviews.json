@@ -349,5 +349,59 @@
     "record": "docs/05_课程审核记录.md",
     "note": "初始/加载/空结果/失败/未知区分、旧响应竞态、取消等待、fetch错误、后端对象授权和可访问恢复核对；8题复核；页面确认和隐藏按钮非授权；不在真实系统执行越权练习，不将客户端终止当服务端撤销",
     "fingerprint": "c5a701ee88f0ca507fac9bf2de67db01a2db2578f7eb3dffac7d7d25ab1cb2ef"
+  },
+  "C31": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "四种交付形态、协作/离线/身份硬条件、平台许可与退出、生命周期和重评触发核对；8题有前提且答案明确；不虚构低代码具体套餐能力，不以人数免除安全恢复，形态比较为模拟",
+    "fingerprint": "fc0e3ef88e01b7bc3c7eb6abfe5668cd883b211e77a1753c7562b0c4838d76ba"
+  },
+  "C32": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "组件职责与组合兼容、硬软指标、证据置信、团队维护、风险路径和权重敏感性核对；8题复核；不作品牌排名，不把下载量当质量；未验证插件明确标待核验，无实际企业身份接入声明",
+    "fingerprint": "08eb2eb9e985fcbff52ef83ba045b0a8397859438c39969019b4ca897ec0aca5"
+  },
+  "C33": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "缓存/队列职责、TTL/淘汰、键隔离、回源、确认/完成、重投和积压核对；8题覆盖故障边界；RabbitMQ发布和消费确认分开；未部署Redis/RabbitMQ，不声称队列保证业务恰好一次",
+    "fingerprint": "fddb6885ad72e2b50fad162521778ad3b4d79fdbb8dd4cb7c1d0daedac4026b0"
+  },
+  "C34": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "内容/元数据/索引、存储取舍、跨存储状态、各入口权限、临时链接和关联恢复核对；8题复核；S3只是核验示例，URL非默认一次性；不把随机名当授权、索引当原始合同备份",
+    "fingerprint": "c7416611c3e7676c44cf33df59128d645446bd673a02956bc41bd0b38a5c74b3"
+  },
+  "C35": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "负载/吞吐/延迟、分位数、SLI/SLO/SLA、瓶颈、扩容状态和单点、恢复责任核对；8题复核；30天99.9%换算43.2分钟已计算；20并发等目标均为模拟，未宣称性能或高可用实测达标",
+    "fingerprint": "42bf44ca2310d95e980fc36f0e2cec163750c2bb26c8da40af3f815347b24d8a"
+  },
+  "C36": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "决策理由/备选/证据/代价、债务责任、被替代历史、重构重写与渐进迁移核对；8题复核；ADR-007为模拟；接受缺口非验收通过，不将后知事实写回原决策，不据课程改变App架构",
+    "fingerprint": "4ee9440f4ad9bb1a3148e5437401caa8eba2cd54393c7c7d1175c0c3751c3a84"
   }
 }
