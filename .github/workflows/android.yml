@@ -16,7 +16,7 @@ jobs:
           python-version: '3.12'
       - uses: android-actions/setup-android@v3
         with:
-          cmdline-tools-version: '13114758'
+          cmdline-tools-version: '15859902'
           packages: platform-tools
           log-accepted-android-sdk-licenses: false
       - run: sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
@@ -67,7 +67,7 @@ jobs:
           python-version: '3.12'
       - uses: android-actions/setup-android@v3
         with:
-          cmdline-tools-version: '13114758'
+          cmdline-tools-version: '15859902'
           packages: platform-tools
           log-accepted-android-sdk-licenses: false
       - uses: gradle/actions/setup-gradle@v4
@@ -78,6 +78,13 @@ jobs:
           echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
+      - name: Make emulator runner use pinned command-line tools 22
+        run: |
+          if [ -e "$ANDROID_HOME/cmdline-tools/latest" ] || [ -L "$ANDROID_HOME/cmdline-tools/latest" ]; then
+            mv "$ANDROID_HOME/cmdline-tools/latest" "$RUNNER_TEMP/zhigou-preinstalled-cmdline-tools"
+          fi
+          ln -s "$ANDROID_HOME/cmdline-tools/15859902" "$ANDROID_HOME/cmdline-tools/latest"
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --version
       - run: chmod +x gradlew
       - name: Build genuine dev.7 upgrade baseline
         run: |
@@ -94,6 +101,7 @@ jobs:
           heap-size: ${{ matrix.heap }}
           emulator-options: ${{ matrix.options }}
           emulator-boot-timeout: 360
+          pre-emulator-launch-script: python tools/check_avd.py ${{ matrix.api }}
           disable-animations: true
           script: |
             python tools/record_device.py
@@ -117,3 +125,4 @@ jobs:
             .artifacts/upgrade-report.json
             .artifacts/background-recovery-report.json
             .artifacts/device-environment.json
+            .artifacts/avd-environment.json
