@@ -186,6 +186,112 @@
         "C20"
       ],
       "claims": "标签定位版本基线；稳定性、产物与发布验证是独立证据。"
+    },
+    {
+      "title": "PostgreSQL18 constraints",
+      "url": "https://www.postgresql.org/docs/18/ddl-constraints.html",
+      "chapters": [
+        "C21",
+        "C22"
+      ],
+      "claims": "主键、唯一、外键、CHECK和NULL的边界。SQLite示例按其方言单独验证，不把不同产品的NULL或类型行为混同。"
+    },
+    {
+      "title": "SQLite CREATE TABLE",
+      "url": "https://www.sqlite.org/lang_createtable.html",
+      "chapters": [
+        "C21",
+        "C22"
+      ],
+      "claims": "建表与约束语法，普通表类型亲和性；金额例子用typeof和范围检查，非跨产品通用DDL。"
+    },
+    {
+      "title": "SQLite foreign keys",
+      "url": "https://www.sqlite.org/foreignkeys.html",
+      "chapters": [
+        "C21"
+      ],
+      "claims": "连接应在事务前启用外键并验证；父行删除行为及孤儿写入，外键不等于授权。"
+    },
+    {
+      "title": "PostgreSQL18 multicolumn indexes",
+      "url": "https://www.postgresql.org/docs/18/indexes-multicolumn.html",
+      "chapters": [
+        "C23"
+      ],
+      "claims": "B-tree列顺序与条件、skip scan等优化存在前提，不将最左列经验变成绝对规则。"
+    },
+    {
+      "title": "PostgreSQL18 EXPLAIN",
+      "url": "https://www.postgresql.org/docs/18/using-explain.html",
+      "chapters": [
+        "C23"
+      ],
+      "claims": "计划估算cost与实际时间有别，ANALYZE真正执行；SQLite的EXPLAIN QUERY PLAN不声称输出真实耗时。"
+    },
+    {
+      "title": "SQLite EXPLAIN QUERY PLAN",
+      "url": "https://www.sqlite.org/eqp.html",
+      "chapters": [
+        "C23"
+      ],
+      "claims": "SQLite计划观察语法；测试核对结果和索引，不绑定特定版本计划文本或宣称真实性能达标。"
+    },
+    {
+      "title": "PostgreSQL18 transaction isolation",
+      "url": "https://www.postgresql.org/docs/18/transaction-iso.html",
+      "chapters": [
+        "C24"
+      ],
+      "claims": "Read Committed快照、Repeatable Read边界和Serializable冲突；明确同名级别不能跨产品照搬。"
+    },
+    {
+      "title": "SQLite transactions",
+      "url": "https://www.sqlite.org/lang_transaction.html",
+      "chapters": [
+        "C24"
+      ],
+      "claims": "单写事务和显式提交/回滚的行为，不提供SELECT FOR UPDATE作为SQLite语法。"
+    },
+    {
+      "title": "OWASP Logging Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html",
+      "chapters": [
+        "C25"
+      ],
+      "claims": "运行、安全与业务审计目的区分，可信来源、事件属性、最小化、保护与保留。事务审计和持久转发是条件化工程设计，非宣称某平台默认提供。"
+    },
+    {
+      "title": "PostgreSQL18 modifying tables",
+      "url": "https://www.postgresql.org/docs/18/ddl-alter.html",
+      "chapters": [
+        "C26"
+      ],
+      "claims": "结构变更和现有数据约束的关系；扩展回填收缩需按产品锁与事务语义验证，不承诺任意DDL无停机。"
+    },
+    {
+      "title": "PostgreSQL18 backup and restore",
+      "url": "https://www.postgresql.org/docs/18/backup.html",
+      "chapters": [
+        "C26"
+      ],
+      "claims": "逻辑导出、文件系统备份、连续归档的不同前提；本文不提供通用生产恢复脚本。"
+    },
+    {
+      "title": "SQLite Backup API",
+      "url": "https://www.sqlite.org/backup.html",
+      "chapters": [
+        "C26"
+      ],
+      "claims": "在线一致性副本的备份机制；实际练习使用Python sqlite3包装，未宣称覆盖服务器数据库恢复。"
+    },
+    {
+      "title": "SQL Server transaction log",
+      "url": "https://learn.microsoft.com/en-us/sql/relational-databases/logs/the-transaction-log-sql-server?view=sql-server-ver17",
+      "chapters": [
+        "C26"
+      ],
+      "claims": "事务日志的恢复职责、截断和收缩不同；不把活动日志当文本删除，不提供未经核对的厂商处置命令。"
     }
   ],
   "simulation": "青禾制造、员工、部门和物料同步均为虚构模拟，不代表金蝶、Salesforce 等厂商真实接口行为。",

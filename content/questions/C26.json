@@ -1,0 +1,313 @@
+[
+  {
+    "id": "C26-Q01",
+    "chapterId": "C26",
+    "revision": 1,
+    "type": "single",
+    "stem": "RPO与RTO分别关注什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "恢复速度与日志级别",
+        "explanation": "混入无关维度，也未说明丢失窗口。"
+      },
+      {
+        "id": "B",
+        "text": "数据库文件大小与索引数量",
+        "explanation": "这是容量结构指标，不是恢复目标。"
+      },
+      {
+        "id": "C",
+        "text": "可接受数据丢失窗口与恢复时长",
+        "explanation": "目标应包含业务需要并通过恢复演练验证。"
+      },
+      {
+        "id": "D",
+        "text": "备份次数与版本号",
+        "explanation": "频率和版本只是影响恢复的部分条件。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C26-K04"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "恢复目标要与可观测的业务损失和停机相连。"
+  },
+  {
+    "id": "C26-Q02",
+    "chapterId": "C26",
+    "revision": 1,
+    "type": "single",
+    "stem": "代码回退与数据库恢复的关系应怎样理解？",
+    "options": [
+      {
+        "id": "A",
+        "text": "分别评估结构、数据与外部副作用",
+        "explanation": "Git只能恢复代码变更，不能自动还原业务事实。"
+      },
+      {
+        "id": "B",
+        "text": "所有新版数据都可由旧版直接读取",
+        "explanation": "要验证兼容性，不能默认成立。"
+      },
+      {
+        "id": "C",
+        "text": "覆盖旧备份不会损失升级后数据",
+        "explanation": "升级后新增或修改的数据可能被覆盖。"
+      },
+      {
+        "id": "D",
+        "text": "切回旧标签便自动恢复旧数据库",
+        "explanation": "数据库不会随代码标签自行变化。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C26-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "回退计划必须明确不同资产的恢复边界。"
+  },
+  {
+    "id": "C26-Q03",
+    "chapterId": "C26",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "给历史表新增必填组织字段时，哪些做法合理？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "删库重建以省迁移脚本",
+        "explanation": "会破坏已有个人或业务记录。"
+      },
+      {
+        "id": "B",
+        "text": "先按可信映射回填，未知进入待确认",
+        "explanation": "保证数据含义而非只满足DDL。"
+      },
+      {
+        "id": "C",
+        "text": "在含旧记录副本验证兼容和失败分支",
+        "explanation": "空库测试不能证明真实升级可靠。"
+      },
+      {
+        "id": "D",
+        "text": "统一填O1使NOT NULL通过",
+        "explanation": "没有来源依据会伪造归属。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C26-K01",
+      "C26-K02"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "迁移要转换已有事实，而不是消除它们。"
+  },
+  {
+    "id": "C26-Q04",
+    "chapterId": "C26",
+    "revision": 1,
+    "type": "single",
+    "stem": "判断SQLite活动数据库备份方式时，哪项正确？",
+    "options": [
+      {
+        "id": "A",
+        "text": "直接复制主文件总能得到最新完整库",
+        "explanation": "WAL及一致性协调可能使该推断失效。"
+      },
+      {
+        "id": "B",
+        "text": "JSON导出等同所有内部状态完整镜像",
+        "explanation": "应用级备份仅覆盖设计的字段和语义。"
+      },
+      {
+        "id": "C",
+        "text": "选择一致性机制并恢复到副本核验",
+        "explanation": "如适用的Backup API，仍需核对结果。"
+      },
+      {
+        "id": "D",
+        "text": "文件同步成功等同有独立历史备份",
+        "explanation": "错误删除也可能同步到副本。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C26-K05",
+      "C26-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "备份方式必须与数据库运行和恢复边界匹配。"
+  },
+  {
+    "id": "C26-Q05",
+    "chapterId": "C26",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "一份备份被记录为可恢复前，应检查哪些条件？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "隔离恢复并核对业务数据和耗时",
+        "explanation": "既要能读，还要符合恢复目标和关键语义。"
+      },
+      {
+        "id": "B",
+        "text": "只比较总行数就证明所有关联正确",
+        "explanation": "行数相同仍可能关联错配。"
+      },
+      {
+        "id": "C",
+        "text": "只要有文件名和大小即可",
+        "explanation": "不能证明内容有效或业务可用。"
+      },
+      {
+        "id": "D",
+        "text": "权限、密钥、版本与需要的日志链可用",
+        "explanation": "缺少必要条件可能无法恢复。"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "knowledge": [
+      "C26-K04",
+      "C26-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "恢复证据应包含可用性、语义与时长。"
+  },
+  {
+    "id": "C26-Q06",
+    "chapterId": "C26",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟SQL Server事务日志增长导致磁盘紧张，首先应如何处理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "永久停用所有日志记录",
+        "explanation": "不是可行的通用事务恢复方案。"
+      },
+      {
+        "id": "B",
+        "text": "只清应用debug日志就证明已解决",
+        "explanation": "两类日志不同，容量问题未必因此消失。"
+      },
+      {
+        "id": "C",
+        "text": "把日志当文本文件直接删除",
+        "explanation": "事务日志承担恢复职责，直接删除危险。"
+      },
+      {
+        "id": "D",
+        "text": "保留现场，查事务、复用阻塞与备份配置",
+        "explanation": "按具体产品和恢复模式制定处理，不能盲删。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C26-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "事务日志与应用日志的职责不同。"
+  },
+  {
+    "id": "C26-Q07",
+    "chapterId": "C26",
+    "revision": 1,
+    "type": "single",
+    "stem": "升级后已录入新业务，发现必须回退。哪种判断可靠？",
+    "options": [
+      {
+        "id": "A",
+        "text": "直接覆盖升级前备份且不核对",
+        "explanation": "可能丢失升级后有效业务。"
+      },
+      {
+        "id": "B",
+        "text": "只重装旧APK便默认结构兼容",
+        "explanation": "新结构和格式可能不被旧代码支持。"
+      },
+      {
+        "id": "C",
+        "text": "冻结写入留存现场，评估增量与兼容再恢复",
+        "explanation": "回退前要明确新增业务如何处理。"
+      },
+      {
+        "id": "D",
+        "text": "先清空异常行再考虑证据",
+        "explanation": "可能扩大损失并破坏恢复信息。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C26-K03",
+      "C26-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "回退不能忽略恢复点之后的业务。"
+  },
+  {
+    "id": "C26-Q08",
+    "chapterId": "C26",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "误删后，哪些初始响应符合恢复边界？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "止损并保存现场及相关证据",
+        "explanation": "继续写入可能增加损失或覆盖恢复信息。"
+      },
+      {
+        "id": "B",
+        "text": "立即在生产反复尝试不明恢复脚本",
+        "explanation": "增加不可控风险且难保留原始状态。"
+      },
+      {
+        "id": "C",
+        "text": "要求把真实凭据发给AI以便最快修复",
+        "explanation": "教材不需要真实凭据，恢复按受控流程执行。"
+      },
+      {
+        "id": "D",
+        "text": "优先恢复隔离副本并核对关键业务",
+        "explanation": "避免直接覆盖仍有有效记录的生产库。"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "knowledge": [
+      "C26-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "恢复速度不能取代止损、核验和数据边界。"
+  }
+]

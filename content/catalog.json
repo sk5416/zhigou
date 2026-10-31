@@ -1,5 +1,5 @@
 {
-  "version": "2026.10-firstfive.1",
+  "version": "2026.10-database.1",
   "chapters": [
     {
       "id": "C00",
@@ -539,8 +539,13 @@
       "part": "第5篇｜数据库与数据工程基础",
       "depth": "L2",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C13"
+      ],
+      "related": [
+        "C22",
+        "C24"
+      ],
       "knowledge": [
         "C21-K01",
         "C21-K02",
@@ -551,7 +556,7 @@
         "C21-K07",
         "C21-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C22",
@@ -559,8 +564,14 @@
       "part": "第5篇｜数据库与数据工程基础",
       "depth": "L3",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C21"
+      ],
+      "related": [
+        "C23",
+        "C25",
+        "C26"
+      ],
       "knowledge": [
         "C22-K01",
         "C22-K02",
@@ -571,7 +582,7 @@
         "C22-K07",
         "C22-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C23",
@@ -579,8 +590,13 @@
       "part": "第5篇｜数据库与数据工程基础",
       "depth": "L2",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C22"
+      ],
+      "related": [
+        "C24",
+        "C10"
+      ],
       "knowledge": [
         "C23-K01",
         "C23-K02",
@@ -591,7 +607,7 @@
         "C23-K07",
         "C23-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C24",
@@ -599,8 +615,15 @@
       "part": "第5篇｜数据库与数据工程基础",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C21",
+        "C22"
+      ],
+      "related": [
+        "C14",
+        "C25",
+        "C26"
+      ],
       "knowledge": [
         "C24-K01",
         "C24-K02",
@@ -611,7 +634,7 @@
         "C24-K07",
         "C24-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C25",
@@ -619,8 +642,14 @@
       "part": "第5篇｜数据库与数据工程基础",
       "depth": "L2",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C08",
+        "C24"
+      ],
+      "related": [
+        "C08",
+        "C26"
+      ],
       "knowledge": [
         "C25-K01",
         "C25-K02",
@@ -631,7 +660,7 @@
         "C25-K07",
         "C25-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C26",
@@ -639,8 +668,15 @@
       "part": "第5篇｜数据库与数据工程基础",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C24",
+        "C25",
+        "C18"
+      ],
+      "related": [
+        "C18",
+        "C27"
+      ],
       "knowledge": [
         "C26-K01",
         "C26-K02",
@@ -651,7 +687,7 @@
         "C26-K07",
         "C26-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C27",

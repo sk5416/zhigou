@@ -1,0 +1,311 @@
+[
+  {
+    "id": "C21-Q01",
+    "chapterId": "C21",
+    "revision": 1,
+    "type": "single",
+    "stem": "采用自增ID作主键后，物料编码的业务唯一性如何处理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "仅将物料名称设为唯一",
+        "explanation": "同名可能是不同对象，名称也可能变更。"
+      },
+      {
+        "id": "B",
+        "text": "把编码直接转整数作ID",
+        "explanation": "会丢前导零，也未解决来源和组织范围。"
+      },
+      {
+        "id": "C",
+        "text": "每行ID不同即可不约束编码",
+        "explanation": "ID只保证行身份，不表达同组织同编码不能重复。"
+      },
+      {
+        "id": "D",
+        "text": "按业务范围另设唯一约束",
+        "explanation": "代理键与业务键承担不同责任，可同时存在。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C21-K01",
+      "C21-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "主键不自动表达业务唯一范围。"
+  },
+  {
+    "id": "C21-Q02",
+    "chapterId": "C21",
+    "revision": 1,
+    "type": "single",
+    "stem": "用户可拥有多个角色，一个角色可属于多个用户，应如何表达？",
+    "options": [
+      {
+        "id": "A",
+        "text": "建用户角色关联表并限制组合重复",
+        "explanation": "可分别关联稳定身份并维护多对多关系。"
+      },
+      {
+        "id": "B",
+        "text": "以逗号拼接全部角色名称",
+        "explanation": "不便独立约束关联及维护更名。"
+      },
+      {
+        "id": "C",
+        "text": "在用户行中只保留最后一个角色",
+        "explanation": "会丢失多角色关系。"
+      },
+      {
+        "id": "D",
+        "text": "为每种角色复制整张用户表",
+        "explanation": "身份和修改容易分叉，并未清晰表达关系。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C21-K04"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "多对多需要可约束的关联，而不只是显示一个列表。"
+  },
+  {
+    "id": "C21-Q03",
+    "chapterId": "C21",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "一个已启用的外键可以直接保证哪些事情？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "当前员工有权查看父对象",
+        "explanation": "数据权限需要服务端鉴权，外键不是授权。"
+      },
+      {
+        "id": "B",
+        "text": "写入的父ID满足定义的引用关系",
+        "explanation": "这是数据库外键的职责，仍受具体约束配置影响。"
+      },
+      {
+        "id": "C",
+        "text": "按配置限制或处理被引用父行的删除",
+        "explanation": "删除行为是外键策略的一部分，需要明确选择。"
+      },
+      {
+        "id": "D",
+        "text": "远程CRM对象此刻一定存在",
+        "explanation": "本地约束不能直接强制外部系统状态。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C21-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "引用完整性与权限、远程状态分开。"
+  },
+  {
+    "id": "C21-Q04",
+    "chapterId": "C21",
+    "revision": 1,
+    "type": "single",
+    "stem": "页面先查物料编码不存在再插入，两人同时操作仍重复。应如何补强？",
+    "options": [
+      {
+        "id": "A",
+        "text": "把查询放到按钮点击前",
+        "explanation": "仍可能有两个执行者在写入前都查不到。"
+      },
+      {
+        "id": "B",
+        "text": "数据库唯一约束并处理冲突",
+        "explanation": "数据库在并发写入边界拒绝重复，应用需解释失败。"
+      },
+      {
+        "id": "C",
+        "text": "扩大随机等待时间",
+        "explanation": "等待不能消除竞争窗口。"
+      },
+      {
+        "id": "D",
+        "text": "新增后异步删除其中一条",
+        "explanation": "可能已被引用，且没有防止重复产生。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C21-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "先查再写不能替代并发约束。"
+  },
+  {
+    "id": "C21-Q05",
+    "chapterId": "C21",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "评审关系型与文档型存储选型，哪些依据合理？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "字段可能增加就必须放弃关系型",
+        "explanation": "关系型也可演进结构或支持JSON。"
+      },
+      {
+        "id": "B",
+        "text": "考虑团队维护与一致性成本",
+        "explanation": "收益需要覆盖新增复杂度和操作成本。"
+      },
+      {
+        "id": "C",
+        "text": "文档型天然无需约束和索引",
+        "explanation": "这些责任仍存在，只是实现方式不同。"
+      },
+      {
+        "id": "D",
+        "text": "比较聚合读取与跨对象关联需求",
+        "explanation": "访问模式与一致性边界影响选型。"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C21-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "存储类型不是性能或灵活性的保证书。"
+  },
+  {
+    "id": "C21-Q06",
+    "chapterId": "C21",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟ERP和CRM都存在项目1001，整合时最稳妥的初始方案是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "丢弃其中一个来源避免冲突",
+        "explanation": "破坏来源数据，也没有解决业务匹配问题。"
+      },
+      {
+        "id": "B",
+        "text": "按名称最相近自动确定最终归属",
+        "explanation": "模糊名称不能独立证明身份相同。"
+      },
+      {
+        "id": "C",
+        "text": "按编号相同自动归到一个项目",
+        "explanation": "编号可能仅在各来源内部唯一。"
+      },
+      {
+        "id": "D",
+        "text": "保留来源身份，建立可确认的统一映射",
+        "explanation": "先避免误合并，再依据业务确认统一对象。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C21-K02",
+      "C21-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "跨来源编号相同不代表同一对象。"
+  },
+  {
+    "id": "C21-Q07",
+    "chapterId": "C21",
+    "revision": 1,
+    "type": "single",
+    "stem": "expense必须引用项目，但导入孤儿明细未报错。在SQLite练习中应检查什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "默认SQLite按DDL始终强制外键",
+        "explanation": "不能只看声明而忽略连接配置。"
+      },
+      {
+        "id": "B",
+        "text": "核对连接外键开关并用孤儿写入反例",
+        "explanation": "应在事务前启用并实际验证拒绝行为。"
+      },
+      {
+        "id": "C",
+        "text": "只检查界面是否显示项目名称",
+        "explanation": "显示不证明数据库实际启用了约束。"
+      },
+      {
+        "id": "D",
+        "text": "把外键改为普通备注列",
+        "explanation": "消除了约束而非定位缺失。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C21-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "约束需实际启用并验证，不能仅停留在DDL。"
+  },
+  {
+    "id": "C21-Q08",
+    "chapterId": "C21",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "删除仍有费用引用的项目，评审应覆盖哪些规则？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "只删除前端下拉项就保证完整性",
+        "explanation": "其他入口和数据库状态仍需约束。"
+      },
+      {
+        "id": "B",
+        "text": "所有外键都级联删除最省维护",
+        "explanation": "可能连带删除费用等重要事实。"
+      },
+      {
+        "id": "C",
+        "text": "明确停用与物理删除是否不同",
+        "explanation": "业务上不能再选用未必等于清除历史对象。"
+      },
+      {
+        "id": "D",
+        "text": "验证拒绝、级联或置空的业务后果",
+        "explanation": "删除策略必须与历史保留和可追溯需求一致。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C21-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "删除便利不能替代业务保留策略。"
+  }
+]

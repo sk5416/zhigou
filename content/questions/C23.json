@@ -1,0 +1,311 @@
+[
+  {
+    "id": "C23-Q01",
+    "chapterId": "C23",
+    "revision": 1,
+    "type": "single",
+    "stem": "索引的主要工程取舍是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只要存在便会强制被使用",
+        "explanation": "优化器会比较可用路径。"
+      },
+      {
+        "id": "B",
+        "text": "为所有查询提供相同收益",
+        "explanation": "收益与访问模式、数据分布和路径有关。"
+      },
+      {
+        "id": "C",
+        "text": "仅多占名称空间，不影响写入",
+        "explanation": "新增、修改和删除通常也需维护索引。"
+      },
+      {
+        "id": "D",
+        "text": "以存储和写维护换取部分查询效率",
+        "explanation": "是否值得需结合查询与写入负载验证。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C23-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "索引是有成本、适用条件明确的结构。"
+  },
+  {
+    "id": "C23-Q02",
+    "chapterId": "C23",
+    "revision": 1,
+    "type": "single",
+    "stem": "查询计划中的估算cost应如何理解？",
+    "options": [
+      {
+        "id": "A",
+        "text": "就是用户看到的精确毫秒数",
+        "explanation": "cost是优化器代价，不是直接时钟测量。"
+      },
+      {
+        "id": "B",
+        "text": "cost小就证明返回数据有权限",
+        "explanation": "性能指标不能证明授权正确。"
+      },
+      {
+        "id": "C",
+        "text": "用于比较计划的相对估算",
+        "explanation": "实际耗时还受环境、数据和等待等影响。"
+      },
+      {
+        "id": "D",
+        "text": "可以跨所有数据库直接排名",
+        "explanation": "不同产品和配置的代价不可直接比较。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C23-K04"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "估算计划不能替代实际分段耗时和正确性检查。"
+  },
+  {
+    "id": "C23-Q03",
+    "chapterId": "C23",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "查询很慢时，哪些初始检查合理？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "先给每一列建索引再观察",
+        "explanation": "增加成本且可能完全未命中瓶颈。"
+      },
+      {
+        "id": "B",
+        "text": "分开执行、锁等待、传输与渲染耗时",
+        "explanation": "先确定瓶颈所在，避免盲目优化SQL。"
+      },
+      {
+        "id": "C",
+        "text": "核对返回行数、字节及代表性参数",
+        "explanation": "返回过量和数据倾斜可能解释慢请求。"
+      },
+      {
+        "id": "D",
+        "text": "只把超时调大后记性能通过",
+        "explanation": "等待更久没有证明性能改善。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C23-K01"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "慢请求与慢SQL并非总是同一件事。"
+  },
+  {
+    "id": "C23-Q04",
+    "chapterId": "C23",
+    "revision": 1,
+    "type": "single",
+    "stem": "对于(org, posted_at DESC, id DESC)索引，哪项判断严谨？",
+    "options": [
+      {
+        "id": "A",
+        "text": "任何不带org的查询绝不可能用它",
+        "explanation": "具体产品有不同优化，不能绝对化。"
+      },
+      {
+        "id": "B",
+        "text": "只要列在索引中就无需读取数据",
+        "explanation": "是否覆盖查询与产品实现、投影等有关。"
+      },
+      {
+        "id": "C",
+        "text": "无论WHERE和排序怎样都最优",
+        "explanation": "模式改变可能需要不同访问路径。"
+      },
+      {
+        "id": "D",
+        "text": "适合先按org等值再按时间和ID取近期数据",
+        "explanation": "仍需看数据分布和实际计划验证收益。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C23-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "组合顺序服务具体访问模式，口诀有边界。"
+  },
+  {
+    "id": "C23-Q05",
+    "chapterId": "C23",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "评估一个索引是否保留，应收集哪些证据？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "十行样例单次运行最快即可",
+        "explanation": "不足以覆盖规模、分布和缓存差异。"
+      },
+      {
+        "id": "B",
+        "text": "写入速度、空间与维护成本",
+        "explanation": "避免读收益被其他代价抵消。"
+      },
+      {
+        "id": "C",
+        "text": "常用及极端参数的计划与耗时",
+        "explanation": "代表性范围能发现倾斜和慢尾部。"
+      },
+      {
+        "id": "D",
+        "text": "索引命名符合团队风格即可",
+        "explanation": "名称不证明查询收益。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C23-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "性能结论要说明负载和比较条件。"
+  },
+  {
+    "id": "C23-Q06",
+    "chapterId": "C23",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟表只有20行，计划采用顺序扫描。应如何判断？",
+    "options": [
+      {
+        "id": "A",
+        "text": "可能合理，结合数据规模与实际成本比较",
+        "explanation": "小表扫描不一定比索引路径差。"
+      },
+      {
+        "id": "B",
+        "text": "说明索引文件一定已经损坏",
+        "explanation": "扫描选择并不能证明损坏。"
+      },
+      {
+        "id": "C",
+        "text": "说明以后百万行也无需复测",
+        "explanation": "规模变化可能改变最优路径。"
+      },
+      {
+        "id": "D",
+        "text": "立即强制所有查询使用索引",
+        "explanation": "可能增加定位开销且掩盖真实成本。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C23-K04",
+      "C23-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "计划名称不能脱离规模判断好坏。"
+  },
+  {
+    "id": "C23-Q07",
+    "chapterId": "C23",
+    "revision": 1,
+    "type": "single",
+    "stem": "为了看UPDATE实际计划，准备在生产运行PostgreSQL EXPLAIN ANALYZE。应注意什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "外层ROLLBACK保证一切副作用撤销",
+        "explanation": "锁和外部动作等不能一概消除。"
+      },
+      {
+        "id": "B",
+        "text": "它只显示估算，永不执行语句",
+        "explanation": "ANALYZE会执行，被分析语句可能写入。"
+      },
+      {
+        "id": "C",
+        "text": "加LIMIT就没有任何业务风险",
+        "explanation": "不能用单一语法推断全部副作用。"
+      },
+      {
+        "id": "D",
+        "text": "先评估真实执行与锁影响，在隔离环境验证",
+        "explanation": "应了解执行行为，不盲目在生产尝试。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C23-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "实际计划分析可能真正执行，不是纯只读观察。"
+  },
+  {
+    "id": "C23-Q08",
+    "chapterId": "C23",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "流水分页改为游标方式，哪些规则仍需要？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "取消权限过滤以降低SQL耗时",
+        "explanation": "改变了数据边界，不能当优化。"
+      },
+      {
+        "id": "B",
+        "text": "稳定唯一排序键及变更期间的分页语义",
+        "explanation": "否则同时间数据或并发变化可能造成重复遗漏。"
+      },
+      {
+        "id": "C",
+        "text": "宣布所有并发场景绝不重复遗漏",
+        "explanation": "需要具体一致性约定和验证，语法本身不保证。"
+      },
+      {
+        "id": "D",
+        "text": "服务端保留组织授权范围",
+        "explanation": "性能调整不能扩大可见数据。"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C23-K06",
+      "C23-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "分页性能、稳定顺序与授权要一同评审。"
+  }
+]

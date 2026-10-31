@@ -1,0 +1,313 @@
+[
+  {
+    "id": "C22-Q01",
+    "chapterId": "C22",
+    "revision": 1,
+    "type": "single",
+    "stem": "编码0012、金额0与缺失金额，哪种建模判断成立？",
+    "options": [
+      {
+        "id": "A",
+        "text": "缺失金额统一存0便于求和",
+        "explanation": "未知和真实零不同，默认会伪造事实。"
+      },
+      {
+        "id": "B",
+        "text": "全部存字符串就无需校验",
+        "explanation": "字符串仍需格式、范围和语义约束。"
+      },
+      {
+        "id": "C",
+        "text": "0012与12都按整数合并",
+        "explanation": "编码有身份语义，前导零可能重要。"
+      },
+      {
+        "id": "D",
+        "text": "分别定义编码、精确金额及缺失语义",
+        "explanation": "类型和空值要遵循业务契约。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C22-K01",
+      "C22-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "显示像数字不代表可按同一数值处理。"
+  },
+  {
+    "id": "C22-Q02",
+    "chapterId": "C22",
+    "revision": 1,
+    "type": "single",
+    "stem": "对于需要精确等值判断的财务金额，哪种设计更合适？",
+    "options": [
+      {
+        "id": "A",
+        "text": "所有币种统一按两位分存储",
+        "explanation": "不同币种的最小单位约定可能不同。"
+      },
+      {
+        "id": "B",
+        "text": "金额仅留显示文本并直接字典排序",
+        "explanation": "不支持可靠的数值运算与比较规则。"
+      },
+      {
+        "id": "C",
+        "text": "约定币种精度，采用合适定点或最小单位整数",
+        "explanation": "需要同时说明舍入、输入范围和币种。"
+      },
+      {
+        "id": "D",
+        "text": "用浮点存储，显示时保留两位即可",
+        "explanation": "显示格式不能消除存储和计算误差。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C22-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "精度契约包括币种和舍入，不只是界面小数位。"
+  },
+  {
+    "id": "C22-Q03",
+    "chapterId": "C22",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "给历史付款表增加唯一请求号前应做哪些工作？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "统计重复与缺失，确认处理规则",
+        "explanation": "约束加入前需知道现存数据是否满足要求。"
+      },
+      {
+        "id": "B",
+        "text": "随意追加随机后缀不留映射",
+        "explanation": "会改变业务身份并破坏追溯。"
+      },
+      {
+        "id": "C",
+        "text": "先删除所有重复行让脚本成功",
+        "explanation": "可能删除真实付款事实，不能随意处理。"
+      },
+      {
+        "id": "D",
+        "text": "在副本验证回填、约束及业务关联",
+        "explanation": "不仅验证新建空表，也要验证旧数据升级。"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "knowledge": [
+      "C22-K07",
+      "C22-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "约束升级包含业务数据治理责任。"
+  },
+  {
+    "id": "C22-Q04",
+    "chapterId": "C22",
+    "revision": 1,
+    "type": "single",
+    "stem": "表中CHECK限制status为DRAFT或APPROVED，能得出什么结论？",
+    "options": [
+      {
+        "id": "A",
+        "text": "任意员工写APPROVED都合法",
+        "explanation": "值合法不等于有审批权限。"
+      },
+      {
+        "id": "B",
+        "text": "已经保证只有DRAFT可变APPROVED",
+        "explanation": "值集合不描述全部状态迁移条件。"
+      },
+      {
+        "id": "C",
+        "text": "限制可存值，迁移权限另需校验",
+        "explanation": "还要检查当前状态、操作者和并发版本。"
+      },
+      {
+        "id": "D",
+        "text": "前端可省去全部状态提示",
+        "explanation": "数据库报错不替代可理解的交互。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C22-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "状态集合、状态迁移和授权是不同约束。"
+  },
+  {
+    "id": "C22-Q05",
+    "chapterId": "C22",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "采用软删除需要补充哪些规则？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "只在列表页加过滤即可",
+        "explanation": "导出、统计、关联和其他入口仍可能读取。"
+      },
+      {
+        "id": "B",
+        "text": "认为标记删除已完成隐私清除",
+        "explanation": "数据仍存在，不能等同物理清除。"
+      },
+      {
+        "id": "C",
+        "text": "明确编号是否可复用及约束如何实现",
+        "explanation": "软删除不自动改变唯一键规则。"
+      },
+      {
+        "id": "D",
+        "text": "定义有效记录查询与恢复冲突处理",
+        "explanation": "删除与恢复都影响可见性和唯一规则。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C22-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "软删除是生命周期策略而非自动安全机制。"
+  },
+  {
+    "id": "C22-Q06",
+    "chapterId": "C22",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟付款导入把缺失币种默认CNY、状态默认APPROVED。首先应如何评审？",
+    "options": [
+      {
+        "id": "A",
+        "text": "确认默认依据，未知值拒绝或待确认",
+        "explanation": "缺失不应未经授权转成明确业务事实。"
+      },
+      {
+        "id": "B",
+        "text": "仅加一条成功日志便于追溯",
+        "explanation": "日志不能补回被伪造的业务语义。"
+      },
+      {
+        "id": "C",
+        "text": "导入成功率上升即可保留",
+        "explanation": "成功率不能证明默认值符合事实。"
+      },
+      {
+        "id": "D",
+        "text": "改为前端默认就消除风险",
+        "explanation": "换到前端仍可能作出未经确认的决定。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C22-K03",
+      "C22-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "默认值也在作业务决定，需要依据。"
+  },
+  {
+    "id": "C22-Q07",
+    "chapterId": "C22",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟表的created_by由浏览器传入，审计要求可信操作者。应如何处理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "改名为audit_user即可可信",
+        "explanation": "字段名称不改变来源可信度。"
+      },
+      {
+        "id": "B",
+        "text": "字段非空就足以证明身份",
+        "explanation": "非空不能阻止用户冒用他人ID。"
+      },
+      {
+        "id": "C",
+        "text": "只显示用户名，不保留稳定ID",
+        "explanation": "名称会变且可能同名，追溯更困难。"
+      },
+      {
+        "id": "D",
+        "text": "从已验证身份上下文确定操作者",
+        "explanation": "还需对代理操作和系统任务明确来源。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C22-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "审计字段需要可信来源而非只满足类型。"
+  },
+  {
+    "id": "C22-Q08",
+    "chapterId": "C22",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "模拟SQLite付款表应验证哪些拒绝路径？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "任何CNY付款默认允许越权审批",
+        "explanation": "币种合规不等于操作授权。"
+      },
+      {
+        "id": "B",
+        "text": "非法状态及缺失必填来源",
+        "explanation": "需要覆盖不同约束，而不只正常写入。"
+      },
+      {
+        "id": "C",
+        "text": "金额为零必定拒绝",
+        "explanation": "教材模拟明确允许零，不能脱离业务前提。"
+      },
+      {
+        "id": "D",
+        "text": "负数金额与重复request_no",
+        "explanation": "应检查数值规则及数据库唯一约束。"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C22-K02",
+      "C22-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "反例应按本表规则，而非凭一般印象。"
+  }
+]

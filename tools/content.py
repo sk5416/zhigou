@@ -41,8 +41,14 @@ def verify_reviews(directory, chapters):
     audits = json.loads((directory / 'reviews.json').read_text(encoding='utf-8'))
     for c in chapters:
         audit = audits.get(c['id'], {})
-        if audit.get('status') != 'reviewed' or not audit.get('reviewer') or not audit.get('note'):
+        fields = ('reviewer', 'method', 'reviewedAt', 'record', 'note')
+        if audit.get('status') != 'reviewed' or any(not isinstance(audit.get(k), str) or not audit[k].strip() for k in fields):
             raise ValueError(f"{c['id']} 尚无完整审核记录")
+        if any(re.search(r'\?{2,}|\ufffd', audit[k]) for k in fields):
+            raise ValueError(f"{c['id']} 审核记录文字损坏")
+        record = (directory.parent / audit['record']).resolve()
+        if not record.is_relative_to((directory.parent / 'docs').resolve()) or not record.is_file():
+            raise ValueError(f"{c['id']} 审核文档不存在或超出docs目录")
         if audit.get('fingerprint') != review_fingerprint(directory, c):
             raise ValueError(f"{c['id']} 审核已过期，正文、题库、元数据或来源已变更")
 

@@ -1,0 +1,314 @@
+[
+  {
+    "id": "C24-Q01",
+    "chapterId": "C24",
+    "revision": 1,
+    "type": "single",
+    "stem": "关于事务的原子性，哪项理解正确？",
+    "options": [
+      {
+        "id": "A",
+        "text": "事务范围内数据库操作一起提交或回滚",
+        "explanation": "仍需正确划定范围和处理失败。"
+      },
+      {
+        "id": "B",
+        "text": "提交后用户断网就自动撤销提交",
+        "explanation": "响应丢失不等于已提交事务回滚。"
+      },
+      {
+        "id": "C",
+        "text": "事务内写过的错误规则会自动变正确",
+        "explanation": "业务不变量仍依赖约束和代码。"
+      },
+      {
+        "id": "D",
+        "text": "本地回滚会撤销远程ERP建单",
+        "explanation": "远程副作用不自动纳入本地事务。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C24-K01"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "事务解决有限边界的提交问题。"
+  },
+  {
+    "id": "C24-Q02",
+    "chapterId": "C24",
+    "revision": 1,
+    "type": "single",
+    "stem": "乐观版本校验主要用于发现什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "当前用户是否知道正确密码",
+        "explanation": "身份认证不由行版本完成。"
+      },
+      {
+        "id": "B",
+        "text": "远程付款接口是否已经执行",
+        "explanation": "本地行版本不证明远程结果。"
+      },
+      {
+        "id": "C",
+        "text": "写入时对象已不再是读取的旧版本",
+        "explanation": "冲突应拒绝或按规则重算，避免静默覆盖。"
+      },
+      {
+        "id": "D",
+        "text": "查询结果是否能被索引覆盖",
+        "explanation": "这是查询路径问题，不是版本校验职责。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C24-K02",
+      "C24-K04"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "版本条件保护旧状态假设，不承担其他验证。"
+  },
+  {
+    "id": "C24-Q03",
+    "chapterId": "C24",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "带qty>=4和version=1的UPDATE影响行数0，哪些处理合适？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "去掉版本条件用旧值强制覆盖",
+        "explanation": "可能覆盖别人刚提交的结果。"
+      },
+      {
+        "id": "B",
+        "text": "回滚关联动作并重新读取解释原因",
+        "explanation": "需区分不存在、库存不足和并发冲突。"
+      },
+      {
+        "id": "C",
+        "text": "将其作为未成立的更新分支处理",
+        "explanation": "不能与影响1行的成功分支混淆。"
+      },
+      {
+        "id": "D",
+        "text": "继续写已扣减单据并提交",
+        "explanation": "可能根本没有扣减成功。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C24-K03",
+      "C24-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "零影响行不是成功，也不必然是数据库异常。"
+  },
+  {
+    "id": "C24-Q04",
+    "chapterId": "C24",
+    "revision": 1,
+    "type": "single",
+    "stem": "事务中包含一次慢ERP网络调用，哪项改进方向合理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "延长数据库事务就变成分布式事务",
+        "explanation": "等待时间不改变事务边界。"
+      },
+      {
+        "id": "B",
+        "text": "遇超时马上无限重试远程建单",
+        "explanation": "结果未知可能造成重复和放大故障。"
+      },
+      {
+        "id": "C",
+        "text": "一直持锁直到人工确认",
+        "explanation": "可能扩大等待和阻塞，且不保证远程原子性。"
+      },
+      {
+        "id": "D",
+        "text": "缩短本地事务并设计持久状态与核对",
+        "explanation": "需明确外部幂等、重试和未知结果的处理。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C24-K05",
+      "C24-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "本地锁不能把远程服务变成本地原子操作。"
+  },
+  {
+    "id": "C24-Q05",
+    "chapterId": "C24",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "选择数据库隔离级别时，哪些判断成立？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "按具体产品语义与业务不变量验证",
+        "explanation": "同名级别和实现可能存在差异。"
+      },
+      {
+        "id": "B",
+        "text": "同时评估冲突、等待和性能成本",
+        "explanation": "更强隔离不是无需成本的开关。"
+      },
+      {
+        "id": "C",
+        "text": "只要叫Serializable就永不失败无需处理",
+        "explanation": "可能发生序列化失败，需要正确重试策略。"
+      },
+      {
+        "id": "D",
+        "text": "所有数据库Read Committed都固定整事务快照",
+        "explanation": "不能把某个快照模型泛化给所有产品。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B"
+    ],
+    "knowledge": [
+      "C24-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "隔离级别要按实现和失败策略理解。"
+  },
+  {
+    "id": "C24-Q06",
+    "chapterId": "C24",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟库存5、version1，首次扣4提交后再次携旧version1扣4。期望是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "第二次自动复用第一次扣减成果",
+        "explanation": "独立业务请求不能随意共享同一结果。"
+      },
+      {
+        "id": "B",
+        "text": "第二次扣成-3再异步补回",
+        "explanation": "会违反库存不负的不变量。"
+      },
+      {
+        "id": "C",
+        "text": "为了成功把version重置1",
+        "explanation": "会破坏已建立的并发保护。"
+      },
+      {
+        "id": "D",
+        "text": "第二次影响0行，不再按成功创建单据",
+        "explanation": "旧版本及数量条件不成立，应处理冲突。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C24-K03",
+      "C24-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "写入时重新检查前提，而非相信第一次读取。"
+  },
+  {
+    "id": "C24-Q07",
+    "chapterId": "C24",
+    "revision": 1,
+    "type": "single",
+    "stem": "扣库存成功后，本地单据插入失败且两步在同一事务内，应如何做？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只向用户显示失败但保留未提交连接",
+        "explanation": "可能留下锁和不确定事务状态。"
+      },
+      {
+        "id": "B",
+        "text": "按失败分支ROLLBACK并验证库存恢复",
+        "explanation": "需要统一处理相关本地写入。"
+      },
+      {
+        "id": "C",
+        "text": "重新发远程建单替代本地回滚",
+        "explanation": "引入额外副作用，并未修复本地原子性。"
+      },
+      {
+        "id": "D",
+        "text": "捕获日志后仍COMMIT库存",
+        "explanation": "形成未对应单据的部分成功。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C24-K01"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "日志不替代事务失败分支。"
+  },
+  {
+    "id": "C24-Q08",
+    "chapterId": "C24",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "宣称已验证并发正确前，应覆盖哪些场景？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "锁超时及有限重试不会重复副作用",
+        "explanation": "要验证失败与重试边界，而非只看最终数量。"
+      },
+      {
+        "id": "B",
+        "text": "两个执行者都持相同旧版本再提交",
+        "explanation": "要验证真实冲突，而非只顺序点击。"
+      },
+      {
+        "id": "C",
+        "text": "只运行一次无冲突的单人成功路径",
+        "explanation": "不覆盖更新丢失和锁等待。"
+      },
+      {
+        "id": "D",
+        "text": "仅增加sleep便算并发验证充分",
+        "explanation": "时序不受控，未保证关键交错发生。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B"
+    ],
+    "knowledge": [
+      "C24-K05",
+      "C24-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "并发验证需要控制交错并检查失败结果。"
+  }
+]

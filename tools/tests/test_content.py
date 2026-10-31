@@ -15,6 +15,8 @@ class ContentTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.directory = Path(self.temp.name) / 'content'
         shutil.copytree(ROOT / 'content', self.directory)
+        (self.directory.parent / 'docs').mkdir()
+        shutil.copy2(ROOT / 'docs/05_课程审核记录.md', self.directory.parent / 'docs/05_课程审核记录.md')
     def tearDown(self):
         self.temp.cleanup()
     def change(self, relative, mutate):
@@ -62,6 +64,18 @@ class ContentTests(unittest.TestCase):
         f = self.directory / 'chapters/C00.md'
         f.write_text(f.read_text(encoding='utf-8') + '\n\n新增一句。', encoding='utf-8')
         with self.assertRaisesRegex(ValueError, '审核已过期'):
+            content.load_and_validate(self.directory, reviewed=True)
+    def test_review_rejects_corrupted_text(self):
+        self.change('reviews.json', lambda data: data['C00'].update(note='????????'))
+        with self.assertRaisesRegex(ValueError, '文字损坏'):
+            content.load_and_validate(self.directory, reviewed=True)
+    def test_review_rejects_missing_record(self):
+        self.change('reviews.json', lambda data: data['C00'].update(record='docs/missing.md'))
+        with self.assertRaisesRegex(ValueError, '审核文档不存在'):
+            content.load_and_validate(self.directory, reviewed=True)
+    def test_review_record_cannot_escape_docs(self):
+        self.change('reviews.json', lambda data: data['C00'].update(record='content/catalog.json'))
+        with self.assertRaisesRegex(ValueError, '超出docs'):
             content.load_and_validate(self.directory, reviewed=True)
     def test_review_invalidated_by_answer_change(self):
         self.change('questions/C00.json', lambda data: data[0].update(answers=['A']))

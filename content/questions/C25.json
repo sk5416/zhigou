@@ -1,0 +1,311 @@
+[
+  {
+    "id": "C25-Q01",
+    "chapterId": "C25",
+    "revision": 1,
+    "type": "single",
+    "stem": "只有updated_at与当前状态，最直接缺少哪类能力？",
+    "options": [
+      {
+        "id": "A",
+        "text": "必然无法执行SQL查询",
+        "explanation": "查询能力与完整历史不同。"
+      },
+      {
+        "id": "B",
+        "text": "不能保存当前值",
+        "explanation": "当前行仍能表达当前状态。"
+      },
+      {
+        "id": "C",
+        "text": "无法使用任何唯一约束",
+        "explanation": "约束也不依赖完整历史。"
+      },
+      {
+        "id": "D",
+        "text": "难以重建每次变更的前后状态与理由",
+        "explanation": "最后修改时间不保存完整事件链。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C25-K01",
+      "C25-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "当前快照与历史追溯承担不同责任。"
+  },
+  {
+    "id": "C25-Q02",
+    "chapterId": "C25",
+    "revision": 1,
+    "type": "single",
+    "stem": "行版本、业务修订号、数据库结构版本应怎样使用？",
+    "options": [
+      {
+        "id": "A",
+        "text": "数据库版本每次业务编辑都递增",
+        "explanation": "结构版本应标识格式变化，而非单行操作。"
+      },
+      {
+        "id": "B",
+        "text": "共享一个数字即可同步表达",
+        "explanation": "变化频率、对象和职责不同，易产生混淆。"
+      },
+      {
+        "id": "C",
+        "text": "分别定义对象和递增条件",
+        "explanation": "需要明确哪个版本用于并发、业务语义或迁移。"
+      },
+      {
+        "id": "D",
+        "text": "行版本可直接当审批业务版本",
+        "explanation": "并发更新与业务修订未必一一对应。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C25-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "版本必须说明对象与目的。"
+  },
+  {
+    "id": "C25-Q03",
+    "chapterId": "C25",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "一条物料停用审计应包含哪些可信关联？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "完整登录密码便于复盘",
+        "explanation": "会引入秘密泄露，不是审计必要内容。"
+      },
+      {
+        "id": "B",
+        "text": "客户端任意上报的用户名即责任证明",
+        "explanation": "可伪造来源不能独立建立可信身份。"
+      },
+      {
+        "id": "C",
+        "text": "稳定对象ID及前后版本、状态",
+        "explanation": "帮助关联更名前对象和具体变更。"
+      },
+      {
+        "id": "D",
+        "text": "可信操作者、来源、理由与记录时间",
+        "explanation": "需明确身份和时钟来源。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C25-K02",
+      "C25-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "追溯需要可信来源及明确语义，并最小化敏感值。"
+  },
+  {
+    "id": "C25-Q04",
+    "chapterId": "C25",
+    "revision": 1,
+    "type": "single",
+    "stem": "业务变更必须与本地审计一起存在，哪种实现边界清楚？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只在页面显示成功后打印日志",
+        "explanation": "程序输出不是可靠的持久业务证据。"
+      },
+      {
+        "id": "B",
+        "text": "先HTTP发出成功审计再尝试业务写入",
+        "explanation": "网络发送不能证明数据库最终提交。"
+      },
+      {
+        "id": "C",
+        "text": "finally无论业务结果都写成功事件",
+        "explanation": "把尝试和提交结果混淆。"
+      },
+      {
+        "id": "D",
+        "text": "同事务内检查业务更新后写审计再提交",
+        "explanation": "任一步失败按约定回滚，保持本地一致性。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C25-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "成功审计必须与真实提交关系明确。"
+  },
+  {
+    "id": "C25-Q05",
+    "chapterId": "C25",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "向独立平台转发审计，哪些设计值得考虑？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "重试防重并保留失败状态可观测",
+        "explanation": "转发可能重复或失败，需要恢复策略。"
+      },
+      {
+        "id": "B",
+        "text": "事务内持久保存待发送事件",
+        "explanation": "使业务提交与发送意图关联，后续可补发。"
+      },
+      {
+        "id": "C",
+        "text": "收到HTTP200即认为本地业务成功",
+        "explanation": "远程接收与本地提交不是同一事实。"
+      },
+      {
+        "id": "D",
+        "text": "写入内存队列后就丢弃本地事件",
+        "explanation": "进程退出或发送失败可能永久丢失。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B"
+    ],
+    "knowledge": [
+      "C25-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "跨存储转发需可靠持久状态而非仅发消息。"
+  },
+  {
+    "id": "C25-Q06",
+    "chapterId": "C25",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟昨日生效的物料调整今天补录，时间应如何表达？",
+    "options": [
+      {
+        "id": "A",
+        "text": "分别保留业务生效与系统记录时间",
+        "explanation": "能解释何时发生及何时被系统知晓。"
+      },
+      {
+        "id": "B",
+        "text": "全部写今天，删除业务发生日期",
+        "explanation": "又丢失了业务生效语义。"
+      },
+      {
+        "id": "C",
+        "text": "所有字段都写昨天伪装准时录入",
+        "explanation": "会丢失实际记录时间与责任线索。"
+      },
+      {
+        "id": "D",
+        "text": "只保留客户端时钟即可可信",
+        "explanation": "客户端可改且时区、漂移等问题需评估。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C25-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "业务时间和记录时间可能不同，不能相互冒充。"
+  },
+  {
+    "id": "C25-Q07",
+    "chapterId": "C25",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟审计用了哈希并限制普通用户删除，能作何结论？",
+    "options": [
+      {
+        "id": "A",
+        "text": "已证明原始输入真实且任何人不能篡改",
+        "explanation": "哈希不证明真实性，管理员和锚点仍需评估。"
+      },
+      {
+        "id": "B",
+        "text": "可以不保存操作者和事件关联",
+        "explanation": "完整性校验不补齐缺失业务语义。"
+      },
+      {
+        "id": "C",
+        "text": "提高完整性检查能力，仍需说明威胁边界",
+        "explanation": "权限、外部证据和保管机制影响可信程度。"
+      },
+      {
+        "id": "D",
+        "text": "不再需要备份或保留策略",
+        "explanation": "防篡改与恢复、保留是不同责任。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C25-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "不要把局部防护宣传成绝对不可篡改。"
+  },
+  {
+    "id": "C25-Q08",
+    "chapterId": "C25",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "删除业务对象时，关于历史记录哪些判断合理？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "按追溯需求保留稳定标识与必要上下文",
+        "explanation": "否则历史可能无法解释，但仍要控制敏感内容。"
+      },
+      {
+        "id": "B",
+        "text": "一律级联删除全部历史最干净",
+        "explanation": "可能破坏应保留的证据。"
+      },
+      {
+        "id": "C",
+        "text": "所有敏感原值无限保存以备查询",
+        "explanation": "保留范围、期限和权限需要明确。"
+      },
+      {
+        "id": "D",
+        "text": "明确访问、保留期限及更正流程",
+        "explanation": "历史也是需要治理的数据。"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "knowledge": [
+      "C25-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "审计保留应按目的最小化并受控。"
+  }
+]
