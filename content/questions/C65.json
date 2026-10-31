@@ -1,0 +1,312 @@
+[
+  {
+    "id": "C65-Q01",
+    "chapterId": "C65",
+    "revision": 1,
+    "type": "single",
+    "stem": "代码评审应看什么对象？",
+    "options": [
+      {
+        "id": "A",
+        "text": "最终diff及其影响",
+        "explanation": "核对实际产物。"
+      },
+      {
+        "id": "B",
+        "text": "只看AI摘要",
+        "explanation": "可能漏变化。"
+      },
+      {
+        "id": "C",
+        "text": "只看截图",
+        "explanation": "不见依赖数据。"
+      },
+      {
+        "id": "D",
+        "text": "只看新增行数",
+        "explanation": "数量不说明风险。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C65-K01"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "摘要不能替代差异。"
+  },
+  {
+    "id": "C65-Q02",
+    "chapterId": "C65",
+    "revision": 1,
+    "type": "single",
+    "stem": "依赖供应链风险包括什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "下载成功就完全可信",
+        "explanation": "不能证明。"
+      },
+      {
+        "id": "B",
+        "text": "流行即无需核验",
+        "explanation": "不是保证。"
+      },
+      {
+        "id": "C",
+        "text": "仅库名拼写",
+        "explanation": "不足。"
+      },
+      {
+        "id": "D",
+        "text": "来源、版本、漏洞、许可与构建执行",
+        "explanation": "不仅业务源码。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C65-K06"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "依赖也是执行输入。"
+  },
+  {
+    "id": "C65-Q03",
+    "chapterId": "C65",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "高价值代码核查有哪些？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "输入、权限、事务与迁移",
+        "explanation": "影响核心不变量。"
+      },
+      {
+        "id": "B",
+        "text": "代码短即安全",
+        "explanation": "无此保证。"
+      },
+      {
+        "id": "C",
+        "text": "失败路径、防重及旧数据",
+        "explanation": "常被成功演示遗漏。"
+      },
+      {
+        "id": "D",
+        "text": "只看缩进",
+        "explanation": "不能覆盖关键行为。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C65-K03",
+      "C65-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "按风险读代码。"
+  },
+  {
+    "id": "C65-Q04",
+    "chapterId": "C65",
+    "revision": 1,
+    "type": "single",
+    "stem": "扫描无告警能否证明安全？",
+    "options": [
+      {
+        "id": "A",
+        "text": "能，可省掉测试",
+        "explanation": "不成立。"
+      },
+      {
+        "id": "B",
+        "text": "不能所以扫描应取消",
+        "explanation": "仍有价值。"
+      },
+      {
+        "id": "C",
+        "text": "能，全部攻击都被覆盖",
+        "explanation": "范围有限。"
+      },
+      {
+        "id": "D",
+        "text": "不能，仍需逻辑权限和运行验证",
+        "explanation": "扫描是部分证据。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C65-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "工具结果有范围。"
+  },
+  {
+    "id": "C65-Q05",
+    "chapterId": "C65",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "测试证据应核对什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "只用Mock就写真实集成通过",
+        "explanation": "扩大结论。"
+      },
+      {
+        "id": "B",
+        "text": "最终提交、命令环境与断言",
+        "explanation": "确保对应实际变更。"
+      },
+      {
+        "id": "C",
+        "text": "为绿色删除困难断言",
+        "explanation": "掩盖缺陷。"
+      },
+      {
+        "id": "D",
+        "text": "失败跳过及未覆盖范围",
+        "explanation": "如实报告。"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C65-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "通过必须可复核。"
+  },
+  {
+    "id": "C65-Q06",
+    "chapterId": "C65",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟改金额文案却新增数据库并删迁移，应先怎样做？",
+    "options": [
+      {
+        "id": "A",
+        "text": "仅改README宣称无影响",
+        "explanation": "不真实。"
+      },
+      {
+        "id": "B",
+        "text": "直接清旧库适配",
+        "explanation": "破坏数据。"
+      },
+      {
+        "id": "C",
+        "text": "追问必要性、兼容与局部替代",
+        "explanation": "控制范围。"
+      },
+      {
+        "id": "D",
+        "text": "因截图好看接受",
+        "explanation": "忽略额外风险。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C65-K02",
+      "C65-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "额外变化要解释。"
+  },
+  {
+    "id": "C65-Q07",
+    "chapterId": "C65",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟导出评审，为什么沿全链看？",
+    "options": [
+      {
+        "id": "A",
+        "text": "可能在查询、文件或链接重新泄露",
+        "explanation": "每层边界需核对。"
+      },
+      {
+        "id": "B",
+        "text": "管理员试过就够",
+        "explanation": "需普通用户拒绝。"
+      },
+      {
+        "id": "C",
+        "text": "界面隐藏字段就全部安全",
+        "explanation": "导出另有出口。"
+      },
+      {
+        "id": "D",
+        "text": "只需路由存在",
+        "explanation": "不证明范围。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C65-K03",
+      "C65-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "旁路也属于数据流。"
+  },
+  {
+    "id": "C65-Q08",
+    "chapterId": "C65",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "遇到不熟悉高风险代码，合理做法有哪些？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "要求解释调用链和具体不变量",
+        "explanation": "可以从边界核验。"
+      },
+      {
+        "id": "B",
+        "text": "假装看懂并全通过",
+        "explanation": "不真实。"
+      },
+      {
+        "id": "C",
+        "text": "因为不能手写就无条件信AI",
+        "explanation": "不必要。"
+      },
+      {
+        "id": "D",
+        "text": "保留未知并安排验证或适当专家",
+        "explanation": "明确专业边界。"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "knowledge": [
+      "C65-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "理解不足应转为具体核验。"
+  }
+]

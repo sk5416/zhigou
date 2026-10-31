@@ -1,0 +1,311 @@
+[
+  {
+    "id": "C68-Q01",
+    "chapterId": "C68",
+    "revision": 1,
+    "type": "single",
+    "stem": "批次、原始行、业务对象、意图与尝试为什么分别编号？",
+    "options": [
+      {
+        "id": "A",
+        "text": "有一个时间戳即可",
+        "explanation": "可能冲突且语义不同。"
+      },
+      {
+        "id": "B",
+        "text": "它们身份与生命周期不同",
+        "explanation": "可定位输入到外部结果。"
+      },
+      {
+        "id": "C",
+        "text": "都能用文件名完全替代",
+        "explanation": "无法可靠防重。"
+      },
+      {
+        "id": "D",
+        "text": "为了增加表数量",
+        "explanation": "有追溯目的。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C68-K01"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "身份要匹配责任。"
+  },
+  {
+    "id": "C68-Q02",
+    "chapterId": "C68",
+    "revision": 1,
+    "type": "single",
+    "stem": "原始行号与业务键有什么区别？",
+    "options": [
+      {
+        "id": "A",
+        "text": "编码可随排序重写",
+        "explanation": "破坏业务身份。"
+      },
+      {
+        "id": "B",
+        "text": "行号跨所有文件永久唯一",
+        "explanation": "不成立。"
+      },
+      {
+        "id": "C",
+        "text": "只有显示行号就可对账",
+        "explanation": "还需稳定ID与范围。"
+      },
+      {
+        "id": "D",
+        "text": "定位源文件与识别业务对象分别使用",
+        "explanation": "两者都需保留。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C68-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "定位不等于对象身份。"
+  },
+  {
+    "id": "C68-Q03",
+    "chapterId": "C68",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "B01提交时应复核什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "当前身份组织与对象状态",
+        "explanation": "可能在预览后变化。"
+      },
+      {
+        "id": "B",
+        "text": "预览通过永久有效",
+        "explanation": "不成立。"
+      },
+      {
+        "id": "C",
+        "text": "客户端org可直接信任",
+        "explanation": "可修改。"
+      },
+      {
+        "id": "D",
+        "text": "必要规则与内容版本",
+        "explanation": "防止提交含义漂移。"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "knowledge": [
+      "C68-K04",
+      "C68-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "预览不是永久许可证。"
+  },
+  {
+    "id": "C68-Q04",
+    "chapterId": "C68",
+    "revision": 1,
+    "type": "single",
+    "stem": "修正R2的单位时应怎样保存历史？",
+    "options": [
+      {
+        "id": "A",
+        "text": "删除原始行号",
+        "explanation": "难定位。"
+      },
+      {
+        "id": "B",
+        "text": "覆盖所有旧记录",
+        "explanation": "丢证据。"
+      },
+      {
+        "id": "C",
+        "text": "顺便改已发送I01内容",
+        "explanation": "破坏意图。"
+      },
+      {
+        "id": "D",
+        "text": "形成明确新版本或获准尝试并保留拒绝",
+        "explanation": "能追溯变化。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C68-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "修正保留版本。"
+  },
+  {
+    "id": "C68-Q05",
+    "chapterId": "C68",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "部分成功策略应保证什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "整批成功即可不存行结果",
+        "explanation": "不利恢复。"
+      },
+      {
+        "id": "B",
+        "text": "远程写入自动纳入本地事务",
+        "explanation": "无此保证。"
+      },
+      {
+        "id": "C",
+        "text": "行事务与独立状态",
+        "explanation": "不同结果可解释。"
+      },
+      {
+        "id": "D",
+        "text": "汇总数量可核对全部行",
+        "explanation": "不能吞未知。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C68-K06",
+      "C68-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "行与批次要一致。"
+  },
+  {
+    "id": "C68-Q06",
+    "chapterId": "C68",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟解析按名称排序后把行号重排，风险是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "错误指向不再对应源文件",
+        "explanation": "应保留原始行号和稳定行ID。"
+      },
+      {
+        "id": "B",
+        "text": "仅美观问题",
+        "explanation": "会定位错。"
+      },
+      {
+        "id": "C",
+        "text": "更易追溯",
+        "explanation": "丢原始位置。"
+      },
+      {
+        "id": "D",
+        "text": "没有任何影响",
+        "explanation": "用户可能改错行。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C68-K02"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "展示排序不能改原始身份。"
+  },
+  {
+    "id": "C68-Q07",
+    "chapterId": "C68",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟本地意图落地但远程仅已发送，能记已创建吗？",
+    "options": [
+      {
+        "id": "A",
+        "text": "能，发送即成功",
+        "explanation": "未确认。"
+      },
+      {
+        "id": "B",
+        "text": "能，日志有字样",
+        "explanation": "不足。"
+      },
+      {
+        "id": "C",
+        "text": "不能，所以删意图",
+        "explanation": "会丢恢复依据。"
+      },
+      {
+        "id": "D",
+        "text": "不能，需受信结果与外部ID",
+        "explanation": "事务边界不同。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C68-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "发送和完成不同。"
+  },
+  {
+    "id": "C68-Q08",
+    "chapterId": "C68",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "本案例数据反例有哪些？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "重传、撤权和约束失败",
+        "explanation": "验证真实写入边界。"
+      },
+      {
+        "id": "B",
+        "text": "重复编码、前导零和空单位",
+        "explanation": "检验类型身份。"
+      },
+      {
+        "id": "C",
+        "text": "所有非法值自动改默认",
+        "explanation": "可能伪造事实。"
+      },
+      {
+        "id": "D",
+        "text": "只用一行合法数据",
+        "explanation": "不足。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B"
+    ],
+    "knowledge": [
+      "C68-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "用边界证明模型。"
+  }
+]

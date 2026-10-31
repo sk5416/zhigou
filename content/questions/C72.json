@@ -1,0 +1,312 @@
+[
+  {
+    "id": "C72-Q01",
+    "chapterId": "C72",
+    "revision": 1,
+    "type": "single",
+    "stem": "原型与可交接应用主要差在哪？",
+    "options": [
+      {
+        "id": "A",
+        "text": "正常路径的演示是否足够流畅",
+        "explanation": "流畅演示只是部分证据，不能覆盖失败、数据恢复、权限与维护责任。"
+      },
+      {
+        "id": "B",
+        "text": "组件越多越成熟",
+        "explanation": "没有保证。"
+      },
+      {
+        "id": "C",
+        "text": "范围、证据、数据和维护责任是否完整",
+        "explanation": "不只部分功能可行。"
+      },
+      {
+        "id": "D",
+        "text": "必须脱离AI手写全部代码",
+        "explanation": "不是学习目标。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C72-K01"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "成熟度看可核验责任。"
+  },
+  {
+    "id": "C72-Q02",
+    "chapterId": "C72",
+    "revision": 1,
+    "type": "single",
+    "stem": "遗留项应怎样管理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "关键权限缺失也无条件上线",
+        "explanation": "风险不可忽略。"
+      },
+      {
+        "id": "B",
+        "text": "全写以后优化",
+        "explanation": "无责任。"
+      },
+      {
+        "id": "C",
+        "text": "列影响责任、处理或触发与临时限制",
+        "explanation": "不能假装通过。"
+      },
+      {
+        "id": "D",
+        "text": "删除未验证项",
+        "explanation": "失真。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C72-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "接受风险需具体。"
+  },
+  {
+    "id": "C72-Q03",
+    "chapterId": "C72",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "交接包应包括什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "只交聊天全文",
+        "explanation": "难以接手。"
+      },
+      {
+        "id": "B",
+        "text": "需求决策、代码产物与数据接口",
+        "explanation": "支撑理解和复现。"
+      },
+      {
+        "id": "C",
+        "text": "安全测试、运行恢复与责任",
+        "explanation": "形成维护闭环。"
+      },
+      {
+        "id": "D",
+        "text": "公开写出所有秘密",
+        "explanation": "不能。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C72-K02",
+      "C72-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "源码不是全部交付。"
+  },
+  {
+    "id": "C72-Q04",
+    "chapterId": "C72",
+    "revision": 1,
+    "type": "single",
+    "stem": "Mock与一次强制结束测试通过，最终结论应怎样写？",
+    "options": [
+      {
+        "id": "A",
+        "text": "说明实际覆盖，不扩展真实ERP或所有回收场景",
+        "explanation": "范围准确。"
+      },
+      {
+        "id": "B",
+        "text": "所有恢复已通过",
+        "explanation": "触发点不同。"
+      },
+      {
+        "id": "C",
+        "text": "正式资格考试通过",
+        "explanation": "学习题库不是独立认证。"
+      },
+      {
+        "id": "D",
+        "text": "真实企业全链已认证",
+        "explanation": "超出。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C72-K02",
+      "C72-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "证据不应扩大。"
+  },
+  {
+    "id": "C72-Q05",
+    "chapterId": "C72",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "接手演练可包含什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "恢复虚构备份和核对外部关联",
+        "explanation": "验证手册与边界。"
+      },
+      {
+        "id": "B",
+        "text": "只签收压缩包",
+        "explanation": "不证明能操作。"
+      },
+      {
+        "id": "C",
+        "text": "隔离副本完成小变更与相关测试构建",
+        "explanation": "验证可维护。"
+      },
+      {
+        "id": "D",
+        "text": "必须依赖原作者私账号",
+        "explanation": "不是独立接手。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C72-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "接手要实际演练。"
+  },
+  {
+    "id": "C72-Q06",
+    "chapterId": "C72",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟开发者离开后没人知道凭据来源，哪项最合适？",
+    "options": [
+      {
+        "id": "A",
+        "text": "继续依赖原作者",
+        "explanation": "不可靠。"
+      },
+      {
+        "id": "B",
+        "text": "删掉交接要求",
+        "explanation": "回避问题。"
+      },
+      {
+        "id": "C",
+        "text": "建立受控获取撤销入口及负责人员",
+        "explanation": "秘密不进普通文档。"
+      },
+      {
+        "id": "D",
+        "text": "把密码发群里永久保存",
+        "explanation": "泄露。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C72-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "转移责任不等于公开秘密。"
+  },
+  {
+    "id": "C72-Q07",
+    "chapterId": "C72",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟新维护者升级依赖，应该保留什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "承诺再不维护",
+        "explanation": "不现实。"
+      },
+      {
+        "id": "B",
+        "text": "原决策前提、兼容证据与回退重评",
+        "explanation": "支持受控演进。"
+      },
+      {
+        "id": "C",
+        "text": "只看最新下载量",
+        "explanation": "不够。"
+      },
+      {
+        "id": "D",
+        "text": "删除全部旧记录",
+        "explanation": "丢理由。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C72-K06",
+      "C72-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "生命周期持续管理。"
+  },
+  {
+    "id": "C72-Q08",
+    "chapterId": "C72",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "课程最终能力应怎样体现？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "一次高分等于独立认证",
+        "explanation": "共用学习题库不能证明。"
+      },
+      {
+        "id": "B",
+        "text": "只记住全部技术名词",
+        "explanation": "不足以判断交付。"
+      },
+      {
+        "id": "C",
+        "text": "能解释边界、判断方案与核验证据",
+        "explanation": "贴合学习目的。"
+      },
+      {
+        "id": "D",
+        "text": "把附录和案例转成具体评审问题",
+        "explanation": "能用于项目。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C72-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "学习闭环以可观察能力为主。"
+  }
+]

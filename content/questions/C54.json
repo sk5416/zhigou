@@ -1,0 +1,312 @@
+[
+  {
+    "id": "C54-Q01",
+    "chapterId": "C54",
+    "revision": 1,
+    "type": "single",
+    "stem": "RPO与RTO分别是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "服务器和备份套餐名",
+        "explanation": "概念不同。"
+      },
+      {
+        "id": "B",
+        "text": "可接受丢失窗口与恢复时长",
+        "explanation": "需明确业务范围。"
+      },
+      {
+        "id": "C",
+        "text": "数据库大小和复制速度",
+        "explanation": "不是目标含义。"
+      },
+      {
+        "id": "D",
+        "text": "备份个数和文件名",
+        "explanation": "不足以描述恢复。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C54-K03",
+      "C54-K04"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "恢复目标要可测。"
+  },
+  {
+    "id": "C54-Q02",
+    "chapterId": "C54",
+    "revision": 1,
+    "type": "single",
+    "stem": "完整业务恢复范围应如何确定？",
+    "options": [
+      {
+        "id": "A",
+        "text": "从业务依赖列数据、附件、配置和密钥等",
+        "explanation": "不只一张表。"
+      },
+      {
+        "id": "B",
+        "text": "保存健康截图即可",
+        "explanation": "不能恢复数据。"
+      },
+      {
+        "id": "C",
+        "text": "只保存索引",
+        "explanation": "未必有原文。"
+      },
+      {
+        "id": "D",
+        "text": "只看数据库行数",
+        "explanation": "可能附件丢失。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C54-K01"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "以业务可用为终点。"
+  },
+  {
+    "id": "C54-Q03",
+    "chapterId": "C54",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "最近可恢复点受哪些条件影响？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "文件名日期足够",
+        "explanation": "内容未必对应。"
+      },
+      {
+        "id": "B",
+        "text": "备份有效性与日志链",
+        "explanation": "需实际检查。"
+      },
+      {
+        "id": "C",
+        "text": "计划任务显示开始就必定有效",
+        "explanation": "可能失败或损坏。"
+      },
+      {
+        "id": "D",
+        "text": "密钥和一致时点",
+        "explanation": "缺失可能无法恢复。"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C54-K02"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "计划时间不是恢复证据。"
+  },
+  {
+    "id": "C54-Q04",
+    "chapterId": "C54",
+    "revision": 1,
+    "type": "single",
+    "stem": "目标RPO4小时，最后有效点00:00，事故05:30，怎样判断？",
+    "options": [
+      {
+        "id": "A",
+        "text": "满足，04:00任务启动过",
+        "explanation": "不证明有效。"
+      },
+      {
+        "id": "B",
+        "text": "固定只丢一分钟",
+        "explanation": "无依据。"
+      },
+      {
+        "id": "C",
+        "text": "潜在窗口5.5小时，可能超过目标",
+        "explanation": "按有效点计算。"
+      },
+      {
+        "id": "D",
+        "text": "RPO与数据无关",
+        "explanation": "错误。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C54-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "窗口看有效恢复点。"
+  },
+  {
+    "id": "C54-Q05",
+    "chapterId": "C54",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "恢复演练应核对什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "权限、关联、金额和附件校验",
+        "explanation": "防止只数行。"
+      },
+      {
+        "id": "B",
+        "text": "直接开放生产写接口测试",
+        "explanation": "需隔离副作用。"
+      },
+      {
+        "id": "C",
+        "text": "只比总量就全部正确",
+        "explanation": "可能错配。"
+      },
+      {
+        "id": "D",
+        "text": "准备到业务验收的完整耗时",
+        "explanation": "不是仅复制时间。"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "knowledge": [
+      "C54-K06",
+      "C54-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "恢复正确性包含语义。"
+  },
+  {
+    "id": "C54-Q06",
+    "chapterId": "C54",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟密文备份完整但解密密钥丢失，应怎样评价？",
+    "options": [
+      {
+        "id": "A",
+        "text": "文件够大即有效",
+        "explanation": "无证明力。"
+      },
+      {
+        "id": "B",
+        "text": "已经恢复成功",
+        "explanation": "不能读取。"
+      },
+      {
+        "id": "C",
+        "text": "恢复条件不完整，密钥也需受控恢复",
+        "explanation": "保密与可用均需设计。"
+      },
+      {
+        "id": "D",
+        "text": "只校验密文哈希一致就认定可恢复",
+        "explanation": "校验完整性不能替代可用解密密钥和实际恢复验证。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C54-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "备份依赖密钥。"
+  },
+  {
+    "id": "C54-Q07",
+    "chapterId": "C54",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟恢复旧备份会覆盖事故后有效业务，应怎么办？",
+    "options": [
+      {
+        "id": "A",
+        "text": "删除当前数据以免混乱",
+        "explanation": "先破坏证据。"
+      },
+      {
+        "id": "B",
+        "text": "保留现场并评估增量重放或补偿",
+        "explanation": "明确恢复点后业务。"
+      },
+      {
+        "id": "C",
+        "text": "立即覆盖无需核对",
+        "explanation": "会扩大损失。"
+      },
+      {
+        "id": "D",
+        "text": "只切代码标签",
+        "explanation": "不处理数据。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C54-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "恢复也需要增量边界。"
+  },
+  {
+    "id": "C54-Q08",
+    "chapterId": "C54",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "备份保管与运行应注意什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "与原数据只存同一块盘就充分",
+        "explanation": "故障范围相同。"
+      },
+      {
+        "id": "B",
+        "text": "缓存副本就是永久历史",
+        "explanation": "不一定。"
+      },
+      {
+        "id": "C",
+        "text": "隔离恢复目标和真实通知接口",
+        "explanation": "防误调用。"
+      },
+      {
+        "id": "D",
+        "text": "独立故障范围与访问权限",
+        "explanation": "避免同一事故全失。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C54-K05",
+      "C54-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "备份要独立且可安全使用。"
+  }
+]

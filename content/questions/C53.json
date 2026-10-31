@@ -1,0 +1,315 @@
+[
+  {
+    "id": "C53-Q01",
+    "chapterId": "C53",
+    "revision": 1,
+    "type": "single",
+    "stem": "健康页200能证明什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "全库权限正确",
+        "explanation": "没有此证据。"
+      },
+      {
+        "id": "B",
+        "text": "全部同步已经完成",
+        "explanation": "未测任务推进。"
+      },
+      {
+        "id": "C",
+        "text": "该探测条件得到响应",
+        "explanation": "范围取决于探测定义。"
+      },
+      {
+        "id": "D",
+        "text": "所有依赖永不失败",
+        "explanation": "不可能据此保证。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C53-K01",
+      "C53-K04"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "健康证据有范围。"
+  },
+  {
+    "id": "C53-Q02",
+    "chapterId": "C53",
+    "revision": 1,
+    "type": "single",
+    "stem": "存活与就绪的区别是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "都是CPU使用率",
+        "explanation": "目的不同。"
+      },
+      {
+        "id": "B",
+        "text": "是否需恢复进程与是否适合接流量",
+        "explanation": "触发动作应区分。"
+      },
+      {
+        "id": "C",
+        "text": "下游短暂失败必须全部重启",
+        "explanation": "可能放大故障。"
+      },
+      {
+        "id": "D",
+        "text": "就绪等于当前进程仍存在",
+        "explanation": "进程存在只证明部分存活状态，不能证明它已能处理预期流量。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C53-K04"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "探测应服务正确动作。"
+  },
+  {
+    "id": "C53-Q03",
+    "chapterId": "C53",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "同步系统应监控什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "成功拒绝未知比例及最近核对",
+        "explanation": "反映实际业务状态。"
+      },
+      {
+        "id": "B",
+        "text": "只看进程存在",
+        "explanation": "不足以证明推进。"
+      },
+      {
+        "id": "C",
+        "text": "积压与最老任务年龄",
+        "explanation": "揭示停滞。"
+      },
+      {
+        "id": "D",
+        "text": "只看健康页",
+        "explanation": "不覆盖业务及时性。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C53-K01",
+      "C53-K02"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "业务推进需要专门信号。"
+  },
+  {
+    "id": "C53-Q04",
+    "chapterId": "C53",
+    "revision": 1,
+    "type": "single",
+    "stem": "所有日志ERROR都通知所有人，主要问题是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "噪声可能淹没可行动故障",
+        "explanation": "应结合影响窗口与责任。"
+      },
+      {
+        "id": "B",
+        "text": "可取消业务指标",
+        "explanation": "不能。"
+      },
+      {
+        "id": "C",
+        "text": "只统一提高告警级别，无需责任人",
+        "explanation": "级别不能替代影响判定、路由、处置手册和明确责任。"
+      },
+      {
+        "id": "D",
+        "text": "说明监控必然充分",
+        "explanation": "数量不代表能力。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C53-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "告警要可行动。"
+  },
+  {
+    "id": "C53-Q05",
+    "chapterId": "C53",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "告警应提供什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "负责人、手册和升级路径",
+        "explanation": "便于处理。"
+      },
+      {
+        "id": "B",
+        "text": "永不验证通知送达",
+        "explanation": "链路可能失败。"
+      },
+      {
+        "id": "C",
+        "text": "环境、影响、窗口和趋势",
+        "explanation": "帮助核查。"
+      },
+      {
+        "id": "D",
+        "text": "完整凭据原值",
+        "explanation": "无必要。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C53-K06",
+      "C53-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "发现要能转为处理。"
+  },
+  {
+    "id": "C53-Q06",
+    "chapterId": "C53",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟首页正常但消费者停止一天，应如何判断？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只增应用副本",
+        "explanation": "未定位原因。"
+      },
+      {
+        "id": "B",
+        "text": "删除积压恢复绿色",
+        "explanation": "可能丢工作。"
+      },
+      {
+        "id": "C",
+        "text": "按业务时限告警并核查消费者依赖",
+        "explanation": "恢复后核对积压和未知。"
+      },
+      {
+        "id": "D",
+        "text": "首页好就不算故障",
+        "explanation": "业务未推进。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C53-K01",
+      "C53-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "颜色不能替代业务。"
+  },
+  {
+    "id": "C53-Q07",
+    "chapterId": "C53",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟数据库短暂抖动导致所有应用反复重启，应怎样评审？",
+    "options": [
+      {
+        "id": "A",
+        "text": "依赖抖动时立即重启所有应用最可靠",
+        "explanation": "把外部依赖短暂失败当进程失活可能造成重启风暴，扩大故障。"
+      },
+      {
+        "id": "B",
+        "text": "关闭全部日志",
+        "explanation": "掩盖现象。"
+      },
+      {
+        "id": "C",
+        "text": "永久返回健康",
+        "explanation": "又可能放入坏流量。"
+      },
+      {
+        "id": "D",
+        "text": "核对存活条件与依赖故障隔离",
+        "explanation": "避免把短暂外部故障当进程死亡。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C53-K03",
+      "C53-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "动作要对应故障性质。"
+  },
+  {
+    "id": "C53-Q08",
+    "chapterId": "C53",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "监控验收有哪些内容？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "确认业务恢复而非只清红点",
+        "explanation": "需要实际结果。"
+      },
+      {
+        "id": "B",
+        "text": "看过一次仪表盘就足够",
+        "explanation": "不证明持续发现。"
+      },
+      {
+        "id": "C",
+        "text": "隔离触发、送达与恢复条件",
+        "explanation": "验证整条链。"
+      },
+      {
+        "id": "D",
+        "text": "监控系统自身不会失败",
+        "explanation": "也需观察采集链。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C53-K07",
+      "C53-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "监控也需要验证。"
+  }
+]

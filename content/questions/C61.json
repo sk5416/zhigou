@@ -1,0 +1,313 @@
+[
+  {
+    "id": "C61-Q01",
+    "chapterId": "C61",
+    "revision": 1,
+    "type": "single",
+    "stem": "新增字段是否必然兼容？",
+    "options": [
+      {
+        "id": "A",
+        "text": "不必然，需看消费者和语义",
+        "explanation": "不能只按增删分类。"
+      },
+      {
+        "id": "B",
+        "text": "必然，永远不破坏",
+        "explanation": "严格解析等可能受影响。"
+      },
+      {
+        "id": "C",
+        "text": "不必然，所以永不升级",
+        "explanation": "应受控演进。"
+      },
+      {
+        "id": "D",
+        "text": "必然，JSON可读即可",
+        "explanation": "不代表程序可用。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C61-K01"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "兼容依赖实际消费行为。"
+  },
+  {
+    "id": "C61-Q02",
+    "chapterId": "C61",
+    "revision": 1,
+    "type": "single",
+    "stem": "API契约包括什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只包括字段名",
+        "explanation": "遗漏类型和行为。"
+      },
+      {
+        "id": "B",
+        "text": "只有厂商宣传",
+        "explanation": "不是可执行约定。"
+      },
+      {
+        "id": "C",
+        "text": "只包括URL",
+        "explanation": "还有语义。"
+      },
+      {
+        "id": "D",
+        "text": "结构、错误、分页、权限及相关语义",
+        "explanation": "真实调用依赖这些条件。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C61-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "契约超出形状。"
+  },
+  {
+    "id": "C61-Q03",
+    "chapterId": "C61",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "未知枚举应怎样设计？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "给出可定位反馈及兼容测试",
+        "explanation": "可发现真实变化。"
+      },
+      {
+        "id": "B",
+        "text": "默认当成功",
+        "explanation": "可能错误。"
+      },
+      {
+        "id": "C",
+        "text": "按业务显式保留或拒绝",
+        "explanation": "需要明确规则。"
+      },
+      {
+        "id": "D",
+        "text": "一条未知总让全部永久停止且不告知",
+        "explanation": "恢复不可用。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C61-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "未知不能伪装已知。"
+  },
+  {
+    "id": "C61-Q04",
+    "chapterId": "C61",
+    "revision": 1,
+    "type": "single",
+    "stem": "契约测试通过能否证明生产全量兼容？",
+    "options": [
+      {
+        "id": "A",
+        "text": "不能，真实权限容量和数据仍有差异",
+        "explanation": "需说明覆盖。"
+      },
+      {
+        "id": "B",
+        "text": "能，所有供应商配置一样",
+        "explanation": "不成立。"
+      },
+      {
+        "id": "C",
+        "text": "不能，所以测试没用",
+        "explanation": "有有限价值。"
+      },
+      {
+        "id": "D",
+        "text": "能，省略监控",
+        "explanation": "不应。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C61-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "证据有边界。"
+  },
+  {
+    "id": "C61-Q05",
+    "chapterId": "C61",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "升级共存方案需包括什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "只变版本字符串",
+        "explanation": "未解决行为。"
+      },
+      {
+        "id": "B",
+        "text": "旧消费者观测与弃用时间",
+        "explanation": "避免突然中断。"
+      },
+      {
+        "id": "C",
+        "text": "发公告即全部升级",
+        "explanation": "需要确认。"
+      },
+      {
+        "id": "D",
+        "text": "迁移责任与通知确认",
+        "explanation": "有人接续。"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C61-K05",
+      "C61-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "版本是治理而非标签。"
+  },
+  {
+    "id": "C61-Q06",
+    "chapterId": "C61",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟新状态使旧解析器崩溃，应该补什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "静默映射成功",
+        "explanation": "语义错误。"
+      },
+      {
+        "id": "B",
+        "text": "只重启",
+        "explanation": "不能修兼容。"
+      },
+      {
+        "id": "C",
+        "text": "未知值策略与代表性契约回放",
+        "explanation": "覆盖新旧组合。"
+      },
+      {
+        "id": "D",
+        "text": "删除新状态记录",
+        "explanation": "破坏事实。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C61-K03",
+      "C61-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "新值需要有意处理。"
+  },
+  {
+    "id": "C61-Q07",
+    "chapterId": "C61",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟供应商降低分页上限，应核查什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只把页面每页条数改小",
+        "explanation": "还要检查所有调用者的分页终止、总量、限流和持久进度，不能只改页面。"
+      },
+      {
+        "id": "B",
+        "text": "只确认首批返回成功",
+        "explanation": "首批成功无法证明后续页未被漏读或游标正确推进。"
+      },
+      {
+        "id": "C",
+        "text": "分页结束判断、水位和源压力",
+        "explanation": "行为契约变化可能漏数。"
+      },
+      {
+        "id": "D",
+        "text": "清空进度当正常升级",
+        "explanation": "可能重放漏数。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C61-K02",
+      "C61-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "行为变化也影响可靠性。"
+  },
+  {
+    "id": "C61-Q08",
+    "chapterId": "C61",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "切换回退需核对什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "进行中任务原契约及业务身份",
+        "explanation": "不能静默换含义。"
+      },
+      {
+        "id": "B",
+        "text": "新旧接口和数据兼容、停止策略",
+        "explanation": "需明确恢复边界。"
+      },
+      {
+        "id": "C",
+        "text": "只拿旧包就够",
+        "explanation": "不足。"
+      },
+      {
+        "id": "D",
+        "text": "旧客户端肯定能读新数据",
+        "explanation": "未必。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B"
+    ],
+    "knowledge": [
+      "C61-K07",
+      "C61-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "回退是跨版本协调。"
+  }
+]

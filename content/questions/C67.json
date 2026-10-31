@@ -1,0 +1,310 @@
+[
+  {
+    "id": "C67-Q01",
+    "chapterId": "C67",
+    "revision": 1,
+    "type": "single",
+    "stem": "本案例首先应确定什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "先确定页面布局再反推权限",
+        "explanation": "界面布局不能替代用户、组织数据范围、业务写入和交付边界的确认。"
+      },
+      {
+        "id": "B",
+        "text": "谁向哪个组织同步什么及失败边界",
+        "explanation": "先形成可验收任务。"
+      },
+      {
+        "id": "C",
+        "text": "框架是否最新",
+        "explanation": "不是业务边界。"
+      },
+      {
+        "id": "D",
+        "text": "组件数量",
+        "explanation": "不说明必要性。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C67-K01",
+      "C67-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "先有边界再选技术。"
+  },
+  {
+    "id": "C67-Q02",
+    "chapterId": "C67",
+    "revision": 1,
+    "type": "single",
+    "stem": "技术维护者与录入员的权限应怎样理解？",
+    "options": [
+      {
+        "id": "A",
+        "text": "按动作与对象分别定义",
+        "explanation": "能重启不等于能导出全量。"
+      },
+      {
+        "id": "B",
+        "text": "维护者无须任何审计",
+        "explanation": "不成立。"
+      },
+      {
+        "id": "C",
+        "text": "都设管理员最安全",
+        "explanation": "权限过宽。"
+      },
+      {
+        "id": "D",
+        "text": "录入即有审批权",
+        "explanation": "需要业务规则。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C67-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "职责应分离。"
+  },
+  {
+    "id": "C67-Q03",
+    "chapterId": "C67",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "案例非目标可以包括什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "默认全公司公开",
+        "explanation": "与数据范围冲突。"
+      },
+      {
+        "id": "B",
+        "text": "不把未知结果直接当失败重建",
+        "explanation": "约束可靠性。"
+      },
+      {
+        "id": "C",
+        "text": "不自动删除外部物料",
+        "explanation": "限定危险动作。"
+      },
+      {
+        "id": "D",
+        "text": "所有失败都忽略",
+        "explanation": "不是合理交付边界。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C67-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "非目标能保护业务。"
+  },
+  {
+    "id": "C67-Q04",
+    "chapterId": "C67",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟ERP幂等能力尚未知，应如何写方案？",
+    "options": [
+      {
+        "id": "A",
+        "text": "直接用生产凭据试",
+        "explanation": "没有授权。"
+      },
+      {
+        "id": "B",
+        "text": "承诺无重复即可",
+        "explanation": "无证据。"
+      },
+      {
+        "id": "C",
+        "text": "列待核验并说明能力不足的人工边界",
+        "explanation": "保持真实限制。"
+      },
+      {
+        "id": "D",
+        "text": "杜撰一个端点",
+        "explanation": "不可信。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C67-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "外部假设需证据。"
+  },
+  {
+    "id": "C67-Q05",
+    "chapterId": "C67",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "案例非功能目标应说明什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "负载及时性与恢复保留",
+        "explanation": "便于判定。"
+      },
+      {
+        "id": "B",
+        "text": "人数少即可不要备份",
+        "explanation": "风险仍在。"
+      },
+      {
+        "id": "C",
+        "text": "身份、数据与维护责任",
+        "explanation": "不只功能。"
+      },
+      {
+        "id": "D",
+        "text": "只说永不失败",
+        "explanation": "无法验收。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C67-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "功能外要求要具体。"
+  },
+  {
+    "id": "C67-Q06",
+    "chapterId": "C67",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟M001超时、M002单位缺失、M003已确认，汇总应怎样表达？",
+    "options": [
+      {
+        "id": "A",
+        "text": "整批都未执行",
+        "explanation": "不符合确认事实。"
+      },
+      {
+        "id": "B",
+        "text": "整批全部成功",
+        "explanation": "掩盖失败未知。"
+      },
+      {
+        "id": "C",
+        "text": "全行盲重发",
+        "explanation": "可能重复。"
+      },
+      {
+        "id": "D",
+        "text": "分别未知、明确拒绝、确认成功",
+        "explanation": "按行保留事实。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C67-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "逐行状态不同。"
+  },
+  {
+    "id": "C67-Q07",
+    "chapterId": "C67",
+    "revision": 1,
+    "type": "single",
+    "stem": "本案例采用服务器架构，能否推断知构App也必须如此？",
+    "options": [
+      {
+        "id": "A",
+        "text": "能，全部必须微服务",
+        "explanation": "无依据。"
+      },
+      {
+        "id": "B",
+        "text": "不能，所以案例无价值",
+        "explanation": "仍能训练评审。"
+      },
+      {
+        "id": "C",
+        "text": "能，教材就是工程指定",
+        "explanation": "原要求区分两者。"
+      },
+      {
+        "id": "D",
+        "text": "不能，教学系统与离线App实现不同",
+        "explanation": "案例用于判断能力。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C67-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "课程技术不等于App选型。"
+  },
+  {
+    "id": "C67-Q08",
+    "chapterId": "C67",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "案例验收应覆盖什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "凭据撤销、损坏备份与接手",
+        "explanation": "覆盖长期交付。"
+      },
+      {
+        "id": "B",
+        "text": "仅上传成功",
+        "explanation": "不足。"
+      },
+      {
+        "id": "C",
+        "text": "只看管理员页面",
+        "explanation": "缺权限。"
+      },
+      {
+        "id": "D",
+        "text": "跨组织、重复、超时和重启",
+        "explanation": "核心失败边界。"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "knowledge": [
+      "C67-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "完整任务包含失败恢复。"
+  }
+]

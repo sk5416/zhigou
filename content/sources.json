@@ -621,6 +621,151 @@
       ],
       "claims": "有限范围、窗口、指标与停止决策；企业发布案例为自编。",
       "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "OWASP encrypted storage",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html",
+      "chapters": [
+        "C47"
+      ],
+      "claims": "最小化数据、密钥保管与恢复；不是法律合规认证或固定加密参数。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "OWASP logging operations",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html",
+      "chapters": [
+        "C52"
+      ],
+      "claims": "事件关联、必要字段、敏感信息保护和日志治理；日志样例为虚构。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "SRE monitoring distributed systems",
+      "url": "https://sre.google/sre-book/monitoring-distributed-systems/",
+      "chapters": [
+        "C53"
+      ],
+      "claims": "业务症状与资源原因、指标和可行动告警基础；探测矩阵为自编设计。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "PostgreSQL18 backup approaches",
+      "url": "https://www.postgresql.org/docs/18/backup.html",
+      "chapters": [
+        "C54"
+      ],
+      "claims": "备份方法有不同前提，不混用通用恢复命令；本章演练和数值为模拟。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "SRE data integrity",
+      "url": "https://sre.google/sre-book/data-integrity/",
+      "chapters": [
+        "C54",
+        "C60"
+      ],
+      "claims": "业务可恢复与数据完整性需核验；对账和回填案例为自编，并非实际演练结果。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "SRE incident management",
+      "url": "https://sre.google/sre-book/managing-incidents/",
+      "chapters": [
+        "C55"
+      ],
+      "claims": "影响、角色、沟通与恢复责任；运行手册分支为模拟。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "SRE postmortem culture",
+      "url": "https://sre.google/sre-book/postmortem-culture/",
+      "chapters": [
+        "C55"
+      ],
+      "claims": "复盘关注促成因素和改进责任，不以个人责备替代工程措施。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "SQL Server transaction log lifecycle",
+      "url": "https://learn.microsoft.com/en-us/sql/relational-databases/logs/the-transaction-log-sql-server?view=sql-server-ver17",
+      "chapters": [
+        "C56"
+      ],
+      "claims": "事务日志有恢复职责，容量处理需查具体阻塞，不能当普通文本删除；费用不作厂商报价。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "Azure anti-corruption layer",
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/anti-corruption-layer",
+      "chapters": [
+        "C57"
+      ],
+      "claims": "系统语义转换边界的基础；字段权威与映射表是自编业务约定，不声称厂商默认规则。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "Azure incremental copy overview",
+      "url": "https://learn.microsoft.com/en-us/azure/data-factory/tutorial-incremental-copy-overview",
+      "chapters": [
+        "C58"
+      ],
+      "claims": "水位和变更跟踪基础；未把Azure具体能力套到ERP，分页迟到与删除需核验源契约。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "AWS Builders Library idempotent APIs",
+      "url": "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/",
+      "chapters": [
+        "C59"
+      ],
+      "claims": "稳定客户意图、相同身份不同含义及重试边界；状态机为自编，不承诺外部ERP支持。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "Azure API design compatibility",
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design",
+      "chapters": [
+        "C61"
+      ],
+      "claims": "API版本、契约和兼容基础；消费者未知枚举及切换案例为模拟。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "OpenAI development workflows with Codex",
+      "url": "https://developers.openai.com/cookbook/examples/codex/iterating-development-workflows-with-codex",
+      "chapters": [
+        "C63"
+      ],
+      "claims": "AGENTS.md持久仓库指导与计划上下文约定；不把指导文件当物理安全屏障。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "OWASP threat modeling",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html",
+      "chapters": [
+        "C64"
+      ],
+      "claims": "资产、入口、信任与威胁的评审基础；不要求所有小项目照搬大流程。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "NIST SSDF1.1 SP800-218",
+      "url": "https://csrc.nist.gov/pubs/sp/800/218/final",
+      "chapters": [
+        "C65"
+      ],
+      "claims": "软件开发需纳入安全实践、风险和根因治理；本章差异清单为自编，不声称符合或认证全部标准。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "OpenAI Codex harness boundaries",
+      "url": "https://developers.openai.com/blog/codex-as-a-platform",
+      "chapters": [
+        "C66"
+      ],
+      "claims": "工具上下文与配置的执行策略；不固定当前产品默认模式、套餐、模型或按钮。",
+      "checkedAt": "2026-10-31"
     }
   ],
   "simulation": "青禾制造、员工、部门和物料同步均为虚构模拟，不代表金蝶、Salesforce 等厂商真实接口行为。",

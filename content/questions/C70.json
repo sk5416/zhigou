@@ -1,0 +1,311 @@
+[
+  {
+    "id": "C70-Q01",
+    "chapterId": "C70",
+    "revision": 1,
+    "type": "single",
+    "stem": "乙/O2看不到B01菜单，能否证明下载接口安全？",
+    "options": [
+      {
+        "id": "A",
+        "text": "能，批次ID长",
+        "explanation": "难猜不等于许可。"
+      },
+      {
+        "id": "B",
+        "text": "能，页面即全部入口",
+        "explanation": "可直接请求。"
+      },
+      {
+        "id": "C",
+        "text": "不能，下载也需对象授权",
+        "explanation": "旁路可能泄露。"
+      },
+      {
+        "id": "D",
+        "text": "能，只用HTTPS",
+        "explanation": "不解决授权。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C70-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "旁路也需检查。"
+  },
+  {
+    "id": "C70-Q02",
+    "chapterId": "C70",
+    "revision": 1,
+    "type": "single",
+    "stem": "技术维护者应默认获得什么权限？",
+    "options": [
+      {
+        "id": "A",
+        "text": "ERP全局管理",
+        "explanation": "范围过大。"
+      },
+      {
+        "id": "B",
+        "text": "必要运行操作与受限观测",
+        "explanation": "业务数据另按授权。"
+      },
+      {
+        "id": "C",
+        "text": "全量财务导出",
+        "explanation": "职责不必需要。"
+      },
+      {
+        "id": "D",
+        "text": "所有组织审批",
+        "explanation": "不是维护职责。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C70-K01"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "维护能力不等于业务全权。"
+  },
+  {
+    "id": "C70-Q03",
+    "chapterId": "C70",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "安全验收矩阵应覆盖什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "无泄露与无副作用断言",
+        "explanation": "拒绝不仅是页面提示。"
+      },
+      {
+        "id": "B",
+        "text": "只用管理员",
+        "explanation": "没有拒绝证据。"
+      },
+      {
+        "id": "C",
+        "text": "无权请求回200带敏感错误",
+        "explanation": "可能泄露。"
+      },
+      {
+        "id": "D",
+        "text": "批次、行、附件、批量与字段",
+        "explanation": "每条路径均可能绕过。"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "knowledge": [
+      "C70-K03",
+      "C70-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "拒绝要看实际数据后果。"
+  },
+  {
+    "id": "C70-Q04",
+    "chapterId": "C70",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟Mock回调和Token测试通过，报告能写什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "说明隔离替身范围，真实ERP验证另列",
+        "explanation": "保持真实。"
+      },
+      {
+        "id": "B",
+        "text": "所有攻击不存在",
+        "explanation": "不可能。"
+      },
+      {
+        "id": "C",
+        "text": "真实供应商已全部验收",
+        "explanation": "超出证据。"
+      },
+      {
+        "id": "D",
+        "text": "可删测试限制",
+        "explanation": "失真。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C70-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "替身不是外部实测。"
+  },
+  {
+    "id": "C70-Q05",
+    "chapterId": "C70",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "审计成功事件应包含什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "可信操作者、版本与真实提交结果",
+        "explanation": "建立责任与事实。"
+      },
+      {
+        "id": "B",
+        "text": "点击按钮就永远记成功",
+        "explanation": "尝试不等于提交。"
+      },
+      {
+        "id": "C",
+        "text": "必要差异、理由与关联",
+        "explanation": "可追溯且最小化。"
+      },
+      {
+        "id": "D",
+        "text": "完整密码和文件",
+        "explanation": "无必要泄露。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C70-K05",
+      "C70-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "审计不能伪造成功。"
+  },
+  {
+    "id": "C70-Q06",
+    "chapterId": "C70",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟复核后、发送前甲权限撤销，应核对什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只换按钮文案",
+        "explanation": "不控制服务端。"
+      },
+      {
+        "id": "B",
+        "text": "仍无条件发送",
+        "explanation": "可能越权。"
+      },
+      {
+        "id": "C",
+        "text": "实际发送前的权限和内容版本策略",
+        "explanation": "需要明确生效边界。"
+      },
+      {
+        "id": "D",
+        "text": "旧预览永久有效",
+        "explanation": "权限可变。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C70-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "长流程需再验前提。"
+  },
+  {
+    "id": "C70-Q07",
+    "chapterId": "C70",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟服务Token被放浏览器方便调用，应怎样评审？",
+    "options": [
+      {
+        "id": "A",
+        "text": "移到受控服务端并校验请求者和范围",
+        "explanation": "代理仍需授权。"
+      },
+      {
+        "id": "B",
+        "text": "变量名混淆即可",
+        "explanation": "秘密仍在客户端。"
+      },
+      {
+        "id": "C",
+        "text": "加成功提示即可",
+        "explanation": "无关。"
+      },
+      {
+        "id": "D",
+        "text": "内网无需保护",
+        "explanation": "不成立。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C70-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "凭据和业务入口分别保护。"
+  },
+  {
+    "id": "C70-Q08",
+    "chapterId": "C70",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "证据表应如何填写？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "版本环境、实际结果与报告位置",
+        "explanation": "可复核。"
+      },
+      {
+        "id": "B",
+        "text": "失败跳过及未验证范围",
+        "explanation": "不夸大。"
+      },
+      {
+        "id": "C",
+        "text": "待运行也记通过",
+        "explanation": "不真实。"
+      },
+      {
+        "id": "D",
+        "text": "只有最终截图",
+        "explanation": "不能覆盖所有边界。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B"
+    ],
+    "knowledge": [
+      "C70-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "证据需要事实。"
+  }
+]

@@ -176,8 +176,8 @@
     "method": "作者二次逐章复核，非独立专家认证",
     "reviewedAt": "2026-10-31",
     "record": "docs/05_课程审核记录.md",
-    "note": "明确编号对应完整规划而非已交付全部内容；先修不强制锁章，易混项无绝对化结论",
-    "fingerprint": "39aec3ac46718af83752fb27639ebd839b67b8144cf50ad5be73f083b75ff43e"
+    "note": "核对全课程依赖索引、自由跳读与学习深度；更新全套课程离线内置提示，不把内容齐备写成正式发布验收；没有强制解锁或新图形界面承诺",
+    "fingerprint": "ad4e2b0b5bca668cc7a54b5bab1d4f726d24c4c057670c4d267744dd035691f2"
   },
   "C06": {
     "status": "reviewed",
@@ -403,5 +403,329 @@
     "record": "docs/05_课程审核记录.md",
     "note": "决策理由/备选/证据/代价、债务责任、被替代历史、重构重写与渐进迁移核对；8题复核；ADR-007为模拟；接受缺口非验收通过，不将后知事实写回原决策，不据课程改变App架构",
     "fingerprint": "4ee9440f4ad9bb1a3148e5437401caa8eba2cd54393c7c7d1175c0c3751c3a84"
+  },
+  "C37": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "进程/服务/监听/业务与运行身份、目录、资源排查分别核对；8题逐项复核；命令仅为获准环境示意，未执行生产操作；替换两项不相关干扰选项",
+    "fingerprint": "e5f2e091f53cbc4cb1d86a0112724cc3d2455ba2617699fece90c58595a02d80"
+  },
+  "C38": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "镜像实例、共享内核条件、可写层/卷/备份、地址挂载权限核对；8题成立；桌面容器可能运行于虚拟机，不以容器保证安全；重建恢复是演练设计",
+    "fingerprint": "dde481a95c4aac1daf09292973bbf7371eccb7304a55ed08b2550cc452c7e015"
+  },
+  "C39": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "依赖拓扑、启动/就绪、有限重试、总连接预算与降级语义核对；8题复核；Compose顺序非业务就绪；运行期失败另处理，不把错误当空结果",
+    "fingerprint": "913269e04d5570a123e3fda8ae1d8a450889862b773687c201ab5e5243806e0c"
+  },
+  "C40": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "配置分类、危险默认、秘密来源轮换撤销、实际环境隔离核对；8题复核；环境变量非保险箱；删除代码不能撤销泄露；加强真实通知目标反例",
+    "fingerprint": "e43d3884817a41246188c20e1129be903ac23358bb4b5b8f29edcfeb0d0d9551"
+  },
+  "C41": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "员工访问链、TLS终止、设备信任、代理头与入口拒绝核对；8题复核；VPN不替代对象授权；内部CA受控分发，不以IP或关闭验证绕过问题",
+    "fingerprint": "5040f7ef24318c281b79af98351b8ed00be19f30e8a47a32d4159833bdc3e791"
+  },
+  "C42": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "构建输入、CI范围、产物绑定、迁移回退和副作用核对；8题复核；重建不承诺逐字节一致；未验证不写通过，旧页面不等于恢复",
+    "fingerprint": "eb73ec3112626c9e6f394c464648d672cba4fb6c49be95d12dd63a2d9bda0d8c"
+  },
+  "C43": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "主体动作对象、字段范围、默认拒绝与全入口授权核对；8题成立；撤权时效明确需验证；跨组织练习仅在获准隔离样例",
+    "fingerprint": "0e810a43e32a10c15f4b09bbe4667ccf00af804d0235691455d434ca287f2291"
+  },
+  "C44": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "Cookie/Session/JWT/OAuth/OIDC/SSO/MFA分层及会话生命周期核对；8题逐项成立；常见签名JWT可读，ID Token不替代任意API令牌；替换重复干扰项",
+    "fingerprint": "0b9d56ffd3cda0cb5e7fde3e112e65c077bc9205c70202e8d1f06de2437ca667"
+  },
+  "C45": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "SQL值/结构、输出上下文、CSRF/CORS、文件路径及依赖边界核对；8题复核；ORM/CSP/HttpOnly非万能控制，不提供对真实站点利用步骤",
+    "fingerprint": "949b20faf872194bdb7f4c154de3f87b2c3af37fefdc698a89b54b10a56a95af"
+  },
+  "C46": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "服务身份、TLS、签名/重放/幂等、回调和轮换使用方核对；8题复核；Q01明确为稳定意图ID以区别技术请求；不杜撰厂商字段与签名规则",
+    "fingerprint": "591ed1315713655c641a8b637f417436771f64129d88b904c671d59e5349d1f0"
+  },
+  "C47": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "最小化、脱敏重识别、密码哈希/加密、导出日志和保留核对；8题复核；Q08明确审计与文件治理两个范围；不作法律合规认证或固定密码成本推荐",
+    "fingerprint": "fa2cb73749a4a43e09b5445567e9abe5f6dbfae9809ccba4a2bb810f8f528cb7"
+  },
+  "C48": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "需求/预期映射、边界失败回归、风险选测与报告真实范围核对；8题复核；不复制实现充当预期；低风险改动不强加无价值测试",
+    "fingerprint": "94007b17dda205edf885d274e59d8f3c9cde43a41d141e819a0dc0a8adcac794"
+  },
+  "C49": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "测试范围与位置、替身假设、真实组件和数据隔离核对；8题复核；构建测试包非设备执行；Mock不当真实ERP验证，覆盖率不等于断言质量",
+    "fingerprint": "227ee039d6718e32c086c3232e0fbb185c5ba7d4eae2adb13e4adefcc494d5f7"
+  },
+  "C50": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "并发控制交错、部分结果守恒、负载口径和失败点核对；8题复核；强制结束已提交记录不扩展为写入中断或低内存恢复",
+    "fingerprint": "7dd61809aa24ee60dbed15e0f792873aa5bdf56b1f98e2503e55b0b018f5164d"
+  },
+  "C51": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "灰度单位、共享数据风险、预定阈值、止损与恢复验收核对；8题复核；少量用户非全部隔离，切旧包不撤销重复建单；改进灰度干扰项",
+    "fingerprint": "465af1227c4bcadbeded5e1833f96c3890a84dc0d5b5033d8e677870c1dad3db"
+  },
+  "C52": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "请求/意图关联、结果未知、时间版本、日志注入脱敏和保留核对；8题复核；虚构日志非远程事实证据；提高日志级别不能补出定位信息",
+    "fingerprint": "b385dee0862299147355d68e0da34365643aaa25ba79b034b7a767d72133bdda"
+  },
+  "C53": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "业务症状、指标分母、存活就绪、监控链和告警行动核对；8题复核；外部抖动不盲触发重启；告警送达和业务恢复需独立验证",
+    "fingerprint": "527e624af0122021c206ab8e083e5ca5860fe790de248b2655070802ad73a232"
+  },
+  "C54": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "完整资产、有效恢复点、RPO/RTO全程、隔离与增量核对；8题复核；00:00至05:30为5.5小时教学算例；校验密文不替代密钥恢复",
+    "fingerprint": "2b0efb345df1810eb6d75d32ae0dea8894e484296ec9157130bb0f9aabbe5b14"
+  },
+  "C55": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "影响分级、止损现场、假设事实、受控动作与无责复盘核对；8题复核；恢复/永久修复分开；手册不写秘密，交接演练非源码压缩包",
+    "fingerprint": "e88cd955586c69b9195031ccbf3b36b6d0704eee16ddb36d117391ca83861456"
+  },
+  "C56": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "总成本、增长保留、升级兼容、到期和下线责任核对；8题复核；8GB乘30为240GB原始增量；不虚构报价，不把事务日志当文本删",
+    "fingerprint": "9a799d21699117c99174766e25da3d78d1ab34da18af1202f6ffcf4d51a475d2"
+  },
+  "C57": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "字段权威、源身份/统一映射、冲突/空值/停用与历史核对；8题复核；ERP/CRM责任表为教学约定，不宣称厂商默认；同码异组织不合并",
+    "fingerprint": "96966d230da566b45c0b98afb5e25a33e63e7a9b2a3fb9fd151a9fea629842a0"
+  },
+  "C58": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "范围/时效维度、水位/游标、同时间分页、迟到删除及压力核对；8题复核；组合排序及重叠窗口有契约前提，不保证无限迟到完整性",
+    "fingerprint": "754264c73406cf0a134dcaf7cbcdad54f2b511677dfc6fdc2aa24ee06c5eff5d"
+  },
+  "C59": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "行状态、意图内容、持久发送/领取、未知核对与业务补偿核对；8题复核；占用过期不证明未发送，本地事务不保证跨系统恰好一次",
+    "fingerprint": "681af94668bcfe735ddb12d56f53d6e5f3bdf9d1c1f9df8bceffdab6a9c59be8"
+  },
+  "C60": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "技术/业务对账、口径归一、差异分类、条件回填与重跑审计核对；8题复核；总量或哈希不替代业务判断；保护人工新值，外部动作需补偿",
+    "fingerprint": "29fb9a528c28ae5625eb41c77f8f34ecc4a45083ca809756e3e7238038daec0c"
+  },
+  "C61": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "结构/行为/语义兼容、未知枚举、消费者及共存退出核对；8题复核；新增字段不绝对兼容；分页缩小需查终止水位及源压力",
+    "fingerprint": "55727d4b0dd6c0cca9f2d54315df63a668b1296eddef1d2623904ab46e466772"
+  },
+  "C62": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "用户范围非目标、事实假设、失败验收和交付证据核对；8题复核；已授权可逆工作持续推进；新增范围作可审阅决定，不猜厂商能力",
+    "fingerprint": "514a4f413d454b9819ea7b26963ee8c8575875d734b303c77654e8a2a2a074b5"
+  },
+  "C63": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "计划门槛、事实源职责、指导文件和批次接续核对；8题复核；Codex具体持久指导参考官方资料；AGENTS不是物理屏障，课程齐备非设备验收",
+    "fingerprint": "f4ebaf32ed001d789c688c3e70e27f9e83d60b40998cd395f27fb9977367e6c6"
+  },
+  "C64": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "关键假设、资产边界、现实备选、反证与外部核验核对；8题复核；后台代理仍需权限与维护；重复AI保证不作为反证或实测",
+    "fingerprint": "f206a22bc1ee0d2512c8dd5c2d825f35567319ba5bd416c96ff642084899e89c"
+  },
+  "C65": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "最终diff、权限/数据、依赖供应链和实际测试证据核对；8题复核；NIST SSDF用作实践来源，不声称项目认证；不以关闭规则制造绿色",
+    "fingerprint": "266af25c510c38036bfecbe64be8207e792aba0fcb49c12f14dbc510f13ed8b8"
+  },
+  "C66": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "工具运行能力、用户授权、Git保护范围、外来指令与交接核对；8题复核；Codex执行边界依环境配置，不承诺统一默认按钮；允许执行非用户意图",
+    "fingerprint": "b514938d3f0c0b95d4887c467a32dd4e9b753414576b002eb73bf2a32fd39f89"
+  },
+  "C67": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "O1/O2、甲乙/复核/维护者、资产与失败边界核对；8题复核；六章同一虚构ERP案例；不把教学服务架构当知构离线App选型",
+    "fingerprint": "83913542adb1041d805c1008fde4363e79601ecc9f84ca5de7f9d5b027e78ae9"
+  },
+  "C68": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "B01、原文件2～4行、R1～R3、I01～I03五类身份与事务核对；8题复核；R2修正保留原拒绝；已发送I01不静默改内容，字段均为模拟",
+    "fingerprint": "11bc9deccdd2708c2ee6fe5f8235f273a122817c8b130b6b04547d4ab24d1e61"
+  },
+  "C69": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "I01未知至E01确认、I02拒绝、I03/E03与重复恢复核对；8题复核；时间线是期望演练，非厂商实测；目标无能力时明确人工限制",
+    "fingerprint": "d6a725d3abc1060923eb16c0425642cf13611eb9a53629d5c527b6717f04c72e"
+  },
+  "C70": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "乙下载B01旁路、角色矩阵、发送前撤权、审计与替身范围核对；8题复核；无权请求断言无泄露无副作用，技术维护无默认全数据权",
+    "fingerprint": "4ad979b90a140724cf72b9a639d25369143eb36c21f6ca95a6c93ac92bdb5a85"
+  },
+  "C71": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "发布/运行/恢复三卡、配置搬迁、任务监控与B01恢复核对；8题复核；先隔离外部写再核对E01/E03；没有捏造校验值和恢复实测",
+    "fingerprint": "352634f0788c535b5c9f5018f2fe366f2885f139755ad1eaffdc955052e8db1a"
+  },
+  "C72": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "原型/交付证据矩阵、遗留责任、接手演练与能力标准核对；8题复核；同题库自查非资格认证；保留未测与限制，正文完成不冒充正式MVP",
+    "fingerprint": "58f1f952818dfb385a7436026c048ed95f4fb6a4c3a591490fd5cd836a438d74"
   }
 }

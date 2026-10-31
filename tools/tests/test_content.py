@@ -32,8 +32,14 @@ class ContentTests(unittest.TestCase):
         self.assertEqual({q['chapterId'] for q in c['questions']}, published)
         self.assertIn('C00-Q01', {q['id'] for q in c['questions']})
     def test_release_gate_rejects_partial_course(self):
+        self.change('catalog.json', lambda data: next(c for c in data['chapters'] if c['id'] == 'C72').update(published=False))
         with self.assertRaisesRegex(ValueError, '未交付'):
             content.load_and_validate(self.directory, release=True)
+    def test_full_course_passes_content_release_gate(self):
+        c = content.load_and_validate(self.directory, release=True)
+        self.assertTrue(all(ch['published'] for ch in c['chapters']))
+        self.assertEqual(sum(ch['id'].startswith('C') for ch in c['chapters']), 73)
+        self.assertGreaterEqual(len(c['questions']), 584)
     def test_cycle_rejected(self):
         self.change('catalog.json', lambda data: data['chapters'][0].update(prerequisites=['C02']))
         with self.assertRaisesRegex(ValueError, '有环'):

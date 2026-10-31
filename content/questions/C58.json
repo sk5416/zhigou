@@ -1,0 +1,313 @@
+[
+  {
+    "id": "C58-Q01",
+    "chapterId": "C58",
+    "revision": 1,
+    "type": "single",
+    "stem": "全量增量与实时批量是什么关系？",
+    "options": [
+      {
+        "id": "A",
+        "text": "四者互斥只能选一",
+        "explanation": "维度不同。"
+      },
+      {
+        "id": "B",
+        "text": "批量一定不能增量",
+        "explanation": "可以。"
+      },
+      {
+        "id": "C",
+        "text": "前者数据范围，后者处理时效",
+        "explanation": "可组合。"
+      },
+      {
+        "id": "D",
+        "text": "实时天然不会重复",
+        "explanation": "仍可能重放乱序。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C58-K01"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "分清范围与时效。"
+  },
+  {
+    "id": "C58-Q02",
+    "chapterId": "C58",
+    "revision": 1,
+    "type": "single",
+    "stem": "持久水位主要表示什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "全部业务已永久一致",
+        "explanation": "仍需对账。"
+      },
+      {
+        "id": "B",
+        "text": "最后打开页面时间",
+        "explanation": "无关。"
+      },
+      {
+        "id": "C",
+        "text": "本机当前时间",
+        "explanation": "可能漏数。"
+      },
+      {
+        "id": "D",
+        "text": "安全确认的处理进度",
+        "explanation": "不只是最后请求时间。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C58-K02",
+      "C58-K04"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "进度须有确认条件。"
+  },
+  {
+    "id": "C58-Q03",
+    "chapterId": "C58",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "分页契约应核对什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "稳定顺序、边界和时区精度",
+        "explanation": "影响遗漏与重复。"
+      },
+      {
+        "id": "B",
+        "text": "并发变化及游标有效期",
+        "explanation": "恢复需有规则。"
+      },
+      {
+        "id": "C",
+        "text": "默认时间戳唯一",
+        "explanation": "同时间可能多条。"
+      },
+      {
+        "id": "D",
+        "text": "自行解码所有游标",
+        "explanation": "可能是不透明令牌。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B"
+    ],
+    "knowledge": [
+      "C58-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "分页不是只循环页码。"
+  },
+  {
+    "id": "C58-Q04",
+    "chapterId": "C58",
+    "revision": 1,
+    "type": "single",
+    "stem": "重叠时间窗口能否保证所有迟到数据都不漏？",
+    "options": [
+      {
+        "id": "A",
+        "text": "能，可以取消防重",
+        "explanation": "重叠会重复。"
+      },
+      {
+        "id": "B",
+        "text": "不能，所以窗口毫无价值",
+        "explanation": "有界迟到仍可获益。"
+      },
+      {
+        "id": "C",
+        "text": "不能，需定义迟到边界并有核对补偿",
+        "explanation": "方法有条件。"
+      },
+      {
+        "id": "D",
+        "text": "能，窗口任意小都行",
+        "explanation": "迟到可能超出。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C58-K05",
+      "C58-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "补偿有范围。"
+  },
+  {
+    "id": "C58-Q05",
+    "chapterId": "C58",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "增量方案应覆盖什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "删除、停用、回填和不可见变化",
+        "explanation": "不只新增。"
+      },
+      {
+        "id": "B",
+        "text": "推送天然完整有序",
+        "explanation": "无此保证。"
+      },
+      {
+        "id": "C",
+        "text": "周期对账与失效恢复",
+        "explanation": "补增量盲区。"
+      },
+      {
+        "id": "D",
+        "text": "查不到就自动物理删除目标",
+        "explanation": "可能权限或延迟。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C58-K06",
+      "C58-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "完整性需多条证据。"
+  },
+  {
+    "id": "C58-Q06",
+    "chapterId": "C58",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟同一时间有六条、每页两条，第一页面后只取大于该时间，会怎样？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只会重复不会漏",
+        "explanation": "恰会遗漏。"
+      },
+      {
+        "id": "B",
+        "text": "保证全收",
+        "explanation": "剩余同时间可能漏。"
+      },
+      {
+        "id": "C",
+        "text": "可能漏掉后续同时间行",
+        "explanation": "应按契约稳定分页与确认。"
+      },
+      {
+        "id": "D",
+        "text": "时间精度无关",
+        "explanation": "影响边界。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C58-K02",
+      "C58-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "同时间边界要验证。"
+  },
+  {
+    "id": "C58-Q07",
+    "chapterId": "C58",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟先推进水位后目标写入崩溃，应怎样判断？",
+    "options": [
+      {
+        "id": "A",
+        "text": "每次用now更快",
+        "explanation": "加大遗漏。"
+      },
+      {
+        "id": "B",
+        "text": "已读即已处理",
+        "explanation": "写入可能没落地。"
+      },
+      {
+        "id": "C",
+        "text": "改成功日志即可",
+        "explanation": "未修复。"
+      },
+      {
+        "id": "D",
+        "text": "存在漏数窗口，需持久确认与防重设计",
+        "explanation": "协调进度和结果。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C58-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "读与写的确认不同。"
+  },
+  {
+    "id": "C58-Q08",
+    "chapterId": "C58",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "源系统压力控制有哪些？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "分页限流、有界重试与窗口",
+        "explanation": "控制读取负载。"
+      },
+      {
+        "id": "B",
+        "text": "每分钟无约束全库扫",
+        "explanation": "可能拖垮源。"
+      },
+      {
+        "id": "C",
+        "text": "按需求选择全量核对频率",
+        "explanation": "完整性与成本需比较。"
+      },
+      {
+        "id": "D",
+        "text": "失败立即无限并发",
+        "explanation": "会放大。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C58-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "同步也有容量责任。"
+  }
+]

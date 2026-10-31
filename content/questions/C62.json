@@ -1,0 +1,314 @@
+[
+  {
+    "id": "C62-Q01",
+    "chapterId": "C62",
+    "revision": 1,
+    "type": "single",
+    "stem": "完整软件需求除功能还应包含什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "用户、约束、数据、依赖、失败和验收",
+        "explanation": "支撑可判定交付。"
+      },
+      {
+        "id": "B",
+        "text": "只说越先进越好",
+        "explanation": "无法比较。"
+      },
+      {
+        "id": "C",
+        "text": "只写技术名称",
+        "explanation": "不明确边界。"
+      },
+      {
+        "id": "D",
+        "text": "只给成功截图",
+        "explanation": "缺异常语义。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C62-K01",
+      "C62-K04",
+      "C62-K05"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "功能清单不是完整契约。"
+  },
+  {
+    "id": "C62-Q02",
+    "chapterId": "C62",
+    "revision": 1,
+    "type": "single",
+    "stem": "非目标有什么作用？",
+    "options": [
+      {
+        "id": "A",
+        "text": "永久禁止所有扩展",
+        "explanation": "可经决策变化。"
+      },
+      {
+        "id": "B",
+        "text": "让AI不用理解需求",
+        "explanation": "仍要理解。"
+      },
+      {
+        "id": "C",
+        "text": "明确本批不做什么以控制范围",
+        "explanation": "减少默认扩建。"
+      },
+      {
+        "id": "D",
+        "text": "替代验收",
+        "explanation": "两者不同。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C62-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "范围需要正反边界。"
+  },
+  {
+    "id": "C62-Q03",
+    "chapterId": "C62",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "未知供应商能力应怎样写？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "杜撰调用成功日志",
+        "explanation": "不可接受。"
+      },
+      {
+        "id": "B",
+        "text": "示例明确模拟且不冒充真实契约",
+        "explanation": "保持可信。"
+      },
+      {
+        "id": "C",
+        "text": "列为待核验并安排证据",
+        "explanation": "不自动补成事实。"
+      },
+      {
+        "id": "D",
+        "text": "按AI经验当已支持",
+        "explanation": "不可靠。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C62-K03",
+      "C62-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "事实与假设分开。"
+  },
+  {
+    "id": "C62-Q04",
+    "chapterId": "C62",
+    "revision": 1,
+    "type": "single",
+    "stem": "“保证稳定”怎样变为可验收要求？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只要求正常演示连续成功三次",
+        "explanation": "少量正常演示不定义负载、失败、恢复目标和可重复验收边界。"
+      },
+      {
+        "id": "B",
+        "text": "重复说三次稳定",
+        "explanation": "没有可测条件。"
+      },
+      {
+        "id": "C",
+        "text": "要求AI更加自信",
+        "explanation": "语气不是证据。"
+      },
+      {
+        "id": "D",
+        "text": "列失败场景、不变量与观察证据",
+        "explanation": "可判断对错。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C62-K05",
+      "C62-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "用具体条件代替形容词。"
+  },
+  {
+    "id": "C62-Q05",
+    "chapterId": "C62",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "任务授权说明应怎样处理？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "所有操作一律无需边界",
+        "explanation": "可能越界。"
+      },
+      {
+        "id": "B",
+        "text": "明确对象环境和允许动作",
+        "explanation": "便于推进与判断。"
+      },
+      {
+        "id": "C",
+        "text": "已授权可逆实现持续推进，新增重大影响另核对",
+        "explanation": "不机械重复询问。"
+      },
+      {
+        "id": "D",
+        "text": "所有小改每一步都必须停",
+        "explanation": "不符合实际协作。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C62-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "授权应具体。"
+  },
+  {
+    "id": "C62-Q06",
+    "chapterId": "C62",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟只需离线工具，AI加入云账号，怎样评审？",
+    "options": [
+      {
+        "id": "A",
+        "text": "默认所有新功能都获准",
+        "explanation": "范围未确认。"
+      },
+      {
+        "id": "B",
+        "text": "核对必要性、代价与非目标并形成决定",
+        "explanation": "不凭演示扩大范围。"
+      },
+      {
+        "id": "C",
+        "text": "能登录就接受",
+        "explanation": "可能违反离线。"
+      },
+      {
+        "id": "D",
+        "text": "先上传真实数据试试",
+        "explanation": "越过数据边界。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C62-K02",
+      "C62-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "新增能力要有理由。"
+  },
+  {
+    "id": "C62-Q07",
+    "chapterId": "C62",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟重复导入需求，哪种描述更可判定？",
+    "options": [
+      {
+        "id": "A",
+        "text": "同意图只一条，内容变化按契约处理并核对数据",
+        "explanation": "有明确不变量。"
+      },
+      {
+        "id": "B",
+        "text": "文件名不同就算新业务",
+        "explanation": "可能重复。"
+      },
+      {
+        "id": "C",
+        "text": "界面响应快",
+        "explanation": "不是防重条件。"
+      },
+      {
+        "id": "D",
+        "text": "不许出错",
+        "explanation": "太模糊。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C62-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "业务意图要明确。"
+  },
+  {
+    "id": "C62-Q08",
+    "chapterId": "C62",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "交付说明应包括什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "只留口头承诺",
+        "explanation": "不可复核。"
+      },
+      {
+        "id": "B",
+        "text": "产物、安装升级恢复及证据",
+        "explanation": "支持真实使用。"
+      },
+      {
+        "id": "C",
+        "text": "限制、未验证和接手资料",
+        "explanation": "不扩大结论。"
+      },
+      {
+        "id": "D",
+        "text": "代码生成即全部完成",
+        "explanation": "忽略验证。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C62-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "交付有可接续成果。"
+  }
+]

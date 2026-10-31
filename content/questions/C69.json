@@ -1,0 +1,313 @@
+[
+  {
+    "id": "C69-Q01",
+    "chapterId": "C69",
+    "revision": 1,
+    "type": "single",
+    "stem": "I01等待超时能得出什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "当前结果未知",
+        "explanation": "需按契约核对。"
+      },
+      {
+        "id": "B",
+        "text": "ERP一定未建",
+        "explanation": "可能已执行。"
+      },
+      {
+        "id": "C",
+        "text": "可删除全部历史",
+        "explanation": "不应。"
+      },
+      {
+        "id": "D",
+        "text": "一定已成功",
+        "explanation": "也未确认。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C69-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "超时保留不确定。"
+  },
+  {
+    "id": "C69-Q02",
+    "chapterId": "C69",
+    "revision": 1,
+    "type": "single",
+    "stem": "I03已确认E03，再收到同意图请求应怎样处理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "按契约返回已确认结果并避免再创建",
+        "explanation": "稳定意图保护副作用。"
+      },
+      {
+        "id": "B",
+        "text": "删除外部对象再建",
+        "explanation": "危险且无必要。"
+      },
+      {
+        "id": "C",
+        "text": "把旧结果改未知",
+        "explanation": "无依据。"
+      },
+      {
+        "id": "D",
+        "text": "每次生成新意图",
+        "explanation": "会绕开防重。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C69-K01",
+      "C69-K04"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "重复不等于新业务。"
+  },
+  {
+    "id": "C69-Q03",
+    "chapterId": "C69",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "判断目标防重能力要核对什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "接口名称像幂等即可",
+        "explanation": "不能证明。"
+      },
+      {
+        "id": "B",
+        "text": "查不到永远证明未执行",
+        "explanation": "不一定。"
+      },
+      {
+        "id": "C",
+        "text": "查询一致性与结果确认能力",
+        "explanation": "未知恢复依赖它。"
+      },
+      {
+        "id": "D",
+        "text": "键、内容及保存期限",
+        "explanation": "影响重试语义。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C69-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "目标能力有条件。"
+  },
+  {
+    "id": "C69-Q04",
+    "chapterId": "C69",
+    "revision": 1,
+    "type": "single",
+    "stem": "目标只能创建且不能可靠查询，本地能否保证跨系统恰好一次？",
+    "options": [
+      {
+        "id": "A",
+        "text": "能，重试足够多",
+        "explanation": "放大风险。"
+      },
+      {
+        "id": "B",
+        "text": "能，加内存锁即可",
+        "explanation": "不能覆盖远程未知。"
+      },
+      {
+        "id": "C",
+        "text": "能，使用随机ID即可",
+        "explanation": "可能重复。"
+      },
+      {
+        "id": "D",
+        "text": "不能无条件保证，应限制重发并说明人工核对",
+        "explanation": "承认边界。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C69-K03",
+      "C69-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "本地不能创造外部能力。"
+  },
+  {
+    "id": "C69-Q05",
+    "chapterId": "C69",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "B01终态两确认一拒绝，应怎样对账？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "核对I01/E01与I03/E03及组织字段",
+        "explanation": "不只数量。"
+      },
+      {
+        "id": "B",
+        "text": "保留I02拒绝依据与修正版本",
+        "explanation": "解释全部三行。"
+      },
+      {
+        "id": "C",
+        "text": "源目标各两条即充分",
+        "explanation": "可能错配。"
+      },
+      {
+        "id": "D",
+        "text": "忽略拒绝行",
+        "explanation": "汇总会失真。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B"
+    ],
+    "knowledge": [
+      "C69-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "计数和语义都需核对。"
+  },
+  {
+    "id": "C69-Q06",
+    "chapterId": "C69",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟I01未确认时用户改名称再复用原键，应怎样处理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "盲目建第二份",
+        "explanation": "会重复。"
+      },
+      {
+        "id": "B",
+        "text": "自动返回旧成功不说明",
+        "explanation": "可能忽略修改。"
+      },
+      {
+        "id": "C",
+        "text": "先解决原意图，再按新意图或更正契约",
+        "explanation": "明确变更含义。"
+      },
+      {
+        "id": "D",
+        "text": "静默覆盖请求内容",
+        "explanation": "破坏语义。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C69-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "重试不能偷偷变业务。"
+  },
+  {
+    "id": "C69-Q07",
+    "chapterId": "C69",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟查询暂未见E01，应怎样继续？",
+    "options": [
+      {
+        "id": "A",
+        "text": "直接断言不存在重建",
+        "explanation": "可能迟到。"
+      },
+      {
+        "id": "B",
+        "text": "写成功避免等待",
+        "explanation": "伪造。"
+      },
+      {
+        "id": "C",
+        "text": "按查询契约继续核对或人工处理",
+        "explanation": "不扩大证据。"
+      },
+      {
+        "id": "D",
+        "text": "清除意图重发",
+        "explanation": "丢追溯。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C69-K02",
+      "C69-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "未见不等于未执行。"
+  },
+  {
+    "id": "C69-Q08",
+    "chapterId": "C69",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "本案例可靠性验收应包括什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "确认迟到、幂等过期和同键改内容",
+        "explanation": "验证边界。"
+      },
+      {
+        "id": "B",
+        "text": "只测普通成功",
+        "explanation": "不足。"
+      },
+      {
+        "id": "C",
+        "text": "人工补偿重跑与外部既有业务键",
+        "explanation": "修复也有风险。"
+      },
+      {
+        "id": "D",
+        "text": "无限重试当恢复",
+        "explanation": "无预算。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C69-K06",
+      "C69-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "端到端失败需推演。"
+  }
+]

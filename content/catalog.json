@@ -1,5 +1,5 @@
 {
-  "version": "2026.10-architecture.1",
+  "version": "2026.10-complete.1",
   "chapters": [
     {
       "id": "C00",
@@ -966,8 +966,15 @@
       "part": "第8篇｜服务器、部署与发布",
       "depth": "L2",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C03",
+        "C10"
+      ],
+      "related": [
+        "C39",
+        "C41",
+        "C55"
+      ],
       "knowledge": [
         "C37-K01",
         "C37-K02",
@@ -978,7 +985,7 @@
         "C37-K07",
         "C37-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C38",
@@ -986,8 +993,15 @@
       "part": "第8篇｜服务器、部署与发布",
       "depth": "L2",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C03",
+        "C37"
+      ],
+      "related": [
+        "C26",
+        "C34",
+        "C39"
+      ],
       "knowledge": [
         "C38-K01",
         "C38-K02",
@@ -998,7 +1012,7 @@
         "C38-K07",
         "C38-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C39",
@@ -1006,8 +1020,15 @@
       "part": "第8篇｜服务器、部署与发布",
       "depth": "L2",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C14",
+        "C38"
+      ],
+      "related": [
+        "C35",
+        "C53",
+        "C59"
+      ],
       "knowledge": [
         "C39-K01",
         "C39-K02",
@@ -1018,7 +1039,7 @@
         "C39-K07",
         "C39-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C40",
@@ -1026,8 +1047,15 @@
       "part": "第8篇｜服务器、部署与发布",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C04",
+        "C17"
+      ],
+      "related": [
+        "C04",
+        "C17",
+        "C46"
+      ],
       "knowledge": [
         "C40-K01",
         "C40-K02",
@@ -1038,7 +1066,7 @@
         "C40-K07",
         "C40-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C41",
@@ -1046,8 +1074,16 @@
       "part": "第8篇｜服务器、部署与发布",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C10",
+        "C12",
+        "C37"
+      ],
+      "related": [
+        "C12",
+        "C43",
+        "C71"
+      ],
       "knowledge": [
         "C41-K01",
         "C41-K02",
@@ -1058,7 +1094,7 @@
         "C41-K07",
         "C41-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C42",
@@ -1066,8 +1102,16 @@
       "part": "第8篇｜服务器、部署与发布",
       "depth": "L2",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C18",
+        "C26",
+        "C40"
+      ],
+      "related": [
+        "C19",
+        "C51",
+        "C61"
+      ],
       "knowledge": [
         "C42-K01",
         "C42-K02",
@@ -1078,7 +1122,7 @@
         "C42-K07",
         "C42-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C43",
@@ -1088,9 +1132,14 @@
       "priority": "P0",
       "prerequisites": [
         "C11",
-        "C12"
+        "C30"
       ],
-      "related": [],
+      "related": [
+        "C30",
+        "C34",
+        "C44",
+        "C70"
+      ],
       "knowledge": [
         "C43-K01",
         "C43-K02",
@@ -1101,7 +1150,7 @@
         "C43-K07",
         "C43-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C44",
@@ -1109,8 +1158,15 @@
       "part": "第9篇｜身份认证、权限与安全",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C12",
+        "C43"
+      ],
+      "related": [
+        "C12",
+        "C45",
+        "C46"
+      ],
       "knowledge": [
         "C44-K01",
         "C44-K02",
@@ -1121,7 +1177,7 @@
         "C44-K07",
         "C44-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C45",
@@ -1129,8 +1185,16 @@
       "part": "第9篇｜身份认证、权限与安全",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C27",
+        "C43",
+        "C44"
+      ],
+      "related": [
+        "C27",
+        "C29",
+        "C50"
+      ],
       "knowledge": [
         "C45-K01",
         "C45-K02",
@@ -1141,7 +1205,7 @@
         "C45-K07",
         "C45-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C46",
@@ -1149,8 +1213,16 @@
       "part": "第9篇｜身份认证、权限与安全",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C13",
+        "C40",
+        "C43"
+      ],
+      "related": [
+        "C14",
+        "C44",
+        "C59"
+      ],
       "knowledge": [
         "C46-K01",
         "C46-K02",
@@ -1161,7 +1233,7 @@
         "C46-K07",
         "C46-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C47",
@@ -1169,8 +1241,16 @@
       "part": "第9篇｜身份认证、权限与安全",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C12",
+        "C25",
+        "C43"
+      ],
+      "related": [
+        "C25",
+        "C43",
+        "C54"
+      ],
       "knowledge": [
         "C47-K01",
         "C47-K02",
@@ -1181,7 +1261,7 @@
         "C47-K07",
         "C47-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C48",
@@ -1189,8 +1269,16 @@
       "part": "第10篇｜测试、质量与交付验收",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C00",
+        "C13",
+        "C43"
+      ],
+      "related": [
+        "C20",
+        "C49",
+        "C70"
+      ],
       "knowledge": [
         "C48-K01",
         "C48-K02",
@@ -1201,7 +1289,7 @@
         "C48-K07",
         "C48-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C49",
@@ -1209,8 +1297,14 @@
       "part": "第10篇｜测试、质量与交付验收",
       "depth": "L2",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C48"
+      ],
+      "related": [
+        "C24",
+        "C50",
+        "C65"
+      ],
       "knowledge": [
         "C49-K01",
         "C49-K02",
@@ -1221,7 +1315,7 @@
         "C49-K07",
         "C49-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C50",
@@ -1229,8 +1323,17 @@
       "part": "第10篇｜测试、质量与交付验收",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C24",
+        "C35",
+        "C43",
+        "C49"
+      ],
+      "related": [
+        "C35",
+        "C43",
+        "C59"
+      ],
       "knowledge": [
         "C50-K01",
         "C50-K02",
@@ -1241,7 +1344,7 @@
         "C50-K07",
         "C50-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C51",
@@ -1249,8 +1352,16 @@
       "part": "第10篇｜测试、质量与交付验收",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C26",
+        "C42",
+        "C50"
+      ],
+      "related": [
+        "C42",
+        "C54",
+        "C55"
+      ],
       "knowledge": [
         "C51-K01",
         "C51-K02",
@@ -1261,7 +1372,7 @@
         "C51-K07",
         "C51-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C52",
@@ -1269,8 +1380,15 @@
       "part": "第11篇｜日志、监控、备份与运维",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C08",
+        "C25"
+      ],
+      "related": [
+        "C08",
+        "C25",
+        "C59"
+      ],
       "knowledge": [
         "C52-K01",
         "C52-K02",
@@ -1281,7 +1399,7 @@
         "C52-K07",
         "C52-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C53",
@@ -1289,8 +1407,16 @@
       "part": "第11篇｜日志、监控、备份与运维",
       "depth": "L2",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C35",
+        "C39",
+        "C52"
+      ],
+      "related": [
+        "C35",
+        "C39",
+        "C55"
+      ],
       "knowledge": [
         "C53-K01",
         "C53-K02",
@@ -1301,7 +1427,7 @@
         "C53-K07",
         "C53-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C54",
@@ -1309,8 +1435,15 @@
       "part": "第11篇｜日志、监控、备份与运维",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C26",
+        "C34"
+      ],
+      "related": [
+        "C26",
+        "C34",
+        "C71"
+      ],
       "knowledge": [
         "C54-K01",
         "C54-K02",
@@ -1321,7 +1454,7 @@
         "C54-K07",
         "C54-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C55",
@@ -1329,8 +1462,16 @@
       "part": "第11篇｜日志、监控、备份与运维",
       "depth": "L2",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C52",
+        "C53",
+        "C54"
+      ],
+      "related": [
+        "C37",
+        "C59",
+        "C72"
+      ],
       "knowledge": [
         "C55-K01",
         "C55-K02",
@@ -1341,7 +1482,7 @@
         "C55-K07",
         "C55-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C56",
@@ -1349,8 +1490,16 @@
       "part": "第11篇｜日志、监控、备份与运维",
       "depth": "L1",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C35",
+        "C40",
+        "C54"
+      ],
+      "related": [
+        "C35",
+        "C40",
+        "C72"
+      ],
       "knowledge": [
         "C56-K01",
         "C56-K02",
@@ -1361,7 +1510,7 @@
         "C56-K07",
         "C56-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C57",
@@ -1369,8 +1518,15 @@
       "part": "第12篇｜企业系统集成与数据一致性",
       "depth": "L3",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C21",
+        "C22"
+      ],
+      "related": [
+        "C25",
+        "C60",
+        "C68"
+      ],
       "knowledge": [
         "C57-K01",
         "C57-K02",
@@ -1381,7 +1537,7 @@
         "C57-K07",
         "C57-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C58",
@@ -1389,8 +1545,15 @@
       "part": "第12篇｜企业系统集成与数据一致性",
       "depth": "L3",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C15",
+        "C57"
+      ],
+      "related": [
+        "C15",
+        "C24",
+        "C60"
+      ],
       "knowledge": [
         "C58-K01",
         "C58-K02",
@@ -1401,7 +1564,7 @@
         "C58-K07",
         "C58-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C59",
@@ -1409,8 +1572,16 @@
       "part": "第12篇｜企业系统集成与数据一致性",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C14",
+        "C24",
+        "C57"
+      ],
+      "related": [
+        "C33",
+        "C60",
+        "C69"
+      ],
       "knowledge": [
         "C59-K01",
         "C59-K02",
@@ -1421,7 +1592,7 @@
         "C59-K07",
         "C59-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C60",
@@ -1429,8 +1600,16 @@
       "part": "第12篇｜企业系统集成与数据一致性",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C25",
+        "C58",
+        "C59"
+      ],
+      "related": [
+        "C25",
+        "C57",
+        "C69"
+      ],
       "knowledge": [
         "C60-K01",
         "C60-K02",
@@ -1441,7 +1620,7 @@
         "C60-K07",
         "C60-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C61",
@@ -1449,8 +1628,16 @@
       "part": "第12篇｜企业系统集成与数据一致性",
       "depth": "L2",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C13",
+        "C42",
+        "C58"
+      ],
+      "related": [
+        "C13",
+        "C59",
+        "C65"
+      ],
       "knowledge": [
         "C61-K01",
         "C61-K02",
@@ -1461,7 +1648,7 @@
         "C61-K07",
         "C61-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C62",
@@ -1469,8 +1656,17 @@
       "part": "第13篇｜AI 辅助开发的工程化方法",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C00",
+        "C31",
+        "C43",
+        "C48"
+      ],
+      "related": [
+        "C00",
+        "C43",
+        "C63"
+      ],
       "knowledge": [
         "C62-K01",
         "C62-K02",
@@ -1481,7 +1677,7 @@
         "C62-K07",
         "C62-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C63",
@@ -1489,8 +1685,15 @@
       "part": "第13篇｜AI 辅助开发的工程化方法",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C20",
+        "C36"
+      ],
+      "related": [
+        "C20",
+        "C36",
+        "C66"
+      ],
       "knowledge": [
         "C63-K01",
         "C63-K02",
@@ -1501,7 +1704,7 @@
         "C63-K07",
         "C63-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C64",
@@ -1509,8 +1712,16 @@
       "part": "第13篇｜AI 辅助开发的工程化方法",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C32",
+        "C43",
+        "C62"
+      ],
+      "related": [
+        "C32",
+        "C43",
+        "C65"
+      ],
       "knowledge": [
         "C64-K01",
         "C64-K02",
@@ -1521,7 +1732,7 @@
         "C64-K07",
         "C64-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C65",
@@ -1529,8 +1740,17 @@
       "part": "第13篇｜AI 辅助开发的工程化方法",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C17",
+        "C45",
+        "C49",
+        "C64"
+      ],
+      "related": [
+        "C17",
+        "C45",
+        "C66"
+      ],
       "knowledge": [
         "C65-K01",
         "C65-K02",
@@ -1541,7 +1761,7 @@
         "C65-K07",
         "C65-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C66",
@@ -1549,8 +1769,18 @@
       "part": "第13篇｜AI 辅助开发的工程化方法",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C18",
+        "C20",
+        "C40",
+        "C63",
+        "C65"
+      ],
+      "related": [
+        "C18",
+        "C40",
+        "C67"
+      ],
       "knowledge": [
         "C66-K01",
         "C66-K02",
@@ -1561,7 +1791,7 @@
         "C66-K07",
         "C66-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C67",
@@ -1569,8 +1799,16 @@
       "part": "第14篇｜贯穿式综合案例：企业物料同步系统",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C59",
+        "C62",
+        "C66"
+      ],
+      "related": [
+        "C31",
+        "C43",
+        "C68"
+      ],
       "knowledge": [
         "C67-K01",
         "C67-K02",
@@ -1581,7 +1819,7 @@
         "C67-K07",
         "C67-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C68",
@@ -1589,8 +1827,16 @@
       "part": "第14篇｜贯穿式综合案例：企业物料同步系统",
       "depth": "L3",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C21",
+        "C29",
+        "C67"
+      ],
+      "related": [
+        "C21",
+        "C29",
+        "C69"
+      ],
       "knowledge": [
         "C68-K01",
         "C68-K02",
@@ -1601,7 +1847,7 @@
         "C68-K07",
         "C68-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C69",
@@ -1609,8 +1855,16 @@
       "part": "第14篇｜贯穿式综合案例：企业物料同步系统",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C59",
+        "C60",
+        "C68"
+      ],
+      "related": [
+        "C14",
+        "C60",
+        "C70"
+      ],
       "knowledge": [
         "C69-K01",
         "C69-K02",
@@ -1621,7 +1875,7 @@
         "C69-K07",
         "C69-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C70",
@@ -1629,8 +1883,17 @@
       "part": "第14篇｜贯穿式综合案例：企业物料同步系统",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C43",
+        "C46",
+        "C50",
+        "C69"
+      ],
+      "related": [
+        "C25",
+        "C43",
+        "C71"
+      ],
       "knowledge": [
         "C70-K01",
         "C70-K02",
@@ -1641,7 +1904,7 @@
         "C70-K07",
         "C70-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C71",
@@ -1649,8 +1912,17 @@
       "part": "第14篇｜贯穿式综合案例：企业物料同步系统",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C41",
+        "C51",
+        "C54",
+        "C70"
+      ],
+      "related": [
+        "C51",
+        "C53",
+        "C72"
+      ],
       "knowledge": [
         "C71-K01",
         "C71-K02",
@@ -1661,7 +1933,7 @@
         "C71-K07",
         "C71-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C72",
@@ -1669,8 +1941,17 @@
       "part": "第14篇｜贯穿式综合案例：企业物料同步系统",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C36",
+        "C55",
+        "C65",
+        "C71"
+      ],
+      "related": [
+        "C36",
+        "C55",
+        "C62"
+      ],
       "knowledge": [
         "C72-K01",
         "C72-K02",
@@ -1681,7 +1962,7 @@
         "C72-K07",
         "C72-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "AA",

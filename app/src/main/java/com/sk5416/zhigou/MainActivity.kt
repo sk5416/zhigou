@@ -72,7 +72,7 @@ private fun mode(mode: String) = when (mode) { "test" -> "自测"; "review" -> "
                 }
             }
         }
-        if (catalog != null && !state.preferences.welcomed) AlertDialog(onDismissRequest = {}, title = { Text("欢迎使用知构") }, text = { Text("先读结论与案例，再做练习解释判断依据。熟悉的章节可以先自测。\n\n已读、成绩和错题分别记录；本应用仅供自查。所有教材离线使用。\n\n当前为开发样板版，完整课程尚未交付。") }, confirmButton = { TextButton(onClick = { vm.preferences(state.preferences.copy(welcomed = true)) }) { Text("开始学习") } })
+        if (catalog != null && !state.preferences.welcomed) AlertDialog(onDismissRequest = {}, title = { Text("欢迎使用知构") }, text = { Text("先读结论与案例，再做练习解释判断依据。熟悉的章节可以先自测。\n\n已读、成绩和错题分别记录；本应用仅供自查。所有教材离线使用。\n\n当前为开发验证版，全套课程已内置；正式发布验收仍在进行。") }, confirmButton = { TextButton(onClick = { vm.preferences(state.preferences.copy(welcomed = true)) }) { Text("开始学习") } })
         error?.let { AlertDialog(onDismissRequest = { vm.error.value = null }, title = { Text("操作提示") }, text = { Text(it) }, confirmButton = { TextButton(onClick = { vm.error.value = null }) { Text("知道了") } }) }
         preview?.let { b -> AlertDialog(onDismissRequest = { vm.restorePreview.value = null }, title = { Text("确认替换学习数据") }, text = { Text("备份课程版本：${b.contentVersion}\n阅读记录 ${b.readings.size} 条，练习 ${b.sessions.size} 次，作答 ${b.attempts.size} 条。\n${b.sessions.count { !LearningRules.compatible(Codec.json.decodeFromString(it.payload), catalog!!) }} 个会话题目版本有变化，恢复后仅供回顾。\n将替换全部现有记录与阅读设置。") }, confirmButton = { TextButton(onClick = { vm.restore() }, enabled = !busy) { Text("替换恢复") } }, dismissButton = { TextButton(onClick = { vm.restorePreview.value = null }) { Text("取消") } }) }
         if (clearConfirm) AlertDialog(onDismissRequest = { clearConfirm = false }, title = { Text("清空全部学习数据？") }, text = { Text("阅读位置、书签、练习、错题和设置均会清空。教材仍保留，请先导出需要的备份。") }, confirmButton = { TextButton(onClick = { clearConfirm = false; vm.clear() }) { Text("确认清空") } }, dismissButton = { TextButton(onClick = { clearConfirm = false }) { Text("取消") } })
@@ -96,7 +96,7 @@ private fun mode(mode: String) = when (mode) { "test" -> "自测"; "review" -> "
         items(s.sessions.filter { !it.finished }.take(3), key = { it.id }) { session -> Tile("继续${mode(session.mode)}", "${session.submitted.size}/${session.questions.size} 题 · ${date(session.updatedAt)}") { quiz(session.id) } }
         item { Text("近期练习", style = MaterialTheme.typography.titleLarge) }
         items(s.sessions.filter { it.finished }.take(3), key = { it.id }) { session -> SessionTile(session, quiz) }
-        item { Text("开发样板版 · 当前 ${chapters.size}/73 章，全部内容无需联网。", style = MaterialTheme.typography.bodySmall) }
+        item { Text("开发验证版 · 当前 ${chapters.size}/73 章，全部内容无需联网。", style = MaterialTheme.typography.bodySmall) }
     }
 }
 @Composable private fun Courses(s: LearningState, read: (String, String) -> Unit, test: (Set<String>) -> Unit) {

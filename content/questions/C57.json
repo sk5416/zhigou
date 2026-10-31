@@ -1,0 +1,315 @@
+[
+  {
+    "id": "C57-Q01",
+    "chapterId": "C57",
+    "revision": 1,
+    "type": "single",
+    "stem": "权威来源应如何定义？",
+    "options": [
+      {
+        "id": "A",
+        "text": "数仓复制了数据即有权改业务",
+        "explanation": "不成立。"
+      },
+      {
+        "id": "B",
+        "text": "永远最后写入者胜",
+        "explanation": "时间不等于权威。"
+      },
+      {
+        "id": "C",
+        "text": "按对象字段和业务阶段明确责任",
+        "explanation": "同步方向需有依据。"
+      },
+      {
+        "id": "D",
+        "text": "指定一个系统对全部字段永远权威",
+        "explanation": "可能职责不同。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C57-K01"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "权威细化到业务语义。"
+  },
+  {
+    "id": "C57-Q02",
+    "chapterId": "C57",
+    "revision": 1,
+    "type": "single",
+    "stem": "源身份与统一ID的关系是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "名称相同就同一对象",
+        "explanation": "可能误合并。"
+      },
+      {
+        "id": "B",
+        "text": "统一ID存在就可丢源信息",
+        "explanation": "失去追溯。"
+      },
+      {
+        "id": "C",
+        "text": "所有系统编号全球唯一",
+        "explanation": "须核验范围。"
+      },
+      {
+        "id": "D",
+        "text": "保留来源范围及有依据的映射",
+        "explanation": "内部关联与源定位都需要。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C57-K02",
+      "C57-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "映射需要来源和依据。"
+  },
+  {
+    "id": "C57-Q03",
+    "chapterId": "C57",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "字段责任表应说明什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "冲突确认与禁止回写方向",
+        "explanation": "防无依据覆盖。"
+      },
+      {
+        "id": "B",
+        "text": "冲突都自动删除",
+        "explanation": "破坏事实。"
+      },
+      {
+        "id": "C",
+        "text": "所有空值都覆盖有效目标",
+        "explanation": "未必符合业务。"
+      },
+      {
+        "id": "D",
+        "text": "空值、单位和枚举转换",
+        "explanation": "影响事实解释。"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "knowledge": [
+      "C57-K04",
+      "C57-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "同步规则先于接口代码。"
+  },
+  {
+    "id": "C57-Q04",
+    "chapterId": "C57",
+    "revision": 1,
+    "type": "single",
+    "stem": "ERP结算名与CRM展示名不同，应怎样判断？",
+    "options": [
+      {
+        "id": "A",
+        "text": "强行双向覆盖",
+        "explanation": "可能循环。"
+      },
+      {
+        "id": "B",
+        "text": "全部合并为一个字段",
+        "explanation": "可能丢语义。"
+      },
+      {
+        "id": "C",
+        "text": "只看更新时间",
+        "explanation": "未说明用途。"
+      },
+      {
+        "id": "D",
+        "text": "先核对不同用途及字段责任",
+        "explanation": "不必强制同名。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C57-K01",
+      "C57-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "差异不一定错误。"
+  },
+  {
+    "id": "C57-Q05",
+    "chapterId": "C57",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "防同步循环应考虑什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "只靠请求快慢",
+        "explanation": "不能保证方向。"
+      },
+      {
+        "id": "B",
+        "text": "映射版本与历史影响",
+        "explanation": "变更需可追溯。"
+      },
+      {
+        "id": "C",
+        "text": "每次变更重新生成对象身份",
+        "explanation": "可能重复。"
+      },
+      {
+        "id": "D",
+        "text": "明确权威方向和变更来源",
+        "explanation": "避免互相当新修改。"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C57-K06",
+      "C57-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "方向与身份稳定。"
+  },
+  {
+    "id": "C57-Q06",
+    "chapterId": "C57",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟O1/O2都有M001，整合应怎么做？",
+    "options": [
+      {
+        "id": "A",
+        "text": "丢掉一个组织",
+        "explanation": "破坏数据。"
+      },
+      {
+        "id": "B",
+        "text": "保留源身份并经批准映射统一ID",
+        "explanation": "无法确认则待处理。"
+      },
+      {
+        "id": "C",
+        "text": "按编码直接合并",
+        "explanation": "忽略组织。"
+      },
+      {
+        "id": "D",
+        "text": "按名称最相近决定",
+        "explanation": "证据不足。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C57-K02",
+      "C57-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "同码不一定同物。"
+  },
+  {
+    "id": "C57-Q07",
+    "chapterId": "C57",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟映射规则调整后应核查什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只改一串字符",
+        "explanation": "引用可能受影响。"
+      },
+      {
+        "id": "B",
+        "text": "历史报表、引用与进行中任务",
+        "explanation": "规则变化有全链影响。"
+      },
+      {
+        "id": "C",
+        "text": "默认所有历史随即正确",
+        "explanation": "需验证。"
+      },
+      {
+        "id": "D",
+        "text": "删除旧映射证据",
+        "explanation": "不利追溯。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C57-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "治理变更也要兼容。"
+  },
+  {
+    "id": "C57-Q08",
+    "chapterId": "C57",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "主数据验收应包含什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "只比较总条数",
+        "explanation": "可能错配。"
+      },
+      {
+        "id": "B",
+        "text": "同码异源、单位未映射与空值覆盖",
+        "explanation": "验证身份语义。"
+      },
+      {
+        "id": "C",
+        "text": "停用、冲突确认和权威字段不被误写",
+        "explanation": "覆盖生命周期。"
+      },
+      {
+        "id": "D",
+        "text": "用平台名称替代规则",
+        "explanation": "不能核验。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C57-K05",
+      "C57-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "数据治理要有反例。"
+  }
+]

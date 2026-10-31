@@ -1,0 +1,312 @@
+[
+  {
+    "id": "C63-Q01",
+    "chapterId": "C63",
+    "revision": 1,
+    "type": "single",
+    "stem": "计划的完成状态应依据什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "日期到了",
+        "explanation": "不代表门槛满足。"
+      },
+      {
+        "id": "B",
+        "text": "实际产物与验收门槛",
+        "explanation": "计划不是成绩单。"
+      },
+      {
+        "id": "C",
+        "text": "聊天长度",
+        "explanation": "无关。"
+      },
+      {
+        "id": "D",
+        "text": "文字写已完成",
+        "explanation": "需证据。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C63-K01",
+      "C63-K04"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "以事实更新状态。"
+  },
+  {
+    "id": "C63-Q02",
+    "chapterId": "C63",
+    "revision": 1,
+    "type": "single",
+    "stem": "单一事实源意味着什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "越多重复摘要越可靠",
+        "explanation": "可能矛盾。"
+      },
+      {
+        "id": "B",
+        "text": "每类事实有负责位置与同步关系",
+        "explanation": "不必只有一个文件。"
+      },
+      {
+        "id": "C",
+        "text": "删原始需求只留总结",
+        "explanation": "可能丢约束。"
+      },
+      {
+        "id": "D",
+        "text": "只留聊天",
+        "explanation": "不可持续。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C63-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "职责清楚而非复制多份。"
+  },
+  {
+    "id": "C63-Q03",
+    "chapterId": "C63",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "批次收尾应记录什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "未验证、阻塞与证据位置",
+        "explanation": "不能冒充通过。"
+      },
+      {
+        "id": "B",
+        "text": "只写下一步",
+        "explanation": "缺实际结果。"
+      },
+      {
+        "id": "C",
+        "text": "隐藏失败只保留绿色",
+        "explanation": "失真。"
+      },
+      {
+        "id": "D",
+        "text": "最终变化、兼容及真实检查",
+        "explanation": "便于接续。"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "knowledge": [
+      "C63-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "结果和缺口同时保存。"
+  },
+  {
+    "id": "C63-Q04",
+    "chapterId": "C63",
+    "revision": 1,
+    "type": "single",
+    "stem": "AGENTS.md等指导文件能否物理保证不会清库？",
+    "options": [
+      {
+        "id": "A",
+        "text": "不能，还需权限审阅及验证等控制",
+        "explanation": "指导有作用但有边界。"
+      },
+      {
+        "id": "B",
+        "text": "不能所以应删除所有规则",
+        "explanation": "规则仍有价值。"
+      },
+      {
+        "id": "C",
+        "text": "能，AI永不犯错",
+        "explanation": "不成立。"
+      },
+      {
+        "id": "D",
+        "text": "能，文字即强隔离",
+        "explanation": "不是物理屏障。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C63-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "指导和强约束分开。"
+  },
+  {
+    "id": "C63-Q05",
+    "chapterId": "C63",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "需求变更时应怎样做？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "保留历史与当前事实",
+        "explanation": "不把旧失败改成从未发生。"
+      },
+      {
+        "id": "B",
+        "text": "自动把全部原目标取消",
+        "explanation": "未必是用户意图。"
+      },
+      {
+        "id": "C",
+        "text": "同步计划说明和验收",
+        "explanation": "避免多处矛盾。"
+      },
+      {
+        "id": "D",
+        "text": "只在新聊天口头记住",
+        "explanation": "可能漂移。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C63-K06",
+      "C63-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "变更要可追踪。"
+  },
+  {
+    "id": "C63-Q06",
+    "chapterId": "C63",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟用户只说继续，AI重新选型并重置题号，缺什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "开工核对原始需求、规则和现状",
+        "explanation": "应接续未完成。"
+      },
+      {
+        "id": "B",
+        "text": "删除旧计划",
+        "explanation": "更糟。"
+      },
+      {
+        "id": "C",
+        "text": "更多新框架",
+        "explanation": "无关。"
+      },
+      {
+        "id": "D",
+        "text": "只要求AI再次承诺沿用旧方案",
+        "explanation": "承诺无法提供稳定编号、当前基线、约束和未完成事项的可查记录。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C63-K03",
+      "C63-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "上下文应从事实恢复。"
+  },
+  {
+    "id": "C63-Q07",
+    "chapterId": "C63",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟课程写完但设备未测，README应怎样表达？",
+    "options": [
+      {
+        "id": "A",
+        "text": "以测试包编译替代设备通过",
+        "explanation": "不同证据。"
+      },
+      {
+        "id": "B",
+        "text": "正式MVP全验收",
+        "explanation": "超出范围。"
+      },
+      {
+        "id": "C",
+        "text": "课程完成与设备待验分开",
+        "explanation": "状态准确。"
+      },
+      {
+        "id": "D",
+        "text": "删除设备需求",
+        "explanation": "不能擅改。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C63-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "交付和验收维度分开。"
+  },
+  {
+    "id": "C63-Q08",
+    "chapterId": "C63",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "信息缺口影响部分工作，合理行为是什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "自行编造事实",
+        "explanation": "不可靠。"
+      },
+      {
+        "id": "B",
+        "text": "所有事项立即停到用户重复确认",
+        "explanation": "不必要。"
+      },
+      {
+        "id": "C",
+        "text": "依据现有授权处理常规可逆选择",
+        "explanation": "不每步重问。"
+      },
+      {
+        "id": "D",
+        "text": "对关键缺口澄清并继续独立可做部分",
+        "explanation": "兼顾边界和推进。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C63-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "澄清不等于放弃推进。"
+  }
+]

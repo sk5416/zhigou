@@ -1,0 +1,314 @@
+[
+  {
+    "id": "C64-Q01",
+    "chapterId": "C64",
+    "revision": 1,
+    "type": "single",
+    "stem": "方案评审最先应关注什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "技术名字是否时髦",
+        "explanation": "不是边界依据。"
+      },
+      {
+        "id": "B",
+        "text": "关键假设、资产和信任边界",
+        "explanation": "先确定风险。"
+      },
+      {
+        "id": "C",
+        "text": "组件数量",
+        "explanation": "不代表质量。"
+      },
+      {
+        "id": "D",
+        "text": "摘要语气是否自信",
+        "explanation": "非证据。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C64-K01",
+      "C64-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "审查前提而非包装。"
+  },
+  {
+    "id": "C64-Q02",
+    "chapterId": "C64",
+    "revision": 1,
+    "type": "single",
+    "stem": "有效反证是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只找赞成方案的例子",
+        "explanation": "确认偏误。"
+      },
+      {
+        "id": "B",
+        "text": "让同一个AI再次保证方案可靠",
+        "explanation": "重复保证没有引入能证伪主张的反例、实测或可核验来源。"
+      },
+      {
+        "id": "C",
+        "text": "再问一次你确定吗",
+        "explanation": "没有具体条件。"
+      },
+      {
+        "id": "D",
+        "text": "可推翻主张的场景及观察",
+        "explanation": "让假设可检验。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C64-K05"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "反证要可执行。"
+  },
+  {
+    "id": "C64-Q03",
+    "chapterId": "C64",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "威胁建模应考虑什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "每个小工具强制大型流程",
+        "explanation": "应按风险适配。"
+      },
+      {
+        "id": "B",
+        "text": "资产、入口、主体与信任区域",
+        "explanation": "识别保护边界。"
+      },
+      {
+        "id": "C",
+        "text": "只画正常流程",
+        "explanation": "遗漏威胁。"
+      },
+      {
+        "id": "D",
+        "text": "失败后果与现有控制",
+        "explanation": "决定需补什么。"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C64-K02",
+      "C64-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "形式服务风险。"
+  },
+  {
+    "id": "C64-Q04",
+    "chapterId": "C64",
+    "revision": 1,
+    "type": "single",
+    "stem": "内网无需应用权限的主张，怎样评审？",
+    "options": [
+      {
+        "id": "A",
+        "text": "因为内网就接受",
+        "explanation": "边界不足。"
+      },
+      {
+        "id": "B",
+        "text": "只确认员工已连接公司VPN",
+        "explanation": "VPN限制网络可达性，不能决定具体用户可读写哪些业务对象。"
+      },
+      {
+        "id": "C",
+        "text": "增加缓存即可安全",
+        "explanation": "无关。"
+      },
+      {
+        "id": "D",
+        "text": "用跨部门对象和直接接口等反例核查",
+        "explanation": "网络可达不同于授权。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C64-K03",
+      "C64-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "网络不能覆盖业务范围。"
+  },
+  {
+    "id": "C64-Q05",
+    "chapterId": "C64",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "方案备选比较需要什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "新技术必定最省成本",
+        "explanation": "无条件结论不可靠。"
+      },
+      {
+        "id": "B",
+        "text": "只列品牌排行榜",
+        "explanation": "不说明适配。"
+      },
+      {
+        "id": "C",
+        "text": "现实简单替代与当前约束",
+        "explanation": "避免过度设计。"
+      },
+      {
+        "id": "D",
+        "text": "成本、维护、恢复与退出",
+        "explanation": "覆盖长期后果。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C64-K04",
+      "C64-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "取舍应带前提。"
+  },
+  {
+    "id": "C64-Q06",
+    "chapterId": "C64",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟浏览器直接持企业Token，怎样比较后台代理方案？",
+    "options": [
+      {
+        "id": "A",
+        "text": "代理天然解决所有安全",
+        "explanation": "仍需授权。"
+      },
+      {
+        "id": "B",
+        "text": "比较秘密暴露、权限、审计与维护边界",
+        "explanation": "并验证实际风险。"
+      },
+      {
+        "id": "C",
+        "text": "前端隐藏Token变量名",
+        "explanation": "不保护秘密。"
+      },
+      {
+        "id": "D",
+        "text": "只比较两种方案的首次响应时间",
+        "explanation": "延迟是一个维度，还需比较秘密暴露、授权、运维和故障边界。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C64-K03",
+      "C64-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "架构变化要有具体理由。"
+  },
+  {
+    "id": "C64-Q07",
+    "chapterId": "C64",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟AI声称某ERP支持幂等但无资料，应怎样处理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "先信承诺上线",
+        "explanation": "可能误导。"
+      },
+      {
+        "id": "B",
+        "text": "默认无限重试",
+        "explanation": "风险大。"
+      },
+      {
+        "id": "C",
+        "text": "列待核验并查正式资料或测试环境",
+        "explanation": "不编造成功。"
+      },
+      {
+        "id": "D",
+        "text": "把模拟字段当厂商规定",
+        "explanation": "错误。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C64-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "外部能力需要证据。"
+  },
+  {
+    "id": "C64-Q08",
+    "chapterId": "C64",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "方案批准应说明什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "范围、限制与后续动作边界",
+        "explanation": "认可设计不等于所有操作获准。"
+      },
+      {
+        "id": "B",
+        "text": "回退交接与未验证项",
+        "explanation": "可持续评估。"
+      },
+      {
+        "id": "C",
+        "text": "只写全部同意",
+        "explanation": "可能含混。"
+      },
+      {
+        "id": "D",
+        "text": "生产数据可随意用",
+        "explanation": "没有授权。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B"
+    ],
+    "knowledge": [
+      "C64-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "批准应具体可审阅。"
+  }
+]

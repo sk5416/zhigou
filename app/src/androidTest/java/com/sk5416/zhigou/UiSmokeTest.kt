@@ -101,6 +101,8 @@ class UiSmokeTest {
             assertTrue(device.wait(Until.hasObject(By.text("把知识，构成判断力。")), 10_000))
             device.findObject(By.text("课程")).click()
             assertTrue(device.wait(Until.hasObject(By.text("搜索课程和附录")), 10_000))
+            openNewLesson(device, "登录不等于拥有所有数据", "C43", "登录不等于拥有所有数据", "认证与授权的区别是什么", "security")
+            openNewLesson(device, "原型证明部分可行", "C72", "原型证明部分可行", "原型与可交接应用主要差在哪", "complete")
             openTimeoutChapter(device)
             assertTrue(device.wait(Until.hasObject(By.textContains("调用超时只说明")), 15_000))
             screenshot(device, "c14-reader")
@@ -148,6 +150,23 @@ class UiSmokeTest {
             assertTrue(device.wait(Until.hasObject(By.text("本章练习")), 10_000))
             screenshot(device, "dark-reader")
         }
+    }
+    private fun openNewLesson(device: UiDevice, query: String, chapter: String, body: String, question: String, name: String) {
+        val search = device.findObject(By.clazz("android.widget.EditText"))
+        search.click()
+        search.text = query
+        device.pressBack()
+        assertTrue(device.wait(Until.hasObject(By.textStartsWith("$chapter ·")), 10_000))
+        device.findObject(By.textStartsWith("$chapter ·")).click()
+        assertTrue("$chapter must render its offline body", device.wait(Until.hasObject(By.textContains(body)), 15_000))
+        screenshot(device, "$name-reader")
+        device.findObject(By.text("本章练习")).click()
+        assertTrue("$chapter question bank must be usable offline", device.wait(Until.hasObject(By.textContains(question)), 10_000))
+        screenshot(device, "$name-practice")
+        device.pressBack()
+        assertTrue(device.wait(Until.hasObject(By.text("把知识，构成判断力。")), 10_000))
+        device.findObject(By.text("课程")).click()
+        assertTrue(device.wait(Until.hasObject(By.text("搜索课程和附录")), 10_000))
     }
     private fun openTimeoutChapter(device: UiDevice) {
         val search = device.findObject(By.clazz("android.widget.EditText"))

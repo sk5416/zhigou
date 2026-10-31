@@ -1,0 +1,315 @@
+[
+  {
+    "id": "C52-Q01",
+    "chapterId": "C52",
+    "revision": 1,
+    "type": "single",
+    "stem": "请求关联ID与业务意图ID是什么关系？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只有用户名就能完全替代",
+        "explanation": "同一人有多笔业务。"
+      },
+      {
+        "id": "B",
+        "text": "每次重试都代表全新业务",
+        "explanation": "技术请求可新，业务意图未变。"
+      },
+      {
+        "id": "C",
+        "text": "分别关联技术调用和同一业务意图",
+        "explanation": "传播关系有助核对重试。"
+      },
+      {
+        "id": "D",
+        "text": "两者都自动提供授权",
+        "explanation": "不是权限凭据。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C52-K02",
+      "C52-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "身份和关联用途要明确。"
+  },
+  {
+    "id": "C52-Q02",
+    "chapterId": "C52",
+    "revision": 1,
+    "type": "single",
+    "stem": "超时日志应把结果记为什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "一定为拒绝",
+        "explanation": "远程可能已提交。"
+      },
+      {
+        "id": "B",
+        "text": "直接删事件",
+        "explanation": "失去证据。"
+      },
+      {
+        "id": "C",
+        "text": "一定为成功",
+        "explanation": "也不能确认。"
+      },
+      {
+        "id": "D",
+        "text": "未确认时为unknown",
+        "explanation": "等待结束不证明业务未执行。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C52-K04"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "记录真实不确定性。"
+  },
+  {
+    "id": "C52-Q03",
+    "chapterId": "C52",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "有用日志包含什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "完整Token和密码",
+        "explanation": "泄露秘密。"
+      },
+      {
+        "id": "B",
+        "text": "只写失败两个字",
+        "explanation": "不足以关联。"
+      },
+      {
+        "id": "C",
+        "text": "时间环境版本与必要关联",
+        "explanation": "便于定位。"
+      },
+      {
+        "id": "D",
+        "text": "阶段、尝试及可解释结果",
+        "explanation": "帮助追踪业务。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C52-K05",
+      "C52-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "信息要必要且有语义。"
+  },
+  {
+    "id": "C52-Q04",
+    "chapterId": "C52",
+    "revision": 1,
+    "type": "single",
+    "stem": "日志中显示confirmed就能单独证明ERP真实创建吗？",
+    "options": [
+      {
+        "id": "A",
+        "text": "能，文字即事实",
+        "explanation": "日志可能错误。"
+      },
+      {
+        "id": "B",
+        "text": "能，可删除业务状态",
+        "explanation": "不应替代持久状态。"
+      },
+      {
+        "id": "C",
+        "text": "不能，还应对应受信结果或对账证据",
+        "explanation": "不同证据需互相核验。"
+      },
+      {
+        "id": "D",
+        "text": "不能，所以日志无用",
+        "explanation": "它仍有定位价值。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C52-K04",
+      "C52-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "日志线索不替代全部事实。"
+  },
+  {
+    "id": "C52-Q05",
+    "chapterId": "C52",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "日志治理应考虑什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "所有事件永远ERROR",
+        "explanation": "噪声妨碍定位。"
+      },
+      {
+        "id": "B",
+        "text": "输入关联字段的长度字符与注入风险",
+        "explanation": "日志也是输出边界。"
+      },
+      {
+        "id": "C",
+        "text": "读取权限、轮转与保留",
+        "explanation": "避免泄露与资源耗尽。"
+      },
+      {
+        "id": "D",
+        "text": "客户端关联ID可作为管理员证明",
+        "explanation": "不是授权。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C52-K06",
+      "C52-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "日志也需设计边界。"
+  },
+  {
+    "id": "C52-Q06",
+    "chapterId": "C52",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟物料M-DEMO失败只留“调用异常”，应怎样改进？",
+    "options": [
+      {
+        "id": "A",
+        "text": "改为成功避免告警",
+        "explanation": "伪造状态。"
+      },
+      {
+        "id": "B",
+        "text": "输出全部财务请求",
+        "explanation": "无必要泄露。"
+      },
+      {
+        "id": "C",
+        "text": "补脱敏意图、请求、阶段和核对关系",
+        "explanation": "能够追踪但不暴露秘密。"
+      },
+      {
+        "id": "D",
+        "text": "只把所有异常升级为最高级别",
+        "explanation": "提高级别不能补出关联标识、阶段、错误类别和结果状态，还会增加噪声。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C52-K02",
+      "C52-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "从业务号追到调用链。"
+  },
+  {
+    "id": "C52-Q07",
+    "chapterId": "C52",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟多机器事件先后对不上，应核对什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "删除冲突日志",
+        "explanation": "破坏证据。"
+      },
+      {
+        "id": "B",
+        "text": "时区、时钟来源及关联传播",
+        "explanation": "时间差异可能改变观察。"
+      },
+      {
+        "id": "C",
+        "text": "仅按文件名排序",
+        "explanation": "不说明事件时间。"
+      },
+      {
+        "id": "D",
+        "text": "固定认为后写日志的业务后执行",
+        "explanation": "缓冲与时间不同。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C52-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "先后需要可靠时间语义。"
+  },
+  {
+    "id": "C52-Q08",
+    "chapterId": "C52",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "日志与业务审计怎样分工？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "日志越多就越可追责",
+        "explanation": "可能噪声或泄露。"
+      },
+      {
+        "id": "B",
+        "text": "按定位与追溯目的分别定义范围",
+        "explanation": "不能只靠debug文本。"
+      },
+      {
+        "id": "C",
+        "text": "运行日志轮转等于可删全部业务历史",
+        "explanation": "保留目的不同。"
+      },
+      {
+        "id": "D",
+        "text": "必要审计独立保证持久和权限",
+        "explanation": "避免诊断策略误删证据。"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C52-K01",
+      "C52-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "记录目的决定治理。"
+  }
+]

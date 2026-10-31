@@ -1,0 +1,315 @@
+[
+  {
+    "id": "C55-Q01",
+    "chapterId": "C55",
+    "revision": 1,
+    "type": "single",
+    "stem": "故障响应中的恢复与永久修复是什么关系？",
+    "options": [
+      {
+        "id": "A",
+        "text": "恢复业务与修正促成因素分别追踪",
+        "explanation": "需不同证据和责任。"
+      },
+      {
+        "id": "B",
+        "text": "找到一个人负责即可",
+        "explanation": "不能替代系统改进。"
+      },
+      {
+        "id": "C",
+        "text": "服务重启就已消除根因",
+        "explanation": "可能只是暂缓。"
+      },
+      {
+        "id": "D",
+        "text": "恢复后无需记录",
+        "explanation": "失去学习机会。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C55-K05",
+      "C55-K06"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "恢复不等于根因消失。"
+  },
+  {
+    "id": "C55-Q02",
+    "chapterId": "C55",
+    "revision": 1,
+    "type": "single",
+    "stem": "运维手册最应帮助谁？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只有原作者",
+        "explanation": "不利交接。"
+      },
+      {
+        "id": "B",
+        "text": "下一位获准人员核查与受控恢复",
+        "explanation": "需要前提和预期。"
+      },
+      {
+        "id": "C",
+        "text": "只帮助生成成功公告",
+        "explanation": "不是主要目的。"
+      },
+      {
+        "id": "D",
+        "text": "任何人无条件运行所有命令",
+        "explanation": "仍需权限与边界。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C55-K08"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "手册应可接手。"
+  },
+  {
+    "id": "C55-Q03",
+    "chapterId": "C55",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "故障现场应保留什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "只留最终结论",
+        "explanation": "缺推断依据。"
+      },
+      {
+        "id": "B",
+        "text": "操作、证据与假设区别",
+        "explanation": "便于复核。"
+      },
+      {
+        "id": "C",
+        "text": "时间、环境、版本和影响",
+        "explanation": "建立事实基础。"
+      },
+      {
+        "id": "D",
+        "text": "先清库再看",
+        "explanation": "破坏数据。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C55-K01",
+      "C55-K03",
+      "C55-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "事实与推断要分开。"
+  },
+  {
+    "id": "C55-Q04",
+    "chapterId": "C55",
+    "revision": 1,
+    "type": "single",
+    "stem": "未知物料任务超时后可否直接清状态重跑？",
+    "options": [
+      {
+        "id": "A",
+        "text": "不可盲目，先核对外部副作用",
+        "explanation": "可能已成功。"
+      },
+      {
+        "id": "B",
+        "text": "可以，只要有管理员",
+        "explanation": "权限不证明业务结果。"
+      },
+      {
+        "id": "C",
+        "text": "可以，超时证明没执行",
+        "explanation": "不成立。"
+      },
+      {
+        "id": "D",
+        "text": "可以，重复可忽略",
+        "explanation": "可能产生严重影响。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C55-K03",
+      "C55-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "止损先于重放。"
+  },
+  {
+    "id": "C55-Q05",
+    "chapterId": "C55",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "可执行手册包含什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "只读核查、状态改变前提与停止条件",
+        "explanation": "帮助受控操作。"
+      },
+      {
+        "id": "B",
+        "text": "恢复、业务核对和升级联系人",
+        "explanation": "形成闭环。"
+      },
+      {
+        "id": "C",
+        "text": "只写执行脚本看看",
+        "explanation": "没有边界。"
+      },
+      {
+        "id": "D",
+        "text": "真实密码明文",
+        "explanation": "不应放普通文档。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B"
+    ],
+    "knowledge": [
+      "C55-K05",
+      "C55-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "手册要解释动作。"
+  },
+  {
+    "id": "C55-Q06",
+    "chapterId": "C55",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟首页恢复后仍有错误单据，应怎样收尾？",
+    "options": [
+      {
+        "id": "A",
+        "text": "删除差异记录",
+        "explanation": "掩盖问题。"
+      },
+      {
+        "id": "B",
+        "text": "核对业务与受影响路径并跟踪修复",
+        "explanation": "恢复结果需业务确认。"
+      },
+      {
+        "id": "C",
+        "text": "只重启更多次",
+        "explanation": "缺证据。"
+      },
+      {
+        "id": "D",
+        "text": "首页好即可关事故",
+        "explanation": "业务仍未恢复。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C55-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "业务验收不可省略。"
+  },
+  {
+    "id": "C55-Q07",
+    "chapterId": "C55",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟复盘只写“操作者粗心”，应补什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "更多个人批评",
+        "explanation": "不能形成工程改进。"
+      },
+      {
+        "id": "B",
+        "text": "权限、手册、检测与流程等促成因素",
+        "explanation": "落实可执行措施。"
+      },
+      {
+        "id": "C",
+        "text": "删除时间线",
+        "explanation": "失去依据。"
+      },
+      {
+        "id": "D",
+        "text": "永不做复盘",
+        "explanation": "不能改进。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C55-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "复盘关注系统改进。"
+  },
+  {
+    "id": "C55-Q08",
+    "chapterId": "C55",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "交接验收有哪些证据？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "源码压缩包即全部",
+        "explanation": "缺运行恢复责任。"
+      },
+      {
+        "id": "B",
+        "text": "依赖原作者个人账号永远存在",
+        "explanation": "不可靠。"
+      },
+      {
+        "id": "C",
+        "text": "未参与开发的获准人员按手册演练",
+        "explanation": "验证可接手。"
+      },
+      {
+        "id": "D",
+        "text": "修正文档过期项并记录责任",
+        "explanation": "资料需持续可用。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C55-K02",
+      "C55-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "交接应被实际检验。"
+  }
+]

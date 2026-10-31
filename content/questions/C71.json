@@ -1,0 +1,312 @@
+[
+  {
+    "id": "C71-Q01",
+    "chapterId": "C71",
+    "revision": 1,
+    "type": "single",
+    "stem": "发布卡、运行卡和恢复卡的关系是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "恢复卡只留文件名",
+        "explanation": "不够。"
+      },
+      {
+        "id": "B",
+        "text": "三张都只写启动命令",
+        "explanation": "职责不足。"
+      },
+      {
+        "id": "C",
+        "text": "有发布卡就无需恢复",
+        "explanation": "不成立。"
+      },
+      {
+        "id": "D",
+        "text": "分别说明版本变更、持续运行与完整恢复",
+        "explanation": "互相衔接。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C71-K01"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "运行交付有多类责任。"
+  },
+  {
+    "id": "C71-Q02",
+    "chapterId": "C71",
+    "revision": 1,
+    "type": "single",
+    "stem": "未知任务在重启时应怎样处理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "保留持久状态并继续核对",
+        "explanation": "不能自动当未执行。"
+      },
+      {
+        "id": "B",
+        "text": "全部清零重发",
+        "explanation": "可能重复。"
+      },
+      {
+        "id": "C",
+        "text": "全部标成功",
+        "explanation": "无依据。"
+      },
+      {
+        "id": "D",
+        "text": "删除外部ID",
+        "explanation": "失追溯。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C71-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "重启不改变外部事实。"
+  },
+  {
+    "id": "C71-Q03",
+    "chapterId": "C71",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "搬迁需核对程序数据库之外什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "只改服务器名称",
+        "explanation": "不保证配置。"
+      },
+      {
+        "id": "B",
+        "text": "仅桌面快捷方式",
+        "explanation": "远远不够。"
+      },
+      {
+        "id": "C",
+        "text": "证书、任务和监控恢复责任",
+        "explanation": "全链转移。"
+      },
+      {
+        "id": "D",
+        "text": "附件、凭据来源与回调地址",
+        "explanation": "属于业务依赖。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C71-K02",
+      "C71-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "迁移不是只拷两份文件。"
+  },
+  {
+    "id": "C71-Q04",
+    "chapterId": "C71",
+    "revision": 1,
+    "type": "single",
+    "stem": "B01恢复到旧状态前应怎样隔离？",
+    "options": [
+      {
+        "id": "A",
+        "text": "先隔离真实外部写与通知并核对",
+        "explanation": "防演练副作用。"
+      },
+      {
+        "id": "B",
+        "text": "删当前数据再想",
+        "explanation": "会损失。"
+      },
+      {
+        "id": "C",
+        "text": "先开放外部写让它自动补",
+        "explanation": "可能重复。"
+      },
+      {
+        "id": "D",
+        "text": "所有备份都可直接覆盖生产",
+        "explanation": "不能。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C71-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "恢复先保护有效业务。"
+  },
+  {
+    "id": "C71-Q05",
+    "chapterId": "C71",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "灰度观测本案例应包括什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "只看CPU",
+        "explanation": "不足。"
+      },
+      {
+        "id": "B",
+        "text": "任务年龄与未知拒绝比例",
+        "explanation": "页面正常也可能后台停滞。"
+      },
+      {
+        "id": "C",
+        "text": "出了问题再改指标继续",
+        "explanation": "掩盖异常。"
+      },
+      {
+        "id": "D",
+        "text": "外部对账与预定停止阈值",
+        "explanation": "保护业务。"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C71-K04",
+      "C71-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "观测对应业务目标。"
+  },
+  {
+    "id": "C71-Q06",
+    "chapterId": "C71",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟迁移后界面正常却指旧ERP，首先核查什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "让用户重试所有批次",
+        "explanation": "可能误写。"
+      },
+      {
+        "id": "B",
+        "text": "配置来源、身份、依赖及实际环境",
+        "explanation": "核对完整运行链。"
+      },
+      {
+        "id": "C",
+        "text": "先反复刷新页面直至显示正常",
+        "explanation": "显示正常不证明实际ERP目标正确，应核对运行配置、身份和连接证据。"
+      },
+      {
+        "id": "D",
+        "text": "只重新编译",
+        "explanation": "未必解决配置。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C71-K02"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "入口成功不是全链正确。"
+  },
+  {
+    "id": "C71-Q07",
+    "chapterId": "C71",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟恢复后本地I03待处理但外部已有E03，应怎样做？",
+    "options": [
+      {
+        "id": "A",
+        "text": "删除E03无须审批",
+        "explanation": "危险。"
+      },
+      {
+        "id": "B",
+        "text": "把所有行都成功",
+        "explanation": "没证据。"
+      },
+      {
+        "id": "C",
+        "text": "直接创建第二份",
+        "explanation": "重复。"
+      },
+      {
+        "id": "D",
+        "text": "先对账关联已确认外部事实再恢复调用",
+        "explanation": "恢复本地不撤销远程。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C71-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "外部事实需要核对。"
+  },
+  {
+    "id": "C71-Q08",
+    "chapterId": "C71",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "恢复验收应包含什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "实测时间与未验证限制",
+        "explanation": "目标和结果分开。"
+      },
+      {
+        "id": "B",
+        "text": "教材模拟等于企业演练成功",
+        "explanation": "不成立。"
+      },
+      {
+        "id": "C",
+        "text": "复制五分钟等于完整RTO",
+        "explanation": "还含准备与验证。"
+      },
+      {
+        "id": "D",
+        "text": "完整资产、权限、附件与意图核对",
+        "explanation": "不是只有行数。"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "knowledge": [
+      "C71-K06",
+      "C71-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "演练证据要真实完整。"
+  }
+]

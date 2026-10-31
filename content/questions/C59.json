@@ -1,0 +1,313 @@
+[
+  {
+    "id": "C59-Q01",
+    "chapterId": "C59",
+    "revision": 1,
+    "type": "single",
+    "stem": "结果未知与明确拒绝有什么不同？",
+    "options": [
+      {
+        "id": "A",
+        "text": "都能直接重建",
+        "explanation": "未知可能已执行。"
+      },
+      {
+        "id": "B",
+        "text": "拒绝永远只能等待",
+        "explanation": "可按规则修正。"
+      },
+      {
+        "id": "C",
+        "text": "未知等于成功",
+        "explanation": "也不能确认。"
+      },
+      {
+        "id": "D",
+        "text": "未知需核对事实，拒绝有明确失败依据",
+        "explanation": "恢复路径不同。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C59-K01",
+      "C59-K07"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "状态代表证据。"
+  },
+  {
+    "id": "C59-Q02",
+    "chapterId": "C59",
+    "revision": 1,
+    "type": "single",
+    "stem": "同一幂等键的内容变化应怎样处理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "默认任意改",
+        "explanation": "破坏语义。"
+      },
+      {
+        "id": "B",
+        "text": "删除历史再发",
+        "explanation": "失去线索。"
+      },
+      {
+        "id": "C",
+        "text": "自动当重复成功",
+        "explanation": "可能忽略新业务。"
+      },
+      {
+        "id": "D",
+        "text": "核对原意图并按新意图或更正契约处理",
+        "explanation": "不能静默混同。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C59-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "键必须绑定语义。"
+  },
+  {
+    "id": "C59-Q03",
+    "chapterId": "C59",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "多执行者处理应注意什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "持久意图与受控领取",
+        "explanation": "不能只内存协调。"
+      },
+      {
+        "id": "B",
+        "text": "一个本地锁保证跨系统一次",
+        "explanation": "不能。"
+      },
+      {
+        "id": "C",
+        "text": "外部防重与结果核对",
+        "explanation": "协调不同边界。"
+      },
+      {
+        "id": "D",
+        "text": "占用过期说明远程必未收到",
+        "explanation": "旧执行者可能已发送。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C59-K04",
+      "C59-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "领取不等于副作用控制。"
+  },
+  {
+    "id": "C59-Q04",
+    "chapterId": "C59",
+    "revision": 1,
+    "type": "single",
+    "stem": "查询暂未找到能否证明未知请求未执行？",
+    "options": [
+      {
+        "id": "A",
+        "text": "能，不需核对",
+        "explanation": "证据不足。"
+      },
+      {
+        "id": "B",
+        "text": "能，马上换键重发",
+        "explanation": "可能重复。"
+      },
+      {
+        "id": "C",
+        "text": "不能，所以永远不能恢复",
+        "explanation": "可按契约或人工处理。"
+      },
+      {
+        "id": "D",
+        "text": "不能，要了解查询一致性和延迟",
+        "explanation": "未见不一定不存在。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C59-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "核对能力也有边界。"
+  },
+  {
+    "id": "C59-Q05",
+    "chapterId": "C59",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "重试策略需要什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "可重试分类、次数与总体预算",
+        "explanation": "不是所有失败可恢复。"
+      },
+      {
+        "id": "B",
+        "text": "认证拒绝一直重放即可",
+        "explanation": "通常需修正凭据。"
+      },
+      {
+        "id": "C",
+        "text": "所有错误无限重试",
+        "explanation": "会放大故障。"
+      },
+      {
+        "id": "D",
+        "text": "失败出口和人工核对",
+        "explanation": "避免无限循环。"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "knowledge": [
+      "C59-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "重试应有限且有语义。"
+  },
+  {
+    "id": "C59-Q06",
+    "chapterId": "C59",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟远程物料已被后续引用，怎样补偿误创建？",
+    "options": [
+      {
+        "id": "A",
+        "text": "无授权直接删除",
+        "explanation": "可能破坏业务。"
+      },
+      {
+        "id": "B",
+        "text": "本地ROLLBACK自动撤销",
+        "explanation": "不覆盖远程。"
+      },
+      {
+        "id": "C",
+        "text": "按业务规则审核停用或更正并留证",
+        "explanation": "补偿是新动作。"
+      },
+      {
+        "id": "D",
+        "text": "删掉日志便算修复",
+        "explanation": "事实仍在。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C59-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "补偿不是万能反向事务。"
+  },
+  {
+    "id": "C59-Q07",
+    "chapterId": "C59",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟批次部分成功，应怎样保存状态？",
+    "options": [
+      {
+        "id": "A",
+        "text": "按业务行保留状态与外部ID",
+        "explanation": "汇总不替代明细。"
+      },
+      {
+        "id": "B",
+        "text": "只留整批失败",
+        "explanation": "会丢行事实。"
+      },
+      {
+        "id": "C",
+        "text": "成功行也重新发",
+        "explanation": "可能重复。"
+      },
+      {
+        "id": "D",
+        "text": "全部改处理中",
+        "explanation": "掩盖结果。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C59-K01",
+      "C59-K02"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "状态要细到恢复单位。"
+  },
+  {
+    "id": "C59-Q08",
+    "chapterId": "C59",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "同步状态验收应覆盖什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "提交后断线、同键不同内容与占用过期",
+        "explanation": "关键失败窗口。"
+      },
+      {
+        "id": "B",
+        "text": "所有未知都人工改成功",
+        "explanation": "没有依据。"
+      },
+      {
+        "id": "C",
+        "text": "人工补偿重复执行与审计",
+        "explanation": "修复本身也要防重。"
+      },
+      {
+        "id": "D",
+        "text": "只测普通创建",
+        "explanation": "不足。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C59-K05",
+      "C59-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "恢复路径同样需验证。"
+  }
+]

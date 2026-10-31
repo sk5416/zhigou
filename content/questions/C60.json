@@ -1,0 +1,310 @@
+[
+  {
+    "id": "C60-Q01",
+    "chapterId": "C60",
+    "revision": 1,
+    "type": "single",
+    "stem": "技术对账与业务对账的区别是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只要总数相等即可",
+        "explanation": "内容可能错。"
+      },
+      {
+        "id": "B",
+        "text": "200即全部业务一致",
+        "explanation": "不成立。"
+      },
+      {
+        "id": "C",
+        "text": "业务对账无需身份",
+        "explanation": "需要业务键。"
+      },
+      {
+        "id": "D",
+        "text": "处理链计数与对象内容语义分别核对",
+        "explanation": "二者补充。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C60-K01"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "传输与事实不同。"
+  },
+  {
+    "id": "C60-Q02",
+    "chapterId": "C60",
+    "revision": 1,
+    "type": "single",
+    "stem": "对账口径应先明确什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只看文件大小",
+        "explanation": "不能判断业务。"
+      },
+      {
+        "id": "B",
+        "text": "只选最多的一列",
+        "explanation": "无完整依据。"
+      },
+      {
+        "id": "C",
+        "text": "范围时点业务键和转换规则",
+        "explanation": "否则比较可能无意义。"
+      },
+      {
+        "id": "D",
+        "text": "默认源目标永远相同",
+        "explanation": "合法转换存在。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C60-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "先定义比较。"
+  },
+  {
+    "id": "C60-Q03",
+    "chapterId": "C60",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "差异可能来自什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "正常延迟、权限或合法转换",
+        "explanation": "不一定错误。"
+      },
+      {
+        "id": "B",
+        "text": "漏数重复、映射或状态错误",
+        "explanation": "需要定位修复。"
+      },
+      {
+        "id": "C",
+        "text": "目标一定全错",
+        "explanation": "权威需确认。"
+      },
+      {
+        "id": "D",
+        "text": "所有差异都应覆盖",
+        "explanation": "先分类。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B"
+    ],
+    "knowledge": [
+      "C60-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "差异分类后决策。"
+  },
+  {
+    "id": "C60-Q04",
+    "chapterId": "C60",
+    "revision": 1,
+    "type": "single",
+    "stem": "哈希相同可以证明所有业务正确吗？",
+    "options": [
+      {
+        "id": "A",
+        "text": "能，不需核对字段",
+        "explanation": "哈希范围与规则有限。"
+      },
+      {
+        "id": "B",
+        "text": "不能，所以哈希无用",
+        "explanation": "可辅助快速比较。"
+      },
+      {
+        "id": "C",
+        "text": "能，来源身份可删除",
+        "explanation": "不可。"
+      },
+      {
+        "id": "D",
+        "text": "不能，需一致归一和业务判定",
+        "explanation": "也不证明授权。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C60-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "技术摘要有范围。"
+  },
+  {
+    "id": "C60-Q05",
+    "chapterId": "C60",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "历史回填应怎样保护数据？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "全表无条件覆盖",
+        "explanation": "可能改错。"
+      },
+      {
+        "id": "B",
+        "text": "只要管理员就无需审计",
+        "explanation": "权限不免责任。"
+      },
+      {
+        "id": "C",
+        "text": "按旧值版本条件更新并留冲突",
+        "explanation": "保护后续业务更改。"
+      },
+      {
+        "id": "D",
+        "text": "先预演分批并设影响阈值",
+        "explanation": "控制损失。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C60-K05",
+      "C60-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "修复也是受控变更。"
+  },
+  {
+    "id": "C60-Q06",
+    "chapterId": "C60",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟单位回填时一行已人工改新值，应怎样处理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "强制写旧规则",
+        "explanation": "覆盖新业务。"
+      },
+      {
+        "id": "B",
+        "text": "改成功计数",
+        "explanation": "伪造。"
+      },
+      {
+        "id": "C",
+        "text": "进入冲突核对或按批准规则处理",
+        "explanation": "不能无条件覆盖。"
+      },
+      {
+        "id": "D",
+        "text": "删掉该行",
+        "explanation": "无依据。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C60-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "不要修复成新错误。"
+  },
+  {
+    "id": "C60-Q07",
+    "chapterId": "C60",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟修复脚本退出0但对账仍错，应怎样判断？",
+    "options": [
+      {
+        "id": "A",
+        "text": "退出0即验收完成",
+        "explanation": "只说明执行状态。"
+      },
+      {
+        "id": "B",
+        "text": "继续核对业务与关联并记录差异",
+        "explanation": "成功不是仅脚本退出。"
+      },
+      {
+        "id": "C",
+        "text": "隐藏差异",
+        "explanation": "不真实。"
+      },
+      {
+        "id": "D",
+        "text": "重跑到总数变大",
+        "explanation": "可能重复。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C60-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "结果需要独立证据。"
+  },
+  {
+    "id": "C60-Q08",
+    "chapterId": "C60",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "修复重跑和留证应包括什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "再次执行可叠加金额",
+        "explanation": "会破坏数据。"
+      },
+      {
+        "id": "B",
+        "text": "明确幂等、失败和补偿路径",
+        "explanation": "重复运行应有规则。"
+      },
+      {
+        "id": "C",
+        "text": "删除旧备份免混淆",
+        "explanation": "削弱恢复。"
+      },
+      {
+        "id": "D",
+        "text": "规则版本、前后值、操作者与影响",
+        "explanation": "便于追溯。"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C60-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "修复必须可控可核对。"
+  }
+]

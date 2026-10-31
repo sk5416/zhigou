@@ -1,0 +1,311 @@
+[
+  {
+    "id": "C56-Q01",
+    "chapterId": "C56",
+    "revision": 1,
+    "type": "single",
+    "stem": "生命周期成本包括什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只算首次开发",
+        "explanation": "生命周期更长。"
+      },
+      {
+        "id": "B",
+        "text": "自建一定没有成本",
+        "explanation": "人工与故障仍有代价。"
+      },
+      {
+        "id": "C",
+        "text": "只有服务器月费",
+        "explanation": "遗漏维护与退出。"
+      },
+      {
+        "id": "D",
+        "text": "存储备份许可维护升级及退出等",
+        "explanation": "需按实际使用核验。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C56-K01"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "总成本不只资源账单。"
+  },
+  {
+    "id": "C56-Q02",
+    "chapterId": "C56",
+    "revision": 1,
+    "type": "single",
+    "stem": "日增8GB、30天原始增量约多少？",
+    "options": [
+      {
+        "id": "A",
+        "text": "0，因为可以压缩",
+        "explanation": "不能假定无限压缩。"
+      },
+      {
+        "id": "B",
+        "text": "固定24TB",
+        "explanation": "数量级不符。"
+      },
+      {
+        "id": "C",
+        "text": "240GB，其他副本需另算",
+        "explanation": "只是示例原始增长。"
+      },
+      {
+        "id": "D",
+        "text": "8GB",
+        "explanation": "忽略时间。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C56-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "预测要说明单位与范围。"
+  },
+  {
+    "id": "C56-Q03",
+    "chapterId": "C56",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "维护台账应包含什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "依赖支持、漏洞和兼容检查",
+        "explanation": "需持续更新。"
+      },
+      {
+        "id": "B",
+        "text": "证书部署一次永不管",
+        "explanation": "会到期。"
+      },
+      {
+        "id": "C",
+        "text": "凭据证书有效期与责任人",
+        "explanation": "防止无人承担。"
+      },
+      {
+        "id": "D",
+        "text": "只记录软件名称",
+        "explanation": "不足。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C56-K04",
+      "C56-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "资产有生命周期。"
+  },
+  {
+    "id": "C56-Q04",
+    "chapterId": "C56",
+    "revision": 1,
+    "type": "single",
+    "stem": "依赖更新应怎样处理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "每天无条件换最新",
+        "explanation": "可能破坏兼容。"
+      },
+      {
+        "id": "B",
+        "text": "永远不更新最稳",
+        "explanation": "可能积累安全和支持风险。"
+      },
+      {
+        "id": "C",
+        "text": "按风险验证兼容迁移并保留回退",
+        "explanation": "不盲目追新也不无限搁置。"
+      },
+      {
+        "id": "D",
+        "text": "只改版本号不测试",
+        "explanation": "无证据。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C56-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "更新是受控变更。"
+  },
+  {
+    "id": "C56-Q05",
+    "chapterId": "C56",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "磁盘清理应考虑什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "对象用途和保留恢复规则",
+        "explanation": "不能混删。"
+      },
+      {
+        "id": "B",
+        "text": "增长趋势、归档与容量触发",
+        "explanation": "提前规划。"
+      },
+      {
+        "id": "C",
+        "text": "全部大文件都可删",
+        "explanation": "可能是业务和事务日志。"
+      },
+      {
+        "id": "D",
+        "text": "日志名称相同就用途相同",
+        "explanation": "职责可能不同。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B"
+    ],
+    "knowledge": [
+      "C56-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "先辨对象再清理。"
+  },
+  {
+    "id": "C56-Q06",
+    "chapterId": "C56",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟SQL Server事务日志占满，应先怎样处理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "当文本日志直接删除",
+        "explanation": "破坏恢复。"
+      },
+      {
+        "id": "B",
+        "text": "按事务恢复与复用阻塞核查并受控处置",
+        "explanation": "需产品具体方案。"
+      },
+      {
+        "id": "C",
+        "text": "立即缩小日志文件，不查增长原因",
+        "explanation": "未核查恢复模式、日志截断条件、长事务和备份链就操作可能无效并掩盖原因。"
+      },
+      {
+        "id": "D",
+        "text": "删除旧备份免查原因",
+        "explanation": "可能损害恢复链。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C56-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "事务日志不等于debug文本。"
+  },
+  {
+    "id": "C56-Q07",
+    "chapterId": "C56",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟系统下线只停进程，遗漏什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只缺新页面",
+        "explanation": "无关。"
+      },
+      {
+        "id": "B",
+        "text": "账号、回调、任务、数据保留和费用",
+        "explanation": "下线需完整核对。"
+      },
+      {
+        "id": "C",
+        "text": "只补充一个进程停止截图",
+        "explanation": "截图不覆盖凭据撤销、定时任务、数据保留和依赖通知等下线责任。"
+      },
+      {
+        "id": "D",
+        "text": "没有遗漏",
+        "explanation": "仍有任务与身份。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C56-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "下线也是工程交付。"
+  },
+  {
+    "id": "C56-Q08",
+    "chapterId": "C56",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "生命周期责任应怎样安排？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "所有待办隐藏",
+        "explanation": "不利维护。"
+      },
+      {
+        "id": "B",
+        "text": "有负责人、检查点与重评触发",
+        "explanation": "避免永久以后优化。"
+      },
+      {
+        "id": "C",
+        "text": "原作者离职后再临时猜",
+        "explanation": "不可靠。"
+      },
+      {
+        "id": "D",
+        "text": "演练接手与退出数据核对",
+        "explanation": "能验证可维护性。"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C56-K06",
+      "C56-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "维护需要可持续责任。"
+  }
+]
