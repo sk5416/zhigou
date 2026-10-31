@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.ContentValues
 import android.graphics.Bitmap
 import android.provider.MediaStore
+import android.os.SystemClock
 import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -42,6 +43,9 @@ class UiSmokeTest {
         }
     }
     private fun screenshot(device: UiDevice, name: String) {
+        device.waitForIdle(2_000)
+        // Accessibility can become ready before Chromium submits its first drawn frame.
+        SystemClock.sleep(800)
         val context = ApplicationProvider.getApplicationContext<Context>()
         val resolver = context.contentResolver
         val values = ContentValues().apply {
@@ -52,6 +56,16 @@ class UiSmokeTest {
         }
         val uri = requireNotNull(resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values))
         val bitmap = requireNotNull(InstrumentationRegistry.getInstrumentation().uiAutomation.takeScreenshot())
+        if (name == "reader") {
+            var ink = 0
+            for (y in bitmap.height / 4 until bitmap.height * 3 / 4) {
+                for (x in 8 until bitmap.width - 8) {
+                    val pixel = bitmap.getPixel(x, y)
+                    if (android.graphics.Color.red(pixel) < 120 && android.graphics.Color.green(pixel) < 120 && android.graphics.Color.blue(pixel) < 120) ink++
+                }
+            }
+            assertTrue("reader must draw visible text, not only expose accessibility nodes", ink > 80)
+        }
         requireNotNull(resolver.openOutputStream(uri)).use { assertTrue(bitmap.compress(Bitmap.CompressFormat.PNG, 100, it)) }
         bitmap.recycle()
         resolver.update(uri, ContentValues().apply { put(MediaStore.Images.Media.IS_PENDING, 0) }, null, null)
