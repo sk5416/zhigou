@@ -35,8 +35,10 @@ private fun mode(mode: String) = when (mode) { "test" -> "自测"; "review" -> "
     val busy by vm.busy.collectAsStateWithLifecycle()
     val error by vm.error.collectAsStateWithLifecycle()
     val preview by vm.restorePreview.collectAsStateWithLifecycle()
+    val notice by vm.notice.collectAsStateWithLifecycle()
     val dark = when (state.preferences.theme) { "dark" -> true; "light" -> false; else -> isSystemInDarkTheme() }
     MaterialTheme(colorScheme = if (dark) darkColorScheme(primary = Color(0xFF8BD6BB)) else lightColorScheme(primary = Color(0xFF246B5B), background = Color(0xFFF7F8F3), surface = Color(0xFFF7F8F3))) {
+        notice?.let { AlertDialog(onDismissRequest = { vm.notice.value = null }, title = { Text("操作完成") }, text = { Text(it) }, confirmButton = { TextButton(onClick = { vm.notice.value = null }) { Text("知道了") } }) }
         var page by rememberSaveable { mutableStateOf("home") }
         var chapter by rememberSaveable { mutableStateOf("") }
         var anchor by rememberSaveable { mutableStateOf("") }

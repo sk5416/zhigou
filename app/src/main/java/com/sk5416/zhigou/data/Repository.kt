@@ -15,11 +15,15 @@ import java.io.File
 import java.util.UUID
 
 private val Context.preferencesStore by preferencesDataStore("preferences")
-class Repository(private val context: Context, database: LearningDatabase? = null) {
+internal enum class WritePoint { ATTEMPT_INSERTED, RESTORE_DATABASE_COMMITTED, RESTORE_PREFERENCES_COMMITTED }
+class Repository(private val context: Context, database: LearningDatabase?, journalFile: File) {
+    constructor(context: Context, database: LearningDatabase? = null) : this(context, database, File(context.filesDir, "restore-journal.json"))
     private val db = database ?: Room.databaseBuilder(context, LearningDatabase::class.java, "learning.db").build()
     private val dao = db.dao()
     private val mutex = Mutex()
-    private val journal = AtomicFile(File(context.filesDir, "restore-journal.json"))
+    private val journal = AtomicFile(journalFile)
+    // Per-instance fault injection for instrumented transaction/process-death tests.
+    internal var checkpoint: suspend (WritePoint) -> Unit = {}
     lateinit var catalog: Catalog; private set
     val readings = dao.readings()
     val sessions = dao.sessions().map { rows -> rows.map { Codec.json.decodeFromString<Session>(it.payload) } }
@@ -88,6 +92,7 @@ class Repository(private val context: Context, database: LearningDatabase? = nul
                 val chosen = s.selections[q.id].orEmpty()
                 val correct = LearningRules.correct(q, chosen)
                 val inserted = dao.putAttempt(Attempt(s.id, q.id, q.revision, q.chapterId, Codec.json.encodeToString(chosen), correct, s.mode, now))
+                checkpoint(WritePoint.ATTEMPT_INSERTED)
                 if (inserted != -1L) {
                     val old = dao.mistake(q.id, q.revision)
                     if (!correct || (old != null && s.mode == "review")) dao.putMistake(Mistake(q.id, q.revision, q.chapterId, correct, now))
@@ -112,7 +117,13 @@ class Repository(private val context: Context, database: LearningDatabase? = nul
             val stream = journal.startWrite()
             try { stream.write(Codec.json.encodeToString(old).toByteArray()); journal.finishWrite(stream) }
             catch (e: Exception) { journal.failWrite(stream); throw e }
-            try { replaceRows(b); setPreferences(b.preferences); journal.delete() }
+            try {
+                replaceRows(b)
+                checkpoint(WritePoint.RESTORE_DATABASE_COMMITTED)
+                setPreferences(b.preferences)
+                checkpoint(WritePoint.RESTORE_PREFERENCES_COMMITTED)
+                journal.delete()
+            }
             catch (e: Exception) { replaceRows(old); setPreferences(old.preferences); journal.delete(); throw e }
         }
     }

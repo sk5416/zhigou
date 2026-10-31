@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
-import java.io.ByteArrayOutputStream
+import java.io.IOException
 
 data class LearningState(
     val catalog: Catalog? = null, val readings: List<Reading> = emptyList(),
@@ -26,6 +26,7 @@ class LearningViewModel(app: Application) : AndroidViewModel(app) {
     val error = MutableStateFlow<String?>(null)
     val busy = MutableStateFlow(false)
     val restorePreview = MutableStateFlow<Backup?>(null)
+    val notice = MutableStateFlow<String?>(null)
     init {
         run {
             repository.initialize()
@@ -49,29 +50,26 @@ class LearningViewModel(app: Application) : AndroidViewModel(app) {
     fun navigate(id: String, index: Int) = run(false) { repository.navigate(id, index) }
     fun submit(id: String, finish: Boolean = false) = run { repository.submit(id, finish) }
     fun export(uri: Uri) = run {
-        val text = Codec.json.encodeToString(repository.snapshot())
-        require(text.toByteArray(Charsets.UTF_8).size <= 20 * 1024 * 1024) { "备份超过当前 20MB 恢复上限，未写入文件" }
-        withContext(Dispatchers.IO) {
-            requireNotNull(getApplication<Application>().contentResolver.openOutputStream(uri, "wt")) { "无法写入文件" }.bufferedWriter().use { it.write(text) }
-        }
+        val bytes = BackupFiles.encode(repository.snapshot())
+        try {
+            withContext(Dispatchers.IO) {
+                requireNotNull(getApplication<Application>().contentResolver.openOutputStream(uri, "wt")) { "无法写入文件" }.use { it.write(bytes) }
+            }
+        } catch (_: IOException) { throw IllegalStateException("备份导出失败，文件可能不完整，请重新导出") }
+        catch (_: SecurityException) { throw IllegalStateException("没有所选文件的写入权限，请重新选择保存位置") }
+        notice.value = "学习备份已导出，请保管所选文件。"
     }
     fun preview(uri: Uri) = run {
-        val backup = withContext(Dispatchers.IO) {
+        restorePreview.value = null
+        val backup = try { withContext(Dispatchers.IO) {
             requireNotNull(getApplication<Application>().contentResolver.openInputStream(uri)).use { input ->
-                val output = ByteArrayOutputStream()
-                val buffer = ByteArray(8192)
-                while (true) {
-                    val count = input.read(buffer)
-                    if (count < 0) break
-                    require(output.size() + count <= 20 * 1024 * 1024) { "备份超过 20MB 上限" }
-                    output.write(buffer, 0, count)
-                }
-                Codec.json.decodeFromString<Backup>(output.toString("UTF-8"))
+                BackupFiles.decode(input)
             }
-        }
+        } } catch (_: IOException) { throw IllegalStateException("无法完整读取备份，请检查文件后重新选择；当前数据未修改") }
+        catch (_: SecurityException) { throw IllegalStateException("没有所选文件的读取权限，请重新选择；当前数据未修改") }
         LearningRules.validate(backup, repository.catalog)
         restorePreview.value = backup
     }
-    fun restore() = run { restorePreview.value?.let { repository.restore(it) }; restorePreview.value = null }
+    fun restore() = run { restorePreview.value?.let { repository.restore(it); notice.value = "学习数据和阅读设置已恢复。" }; restorePreview.value = null }
     fun clear() = run { repository.clear() }
 }
