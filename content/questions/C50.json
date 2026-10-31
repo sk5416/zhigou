@@ -1,0 +1,312 @@
+[
+  {
+    "id": "C50-Q01",
+    "chapterId": "C50",
+    "revision": 1,
+    "type": "single",
+    "stem": "并发测试需要证明什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只看最终页面",
+        "explanation": "可能掩盖覆盖。"
+      },
+      {
+        "id": "B",
+        "text": "调用总次数大于一",
+        "explanation": "顺序调用未必并发。"
+      },
+      {
+        "id": "C",
+        "text": "只要加sleep就充分",
+        "explanation": "关键交错可能未发生。"
+      },
+      {
+        "id": "D",
+        "text": "保护不变量的关键交错确实发生",
+        "explanation": "需受控时序和断言。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C50-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "并发不等于重复调用。"
+  },
+  {
+    "id": "C50-Q02",
+    "chapterId": "C50",
+    "revision": 1,
+    "type": "single",
+    "stem": "性能测试需要什么前提？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只看CPU",
+        "explanation": "不能覆盖用户质量。"
+      },
+      {
+        "id": "B",
+        "text": "只压健康页",
+        "explanation": "不代表业务。"
+      },
+      {
+        "id": "C",
+        "text": "只统计最好一次",
+        "explanation": "不代表尾部。"
+      },
+      {
+        "id": "D",
+        "text": "负载、数据分布、窗口与正确结果口径",
+        "explanation": "速度不能脱离条件。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C50-K05"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "测量条件决定结论。"
+  },
+  {
+    "id": "C50-Q03",
+    "chapterId": "C50",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "批量七成功两拒绝一未知，应核对什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "逐行业务键、状态与数量关系",
+        "explanation": "不能丢掉未知。"
+      },
+      {
+        "id": "B",
+        "text": "全部当失败重新创建",
+        "explanation": "可能重复。"
+      },
+      {
+        "id": "C",
+        "text": "外部ID、审计及重试结果",
+        "explanation": "副作用也要确认。"
+      },
+      {
+        "id": "D",
+        "text": "仅总数相等即可",
+        "explanation": "归属和内容可能错。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C50-K04",
+      "C50-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "数量与语义都要对账。"
+  },
+  {
+    "id": "C50-Q04",
+    "chapterId": "C50",
+    "revision": 1,
+    "type": "single",
+    "stem": "强制结束后的已提交数据恢复通过，能否代表写入中断也通过？",
+    "options": [
+      {
+        "id": "A",
+        "text": "不能，所以该测试无价值",
+        "explanation": "它验证有限但有用的范围。"
+      },
+      {
+        "id": "B",
+        "text": "能，都是重启",
+        "explanation": "失败点不同。"
+      },
+      {
+        "id": "C",
+        "text": "能，数据库肯定自动解决全部",
+        "explanation": "仍需证据。"
+      },
+      {
+        "id": "D",
+        "text": "不能，应分别报告触发点",
+        "explanation": "不能扩大恢复结论。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C50-K06",
+      "C50-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "恢复场景需分开。"
+  },
+  {
+    "id": "C50-Q05",
+    "chapterId": "C50",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "专项测试应怎样限制环境？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "确认授权目标、负载及停止条件",
+        "explanation": "避免影响真实业务。"
+      },
+      {
+        "id": "B",
+        "text": "真实数据必须交给AI",
+        "explanation": "无必要。"
+      },
+      {
+        "id": "C",
+        "text": "使用受控替身或隔离环境注入失败",
+        "explanation": "便于安全复现。"
+      },
+      {
+        "id": "D",
+        "text": "对供应商生产接口无限压测",
+        "explanation": "没有此授权。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C50-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "验证也要有边界。"
+  },
+  {
+    "id": "C50-Q06",
+    "chapterId": "C50",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟两个用户先读同一库存再写，怎样测试最可靠？",
+    "options": [
+      {
+        "id": "A",
+        "text": "用屏障控制同旧版本并核对冲突与数据",
+        "explanation": "直接检验不变量。"
+      },
+      {
+        "id": "B",
+        "text": "只看请求成功数",
+        "explanation": "可能数据覆盖。"
+      },
+      {
+        "id": "C",
+        "text": "顺序读写两次",
+        "explanation": "第二次可能已见新值。"
+      },
+      {
+        "id": "D",
+        "text": "增加随机等待不记时序",
+        "explanation": "不能证明关键交错。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C50-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "需要时序与数据证据。"
+  },
+  {
+    "id": "C50-Q07",
+    "chapterId": "C50",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟请求处理后响应丢失，合理预期是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "保持未知并查询或按防重规则恢复",
+        "explanation": "核对副作用。"
+      },
+      {
+        "id": "B",
+        "text": "自动认定未执行",
+        "explanation": "可能已提交。"
+      },
+      {
+        "id": "C",
+        "text": "生成新业务身份重发",
+        "explanation": "可能重复。"
+      },
+      {
+        "id": "D",
+        "text": "删除失败记录",
+        "explanation": "失去线索。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C50-K06",
+      "C50-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "未知不能伪装明确失败。"
+  },
+  {
+    "id": "C50-Q08",
+    "chapterId": "C50",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "权限专项有哪些高价值反例？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "只用管理员",
+        "explanation": "不测拒绝。"
+      },
+      {
+        "id": "B",
+        "text": "直接请求他人对象或混合批量",
+        "explanation": "验证服务端范围。"
+      },
+      {
+        "id": "C",
+        "text": "导出字段、搜索摘要与撤权后请求",
+        "explanation": "覆盖旁路与生命周期。"
+      },
+      {
+        "id": "D",
+        "text": "按钮隐藏即可",
+        "explanation": "可绕过。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C50-K02"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "权限应全链核验。"
+  }
+]

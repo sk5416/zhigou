@@ -1,0 +1,312 @@
+[
+  {
+    "id": "C45-Q01",
+    "chapterId": "C45",
+    "revision": 1,
+    "type": "single",
+    "stem": "SQL参数化主要防护什么边界？",
+    "options": [
+      {
+        "id": "A",
+        "text": "自动清洗所有HTML",
+        "explanation": "输出上下文不同。"
+      },
+      {
+        "id": "B",
+        "text": "把全部数据库对象授权给员工",
+        "explanation": "不是授权机制。"
+      },
+      {
+        "id": "C",
+        "text": "替代所有业务校验",
+        "explanation": "输入语义仍要检查。"
+      },
+      {
+        "id": "D",
+        "text": "将数据值与查询结构区分",
+        "explanation": "动态表名或排序仍需受控映射。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C45-K01"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "参数化有适用范围。"
+  },
+  {
+    "id": "C45-Q02",
+    "chapterId": "C45",
+    "revision": 1,
+    "type": "single",
+    "stem": "XSS与CSRF的核心区别是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "两者都仅由密码太短造成",
+        "explanation": "原因不同。"
+      },
+      {
+        "id": "B",
+        "text": "启用CORS便自动解决二者",
+        "explanation": "不是通用防护。"
+      },
+      {
+        "id": "C",
+        "text": "内网不存在这两种风险",
+        "explanation": "信任边界仍可能失守。"
+      },
+      {
+        "id": "D",
+        "text": "不可信内容被执行与跨站请求意图混淆",
+        "explanation": "控制需按具体机制设计。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C45-K02",
+      "C45-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "按风险配控制。"
+  },
+  {
+    "id": "C45-Q03",
+    "chapterId": "C45",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "输出处理哪些判断正确？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "用正则删一个标签就全安全",
+        "explanation": "富文本和上下文更复杂。"
+      },
+      {
+        "id": "B",
+        "text": "富文本使用适当净化与安全配置",
+        "explanation": "不能任意当活动内容输出。"
+      },
+      {
+        "id": "C",
+        "text": "按HTML、属性、URL等上下文处理",
+        "explanation": "一个编码不能直接套所有位置。"
+      },
+      {
+        "id": "D",
+        "text": "CSP替代全部安全输出",
+        "explanation": "只能增加防护。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C45-K02"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "输出上下文决定处理方式。"
+  },
+  {
+    "id": "C45-Q04",
+    "chapterId": "C45",
+    "revision": 1,
+    "type": "single",
+    "stem": "CORS能否代替API授权？",
+    "options": [
+      {
+        "id": "A",
+        "text": "能，加入任意允许源即可",
+        "explanation": "还扩大访问。"
+      },
+      {
+        "id": "B",
+        "text": "能，只要请求是JSON",
+        "explanation": "格式不证明权限。"
+      },
+      {
+        "id": "C",
+        "text": "能，非浏览器也全部受它阻断",
+        "explanation": "不成立。"
+      },
+      {
+        "id": "D",
+        "text": "不能，仍需服务端身份和对象检查",
+        "explanation": "浏览器跨源策略不是所有调用者的权限边界。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C45-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "跨源策略与业务授权分开。"
+  },
+  {
+    "id": "C45-Q05",
+    "chapterId": "C45",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "文件和路径处理应注意什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "核对规范位置、权限及解析资源",
+        "explanation": "需防越界与耗尽。"
+      },
+      {
+        "id": "B",
+        "text": "用户路径前缀看起来正确就够",
+        "explanation": "规范化与环境行为可能改变目标。"
+      },
+      {
+        "id": "C",
+        "text": "文件扩展名安全便可执行",
+        "explanation": "不能这样推断。"
+      },
+      {
+        "id": "D",
+        "text": "以稳定业务ID映射受控存储",
+        "explanation": "减少任意路径决定权。"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "knowledge": [
+      "C45-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "路径和内容都要受控。"
+  },
+  {
+    "id": "C45-Q06",
+    "chapterId": "C45",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟查询值已参数化，但排序字段直接拼请求字符串，应怎样判断？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只需隐藏排序按钮",
+        "explanation": "接口可绕过。"
+      },
+      {
+        "id": "B",
+        "text": "排序采用明确允许字段映射",
+        "explanation": "不能把值保护扩大到结构。"
+      },
+      {
+        "id": "C",
+        "text": "已经全安全",
+        "explanation": "动态结构仍可能失控。"
+      },
+      {
+        "id": "D",
+        "text": "关闭TLS解决",
+        "explanation": "与风险无关。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C45-K01"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "检查所有动态片段。"
+  },
+  {
+    "id": "C45-Q07",
+    "chapterId": "C45",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟备注安全显示，错误回显却直接插HTML，应怎样处理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "按错误输出上下文同样处理并回归",
+        "explanation": "保护应覆盖所有输出。"
+      },
+      {
+        "id": "B",
+        "text": "有HttpOnly便无影响",
+        "explanation": "仍可能执行用户动作。"
+      },
+      {
+        "id": "C",
+        "text": "只禁用页面复制",
+        "explanation": "不修复解释边界。"
+      },
+      {
+        "id": "D",
+        "text": "只测备注页即可",
+        "explanation": "旁路仍有风险。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C45-K02",
+      "C45-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "输出旁路不能遗漏。"
+  },
+  {
+    "id": "C45-Q08",
+    "chapterId": "C45",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "安全修复验收包括什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "扫描无告警即证明无漏洞",
+        "explanation": "覆盖有限。"
+      },
+      {
+        "id": "B",
+        "text": "隔离环境的拒绝反例与正常功能",
+        "explanation": "既防风险也保行为。"
+      },
+      {
+        "id": "C",
+        "text": "直接攻击真实企业网站验证",
+        "explanation": "无此授权。"
+      },
+      {
+        "id": "D",
+        "text": "记录依赖来源、版本与处置",
+        "explanation": "供应链也是边界。"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C45-K07",
+      "C45-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "反例要受控且证据有范围。"
+  }
+]

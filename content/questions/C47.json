@@ -1,0 +1,315 @@
+[
+  {
+    "id": "C47-Q01",
+    "chapterId": "C47",
+    "revision": 1,
+    "type": "single",
+    "stem": "密码哈希与可逆加密应怎样区分？",
+    "options": [
+      {
+        "id": "A",
+        "text": "把密码隐藏在日志就安全",
+        "explanation": "不应记录原值。"
+      },
+      {
+        "id": "B",
+        "text": "验证密码与恢复原文是不同目的",
+        "explanation": "常规密码验证不应默认保存可解密原文。"
+      },
+      {
+        "id": "C",
+        "text": "单次快速哈希等于适当密码方案",
+        "explanation": "缺少相应成本等保护。"
+      },
+      {
+        "id": "D",
+        "text": "加密无需管理密钥",
+        "explanation": "恢复依赖密钥。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C47-K04",
+      "C47-K05"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "处理方式要匹配目的。"
+  },
+  {
+    "id": "C47-Q02",
+    "chapterId": "C47",
+    "revision": 1,
+    "type": "single",
+    "stem": "去掉姓名的数据能否默认当匿名数据？",
+    "options": [
+      {
+        "id": "A",
+        "text": "能，财务记录不敏感",
+        "explanation": "需按用途与组织分级。"
+      },
+      {
+        "id": "B",
+        "text": "能，只要文件名改test",
+        "explanation": "名称不改变内容。"
+      },
+      {
+        "id": "C",
+        "text": "不能，要评估组合识别与副本范围",
+        "explanation": "脱敏不等于匿名。"
+      },
+      {
+        "id": "D",
+        "text": "能，只有姓名能识别人",
+        "explanation": "组合字段也可识别。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C47-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "匿名性不能靠单列删除推断。"
+  },
+  {
+    "id": "C47-Q03",
+    "chapterId": "C47",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "敏感数据清单应包含什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "只记录总行数",
+        "explanation": "不表达用途和范围。"
+      },
+      {
+        "id": "B",
+        "text": "日志导出缓存与备份副本",
+        "explanation": "不能只看主表。"
+      },
+      {
+        "id": "C",
+        "text": "用途、访问者、字段与保留责任",
+        "explanation": "有助最小化治理。"
+      },
+      {
+        "id": "D",
+        "text": "所有数据永久保留最保险",
+        "explanation": "增加风险且可能不合适。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C47-K01",
+      "C47-K02",
+      "C47-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "数据流各副本都要治理。"
+  },
+  {
+    "id": "C47-Q04",
+    "chapterId": "C47",
+    "revision": 1,
+    "type": "single",
+    "stem": "页面隐藏金额列，导出可以直接全表全列吗？",
+    "options": [
+      {
+        "id": "A",
+        "text": "可以，只需ZIP压缩",
+        "explanation": "压缩不是授权。"
+      },
+      {
+        "id": "B",
+        "text": "可以，下载后由员工负责",
+        "explanation": "应用仍应限制导出。"
+      },
+      {
+        "id": "C",
+        "text": "不可以，要重新核对对象与字段范围",
+        "explanation": "界面隐藏不保护其他输出。"
+      },
+      {
+        "id": "D",
+        "text": "可以，内网无需限制",
+        "explanation": "网络不替代权限。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C47-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "导出是独立数据出口。"
+  },
+  {
+    "id": "C47-Q05",
+    "chapterId": "C47",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "加密备份需要考虑什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "密钥可用、受控及独立恢复",
+        "explanation": "只有密文可能无法还原。"
+      },
+      {
+        "id": "B",
+        "text": "密钥与公开日志一起保存",
+        "explanation": "会破坏保密。"
+      },
+      {
+        "id": "C",
+        "text": "加密后无需备份内容",
+        "explanation": "加密不防所有丢失。"
+      },
+      {
+        "id": "D",
+        "text": "轮换、权限和恢复演练",
+        "explanation": "生命周期影响可用性。"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "knowledge": [
+      "C47-K05",
+      "C47-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "密文和密钥共同决定恢复。"
+  },
+  {
+    "id": "C47-Q06",
+    "chapterId": "C47",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟排障要求完整财务响应发给AI，合理替代是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "优先虚构复现与必要脱敏关联线索",
+        "explanation": "确需敏感数据时按授权受控处理。"
+      },
+      {
+        "id": "B",
+        "text": "先发送再删消息",
+        "explanation": "副本可能已存在。"
+      },
+      {
+        "id": "C",
+        "text": "公开工单可无限保留",
+        "explanation": "仍有泄露风险。"
+      },
+      {
+        "id": "D",
+        "text": "仅改文件名",
+        "explanation": "内容未最小化。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C47-K02",
+      "C47-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "排障证据要最小必要。"
+  },
+  {
+    "id": "C47-Q07",
+    "chapterId": "C47",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟删除某员工记录后备份仍有历史，应怎样说明？",
+    "options": [
+      {
+        "id": "A",
+        "text": "承诺所有副本已瞬间擦除",
+        "explanation": "可能不真实。"
+      },
+      {
+        "id": "B",
+        "text": "说明适用保留规则与到期处理范围",
+        "explanation": "需要负责人员核验要求。"
+      },
+      {
+        "id": "C",
+        "text": "完全隐瞒历史副本",
+        "explanation": "妨碍治理。"
+      },
+      {
+        "id": "D",
+        "text": "把所有备份直接公开",
+        "explanation": "无关且危险。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C47-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "删除与保留需真实可解释。"
+  },
+  {
+    "id": "C47-Q08",
+    "chapterId": "C47",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "导出审计应记录什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "完整密码便于追责",
+        "explanation": "不应记录秘密。"
+      },
+      {
+        "id": "B",
+        "text": "整份财务文件复制到日志",
+        "explanation": "增加无必要副本。"
+      },
+      {
+        "id": "C",
+        "text": "下载和临时文件的访问保留策略",
+        "explanation": "导出后仍有生命周期。"
+      },
+      {
+        "id": "D",
+        "text": "操作者、时间、范围与结果",
+        "explanation": "足以建立必要线索。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C47-K06",
+      "C47-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "审计不能成为第二份泄露源。"
+  }
+]

@@ -1,0 +1,313 @@
+[
+  {
+    "id": "C48-Q01",
+    "chapterId": "C48",
+    "revision": 1,
+    "type": "single",
+    "stem": "测试用例首先需要什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只写检查正常",
+        "explanation": "不可判定。"
+      },
+      {
+        "id": "B",
+        "text": "前提、操作及独立可观察预期",
+        "explanation": "才能判断实际行为。"
+      },
+      {
+        "id": "C",
+        "text": "复制实现作为全部预期",
+        "explanation": "可能同错。"
+      },
+      {
+        "id": "D",
+        "text": "成功截图数量",
+        "explanation": "不等于需求覆盖。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C48-K01",
+      "C48-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "判定依据要明确。"
+  },
+  {
+    "id": "C48-Q02",
+    "chapterId": "C48",
+    "revision": 1,
+    "type": "single",
+    "stem": "回归测试主要关注什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只重新安装应用",
+        "explanation": "不证明行为正确。"
+      },
+      {
+        "id": "B",
+        "text": "只测新增按钮",
+        "explanation": "可能遗漏旧行为。"
+      },
+      {
+        "id": "C",
+        "text": "任何检查都全量重复",
+        "explanation": "未必有价值。"
+      },
+      {
+        "id": "D",
+        "text": "变更后受影响的既有行为",
+        "explanation": "应按影响范围选择。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C48-K05"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "按变更风险回归。"
+  },
+  {
+    "id": "C48-Q03",
+    "chapterId": "C48",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "哪些情况应在测试报告单列？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "未运行和跳过",
+        "explanation": "不能算通过。"
+      },
+      {
+        "id": "B",
+        "text": "环境限制与实际命令",
+        "explanation": "帮助理解结论。"
+      },
+      {
+        "id": "C",
+        "text": "只有成功结果即可",
+        "explanation": "掩盖范围。"
+      },
+      {
+        "id": "D",
+        "text": "静态检查等于设备实测",
+        "explanation": "两类证据不同。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B"
+    ],
+    "knowledge": [
+      "C48-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "报告范围要真实。"
+  },
+  {
+    "id": "C48-Q04",
+    "chapterId": "C48",
+    "revision": 1,
+    "type": "single",
+    "stem": "低风险文案调整与新增防重规则应怎样选测？",
+    "options": [
+      {
+        "id": "A",
+        "text": "个人项目都不用验证",
+        "explanation": "风险仍存在。"
+      },
+      {
+        "id": "B",
+        "text": "按风险选择有意义检查",
+        "explanation": "不以数量装饰。"
+      },
+      {
+        "id": "C",
+        "text": "都只截图",
+        "explanation": "防重需要数据断言。"
+      },
+      {
+        "id": "D",
+        "text": "都写重复实现单测",
+        "explanation": "可能无效。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C48-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "检查要对应影响。"
+  },
+  {
+    "id": "C48-Q05",
+    "chapterId": "C48",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "需求到测试映射应包括什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "边界、失败与恢复",
+        "explanation": "这些常有遗漏。"
+      },
+      {
+        "id": "B",
+        "text": "仅管理员正常路径",
+        "explanation": "覆盖不足。"
+      },
+      {
+        "id": "C",
+        "text": "身份、输入和不允许发生的事",
+        "explanation": "能明确安全和数据结果。"
+      },
+      {
+        "id": "D",
+        "text": "全部依赖AI口头保证",
+        "explanation": "没有证据。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C48-K03",
+      "C48-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "成功演示只是起点。"
+  },
+  {
+    "id": "C48-Q06",
+    "chapterId": "C48",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟重复导入用例应怎样判定？",
+    "options": [
+      {
+        "id": "A",
+        "text": "成功弹窗出现两次",
+        "explanation": "不证明没有重复。"
+      },
+      {
+        "id": "B",
+        "text": "仅记录调用时间",
+        "explanation": "不足。"
+      },
+      {
+        "id": "C",
+        "text": "界面不卡顿",
+        "explanation": "不证明数据唯一。"
+      },
+      {
+        "id": "D",
+        "text": "核对同意图只一条业务及可解释结果",
+        "explanation": "还要避免误吞新意图。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C48-K02",
+      "C48-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "观察业务不变量。"
+  },
+  {
+    "id": "C48-Q07",
+    "chapterId": "C48",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟修复后测试失败，合理做法是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "修改预期为当前错误值",
+        "explanation": "没有业务依据。"
+      },
+      {
+        "id": "B",
+        "text": "全部改成跳过并算通过",
+        "explanation": "不真实。"
+      },
+      {
+        "id": "C",
+        "text": "区分产品、前提与环境原因并修复",
+        "explanation": "保留判定依据。"
+      },
+      {
+        "id": "D",
+        "text": "删除断言保持绿色",
+        "explanation": "掩盖问题。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C48-K05",
+      "C48-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "失败要解释而非隐藏。"
+  },
+  {
+    "id": "C48-Q08",
+    "chapterId": "C48",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "人工检查与自动化应怎样结合？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "人工发现无需留证",
+        "explanation": "难接续。"
+      },
+      {
+        "id": "B",
+        "text": "人工也记录条件和结果",
+        "explanation": "便于复核。"
+      },
+      {
+        "id": "C",
+        "text": "按风险与可观察性分工",
+        "explanation": "体验与规则可采用不同证据。"
+      },
+      {
+        "id": "D",
+        "text": "自动化能证明所有体验",
+        "explanation": "范围有限。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C48-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "证据形式不同仍需可靠。"
+  }
+]

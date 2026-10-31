@@ -1,0 +1,314 @@
+[
+  {
+    "id": "C41-Q01",
+    "chapterId": "C41",
+    "revision": 1,
+    "type": "single",
+    "stem": "VPN、防火墙与应用授权的关系是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "进入VPN就可查看全部数据",
+        "explanation": "网络可达不等于对象授权。"
+      },
+      {
+        "id": "B",
+        "text": "登录成功证明所有端口配置正确",
+        "explanation": "证据不同。"
+      },
+      {
+        "id": "C",
+        "text": "防火墙替代TLS",
+        "explanation": "不保护相同传输职责。"
+      },
+      {
+        "id": "D",
+        "text": "网络限制入口，应用仍需检查身份和范围",
+        "explanation": "属于不同防护边界。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C41-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "可达性和授权分开。"
+  },
+  {
+    "id": "C41-Q02",
+    "chapterId": "C41",
+    "revision": 1,
+    "type": "single",
+    "stem": "代理终止TLS意味着什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "TLS在该端点结束，后续保护需明确",
+        "explanation": "不能自动扩展结论。"
+      },
+      {
+        "id": "B",
+        "text": "浏览器不再需验证证书",
+        "explanation": "客户端仍需正确验证端点。"
+      },
+      {
+        "id": "C",
+        "text": "整条链必定一直加密",
+        "explanation": "后续链路需单独设计。"
+      },
+      {
+        "id": "D",
+        "text": "数据库密码可公开",
+        "explanation": "无关且危险。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C41-K04",
+      "C41-K06"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "标出加密端点。"
+  },
+  {
+    "id": "C41-Q03",
+    "chapterId": "C41",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "证书验收需核对哪些条件？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "把IP替代域名视为完全等价",
+        "explanation": "可能改变名称匹配与路由。"
+      },
+      {
+        "id": "B",
+        "text": "名称、期限和设备信任链",
+        "explanation": "都会影响验证。"
+      },
+      {
+        "id": "C",
+        "text": "默认让员工忽略所有错误",
+        "explanation": "不能作为正常信任机制。"
+      },
+      {
+        "id": "D",
+        "text": "续期、分发与撤销责任",
+        "explanation": "不只部署当天有效。"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C41-K05",
+      "C41-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "证书管理是生命周期。"
+  },
+  {
+    "id": "C41-Q04",
+    "chapterId": "C41",
+    "revision": 1,
+    "type": "single",
+    "stem": "服务器本机成功而员工域名失败，首先应怎样排查？",
+    "options": [
+      {
+        "id": "A",
+        "text": "沿客户端DNS、路由、TLS与代理逐层核对",
+        "explanation": "两条路径条件可能不同。"
+      },
+      {
+        "id": "B",
+        "text": "永久全网放通",
+        "explanation": "取消边界而未定位。"
+      },
+      {
+        "id": "C",
+        "text": "直接公开数据库端口",
+        "explanation": "扩大暴露且无必要。"
+      },
+      {
+        "id": "D",
+        "text": "宣布员工操作错误",
+        "explanation": "缺乏证据。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C41-K01",
+      "C41-K02",
+      "C41-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "按真实路径定位。"
+  },
+  {
+    "id": "C41-Q05",
+    "chapterId": "C41",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "代理身份与转发头应怎样处理？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "明确只接受可信代理提供的约定信息",
+        "explanation": "需有受控信任边界。"
+      },
+      {
+        "id": "B",
+        "text": "信任任何客户端提供的身份头",
+        "explanation": "可伪造。"
+      },
+      {
+        "id": "C",
+        "text": "有代理就可取消应用检查",
+        "explanation": "代理不自动承担所有业务授权。"
+      },
+      {
+        "id": "D",
+        "text": "核对直接绕过代理的访问路径",
+        "explanation": "防止跳过约定入口。"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "knowledge": [
+      "C41-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "头字段可信度来自路径与配置。"
+  },
+  {
+    "id": "C41-Q06",
+    "chapterId": "C41",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟内部CA证书未被员工设备信任，应怎样修复？",
+    "options": [
+      {
+        "id": "A",
+        "text": "长期关闭证书验证",
+        "explanation": "破坏端点信任。"
+      },
+      {
+        "id": "B",
+        "text": "让所有人永久忽略警告",
+        "explanation": "掩盖问题。"
+      },
+      {
+        "id": "C",
+        "text": "只更改网站标题",
+        "explanation": "不改变证书链。"
+      },
+      {
+        "id": "D",
+        "text": "受控部署信任并验证续期撤销",
+        "explanation": "按组织设备管理落实。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C41-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "信任应被正式管理。"
+  },
+  {
+    "id": "C41-Q07",
+    "chapterId": "C41",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟某证书一周后到期，发布验收应怎样处理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "移除HTTPS避免到期",
+        "explanation": "降低保护。"
+      },
+      {
+        "id": "B",
+        "text": "当天有效就不用管",
+        "explanation": "很快可能故障。"
+      },
+      {
+        "id": "C",
+        "text": "只保留证书截图",
+        "explanation": "不能自动续期。"
+      },
+      {
+        "id": "D",
+        "text": "明确续期与监控并验证失败响应",
+        "explanation": "需要生命周期责任。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C41-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "到期是运维条件而非一次性检查。"
+  },
+  {
+    "id": "C41-Q08",
+    "chapterId": "C41",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "内网服务验收应覆盖哪些访问？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "所有网络均开放更易通过",
+        "explanation": "违反访问范围。"
+      },
+      {
+        "id": "B",
+        "text": "获准员工网络的登录查询与导出",
+        "explanation": "验证完整使用路径。"
+      },
+      {
+        "id": "C",
+        "text": "未获准来源的拒绝路径",
+        "explanation": "验证边界确实生效。"
+      },
+      {
+        "id": "D",
+        "text": "只看服务器curl成功",
+        "explanation": "未覆盖员工设备。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C41-K01",
+      "C41-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "成功与拒绝都应有证据。"
+  }
+]

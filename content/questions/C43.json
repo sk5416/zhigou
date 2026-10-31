@@ -1,0 +1,314 @@
+[
+  {
+    "id": "C43-Q01",
+    "chapterId": "C43",
+    "revision": 1,
+    "type": "single",
+    "stem": "认证与授权的区别是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "授权只是显示用户名",
+        "explanation": "还需判断动作和对象。"
+      },
+      {
+        "id": "B",
+        "text": "角色名字就是证书",
+        "explanation": "概念不同。"
+      },
+      {
+        "id": "C",
+        "text": "认证回答是谁，授权判断能做什么",
+        "explanation": "两者分别建立身份与操作边界。"
+      },
+      {
+        "id": "D",
+        "text": "认证成功就能读全库",
+        "explanation": "登录不证明对象许可。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C43-K01"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "登录不等于全权。"
+  },
+  {
+    "id": "C43-Q02",
+    "chapterId": "C43",
+    "revision": 1,
+    "type": "single",
+    "stem": "对象权限通常需要哪些维度？",
+    "options": [
+      {
+        "id": "A",
+        "text": "主体、动作、对象及组织状态等条件",
+        "explanation": "权限针对具体业务上下文。"
+      },
+      {
+        "id": "B",
+        "text": "只看按钮是否显示",
+        "explanation": "界面可绕过。"
+      },
+      {
+        "id": "C",
+        "text": "只看ID是否足够长",
+        "explanation": "难猜不等于获准。"
+      },
+      {
+        "id": "D",
+        "text": "只按IP永远决定身份",
+        "explanation": "网络来源不等于员工身份。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C43-K02",
+      "C43-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "对象许可有明确条件。"
+  },
+  {
+    "id": "C43-Q03",
+    "chapterId": "C43",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "默认拒绝应如何体现？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "权限验证失败时不泄露额外对象细节",
+        "explanation": "拒绝也应最小化信息。"
+      },
+      {
+        "id": "B",
+        "text": "仅约束菜单",
+        "explanation": "其他入口也须保护。"
+      },
+      {
+        "id": "C",
+        "text": "检查异常时临时当管理员",
+        "explanation": "扩大风险。"
+      },
+      {
+        "id": "D",
+        "text": "未配置权限时拒绝受保护动作",
+        "explanation": "不能把空配置当全开放。"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "knowledge": [
+      "C43-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "失败分支同样要受控。"
+  },
+  {
+    "id": "C43-Q04",
+    "chapterId": "C43",
+    "revision": 1,
+    "type": "single",
+    "stem": "前端传org=O1，后端可否直接据此确定访问范围？",
+    "options": [
+      {
+        "id": "A",
+        "text": "可以，隐藏输入框即可",
+        "explanation": "隐藏仍可改请求。"
+      },
+      {
+        "id": "B",
+        "text": "不能，应从可信身份与授权计算范围",
+        "explanation": "参数可被修改。"
+      },
+      {
+        "id": "C",
+        "text": "可以，只要使用HTTPS",
+        "explanation": "TLS不阻止合法客户端改参数。"
+      },
+      {
+        "id": "D",
+        "text": "可以，字段名明确即可",
+        "explanation": "名称不证明来源可信。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C43-K04",
+      "C43-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "参数不是权限证明。"
+  },
+  {
+    "id": "C43-Q05",
+    "chapterId": "C43",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "对象权限验收需要覆盖什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "只验证页面按钮隐藏",
+        "explanation": "不是接口证据。"
+      },
+      {
+        "id": "B",
+        "text": "仅管理员正常读取",
+        "explanation": "未验证拒绝。"
+      },
+      {
+        "id": "C",
+        "text": "导出、附件、聚合和搜索",
+        "explanation": "旁路也可能泄露。"
+      },
+      {
+        "id": "D",
+        "text": "他人ID、跨部门及批量混入",
+        "explanation": "常见绕过范围路径。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C43-K06",
+      "C43-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "所有数据入口出口都需授权。"
+  },
+  {
+    "id": "C43-Q06",
+    "chapterId": "C43",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟O1员工能修改请求读取O2单据，首先修复什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只加确认弹窗",
+        "explanation": "不建立授权。"
+      },
+      {
+        "id": "B",
+        "text": "只隐藏O2列表",
+        "explanation": "详情仍可绕过。"
+      },
+      {
+        "id": "C",
+        "text": "服务端对具体对象和动作校验",
+        "explanation": "并回归正常与拒绝路径。"
+      },
+      {
+        "id": "D",
+        "text": "把ID再加长",
+        "explanation": "不能消除越权。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C43-K04",
+      "C43-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "详情不能只依赖列表过滤。"
+  },
+  {
+    "id": "C43-Q07",
+    "chapterId": "C43",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟员工调岗后旧会话仍能导出原部门数据，应核查什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只看新页面显示部门",
+        "explanation": "旧会话或缓存可能陈旧。"
+      },
+      {
+        "id": "B",
+        "text": "导出文件名",
+        "explanation": "不是权限原因。"
+      },
+      {
+        "id": "C",
+        "text": "撤权传播、缓存和会话失效时限",
+        "explanation": "需按目标实际验证。"
+      },
+      {
+        "id": "D",
+        "text": "让旧会话永久有效以免投诉",
+        "explanation": "违反变更边界。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C43-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "权限有生命周期。"
+  },
+  {
+    "id": "C43-Q08",
+    "chapterId": "C43",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "紧急临时权限应包含哪些条件？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "限定对象、动作、时间与责任",
+        "explanation": "避免无限扩大。"
+      },
+      {
+        "id": "B",
+        "text": "服务账号天然免检",
+        "explanation": "系统主体也需授权。"
+      },
+      {
+        "id": "C",
+        "text": "留审计并到期回收",
+        "explanation": "便于追溯和撤销。"
+      },
+      {
+        "id": "D",
+        "text": "永远保留管理员权限",
+        "explanation": "不能视为临时。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C43-K03",
+      "C43-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "临时授权也要可结束。"
+  }
+]

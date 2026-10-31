@@ -1,0 +1,316 @@
+[
+  {
+    "id": "C44-Q01",
+    "chapterId": "C44",
+    "revision": 1,
+    "type": "single",
+    "stem": "Cookie、Session与JWT应怎样区分？",
+    "options": [
+      {
+        "id": "A",
+        "text": "传送状态机制、会话管理与令牌格式",
+        "explanation": "层次不同，可按设计组合。"
+      },
+      {
+        "id": "B",
+        "text": "Cookie存在就代表已认证",
+        "explanation": "普通Cookie不证明身份。"
+      },
+      {
+        "id": "C",
+        "text": "三者完全同义",
+        "explanation": "不能混用解释。"
+      },
+      {
+        "id": "D",
+        "text": "JWT就是数据库权限表",
+        "explanation": "格式不决定业务权限。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C44-K01",
+      "C44-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "名词对应不同职责。"
+  },
+  {
+    "id": "C44-Q02",
+    "chapterId": "C44",
+    "revision": 1,
+    "type": "single",
+    "stem": "OAuth2.0与OIDC关系是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "Access Token总能当任意ID Token",
+        "explanation": "用途与受众不同。"
+      },
+      {
+        "id": "B",
+        "text": "OAuth专门保证所有对象授权",
+        "explanation": "还需业务范围校验。"
+      },
+      {
+        "id": "C",
+        "text": "OIDC是JWT的另一种编码",
+        "explanation": "协议层不同。"
+      },
+      {
+        "id": "D",
+        "text": "OIDC在OAuth基础上提供身份层",
+        "explanation": "访问授权与用户认证概念分开。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C44-K03",
+      "C44-K04"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "协议用途不能混同。"
+  },
+  {
+    "id": "C44-Q03",
+    "chapterId": "C44",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "JWT验证应核对什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "令牌长得像三段就有效",
+        "explanation": "外形无证明力。"
+      },
+      {
+        "id": "B",
+        "text": "发行者、受众、期限和用途",
+        "explanation": "需要完整验证契约。"
+      },
+      {
+        "id": "C",
+        "text": "受信算法密钥及签名",
+        "explanation": "不能盲信令牌自己声称的规则。"
+      },
+      {
+        "id": "D",
+        "text": "仅解码用户名",
+        "explanation": "可读不代表有效。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C44-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "验证不仅是解析。"
+  },
+  {
+    "id": "C44-Q04",
+    "chapterId": "C44",
+    "revision": 1,
+    "type": "single",
+    "stem": "常见签名JWT的内容能否默认保密？",
+    "options": [
+      {
+        "id": "A",
+        "text": "能，只要改文件名",
+        "explanation": "无关。"
+      },
+      {
+        "id": "B",
+        "text": "能，签名等于加密",
+        "explanation": "签名主要保护完整性与来源。"
+      },
+      {
+        "id": "C",
+        "text": "能，只要Base64编码",
+        "explanation": "编码不是加密。"
+      },
+      {
+        "id": "D",
+        "text": "不能，载荷可能可读",
+        "explanation": "秘密和多余敏感数据不应随意放入。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C44-K02",
+      "C44-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "完整性与保密不同。"
+  },
+  {
+    "id": "C44-Q05",
+    "chapterId": "C44",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "会话安全需要哪些控制？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "HttpOnly使任何XSS后果消失",
+        "explanation": "脚本仍可能发起用户动作。"
+      },
+      {
+        "id": "B",
+        "text": "按场景配置Cookie发送与跨站策略",
+        "explanation": "Secure、HttpOnly、SameSite作用不同。"
+      },
+      {
+        "id": "C",
+        "text": "有SSO就无需本应用生命周期",
+        "explanation": "注销传播需核实。"
+      },
+      {
+        "id": "D",
+        "text": "登录后适当更新标识并管理期限撤销",
+        "explanation": "避免会话固定与长期失控。"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C44-K01",
+      "C44-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "登录和退出都要设计。"
+  },
+  {
+    "id": "C44-Q06",
+    "chapterId": "C44",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟方案只有“JWT实现SSO”，最应追问什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "谁认证签发验证及如何撤销",
+        "explanation": "需明确身份流与各令牌用途。"
+      },
+      {
+        "id": "B",
+        "text": "JWT字符串颜色",
+        "explanation": "不是协议要求。"
+      },
+      {
+        "id": "C",
+        "text": "哪个名称更时髦",
+        "explanation": "无助建立信任。"
+      },
+      {
+        "id": "D",
+        "text": "是否把全部密码放进载荷",
+        "explanation": "应避免秘密暴露。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C44-K04",
+      "C44-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "先画信任流程。"
+  },
+  {
+    "id": "C44-Q07",
+    "chapterId": "C44",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟身份平台停用员工后本应用仍可访问，合理判断是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "永久禁止所有用户登录",
+        "explanation": "不是有依据的恢复。"
+      },
+      {
+        "id": "B",
+        "text": "SSO必定已经即时注销所有会话",
+        "explanation": "不应默认产品行为。"
+      },
+      {
+        "id": "C",
+        "text": "说明MFA必定失效",
+        "explanation": "MFA与存量会话是不同问题。"
+      },
+      {
+        "id": "D",
+        "text": "核对本地会话、刷新及注销传播机制",
+        "explanation": "需明确实际生效时限。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C44-K05",
+      "C44-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "身份变更需传播到应用。"
+  },
+  {
+    "id": "C44-Q08",
+    "chapterId": "C44",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "OAuth/OIDC集成评审应考虑什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "按客户端选择成熟流程与保护",
+        "explanation": "核对PKCE、重定向和请求绑定等条件。"
+      },
+      {
+        "id": "B",
+        "text": "过期、篡改、错误受众及注销反例",
+        "explanation": "不只测试正常登录。"
+      },
+      {
+        "id": "C",
+        "text": "手写协议越短越安全",
+        "explanation": "会遗漏复杂边界。"
+      },
+      {
+        "id": "D",
+        "text": "ID Token可替代全部业务授权",
+        "explanation": "身份不等于对象范围。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B"
+    ],
+    "knowledge": [
+      "C44-K03",
+      "C44-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "使用受支持实现并验失败路径。"
+  }
+]

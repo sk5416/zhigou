@@ -1,0 +1,313 @@
+[
+  {
+    "id": "C46-Q01",
+    "chapterId": "C46",
+    "revision": 1,
+    "type": "single",
+    "stem": "调用服务身份与业务请求ID是什么关系？",
+    "options": [
+      {
+        "id": "A",
+        "text": "证明谁可调用与识别一次意图分别处理",
+        "explanation": "需要两层边界。"
+      },
+      {
+        "id": "B",
+        "text": "有Token就无需请求ID",
+        "explanation": "仍要识别业务重试。"
+      },
+      {
+        "id": "C",
+        "text": "所有厂商都用相同字段",
+        "explanation": "必须核验契约。"
+      },
+      {
+        "id": "D",
+        "text": "请求ID可以替代鉴权",
+        "explanation": "不是调用权限凭据。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C46-K01",
+      "C46-K05"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "身份与意图不同。"
+  },
+  {
+    "id": "C46-Q02",
+    "chapterId": "C46",
+    "revision": 1,
+    "type": "single",
+    "stem": "签名通过能否证明业务请求不会重放？",
+    "options": [
+      {
+        "id": "A",
+        "text": "能，可跳过授权",
+        "explanation": "完整性不同于许可。"
+      },
+      {
+        "id": "B",
+        "text": "能，可省略幂等",
+        "explanation": "业务防重仍需设计。"
+      },
+      {
+        "id": "C",
+        "text": "不能，仍需期限、唯一身份等规则",
+        "explanation": "相同有效请求可能再次提交。"
+      },
+      {
+        "id": "D",
+        "text": "能，签名天然一次性",
+        "explanation": "没有这种通用保证。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C46-K04",
+      "C46-K05"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "签名、重放和幂等分开。"
+  },
+  {
+    "id": "C46-Q03",
+    "chapterId": "C46",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "服务凭据应怎样限定？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "轮换撤销并核对全部使用者",
+        "explanation": "生命周期不能遗漏。"
+      },
+      {
+        "id": "B",
+        "text": "全局管理员适合所有集成",
+        "explanation": "影响过大。"
+      },
+      {
+        "id": "C",
+        "text": "环境、对象与动作最小范围",
+        "explanation": "尽量限制误用损失。"
+      },
+      {
+        "id": "D",
+        "text": "直接放浏览器便于调用",
+        "explanation": "会把秘密交给客户端。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C46-K02",
+      "C46-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "凭据范围需有目的。"
+  },
+  {
+    "id": "C46-Q04",
+    "chapterId": "C46",
+    "revision": 1,
+    "type": "single",
+    "stem": "第三方接口字段与签名规则未知时应怎样做？",
+    "options": [
+      {
+        "id": "A",
+        "text": "核对正式契约，未核实标模拟",
+        "explanation": "不能虚构接口行为。"
+      },
+      {
+        "id": "B",
+        "text": "忽略字段编码",
+        "explanation": "会影响签名与解释。"
+      },
+      {
+        "id": "C",
+        "text": "照其他厂商猜一个",
+        "explanation": "可能错误且不可信。"
+      },
+      {
+        "id": "D",
+        "text": "自行改签名算法后强推",
+        "explanation": "双方未约定不兼容。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C46-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "以真实契约建立互通。"
+  },
+  {
+    "id": "C46-Q05",
+    "chapterId": "C46",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "Webhook处理要核查哪些内容？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "收到即当所有业务完成",
+        "explanation": "需持久处理结果。"
+      },
+      {
+        "id": "B",
+        "text": "重复乱序与状态核对",
+        "explanation": "外部事件并非天然只来一次。"
+      },
+      {
+        "id": "C",
+        "text": "来源身份、事件身份和重放边界",
+        "explanation": "URL外观不能证明调用者。"
+      },
+      {
+        "id": "D",
+        "text": "只允许页面访问就够",
+        "explanation": "回调通常不是页面请求。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C46-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "回调也是不可信入口。"
+  },
+  {
+    "id": "C46-Q06",
+    "chapterId": "C46",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟物料同步只需测试组织写权限却用全局Token，应如何改进？",
+    "options": [
+      {
+        "id": "A",
+        "text": "增加日志中的Token原值",
+        "explanation": "反而泄露。"
+      },
+      {
+        "id": "B",
+        "text": "仅隐藏设置页",
+        "explanation": "不能限制实际权限。"
+      },
+      {
+        "id": "C",
+        "text": "改受限身份并核对实际厂商粒度",
+        "explanation": "不足处记录补充限制。"
+      },
+      {
+        "id": "D",
+        "text": "把Token改变量名",
+        "explanation": "范围未变。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C46-K02"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "最小权限应落到真实能力。"
+  },
+  {
+    "id": "C46-Q07",
+    "chapterId": "C46",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟新凭据部署后旧脚本仍使用旧值，应怎样验收轮换？",
+    "options": [
+      {
+        "id": "A",
+        "text": "删除脚本证据",
+        "explanation": "不利追溯。"
+      },
+      {
+        "id": "B",
+        "text": "新服务正常就算全部完成",
+        "explanation": "旧使用方仍存在。"
+      },
+      {
+        "id": "C",
+        "text": "保留旧值永久有效",
+        "explanation": "扩大风险。"
+      },
+      {
+        "id": "D",
+        "text": "列全使用方、更新验证并确认撤销",
+        "explanation": "覆盖任务、脚本和回调。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C46-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "轮换是全链变更。"
+  },
+  {
+    "id": "C46-Q08",
+    "chapterId": "C46",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "接口安全测试应覆盖什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "过期撤销、错误目标和越范围对象",
+        "explanation": "验证失败边界。"
+      },
+      {
+        "id": "B",
+        "text": "完整请求头全部存日志",
+        "explanation": "可能泄露。"
+      },
+      {
+        "id": "C",
+        "text": "禁用证书验证保证成功",
+        "explanation": "降低传输信任。"
+      },
+      {
+        "id": "D",
+        "text": "重复回调、响应丢失与脱敏审计",
+        "explanation": "兼顾安全与可靠性。"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "knowledge": [
+      "C46-K03",
+      "C46-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "成功请求不足以验收。"
+  }
+]

@@ -1,0 +1,313 @@
+[
+  {
+    "id": "C40-Q01",
+    "chapterId": "C40",
+    "revision": 1,
+    "type": "single",
+    "stem": "环境变量与秘密管理的关系是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只要不写Git便已完成全部保护",
+        "explanation": "日志和产物也可能泄露。"
+      },
+      {
+        "id": "B",
+        "text": "是一种传递方式，仍需权限和生命周期管理",
+        "explanation": "来源与使用边界不自动安全。"
+      },
+      {
+        "id": "C",
+        "text": "存环境变量便永不泄露",
+        "explanation": "调试、进程环境等仍可能暴露。"
+      },
+      {
+        "id": "D",
+        "text": "所有配置都必须公开",
+        "explanation": "秘密需要受控读取。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C40-K01",
+      "C40-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "传递方式不是安全保证。"
+  },
+  {
+    "id": "C40-Q02",
+    "chapterId": "C40",
+    "revision": 1,
+    "type": "single",
+    "stem": "生产与测试使用同一管理员Token，主要问题是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "权限和环境边界过宽",
+        "explanation": "误调用与泄露影响扩大。"
+      },
+      {
+        "id": "B",
+        "text": "只有页面配色不足",
+        "explanation": "实际目标和身份才关键。"
+      },
+      {
+        "id": "C",
+        "text": "需要增加更多副本",
+        "explanation": "副本不能隔离凭据。"
+      },
+      {
+        "id": "D",
+        "text": "变量名不够短",
+        "explanation": "不是核心风险。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C40-K04",
+      "C40-K07"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "账号应按环境和必要范围隔离。"
+  },
+  {
+    "id": "C40-Q03",
+    "chapterId": "C40",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "秘密泄露后的合理响应有哪些？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "只删除当前代码行",
+        "explanation": "历史和已取副本仍可能存在。"
+      },
+      {
+        "id": "B",
+        "text": "排查日志、副本及使用记录",
+        "explanation": "处理泄露链而非只修外观。"
+      },
+      {
+        "id": "C",
+        "text": "仅加gitignore就宣布完成",
+        "explanation": "不移除已跟踪历史或撤销值。"
+      },
+      {
+        "id": "D",
+        "text": "评估影响并撤销或轮换",
+        "explanation": "应限制继续使用。"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C40-K05",
+      "C40-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "泄露后的值不能继续被默认信任。"
+  },
+  {
+    "id": "C40-Q04",
+    "chapterId": "C40",
+    "revision": 1,
+    "type": "single",
+    "stem": "关键ERP地址缺失，应怎样处理默认值？",
+    "options": [
+      {
+        "id": "A",
+        "text": "显式失败并提示核对目标",
+        "explanation": "危险缺项不应静默补成生产事实。"
+      },
+      {
+        "id": "B",
+        "text": "自动回退正式地址",
+        "explanation": "可能把测试请求送生产。"
+      },
+      {
+        "id": "C",
+        "text": "隐藏错误继续记成功",
+        "explanation": "破坏可观测性。"
+      },
+      {
+        "id": "D",
+        "text": "随便选择最近可用地址",
+        "explanation": "不可控。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C40-K02"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "安全默认应避免误连。"
+  },
+  {
+    "id": "C40-Q05",
+    "chapterId": "C40",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "轮换方案需要哪些验证？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "新凭据使用方更新并正常执行必要操作",
+        "explanation": "不能只创建新值。"
+      },
+      {
+        "id": "B",
+        "text": "把旧值永远保留以免故障",
+        "explanation": "扩大有效秘密范围。"
+      },
+      {
+        "id": "C",
+        "text": "只更新一个实例就算全链完成",
+        "explanation": "其他使用者可能仍依赖旧值。"
+      },
+      {
+        "id": "D",
+        "text": "确认旧值撤销及日志不泄露",
+        "explanation": "包含失效和保密边界。"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "knowledge": [
+      "C40-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "轮换需覆盖完整使用链。"
+  },
+  {
+    "id": "C40-Q06",
+    "chapterId": "C40",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟测试环境页面写test却发送真实通知，应核查什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只禁用浏览器按钮",
+        "explanation": "任务或接口仍可能发送。"
+      },
+      {
+        "id": "B",
+        "text": "把通知当可忽略副作用",
+        "explanation": "已影响真实对象。"
+      },
+      {
+        "id": "C",
+        "text": "只改页面颜色",
+        "explanation": "没有隔离后台目标。"
+      },
+      {
+        "id": "D",
+        "text": "回调、通知、队列与凭据实际目标",
+        "explanation": "隔离应覆盖全链。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C40-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "环境名称不是隔离证据。"
+  },
+  {
+    "id": "C40-Q07",
+    "chapterId": "C40",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟AI要将全部环境变量贴入日志排障，应怎样调整？",
+    "options": [
+      {
+        "id": "A",
+        "text": "先公开再删除",
+        "explanation": "可能已被复制。"
+      },
+      {
+        "id": "B",
+        "text": "仅保留必要脱敏线索并核对敏感项",
+        "explanation": "不需要输出原值。"
+      },
+      {
+        "id": "C",
+        "text": "日志私有就无限记录秘密",
+        "explanation": "仍有读取与泄露风险。"
+      },
+      {
+        "id": "D",
+        "text": "变量不是密码就全可公开",
+        "explanation": "Token和地址等也需分级。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C40-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "定位需要必要证据而非完整秘密。"
+  },
+  {
+    "id": "C40-Q08",
+    "chapterId": "C40",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "交接配置清单应包含什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "真实密钥明文",
+        "explanation": "不应放普通文档。"
+      },
+      {
+        "id": "B",
+        "text": "只列当前运行截图",
+        "explanation": "不解释来源和恢复。"
+      },
+      {
+        "id": "C",
+        "text": "名称、分类、来源与缺失行为",
+        "explanation": "说明契约而非暴露值。"
+      },
+      {
+        "id": "D",
+        "text": "环境、责任人与轮换办法",
+        "explanation": "便于长期维护。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C40-K01",
+      "C40-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "记录管理办法，秘密受控保管。"
+  }
+]

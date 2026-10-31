@@ -1,0 +1,316 @@
+[
+  {
+    "id": "C38-Q01",
+    "chapterId": "C38",
+    "revision": 1,
+    "type": "single",
+    "stem": "镜像与容器的关系是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "一个镜像只能有一个容器",
+        "explanation": "可以创建多个实例。"
+      },
+      {
+        "id": "B",
+        "text": "镜像提供基础内容，容器是运行实例",
+        "explanation": "运行还受配置和资源影响。"
+      },
+      {
+        "id": "C",
+        "text": "容器就是独立物理服务器",
+        "explanation": "隔离形态不同。"
+      },
+      {
+        "id": "D",
+        "text": "镜像包含所有最新业务数据",
+        "explanation": "运行数据不自动写回镜像。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C38-K01"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "产物与实例分开。"
+  },
+  {
+    "id": "C38-Q02",
+    "chapterId": "C38",
+    "revision": 1,
+    "type": "single",
+    "stem": "持久卷与备份的关系是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "重启和删除重建完全相同",
+        "explanation": "后者可丢失可写层。"
+      },
+      {
+        "id": "B",
+        "text": "有卷就不再需要备份",
+        "explanation": "同一故障可能破坏卷。"
+      },
+      {
+        "id": "C",
+        "text": "镜像备份一定包含卷数据",
+        "explanation": "两者生命周期不同。"
+      },
+      {
+        "id": "D",
+        "text": "卷独立容器生命周期，仍需恢复保护",
+        "explanation": "持久化不等于独立备份。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C38-K03",
+      "C38-K04",
+      "C38-K08"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "明确数据生命周期。"
+  },
+  {
+    "id": "C38-Q03",
+    "chapterId": "C38",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "容器交付应核对哪些条件？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "运行身份、挂载和端口范围",
+        "explanation": "需要最小必要边界。"
+      },
+      {
+        "id": "B",
+        "text": "挂载整个宿主即可省心",
+        "explanation": "暴露过宽资源。"
+      },
+      {
+        "id": "C",
+        "text": "固定镜像来源与版本",
+        "explanation": "便于追溯验证。"
+      },
+      {
+        "id": "D",
+        "text": "高权限运行即可安全",
+        "explanation": "会扩大破坏范围。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C38-K06",
+      "C38-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "容器不自动提供安全配置。"
+  },
+  {
+    "id": "C38-Q04",
+    "chapterId": "C38",
+    "revision": 1,
+    "type": "single",
+    "stem": "容器内localhost通常指哪里？",
+    "options": [
+      {
+        "id": "A",
+        "text": "所有情况下都指物理宿主",
+        "explanation": "桌面与隔离网络存在差异。"
+      },
+      {
+        "id": "B",
+        "text": "该网络环境自身",
+        "explanation": "访问其他服务需正确地址。"
+      },
+      {
+        "id": "C",
+        "text": "默认指任意数据库容器",
+        "explanation": "不同网络环境不自动等同。"
+      },
+      {
+        "id": "D",
+        "text": "固定指公网网关",
+        "explanation": "没有这种规则。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C38-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "地址需要按运行环境解释。"
+  },
+  {
+    "id": "C38-Q05",
+    "chapterId": "C38",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "容器安全与隔离，哪些判断准确？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "容器能免除宿主维护",
+        "explanation": "宿主与运行时仍需维护。"
+      },
+      {
+        "id": "B",
+        "text": "高权限和敏感挂载会扩大风险",
+        "explanation": "要评估实际配置。"
+      },
+      {
+        "id": "C",
+        "text": "常见Linux容器共享所在环境内核",
+        "explanation": "不能直接等同独立客体内核的虚拟机。"
+      },
+      {
+        "id": "D",
+        "text": "有容器就无需输入和授权检查",
+        "explanation": "应用风险依旧存在。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C38-K02",
+      "C38-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "隔离有边界。"
+  },
+  {
+    "id": "C38-Q06",
+    "chapterId": "C38",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟重建容器后附件丢失，应先核查什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只重启代理",
+        "explanation": "未触及存储原因。"
+      },
+      {
+        "id": "B",
+        "text": "默认用户误删",
+        "explanation": "没有证据。"
+      },
+      {
+        "id": "C",
+        "text": "把新镜像名字改回旧名",
+        "explanation": "不恢复文件字节。"
+      },
+      {
+        "id": "D",
+        "text": "附件是否只在旧容器可写层",
+        "explanation": "还要核对持久挂载与备份。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C38-K03",
+      "C38-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "重建需要独立保存数据。"
+  },
+  {
+    "id": "C38-Q07",
+    "chapterId": "C38",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟要验证附件持久性，哪种做法合适？",
+    "options": [
+      {
+        "id": "A",
+        "text": "在隔离副本写虚构文件后重建并恢复核对",
+        "explanation": "验证生命周期与备份链。"
+      },
+      {
+        "id": "B",
+        "text": "镜像能下载就算附件恢复",
+        "explanation": "产物不等于运行数据。"
+      },
+      {
+        "id": "C",
+        "text": "直接删除生产卷看能否恢复",
+        "explanation": "不在未受控环境做破坏练习。"
+      },
+      {
+        "id": "D",
+        "text": "只看volume参数存在",
+        "explanation": "可能挂错位置。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C38-K04",
+      "C38-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "配置声明需实际验证。"
+  },
+  {
+    "id": "C38-Q08",
+    "chapterId": "C38",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "从镜像转交给他人运行，还应提供什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "配置、网络与持久位置说明",
+        "explanation": "运行依赖不全在镜像。"
+      },
+      {
+        "id": "B",
+        "text": "来源、检查和恢复责任",
+        "explanation": "便于重建和维护。"
+      },
+      {
+        "id": "C",
+        "text": "把企业秘密直接做进镜像",
+        "explanation": "产物可能被获取。"
+      },
+      {
+        "id": "D",
+        "text": "只给浮动latest标签",
+        "explanation": "无法确认固定内容。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B"
+    ],
+    "knowledge": [
+      "C38-K05",
+      "C38-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "交付不止一个镜像名。"
+  }
+]

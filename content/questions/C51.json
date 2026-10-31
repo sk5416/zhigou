@@ -1,0 +1,314 @@
+[
+  {
+    "id": "C51-Q01",
+    "chapterId": "C51",
+    "revision": 1,
+    "type": "single",
+    "stem": "灰度发布核心是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "允许少数人永久用未经验证版本",
+        "explanation": "不是完整发布控制。"
+      },
+      {
+        "id": "B",
+        "text": "有限范围时间的变更与观察决策",
+        "explanation": "需指标、对照和停止规则。"
+      },
+      {
+        "id": "C",
+        "text": "少量用户即可完全隔离",
+        "explanation": "共享依赖仍影响其他人。"
+      },
+      {
+        "id": "D",
+        "text": "只换页面颜色",
+        "explanation": "未必隔离业务。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C51-K02",
+      "C51-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "范围与观察缺一不可。"
+  },
+  {
+    "id": "C51-Q02",
+    "chapterId": "C51",
+    "revision": 1,
+    "type": "single",
+    "stem": "回退为什么也要验收？",
+    "options": [
+      {
+        "id": "A",
+        "text": "结构、增量和副作用可能不随代码回退",
+        "explanation": "需核对业务。"
+      },
+      {
+        "id": "B",
+        "text": "旧首页能打开即全部恢复",
+        "explanation": "可能数据未恢复。"
+      },
+      {
+        "id": "C",
+        "text": "旧代码必定读所有新数据",
+        "explanation": "未必兼容。"
+      },
+      {
+        "id": "D",
+        "text": "只为增加流程",
+        "explanation": "有明确风险。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C51-K06",
+      "C51-K08"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "回退是新一次变更。"
+  },
+  {
+    "id": "C51-Q03",
+    "chapterId": "C51",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "发布前需要什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "未测项写全通过",
+        "explanation": "证据失真。"
+      },
+      {
+        "id": "B",
+        "text": "可执行备份恢复与责任人",
+        "explanation": "文件存在不等于可用。"
+      },
+      {
+        "id": "C",
+        "text": "发生错误再临时找人",
+        "explanation": "响应不可靠。"
+      },
+      {
+        "id": "D",
+        "text": "产物、迁移、窗口与停止条件",
+        "explanation": "便于受控执行。"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C51-K01",
+      "C51-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "准备包括失败路径。"
+  },
+  {
+    "id": "C51-Q04",
+    "chapterId": "C51",
+    "revision": 1,
+    "type": "single",
+    "stem": "灰度出现指标超限，应怎样做？",
+    "options": [
+      {
+        "id": "A",
+        "text": "删除异常日志",
+        "explanation": "破坏线索。"
+      },
+      {
+        "id": "B",
+        "text": "只发成功公告",
+        "explanation": "误导业务。"
+      },
+      {
+        "id": "C",
+        "text": "按预定规则停止或回退并保现场",
+        "explanation": "避免扩大影响。"
+      },
+      {
+        "id": "D",
+        "text": "现场降低标准继续放量",
+        "explanation": "改变判定掩盖问题。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C51-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "阈值应事先明确。"
+  },
+  {
+    "id": "C51-Q05",
+    "chapterId": "C51",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "灰度隔离应核对什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "数据库迁移与后台任务范围",
+        "explanation": "可能影响所有人。"
+      },
+      {
+        "id": "B",
+        "text": "只数试用账号",
+        "explanation": "忽略共享资源。"
+      },
+      {
+        "id": "C",
+        "text": "用户、流量、组织或功能的具体单位",
+        "explanation": "需要真实隔离语义。"
+      },
+      {
+        "id": "D",
+        "text": "有开关就必定没有外部副作用",
+        "explanation": "未必成立。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C51-K02"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "页面开关不代表全链隔离。"
+  },
+  {
+    "id": "C51-Q06",
+    "chapterId": "C51",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟灰度期间重复建单，应先做什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "暂停新增副作用并核对请求与外部ID",
+        "explanation": "先止损再恢复。"
+      },
+      {
+        "id": "B",
+        "text": "清空记录避免告警",
+        "explanation": "破坏事实。"
+      },
+      {
+        "id": "C",
+        "text": "只切旧包就宣布完成",
+        "explanation": "重复外部对象仍在。"
+      },
+      {
+        "id": "D",
+        "text": "无上限重试补偿",
+        "explanation": "可能扩大重复。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C51-K05",
+      "C51-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "应急要处理真实业务。"
+  },
+  {
+    "id": "C51-Q07",
+    "chapterId": "C51",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟恢复后只有首页可用，下一步是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只重启更多次",
+        "explanation": "缺乏定位。"
+      },
+      {
+        "id": "B",
+        "text": "立即结束事故",
+        "explanation": "关键路径可能仍坏。"
+      },
+      {
+        "id": "C",
+        "text": "核对权限、写入、受影响数据和无关路径",
+        "explanation": "完成业务验收。"
+      },
+      {
+        "id": "D",
+        "text": "删除遗留项",
+        "explanation": "不能掩盖缺口。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C51-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "服务回来不等于业务恢复。"
+  },
+  {
+    "id": "C51-Q08",
+    "chapterId": "C51",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "上线收尾要留下什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "只保留最终成功截图",
+        "explanation": "遗漏过程和范围。"
+      },
+      {
+        "id": "B",
+        "text": "遗留项、责任和文档交接",
+        "explanation": "支撑后续维护。"
+      },
+      {
+        "id": "C",
+        "text": "把未验证风险隐藏",
+        "explanation": "不真实。"
+      },
+      {
+        "id": "D",
+        "text": "时间、版本、操作与验收结果",
+        "explanation": "便于追溯。"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C51-K05",
+      "C51-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "上线有可接续的结束条件。"
+  }
+]

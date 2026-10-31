@@ -1,0 +1,313 @@
+[
+  {
+    "id": "C49-Q01",
+    "chapterId": "C49",
+    "revision": 1,
+    "type": "single",
+    "stem": "测试层次和运行位置的关系是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "本地测试全是单元",
+        "explanation": "可能集成多组件。"
+      },
+      {
+        "id": "B",
+        "text": "设备测试自动覆盖生产",
+        "explanation": "仍有环境差异。"
+      },
+      {
+        "id": "C",
+        "text": "覆盖范围与运行位置是不同维度",
+        "explanation": "本地不必然单元，设备也不必然全链。"
+      },
+      {
+        "id": "D",
+        "text": "端到端不需要断言",
+        "explanation": "仍需判定。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C49-K01",
+      "C49-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "名称不能替代范围说明。"
+  },
+  {
+    "id": "C49-Q02",
+    "chapterId": "C49",
+    "revision": 1,
+    "type": "single",
+    "stem": "Mock成功直接证明什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "真实ERP完全兼容",
+        "explanation": "替身不能证明。"
+      },
+      {
+        "id": "B",
+        "text": "本地对替身假设的处理满足断言",
+        "explanation": "需要说明假设。"
+      },
+      {
+        "id": "C",
+        "text": "真实网络没有超时",
+        "explanation": "替身不证明网络。"
+      },
+      {
+        "id": "D",
+        "text": "生产凭据已可用",
+        "explanation": "没有实际验证。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C49-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "替身边界要公开。"
+  },
+  {
+    "id": "C49-Q03",
+    "chapterId": "C49",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "测试隔离应注意什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "并行共享全部可变夹具",
+        "explanation": "容易互相污染。"
+      },
+      {
+        "id": "B",
+        "text": "专用账号、库与明确清理范围",
+        "explanation": "避免真实数据损失。"
+      },
+      {
+        "id": "C",
+        "text": "核对目标并隔离命名空间",
+        "explanation": "提高结果可信度。"
+      },
+      {
+        "id": "D",
+        "text": "名字含test便可清库",
+        "explanation": "不能只看名称。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C49-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "测试也要保护数据。"
+  },
+  {
+    "id": "C49-Q04",
+    "chapterId": "C49",
+    "revision": 1,
+    "type": "single",
+    "stem": "覆盖率很高是否说明验收完整？",
+    "options": [
+      {
+        "id": "A",
+        "text": "是，安全无需另测",
+        "explanation": "没有此保证。"
+      },
+      {
+        "id": "B",
+        "text": "是，执行即代表预期正确",
+        "explanation": "可能缺断言。"
+      },
+      {
+        "id": "C",
+        "text": "否，所以覆盖率完全无用",
+        "explanation": "它仍可提供有限线索。"
+      },
+      {
+        "id": "D",
+        "text": "否，仍需需求和断言质量",
+        "explanation": "代码度量不是完整风险覆盖。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C49-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "度量有用途也有边界。"
+  },
+  {
+    "id": "C49-Q05",
+    "chapterId": "C49",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "导入链路分层测试怎样合理？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "所有细节都塞进最慢UI测试",
+        "explanation": "成本高且不易定位。"
+      },
+      {
+        "id": "B",
+        "text": "端到端核对用户入口与关键结果",
+        "explanation": "补充整体证据。"
+      },
+      {
+        "id": "C",
+        "text": "每层只重复同一个正常样例",
+        "explanation": "遗漏各自风险。"
+      },
+      {
+        "id": "D",
+        "text": "单元测解析，集成测约束与回滚",
+        "explanation": "发挥不同层优势。"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C49-K04",
+      "C49-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "各层应发现不同问题。"
+  },
+  {
+    "id": "C49-Q06",
+    "chapterId": "C49",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟ERP真实返回部分成功，但Mock永远200，报告应怎样改？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只增加截图",
+        "explanation": "不补语义。"
+      },
+      {
+        "id": "B",
+        "text": "删除部分成功需求",
+        "explanation": "没有依据。"
+      },
+      {
+        "id": "C",
+        "text": "补替身失败语义并另列真实集成待验证",
+        "explanation": "明确边界。"
+      },
+      {
+        "id": "D",
+        "text": "声称供应商接口已通过",
+        "explanation": "超出证据。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C49-K03",
+      "C49-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "替身要代表必要风险。"
+  },
+  {
+    "id": "C49-Q07",
+    "chapterId": "C49",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟测试APK编译成功，设备未连接，能写什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "测试包构建成功，设备执行未验证",
+        "explanation": "如实区分。"
+      },
+      {
+        "id": "B",
+        "text": "所有功能可用",
+        "explanation": "缺证据。"
+      },
+      {
+        "id": "C",
+        "text": "无设备就删设备门槛",
+        "explanation": "不能擅改验收。"
+      },
+      {
+        "id": "D",
+        "text": "设备测试已通过",
+        "explanation": "实际未运行。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C49-K02",
+      "C49-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "构建和执行不同。"
+  },
+  {
+    "id": "C49-Q08",
+    "chapterId": "C49",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "一份有用测试报告包含什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "版本、环境、实际运行及失败跳过",
+        "explanation": "限定结论。"
+      },
+      {
+        "id": "B",
+        "text": "只引用聊天承诺",
+        "explanation": "没有运行证据。"
+      },
+      {
+        "id": "C",
+        "text": "替身范围与报告位置",
+        "explanation": "便于核查未覆盖风险。"
+      },
+      {
+        "id": "D",
+        "text": "只报总百分比",
+        "explanation": "不足以复核。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C49-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "报告应能复核。"
+  }
+]

@@ -1,0 +1,317 @@
+[
+  {
+    "id": "C37-Q01",
+    "chapterId": "C37",
+    "revision": 1,
+    "type": "single",
+    "stem": "进程、服务与业务可用的关系，哪项准确？",
+    "options": [
+      {
+        "id": "A",
+        "text": "监听端口等于所有员工可达",
+        "explanation": "还受网络与入口策略影响。"
+      },
+      {
+        "id": "B",
+        "text": "进程存在就证明查询正常",
+        "explanation": "进程可能未就绪或内部失败。"
+      },
+      {
+        "id": "C",
+        "text": "服务停止必定是数据库损坏",
+        "explanation": "还有配置、身份和资源等原因。"
+      },
+      {
+        "id": "D",
+        "text": "需要分别观察运行、监听和业务结果",
+        "explanation": "不同层次证据不能互相代替。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C37-K02",
+      "C37-K05"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "按层次核查。"
+  },
+  {
+    "id": "C37-Q02",
+    "chapterId": "C37",
+    "revision": 1,
+    "type": "single",
+    "stem": "服务账号主要影响什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "所有用户自动拥有管理员角色",
+        "explanation": "用户授权需另外设计。"
+      },
+      {
+        "id": "B",
+        "text": "注册用户数量",
+        "explanation": "运行权限与用户数不同。"
+      },
+      {
+        "id": "C",
+        "text": "文件、配置和依赖访问权限",
+        "explanation": "服务身份应有必要且受限权限。"
+      },
+      {
+        "id": "D",
+        "text": "页面显示的标题",
+        "explanation": "运行身份不决定产品文案。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C37-K03",
+      "C37-K04"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "运行身份与业务身份分开。"
+  },
+  {
+    "id": "C37-Q03",
+    "chapterId": "C37",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "开始服务器排查应记录什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "先重启再记故障",
+        "explanation": "可能丢失重要现场。"
+      },
+      {
+        "id": "B",
+        "text": "完整密码和Token",
+        "explanation": "会泄露秘密且无必要。"
+      },
+      {
+        "id": "C",
+        "text": "部署版本和当前身份",
+        "explanation": "环境差异常影响判断。"
+      },
+      {
+        "id": "D",
+        "text": "目标主机、环境与时间",
+        "explanation": "防止看错环境并便于关联。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C37-K01",
+      "C37-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "先建立可靠现场。"
+  },
+  {
+    "id": "C37-Q04",
+    "chapterId": "C37",
+    "revision": 1,
+    "type": "single",
+    "stem": "管理员终端可运行，服务账号失败，应优先怎样处理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "永久改成管理员运行",
+        "explanation": "扩大权限而未解释原因。"
+      },
+      {
+        "id": "B",
+        "text": "放开整个磁盘写权限",
+        "explanation": "远超必要范围。"
+      },
+      {
+        "id": "C",
+        "text": "核对工作目录、配置与必要权限",
+        "explanation": "定位实际差异并最小化修复。"
+      },
+      {
+        "id": "D",
+        "text": "关闭所有错误记录",
+        "explanation": "掩盖问题。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C37-K03",
+      "C37-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "修复差异而非无限授权。"
+  },
+  {
+    "id": "C37-Q05",
+    "chapterId": "C37",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "本机可访问、员工不可访问，应检查哪些边界？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "监听地址、DNS与路由",
+        "explanation": "本机路径与员工路径不同。"
+      },
+      {
+        "id": "B",
+        "text": "防火墙、代理和来源限制",
+        "explanation": "这些可能改变可达性。"
+      },
+      {
+        "id": "C",
+        "text": "直接认定程序代码全错",
+        "explanation": "还需逐段证据。"
+      },
+      {
+        "id": "D",
+        "text": "默认永久关闭防火墙",
+        "explanation": "不应取消边界碰运气。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B"
+    ],
+    "knowledge": [
+      "C37-K05",
+      "C37-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "沿真实客户端路径排查。"
+  },
+  {
+    "id": "C37-Q06",
+    "chapterId": "C37",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟退出工程师登录后服务停止，应补什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "受管启动与明确运行账号目录",
+        "explanation": "并验证重启和退出后状态。"
+      },
+      {
+        "id": "B",
+        "text": "要求工程师永不退出",
+        "explanation": "依赖个人会话不可靠。"
+      },
+      {
+        "id": "C",
+        "text": "复制一张成功截图",
+        "explanation": "不证明持续运行。"
+      },
+      {
+        "id": "D",
+        "text": "多开几个终端",
+        "explanation": "未解决运行管理。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C37-K02",
+      "C37-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "服务不能隐式依赖个人会话。"
+  },
+  {
+    "id": "C37-Q07",
+    "chapterId": "C37",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟磁盘不足导致日志写入失败，哪项响应合理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "宣称只影响日志无需关注",
+        "explanation": "也可能影响业务与定位。"
+      },
+      {
+        "id": "B",
+        "text": "立即删除任意大文件",
+        "explanation": "可能破坏数据和恢复。"
+      },
+      {
+        "id": "C",
+        "text": "保留证据核查增长来源与保留规则",
+        "explanation": "按受控方案止损和恢复。"
+      },
+      {
+        "id": "D",
+        "text": "只增加重启次数",
+        "explanation": "不能消除容量原因。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C37-K06",
+      "C37-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "资源问题需要明确对象和后果。"
+  },
+  {
+    "id": "C37-Q08",
+    "chapterId": "C37",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "一份运行交接应包含哪些内容？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "只给启动成功截图",
+        "explanation": "缺少可复现步骤。"
+      },
+      {
+        "id": "B",
+        "text": "重启策略、权限与故障责任",
+        "explanation": "有助恢复并避免无限循环。"
+      },
+      {
+        "id": "C",
+        "text": "把真实私钥放公开README",
+        "explanation": "不能公开秘密。"
+      },
+      {
+        "id": "D",
+        "text": "账号、路径、服务配置与探测方法",
+        "explanation": "便于下一位维护者核查。"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C37-K02",
+      "C37-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "交接需可执行且受控。"
+  }
+]

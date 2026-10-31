@@ -1,0 +1,315 @@
+[
+  {
+    "id": "C42-Q01",
+    "chapterId": "C42",
+    "revision": 1,
+    "type": "single",
+    "stem": "CI绿色能直接证明什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "发布的一定是被测产物",
+        "explanation": "仍需绑定提交与产物。"
+      },
+      {
+        "id": "B",
+        "text": "所配置且实际运行的检查满足其条件",
+        "explanation": "未运行项不能据此推断。"
+      },
+      {
+        "id": "C",
+        "text": "数据库回退没有风险",
+        "explanation": "不是CI颜色能证明。"
+      },
+      {
+        "id": "D",
+        "text": "所有设备和业务验收都已通过",
+        "explanation": "取决于实际执行范围。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C42-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "检查证据有范围。"
+  },
+  {
+    "id": "C42-Q02",
+    "chapterId": "C42",
+    "revision": 1,
+    "type": "single",
+    "stem": "构建产物追溯应绑定什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "开发者聊天中的承诺",
+        "explanation": "不能替代可验证基线。"
+      },
+      {
+        "id": "B",
+        "text": "只记录打包时间",
+        "explanation": "不足以重建输入。"
+      },
+      {
+        "id": "C",
+        "text": "仅文件名release.apk",
+        "explanation": "同名可能内容不同。"
+      },
+      {
+        "id": "D",
+        "text": "提交、依赖工具链、校验和报告",
+        "explanation": "便于确认到底交付了什么。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C42-K01",
+      "C42-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "版本名不是完整来源证据。"
+  },
+  {
+    "id": "C42-Q03",
+    "chapterId": "C42",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "发布基线应包含哪些内容？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "目标环境、配置来源和责任人",
+        "explanation": "部署有明确边界。"
+      },
+      {
+        "id": "B",
+        "text": "迁移、验收及停止回退条件",
+        "explanation": "需要预先可执行。"
+      },
+      {
+        "id": "C",
+        "text": "真实生产密钥明文",
+        "explanation": "不应进入普通产物或报告。"
+      },
+      {
+        "id": "D",
+        "text": "只记录最新首页截图",
+        "explanation": "无法覆盖迁移与失败。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B"
+    ],
+    "knowledge": [
+      "C42-K04",
+      "C42-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "发布需要运行与业务证据。"
+  },
+  {
+    "id": "C42-Q04",
+    "chapterId": "C42",
+    "revision": 1,
+    "type": "single",
+    "stem": "新版已产生新格式数据，回退旧代码前应怎样做？",
+    "options": [
+      {
+        "id": "A",
+        "text": "核对兼容与增量，明确受控回退方案",
+        "explanation": "旧代码未必能读新结构。"
+      },
+      {
+        "id": "B",
+        "text": "卸载清库就能保数据",
+        "explanation": "会破坏记录。"
+      },
+      {
+        "id": "C",
+        "text": "只切Git标签即可",
+        "explanation": "不撤销数据与外部动作。"
+      },
+      {
+        "id": "D",
+        "text": "直接覆盖旧备份",
+        "explanation": "可能丢新业务。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C42-K06",
+      "C42-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "代码回退不等于业务恢复。"
+  },
+  {
+    "id": "C42-Q05",
+    "chapterId": "C42",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "自动化发布仍需哪些控制？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "让所有构建都携正式凭据",
+        "explanation": "扩大泄露和误调用风险。"
+      },
+      {
+        "id": "B",
+        "text": "测试未跑也记通过以免阻塞",
+        "explanation": "伪造证据。"
+      },
+      {
+        "id": "C",
+        "text": "关键失败时停止放量并保留现场",
+        "explanation": "不要掩盖失败。"
+      },
+      {
+        "id": "D",
+        "text": "环境专用秘密与受限部署权限",
+        "explanation": "自动化不取消信任边界。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C42-K05",
+      "C42-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "自动化服务于可控交付。"
+  },
+  {
+    "id": "C42-Q06",
+    "chapterId": "C42",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟测试后又手工改代码重打包，应怎样处理证据？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只改发布日期",
+        "explanation": "未补验证。"
+      },
+      {
+        "id": "B",
+        "text": "沿用旧测试报告无须说明",
+        "explanation": "已不对应相同内容。"
+      },
+      {
+        "id": "C",
+        "text": "重新绑定最终提交与必要检查",
+        "explanation": "保证报告对应交付内容。"
+      },
+      {
+        "id": "D",
+        "text": "保持文件名就算同版本",
+        "explanation": "名字不保证内容。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C42-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "验证应指向最终变更。"
+  },
+  {
+    "id": "C42-Q07",
+    "chapterId": "C42",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟上线迁移失败但旧页面还能打开，能否宣布恢复？",
+    "options": [
+      {
+        "id": "A",
+        "text": "先删异常数据再看",
+        "explanation": "可能扩大损失。"
+      },
+      {
+        "id": "B",
+        "text": "需核对服务、结构、业务与副作用",
+        "explanation": "恢复是端到端结果。"
+      },
+      {
+        "id": "C",
+        "text": "换个端口即可",
+        "explanation": "不解决迁移。"
+      },
+      {
+        "id": "D",
+        "text": "能，页面存在足够",
+        "explanation": "数据可能仍不一致。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C42-K06",
+      "C42-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "回退也需要验收。"
+  },
+  {
+    "id": "C42-Q08",
+    "chapterId": "C42",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "一张可执行发布卡应包含什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "版本、产物校验、检查与窗口",
+        "explanation": "明确输入和操作边界。"
+      },
+      {
+        "id": "B",
+        "text": "仅写出了问题找AI",
+        "explanation": "无实际责任。"
+      },
+      {
+        "id": "C",
+        "text": "停止阈值、恢复步骤及责任人",
+        "explanation": "便于异常时执行。"
+      },
+      {
+        "id": "D",
+        "text": "用一键回滚承诺代替数据方案",
+        "explanation": "未定义后果。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C42-K07",
+      "C42-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "发布前明确失败怎么办。"
+  }
+]

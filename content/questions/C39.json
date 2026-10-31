@@ -1,0 +1,313 @@
+[
+  {
+    "id": "C39-Q01",
+    "chapterId": "C39",
+    "revision": 1,
+    "type": "single",
+    "stem": "启动顺序与就绪有什么区别？",
+    "options": [
+      {
+        "id": "A",
+        "text": "先启动就一定可处理业务",
+        "explanation": "可能仍在恢复或迁移。"
+      },
+      {
+        "id": "B",
+        "text": "运行进程不等于满足依赖契约",
+        "explanation": "需要明确可服务的条件。"
+      },
+      {
+        "id": "C",
+        "text": "数据库端口通就证明账号正确",
+        "explanation": "认证和结构也需验证。"
+      },
+      {
+        "id": "D",
+        "text": "健康检查替代所有业务验收",
+        "explanation": "检查范围有限。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C39-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "区分启动与可用。"
+  },
+  {
+    "id": "C39-Q02",
+    "chapterId": "C39",
+    "revision": 1,
+    "type": "single",
+    "stem": "多服务拓扑最应表达什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "隐藏所有端口和职责",
+        "explanation": "交接难以核验。"
+      },
+      {
+        "id": "B",
+        "text": "只标页面数量",
+        "explanation": "不能反映运行依赖。"
+      },
+      {
+        "id": "C",
+        "text": "只画技术品牌标志",
+        "explanation": "不足以解释数据流。"
+      },
+      {
+        "id": "D",
+        "text": "连接、身份、协议、存储与故障边界",
+        "explanation": "图要能支持运行和排障。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C39-K01",
+      "C39-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "拓扑要可观察。"
+  },
+  {
+    "id": "C39-Q03",
+    "chapterId": "C39",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "设计依赖重试应考虑什么？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "结果未知的写入直接重做",
+        "explanation": "可能重复副作用。"
+      },
+      {
+        "id": "B",
+        "text": "每层无限重试",
+        "explanation": "会放大负载和等待。"
+      },
+      {
+        "id": "C",
+        "text": "可重试类型与防重核对",
+        "explanation": "错误语义影响恢复。"
+      },
+      {
+        "id": "D",
+        "text": "总体时间预算与有限退避",
+        "explanation": "避免失控。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C39-K04",
+      "C39-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "重试不是通用成功按钮。"
+  },
+  {
+    "id": "C39-Q04",
+    "chapterId": "C39",
+    "revision": 1,
+    "type": "single",
+    "stem": "增加应用副本后应怎样评估连接池？",
+    "options": [
+      {
+        "id": "A",
+        "text": "每个副本都设最大值即可",
+        "explanation": "总量可能超过数据库容量。"
+      },
+      {
+        "id": "B",
+        "text": "只看单实例启动成功",
+        "explanation": "不证明峰值可用。"
+      },
+      {
+        "id": "C",
+        "text": "连接越多吞吐一定更高",
+        "explanation": "可能增加争用。"
+      },
+      {
+        "id": "D",
+        "text": "核对总连接预算和占用时间",
+        "explanation": "要考虑全部实例与下游上限。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C39-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "总预算随拓扑变化。"
+  },
+  {
+    "id": "C39-Q05",
+    "chapterId": "C39",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "依赖故障的降级，哪些做法合理？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "保留输入并解释暂不可用",
+        "explanation": "不伪造查询结果。"
+      },
+      {
+        "id": "B",
+        "text": "把数据库错误显示成成功空集合",
+        "explanation": "混淆失败与事实。"
+      },
+      {
+        "id": "C",
+        "text": "后台任务保存持久待处理状态",
+        "explanation": "便于恢复和核对。"
+      },
+      {
+        "id": "D",
+        "text": "外部失败就拖死所有无关功能",
+        "explanation": "应考虑隔离故障范围。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C39-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "降级需保持业务含义。"
+  },
+  {
+    "id": "C39-Q06",
+    "chapterId": "C39",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟数据库仍在恢复，应用先连接失败，应怎样改进？",
+    "options": [
+      {
+        "id": "A",
+        "text": "永久提高权限",
+        "explanation": "不解决就绪时序。"
+      },
+      {
+        "id": "B",
+        "text": "记录成功后忽略异常",
+        "explanation": "制造假状态。"
+      },
+      {
+        "id": "C",
+        "text": "只把进程启动当健康",
+        "explanation": "仍可能不可服务。"
+      },
+      {
+        "id": "D",
+        "text": "明确就绪条件及运行期有限恢复",
+        "explanation": "初始顺序不足以保证持续可用。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C39-K03",
+      "C39-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "检查需要对应真实依赖条件。"
+  },
+  {
+    "id": "C39-Q07",
+    "chapterId": "C39",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟物料任务入队后ERP故障，用户界面应怎样表达？",
+    "options": [
+      {
+        "id": "A",
+        "text": "无限刷新自动新建任务",
+        "explanation": "可能重复。"
+      },
+      {
+        "id": "B",
+        "text": "删除任务避免积压",
+        "explanation": "可能丢失工作。"
+      },
+      {
+        "id": "C",
+        "text": "显示全部创建成功",
+        "explanation": "受理不等于完成。"
+      },
+      {
+        "id": "D",
+        "text": "显示真实待处理或失败状态并可查询",
+        "explanation": "需要持久进度与恢复路径。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C39-K07",
+      "C39-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "用户状态要对应真实处理阶段。"
+  },
+  {
+    "id": "C39-Q08",
+    "chapterId": "C39",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "隔离环境的逐边故障验收应包括哪些内容？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "网络、认证、超时与恢复分别观察",
+        "explanation": "不同失败需不同证据。"
+      },
+      {
+        "id": "B",
+        "text": "只关闭首页动画",
+        "explanation": "没有测试依赖故障。"
+      },
+      {
+        "id": "C",
+        "text": "仅验证所有组件启动一次",
+        "explanation": "不覆盖持续失效。"
+      },
+      {
+        "id": "D",
+        "text": "核对资源和重复/丢失结果",
+        "explanation": "恢复正确性也重要。"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "knowledge": [
+      "C39-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "逐边验证比笼统健康更具体。"
+  }
+]

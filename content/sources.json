@@ -430,6 +430,197 @@
         "C36"
       ],
       "claims": "一项重要决定的理由、取舍和后果；ADR-007为自编模拟，不修改App技术选型。"
+    },
+    {
+      "title": "PowerShell Get-Service",
+      "url": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-service?view=powershell-7.5",
+      "chapters": [
+        "C37"
+      ],
+      "claims": "服务状态观察示意，工具与权限有前提；未执行真实服务器命令。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "Docker container concepts",
+      "url": "https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-a-container/",
+      "chapters": [
+        "C38"
+      ],
+      "claims": "镜像、实例和常见容器隔离区别，不把容器等同完整虚拟机或安全保证。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "Docker persistent data",
+      "url": "https://docs.docker.com/get-started/docker-concepts/running-containers/persisting-container-data/",
+      "chapters": [
+        "C38"
+      ],
+      "claims": "可写层、容器删除及独立卷生命周期；卷仍需独立备份。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "Compose startup order",
+      "url": "https://docs.docker.com/compose/how-tos/startup-order/",
+      "chapters": [
+        "C39"
+      ],
+      "claims": "普通启动顺序不同于业务就绪，健康条件和运行期失败分开。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "OWASP secrets management",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html",
+      "chapters": [
+        "C40",
+        "C46"
+      ],
+      "claims": "凭据分发、最小权限、轮换与撤销；不提供真实秘密或厂商未核验字段。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "OWASP TLS deployment",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Security_Cheat_Sheet.html",
+      "chapters": [
+        "C41"
+      ],
+      "claims": "证书验证、端点与后续链路分别考虑，VPN不替代应用授权。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "SRE release engineering",
+      "url": "https://sre.google/sre-book/release-engineering/",
+      "chapters": [
+        "C42"
+      ],
+      "claims": "构建、产物来源与自动检查证据基础，发布卡为自编模拟。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "OWASP authorization review",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+      "chapters": [
+        "C43"
+      ],
+      "claims": "可信位置逐请求与对象检查、最小权限及默认拒绝；权限矩阵为模拟。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "OWASP sessions",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html",
+      "chapters": [
+        "C44"
+      ],
+      "claims": "会话标识、Cookie属性与失效的不同职责，不宣称SSO自动即时撤销全部应用。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "OIDC Core1.0 errata2",
+      "url": "https://openid.net/specs/openid-connect-core-1_0.html",
+      "chapters": [
+        "C44"
+      ],
+      "claims": "OAuth上的身份层、ID Token用途及验证边界；不替代API对象授权。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "OAuth2 security BCP RFC9700",
+      "url": "https://www.rfc-editor.org/rfc/rfc9700.html",
+      "chapters": [
+        "C44"
+      ],
+      "claims": "按客户端使用受支持流程与成熟实现核对PKCE、重定向和请求绑定，不自制协议。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "JWT BCP RFC8725",
+      "url": "https://www.rfc-editor.org/rfc/rfc8725.html",
+      "chapters": [
+        "C44"
+      ],
+      "claims": "JWT格式、算法签名、发行者受众与用途验证；签名不等于加密。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "OWASP SQL injection",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html",
+      "chapters": [
+        "C45"
+      ],
+      "claims": "值参数化和动态结构映射的区别，ORM不是自动证明。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "OWASP XSS prevention",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html",
+      "chapters": [
+        "C45"
+      ],
+      "claims": "按输出上下文编码，富文本净化与CSP作为不同控制。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "OWASP CSRF prevention",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html",
+      "chapters": [
+        "C45"
+      ],
+      "claims": "自动凭据、请求绑定与跨源的边界，单项策略不泛化为万能防护。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "OWASP REST security",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html",
+      "chapters": [
+        "C46"
+      ],
+      "claims": "传输、服务身份、范围、输入与审计分别检查，不把Token当全部安全。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "HTTP message signatures RFC9421",
+      "url": "https://www.rfc-editor.org/rfc/rfc9421.html",
+      "chapters": [
+        "C46"
+      ],
+      "claims": "消息签名需完整契约与重放考虑；仅讲边界，不宣称ERP采用此规范。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "OWASP password storage",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html",
+      "chapters": [
+        "C47"
+      ],
+      "claims": "适当密码哈希与普通快速哈希、可逆加密分开，不固定万能参数。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "Android testing fundamentals",
+      "url": "https://developer.android.com/training/testing/fundamentals",
+      "chapters": [
+        "C48",
+        "C49"
+      ],
+      "claims": "功能/非功能、测试范围与运行位置的区分；课程案例为跨技术的自编方法。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "OWASP WSTG4.2",
+      "url": "https://wstg.owasp.org/v4.2/",
+      "chapters": [
+        "C50"
+      ],
+      "claims": "授权环境下的专项安全测试与反例范围，未执行真实系统攻击。",
+      "checkedAt": "2026-10-31"
+    },
+    {
+      "title": "SRE canarying releases",
+      "url": "https://sre.google/workbook/canarying-releases/",
+      "chapters": [
+        "C51"
+      ],
+      "claims": "有限范围、窗口、指标与停止决策；企业发布案例为自编。",
+      "checkedAt": "2026-10-31"
     }
   ],
   "simulation": "青禾制造、员工、部门和物料同步均为虚构模拟，不代表金蝶、Salesforce 等厂商真实接口行为。",
