@@ -57,13 +57,16 @@ class UiSmokeTest {
             assertTrue(device.wait(Until.hasObject(By.text("所选 1 章自测 · 最多 20 题")), 10_000))
             device.findObject(By.text("所选 1 章自测 · 最多 20 题")).click()
             assertTrue(device.wait(Until.hasObject(By.text("自测 · 1/8")), 10_000))
-            assertTrue(scrollToText(device, "交卷并查看解析"))
+            screenshot(device, "self-test")
+            assertTrue("self-test submit button must be reachable", scrollToText(device, "交卷并查看解析"))
             device.findObject(By.text("交卷并查看解析")).click()
-            assertTrue(device.wait(Until.hasObject(By.textContains("还有 8 题未作答")), 10_000))
+            assertTrue("confirm must disclose all eight unanswered questions", device.wait(Until.hasObject(By.textContains("还有 8 题未作答")), 10_000))
+            screenshot(device, "submit-confirm")
             device.findObjects(By.text("确认交卷")).last().click()
             assertTrue(device.wait(Until.gone(By.text("继续作答")), 10_000))
             repeat(3) { device.swipe(device.displayWidth / 2, device.displayHeight / 3, device.displayWidth / 2, device.displayHeight * 4 / 5, 20) }
-            assertTrue(device.wait(Until.hasObject(By.textContains("已完成 · 0/8")), 10_000))
+            screenshot(device, "self-test-result")
+            assertTrue("all unanswered questions must score zero", device.wait(Until.hasObject(By.textContains("已完成 · 0/8")), 10_000))
             device.pressBack()
             assertTrue(device.wait(Until.hasObject(By.text("把知识，构成判断力。")), 10_000))
             device.findObject(By.text("复习")).click()
@@ -97,7 +100,7 @@ class UiSmokeTest {
         // Exercise the real gesture and keep a strict bound instead of weakening assertions.
         repeat(8) {
             val node = device.findObject(By.text(text))
-            if (node != null && node.visibleBounds.height() > 20) return true
+            if (node != null && node.visibleBounds.height() >= 8 && node.visibleBounds.width() > 20) return true
             device.swipe(device.displayWidth / 2, device.displayHeight * 4 / 5, device.displayWidth / 2, device.displayHeight / 3, 20)
             device.waitForIdle(1_000)
         }
