@@ -45,8 +45,14 @@ jobs:
         include:
           - api: '29'
             target: default
+            ram: '2048M'
+            heap: '256M'
+            options: '-no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim'
           - api: '37.0'
             target: google_apis_ps16k
+            ram: '4096M'
+            heap: '512M'
+            options: '-no-window -gpu swangle_indirect -no-snapshot -noaudio -no-boot-anim -show-kernel'
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
@@ -84,8 +90,13 @@ jobs:
           api-level: ${{ matrix.api }}
           target: ${{ matrix.target }}
           arch: x86_64
+          ram-size: ${{ matrix.ram }}
+          heap-size: ${{ matrix.heap }}
+          emulator-options: ${{ matrix.options }}
+          emulator-boot-timeout: 360
           disable-animations: true
           script: |
+            python tools/record_device.py
             ./gradlew connectedDebugAndroidTest || { adb pull /sdcard/Pictures/zhigou-tests device-screenshots || true; exit 1; }
             adb pull /sdcard/Pictures/zhigou-tests device-screenshots
             python tools/run_upgrade.py "$RUNNER_TEMP/zhigou-dev7/app/build/outputs/apk/debug/app-debug.apk" app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
@@ -105,3 +116,4 @@ jobs:
             .artifacts/interrupted-writes-report.json
             .artifacts/upgrade-report.json
             .artifacts/background-recovery-report.json
+            .artifacts/device-environment.json
