@@ -12,6 +12,8 @@ import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.uiautomator.By
 import androidx.test.uiautomator.UiDevice
 import androidx.test.uiautomator.Until
+import androidx.test.uiautomator.UiScrollable
+import androidx.test.uiautomator.UiSelector
 import org.junit.Assert.*
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -40,7 +42,56 @@ class UiSmokeTest {
             device.findObject(By.text("课程")).click()
             assertTrue(device.wait(Until.hasObject(By.text("搜索课程和附录")), 10_000))
             screenshot(device, "courses")
+            openTimeoutChapter(device)
+            assertTrue(device.wait(Until.hasObject(By.textContains("调用超时只说明")), 15_000))
+            screenshot(device, "c14-reader")
+            device.findObject(By.text("标记已读")).click()
+            assertTrue(device.wait(Until.hasObject(By.text("已读 ✓")), 10_000))
+            device.findObject(By.text("收藏")).click()
+            assertTrue(device.wait(Until.hasObject(By.text("已收藏 ★")), 10_000))
+            device.pressBack()
+            assertTrue(device.wait(Until.hasObject(By.text("只看书签")), 10_000))
+            device.findObject(By.text("只看书签")).click()
+            assertTrue(device.wait(Until.hasObject(By.textStartsWith("C14 ·")), 10_000))
+            assertFalse(device.hasObject(By.textStartsWith("C00 ·")))
+            screenshot(device, "bookmarks")
+            device.findObject(By.text("选择已读")).click()
+            assertTrue(device.wait(Until.hasObject(By.text("所选 1 章自测 · 最多 20 题")), 10_000))
+            device.findObject(By.text("所选 1 章自测 · 最多 20 题")).click()
+            assertTrue(device.wait(Until.hasObject(By.text("自测 · 1/8")), 10_000))
+            assertTrue(UiScrollable(UiSelector().scrollable(true)).scrollTextIntoView("交卷并查看解析"))
+            device.findObject(By.text("交卷并查看解析")).click()
+            assertTrue(device.wait(Until.hasObject(By.textContains("还有 8 题未作答")), 10_000))
+            device.findObjects(By.text("确认交卷")).last().click()
+            UiScrollable(UiSelector().scrollable(true)).scrollToBeginning(6)
+            assertTrue(device.wait(Until.hasObject(By.textContains("已完成 · 0/8")), 10_000))
+            device.pressBack()
+            assertTrue(device.wait(Until.hasObject(By.text("把知识，构成判断力。")), 10_000))
+            device.findObject(By.text("复习")).click()
+            assertTrue(device.wait(Until.hasObject(By.text("复习 8 道待订正题")), 10_000))
+            screenshot(device, "review")
+            device.findObject(By.text("设置")).click()
+            assertTrue(device.wait(Until.hasObject(By.text("深色")), 10_000))
+            device.findObject(By.text("深色")).click()
+            val slider = device.findObject(By.clazz("android.widget.SeekBar"))
+            val bounds = slider.visibleBounds
+            device.click(bounds.right - 4, bounds.centerY())
+            assertTrue(device.wait(Until.hasObject(By.text("正文字号：28")), 10_000))
+            screenshot(device, "settings-dark")
+            device.findObject(By.text("学习")).click()
+            assertTrue(device.wait(Until.hasObject(By.text("继续阅读 · C14")), 10_000))
+            device.findObject(By.text("继续阅读 · C14")).click()
+            assertTrue(device.wait(Until.hasObject(By.text("本章练习")), 10_000))
+            screenshot(device, "dark-reader")
         }
+    }
+    private fun openTimeoutChapter(device: UiDevice) {
+        val search = device.findObject(By.clazz("android.widget.EditText"))
+        search.click()
+        search.text = "超时、重试、幂等与限流"
+        device.pressBack() // dismiss the keyboard, keeping the results on screen
+        assertTrue(device.wait(Until.hasObject(By.textStartsWith("C14 ·")), 10_000))
+        device.findObject(By.textStartsWith("C14 ·")).click()
     }
     private fun screenshot(device: UiDevice, name: String) {
         device.waitForIdle(2_000)
@@ -57,7 +108,7 @@ class UiSmokeTest {
         val uri = requireNotNull(resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values))
         val bitmap = requireNotNull(InstrumentationRegistry.getInstrumentation().uiAutomation.takeScreenshot())
         var visibleReader = true
-        if (name == "reader") {
+        if (name.endsWith("reader")) {
             var ink = 0
             for (y in bitmap.height / 4 until bitmap.height * 3 / 4) {
                 for (x in 8 until bitmap.width - 8) {

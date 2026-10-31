@@ -1,0 +1,317 @@
+[
+  {
+    "id": "C14-Q01",
+    "chapterId": "C14",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟创建物料请求超时，调用者此时能确定什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "必须把该行标记永久失败",
+        "explanation": "结果未知与明确失败不同。"
+      },
+      {
+        "id": "B",
+        "text": "重新创建肯定不会重复",
+        "explanation": "需要幂等或结果核实能力。"
+      },
+      {
+        "id": "C",
+        "text": "自己未在等待预算内取得结果",
+        "explanation": "只能证明调用方的观察范围。"
+      },
+      {
+        "id": "D",
+        "text": "对方肯定未创建",
+        "explanation": "可能已经执行但响应丢失。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C14-K01"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "超时不是未执行证明。"
+  },
+  {
+    "id": "C14-Q02",
+    "chapterId": "C14",
+    "revision": 1,
+    "type": "single",
+    "stem": "接口支持幂等键，重试同一业务意图时应该怎样处理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "同键可以任意改变请求内容",
+        "explanation": "需要遵守同键内容的契约约束。"
+      },
+      {
+        "id": "B",
+        "text": "只在内存存键便可应对重启",
+        "explanation": "重启可能丢失防重依据。"
+      },
+      {
+        "id": "C",
+        "text": "保持稳定键，并核对范围与有效期",
+        "explanation": "幂等保证有适用条件。"
+      },
+      {
+        "id": "D",
+        "text": "每次换新键增加成功率",
+        "explanation": "可能绕过对同一意图的防重。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C14-K03",
+      "C14-K04",
+      "C14-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "幂等需要可追踪身份和明确支持范围。"
+  },
+  {
+    "id": "C14-Q03",
+    "chapterId": "C14",
+    "revision": 1,
+    "type": "single",
+    "stem": "遇到输入格式错误，默认每秒重发十次最主要的问题是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "重试次数还不够多",
+        "explanation": "没有修复错误原因。"
+      },
+      {
+        "id": "B",
+        "text": "应该同时关闭鉴权",
+        "explanation": "与输入错误无关且扩大风险。"
+      },
+      {
+        "id": "C",
+        "text": "应把失败状态改成成功",
+        "explanation": "会误导调用者。"
+      },
+      {
+        "id": "D",
+        "text": "重试不修正输入且可能加重负载",
+        "explanation": "应区分永久性问题和临时故障。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C14-K02",
+      "C14-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "重试需要错误分类，而非统一次数。"
+  },
+  {
+    "id": "C14-Q04",
+    "chapterId": "C14",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "有关退避与限流，哪些说法合理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "限流后立即开更多并发最稳妥",
+        "explanation": "可能进一步加重限制和故障。"
+      },
+      {
+        "id": "B",
+        "text": "退避保证最终成功",
+        "explanation": "对方可能永久拒绝或持续不可用。"
+      },
+      {
+        "id": "C",
+        "text": "等待逐步拉长可减少持续冲击",
+        "explanation": "需要结合次数与总预算。"
+      },
+      {
+        "id": "D",
+        "text": "多层重试可能叠加等待与流量",
+        "explanation": "应核查端到端预算。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C14-K06"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "退避缓解负载，不等于完成正确性保证。"
+  },
+  {
+    "id": "C14-Q05",
+    "chapterId": "C14",
+    "revision": 1,
+    "type": "single",
+    "stem": "批量 A 已成功、B 输入错误、C 超时未知，合适的处理是？",
+    "options": [
+      {
+        "id": "A",
+        "text": "把全部记录清零当未执行",
+        "explanation": "覆盖了已确认事实。"
+      },
+      {
+        "id": "B",
+        "text": "只看整体 HTTP 状态",
+        "explanation": "不足以确认每行结果。"
+      },
+      {
+        "id": "C",
+        "text": "整批按新业务编号重新创建",
+        "explanation": "会重复已成功项并丢失原意图。"
+      },
+      {
+        "id": "D",
+        "text": "保留逐项状态并按类别核实或修正",
+        "explanation": "区分成功、明确失败和未知。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C14-K07",
+      "C14-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "部分成功要求逐项确认与可追溯处置。"
+  },
+  {
+    "id": "C14-Q06",
+    "chapterId": "C14",
+    "revision": 1,
+    "type": "single",
+    "stem": "超时后立即查询“暂未找到”，能否据此直接重发创建？",
+    "options": [
+      {
+        "id": "A",
+        "text": "一定能，查询无结果等于没执行",
+        "explanation": "可能仍在处理或查询尚不可见。"
+      },
+      {
+        "id": "B",
+        "text": "需核对处理与查询可见性契约",
+        "explanation": "结论取决于提供方能力和状态。"
+      },
+      {
+        "id": "C",
+        "text": "所有查询都永远无用",
+        "explanation": "有明确契约时可用于核实。"
+      },
+      {
+        "id": "D",
+        "text": "换一个新编号即可保证安全",
+        "explanation": "可能重复同一业务意图。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C14-K01",
+      "C14-K05",
+      "C14-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "结果核实也需要理解查询的时效与范围。"
+  },
+  {
+    "id": "C14-Q07",
+    "chapterId": "C14",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "可靠性验收应包含哪些反例？",
+    "options": [
+      {
+        "id": "A",
+        "text": "同键不同内容和并发同键",
+        "explanation": "检验幂等契约边界。"
+      },
+      {
+        "id": "B",
+        "text": "写入已成功但响应丢失",
+        "explanation": "检验未知结果处理与防重。"
+      },
+      {
+        "id": "C",
+        "text": "只测所有依赖正常的路径",
+        "explanation": "不足以检验重试与恢复。"
+      },
+      {
+        "id": "D",
+        "text": "进程重启后继续处理未知任务",
+        "explanation": "检验状态是否可靠保存。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C14-K05",
+      "C14-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "最终业务结果比成功请求次数更有说明力。"
+  },
+  {
+    "id": "C14-Q08",
+    "chapterId": "C14",
+    "revision": 1,
+    "type": "single",
+    "stem": "对方没有防重或结果查询能力，AI 宣称可以保证不重复。应怎样评审？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只要延时足够长便能保证",
+        "explanation": "等待不能补出缺失的确认能力。"
+      },
+      {
+        "id": "B",
+        "text": "把所有超时隐藏不显示",
+        "explanation": "丢失了需要处理的不确定状态。"
+      },
+      {
+        "id": "C",
+        "text": "要求说明依据，并保留人工核实与残余风险",
+        "explanation": "能力不足时不能虚构保证。"
+      },
+      {
+        "id": "D",
+        "text": "有循环重试代码就可信",
+        "explanation": "重试可能正是重复来源。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C14-K05",
+      "C14-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "工程承诺不能超出实际契约与可验证能力。"
+  }
+]

@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse
 import json
 import re
-import html
+import hashlib
 import shutil
 from urllib.parse import urlsplit
 import markdown
@@ -12,7 +12,29 @@ ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / 'content'
 HEADINGS = ['结论先行', '业务场景', '核心概念', '工作原理', '企业案例', 'AI 易忽视', 'PM 评审', '微实践', '小结']
 
-def load_and_validate(directory=CONTENT, release=False):
+def review_fingerprint(directory, chapter):
+    cid = chapter['id']
+    questions_file = directory / 'questions' / f'{cid}.json'
+    sources_file = directory / 'sources.json'
+    sources = json.loads(sources_file.read_text(encoding='utf-8')).get('sources', []) if sources_file.exists() else []
+    payload = {
+        'metadata': chapter,
+        'markdown': (directory / 'chapters' / f'{cid}.md').read_text(encoding='utf-8'),
+        'questions': json.loads(questions_file.read_text(encoding='utf-8')) if cid.startswith('C') else [],
+        'sources': [s for s in sources if cid in s.get('chapters', [])],
+    }
+    return hashlib.sha256(json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode('utf-8')).hexdigest()
+
+def verify_reviews(directory, chapters):
+    audits = json.loads((directory / 'reviews.json').read_text(encoding='utf-8'))
+    for c in chapters:
+        audit = audits.get(c['id'], {})
+        if audit.get('status') != 'reviewed' or not audit.get('reviewer') or not audit.get('note'):
+            raise ValueError(f"{c['id']} 尚无完整审核记录")
+        if audit.get('fingerprint') != review_fingerprint(directory, c):
+            raise ValueError(f"{c['id']} 审核已过期，正文、题库、元数据或来源已变更")
+
+def load_and_validate(directory=CONTENT, release=False, reviewed=False):
     meta = json.loads((directory / 'catalog.json').read_text(encoding='utf-8'))
     ids = [c['id'] for c in meta['chapters']]
     if len(ids) != len(set(ids)):
@@ -46,16 +68,23 @@ def load_and_validate(directory=CONTENT, release=False):
             c['body'] = source.read_text(encoding='utf-8')
             c['html'] = f"chapters/{c['id']}.html"
             if c['id'].startswith('C'):
-                if any(h not in c['body'] for h in HEADINGS):
+                if any(not re.search(r'^## .*' + re.escape(h), c['body'], re.M) for h in HEADINGS):
                     raise ValueError(f"{c['id']} 缺少教学要素")
                 qs = json.loads((directory / 'questions' / f"{c['id']}.json").read_text(encoding='utf-8'))
                 if not 8 <= len(qs) <= 12:
                     raise ValueError(f"{c['id']} 题数须为 8～12")
+                stems = set()
                 for q in qs:
                     options = q['options']
                     option_ids = [o['id'] for o in options]
-                    if q['chapterId'] != c['id'] or not q['id'].startswith(c['id'] + '-Q') or q['revision'] < 1:
+                    if q['chapterId'] != c['id'] or not re.fullmatch(c['id'] + r'-Q\d{2,}', q['id']) or type(q['revision']) is not int or q['revision'] < 1:
                         raise ValueError('题号、所属章节或修订号错误')
+                    normalized_stem = re.sub(r'\s+', '', q['stem'])
+                    if normalized_stem in stems:
+                        raise ValueError('同章题干重复')
+                    stems.add(normalized_stem)
+                    if q['ability'] not in ('概念', '判断', '场景') or q['difficulty'] not in ('基础', '应用', '进阶'):
+                        raise ValueError('题目能力或难度标记无效')
                     if q['type'] not in ('single', 'multiple') or len(option_ids) != len(set(option_ids)) or len(option_ids) < 2:
                         raise ValueError('题型或选项错误')
                     if not q['answers'] or len(q['answers']) != len(set(q['answers'])) or not set(q['answers']) <= set(option_ids):
@@ -64,6 +93,8 @@ def load_and_validate(directory=CONTENT, release=False):
                         raise ValueError('题型与答案数量不符')
                     if any(not o['text'].strip() or not o['explanation'].strip() for o in options):
                         raise ValueError('缺少选项文字或解析')
+                    if len({re.sub(r'\s+', '', o['text']) for o in options}) != len(options):
+                        raise ValueError('选项文字重复')
                     if not q['knowledge'] or any(k not in c['knowledge'] for k in q['knowledge']):
                         raise ValueError('知识点引用错误')
                     if any(not q[k].strip() for k in ('stem', 'difficulty', 'ability', 'misconception')):
@@ -90,9 +121,8 @@ def load_and_validate(directory=CONTENT, release=False):
     if release:
         if not all(c['published'] for c in chapters):
             raise ValueError('正式 MVP 不允许未交付章节或附录')
-        audits = json.loads((directory / 'reviews.json').read_text(encoding='utf-8'))
-        if any(audits.get(c['id'], {}).get('status') != 'reviewed' for c in chapters):
-            raise ValueError('正式 MVP 尚有未审核内容')
+    if release or reviewed:
+        verify_reviews(directory, [c for c in meta['chapters'] if c['published']])
     return {'version': meta['version'], 'chapters': chapters, 'questions': questions}
 
 CSS = '''body{font:18px/1.85 sans-serif;max-width:48em;margin:auto;padding:18px;color:#253b32;background:#f7f8f3;overflow-wrap:anywhere}h1{font-size:1.65em}h2{font-size:1.3em;margin-top:2em}a{color:#246b5b}pre,blockquote{background:#e8eee7;padding:12px;border-radius:8px}pre{overflow-x:auto}code{font-size:.9em}table{border-collapse:collapse;display:block;overflow:auto}th,td{border:1px solid #b5c8ba;padding:8px}img{max-width:100%}.toc{font-size:.9em}'''
@@ -112,8 +142,9 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('command', choices=['check', 'build'])
     parser.add_argument('--release', action='store_true')
+    parser.add_argument('--reviewed', action='store_true', help='Verify recorded reviews match the current published artifacts, not their teaching correctness')
     args = parser.parse_args()
-    catalog = load_and_validate(release=args.release)
+    catalog = load_and_validate(release=args.release, reviewed=args.reviewed)
     if args.command == 'build':
         dest = ROOT / 'app/build/generated/courseAssets'
         (dest / 'chapters').mkdir(parents=True, exist_ok=True)

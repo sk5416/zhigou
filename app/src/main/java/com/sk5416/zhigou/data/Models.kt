@@ -43,6 +43,10 @@ import kotlinx.serialization.Serializable
 )
 
 object LearningRules {
+    fun completedChapters(readings: List<Reading>, catalog: Catalog): Set<String> {
+        val available = catalog.chapters.filter { it.published && it.id.startsWith("C") }.map { it.id }.toSet()
+        return readings.filter { it.completed && it.chapterId in available }.map { it.chapterId }.toSet()
+    }
     fun correct(question: Question, selected: Set<String>) = selected == question.answers
     fun sample(questions: List<Question>, chapters: Set<String>, limit: Int = 20): List<Question> =
         questions.filter { it.chapterId in chapters }.shuffled().take(limit.coerceAtLeast(0))

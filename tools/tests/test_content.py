@@ -1,4 +1,3 @@
-import copy
 import importlib.util
 import json
 from pathlib import Path
@@ -26,7 +25,10 @@ class ContentTests(unittest.TestCase):
     def test_sample_complete_structure(self):
         c = content.load_and_validate(self.directory)
         self.assertEqual(len(c['chapters']), 81)
-        self.assertEqual(len(c['questions']), 24)
+        published = {ch['id'] for ch in c['chapters'] if ch['published'] and ch['id'].startswith('C')}
+        self.assertTrue({'C00', 'C02', 'C12'} <= published)
+        self.assertEqual({q['chapterId'] for q in c['questions']}, published)
+        self.assertIn('C00-Q01', {q['id'] for q in c['questions']})
     def test_release_gate_rejects_partial_course(self):
         with self.assertRaisesRegex(ValueError, '未交付'):
             content.load_and_validate(self.directory, release=True)
@@ -42,6 +44,37 @@ class ContentTests(unittest.TestCase):
         self.change('questions/C12.json', lambda data: data[0]['options'][0].update(explanation=''))
         with self.assertRaisesRegex(ValueError, '解析'):
             content.load_and_validate(self.directory)
+    def test_duplicate_stem_rejected(self):
+        self.change('questions/C00.json', lambda data: data[1].update(stem=data[0]['stem']))
+        with self.assertRaisesRegex(ValueError, '题干重复'):
+            content.load_and_validate(self.directory)
+    def test_duplicate_option_text_rejected(self):
+        self.change('questions/C00.json', lambda data: data[0]['options'][1].update(text=data[0]['options'][0]['text']))
+        with self.assertRaisesRegex(ValueError, '文字重复'):
+            content.load_and_validate(self.directory)
+    def test_boolean_revision_rejected(self):
+        self.change('questions/C00.json', lambda data: data[0].update(revision=True))
+        with self.assertRaisesRegex(ValueError, '修订号'):
+            content.load_and_validate(self.directory)
+    def test_current_reviews_match_artifacts(self):
+        content.load_and_validate(self.directory, reviewed=True)
+    def test_review_invalidated_by_markdown_change(self):
+        f = self.directory / 'chapters/C00.md'
+        f.write_text(f.read_text(encoding='utf-8') + '\n\n新增一句。', encoding='utf-8')
+        with self.assertRaisesRegex(ValueError, '审核已过期'):
+            content.load_and_validate(self.directory, reviewed=True)
+    def test_review_invalidated_by_answer_change(self):
+        self.change('questions/C00.json', lambda data: data[0].update(answers=['A']))
+        with self.assertRaisesRegex(ValueError, '审核已过期'):
+            content.load_and_validate(self.directory, reviewed=True)
+    def test_review_invalidated_by_metadata_change(self):
+        self.change('catalog.json', lambda data: data['chapters'][0].update(title='修改章名'))
+        with self.assertRaisesRegex(ValueError, '审核已过期'):
+            content.load_and_validate(self.directory, reviewed=True)
+    def test_review_invalidated_by_source_change(self):
+        self.change('sources.json', lambda data: data['sources'][0].update(claims='变更说明'))
+        with self.assertRaisesRegex(ValueError, '审核已过期'):
+            content.load_and_validate(self.directory, reviewed=True)
     def test_remote_image_rejected(self):
         file = self.directory / 'chapters/C02.md'
         file.write_text(file.read_text(encoding='utf-8') + '\n![remote](https://example.com/x.png)', encoding='utf-8')

@@ -1,0 +1,313 @@
+[
+  {
+    "id": "C13-Q01",
+    "chapterId": "C13",
+    "revision": 1,
+    "type": "single",
+    "stem": "只有一份成功 JSON 样例，能否作为完整接口契约？",
+    "options": [
+      {
+        "id": "A",
+        "text": "不足，还需字段规则及边界行为",
+        "explanation": "样例只能展示一种形状。"
+      },
+      {
+        "id": "B",
+        "text": "可以由调用方任意猜默认值",
+        "explanation": "不同猜测会导致不一致。"
+      },
+      {
+        "id": "C",
+        "text": "只补一个接口名称就完整",
+        "explanation": "仍缺少可依赖的语义。"
+      },
+      {
+        "id": "D",
+        "text": "可以，JSON 语法已覆盖行为",
+        "explanation": "语法没有定义失败、空值、权限与分页。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C13-K02",
+      "C13-K03",
+      "C13-K06"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "成功样例不是完整契约。"
+  },
+  {
+    "id": "C13-Q02",
+    "chapterId": "C13",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟接口缺失字段表示不修改，null 表示清空。如何使用这条规则？",
+    "options": [
+      {
+        "id": "A",
+        "text": "遇到 null 自动替换为零",
+        "explanation": "可能改变业务数据含义。"
+      },
+      {
+        "id": "B",
+        "text": "契约明确并通过实现与测试确认",
+        "explanation": "不能仅从一份示例推断。"
+      },
+      {
+        "id": "C",
+        "text": "所有接口默认如此",
+        "explanation": "不同提供方可能有不同约定。"
+      },
+      {
+        "id": "D",
+        "text": "前端自行决定即可",
+        "explanation": "服务端实现必须一致。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C13-K02"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "缺失、空值和默认值的意义需逐项约定。"
+  },
+  {
+    "id": "C13-Q03",
+    "chapterId": "C13",
+    "revision": 1,
+    "type": "single",
+    "stem": "订单数据超过一页，调用方想确认取完结果，应核查什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "分页终点、稳定排序及后续游标规则",
+        "explanation": "决定如何继续与识别结束。"
+      },
+      {
+        "id": "B",
+        "text": "第一批非空就视作完整",
+        "explanation": "可能漏掉后续页面。"
+      },
+      {
+        "id": "C",
+        "text": "固定无限重取第一页",
+        "explanation": "既漏数又增加负载。"
+      },
+      {
+        "id": "D",
+        "text": "只增加前端表格高度",
+        "explanation": "不改变接口分页。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C13-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "分页完整性需要明确边界，不是页面展示问题。"
+  },
+  {
+    "id": "C13-Q04",
+    "chapterId": "C13",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "哪些变更可能影响已有调用者？",
+    "options": [
+      {
+        "id": "A",
+        "text": "新增可选响应字段但调用方拒绝未知字段",
+        "explanation": "即使新增字段也需结合调用者验证。"
+      },
+      {
+        "id": "B",
+        "text": "把原数字字段改为文本",
+        "explanation": "可能破坏解析及运算。"
+      },
+      {
+        "id": "C",
+        "text": "保持字段与响应语义，仅补充内部注释",
+        "explanation": "内部注释不改变调用者依赖的契约行为。"
+      },
+      {
+        "id": "D",
+        "text": "新增必填请求字段",
+        "explanation": "旧调用方可能不发送。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C13-K07"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "兼容性应按调用者行为核查，不能绝对化。"
+  },
+  {
+    "id": "C13-Q05",
+    "chapterId": "C13",
+    "revision": 1,
+    "type": "single",
+    "stem": "批量导入 HTTP 成功，但部分行失败，应怎样设计返回与处理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "按稳定业务标识返回逐项状态",
+        "explanation": "有助核实、补偿和防止重复处理。"
+      },
+      {
+        "id": "B",
+        "text": "所有行统一算成功",
+        "explanation": "会遗漏业务失败。"
+      },
+      {
+        "id": "C",
+        "text": "按返回文案猜是哪一行",
+        "explanation": "文案可能变化且缺少稳定对应。"
+      },
+      {
+        "id": "D",
+        "text": "删除失败明细便于展示",
+        "explanation": "损失定位与修复依据。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C13-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "整批传输成功不能代表逐行业务成功。"
+  },
+  {
+    "id": "C13-Q06",
+    "chapterId": "C13",
+    "revision": 1,
+    "type": "single",
+    "stem": "请求里有 departmentId，接口权限设计应怎样做？",
+    "options": [
+      {
+        "id": "A",
+        "text": "使用 JSON 格式即可防越权",
+        "explanation": "数据格式没有授权能力。"
+      },
+      {
+        "id": "B",
+        "text": "由页面隐藏其他部门即可",
+        "explanation": "可绕过页面直接调用。"
+      },
+      {
+        "id": "C",
+        "text": "只按参数筛选便已授权",
+        "explanation": "客户端参数不证明访问权。"
+      },
+      {
+        "id": "D",
+        "text": "服务端用可信身份核对允许范围",
+        "explanation": "数据过滤应服从授权。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C13-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "契约中的数据范围必须由可信位置执行。"
+  },
+  {
+    "id": "C13-Q07",
+    "chapterId": "C13",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "契约测试适合核查哪些约定？",
+    "options": [
+      {
+        "id": "A",
+        "text": "字段类型、空结果和错误结构",
+        "explanation": "可检测实现偏离约定。"
+      },
+      {
+        "id": "B",
+        "text": "分页上限与无效游标行为",
+        "explanation": "属于可测试的边界。"
+      },
+      {
+        "id": "C",
+        "text": "未授权身份不能得到越权记录",
+        "explanation": "可以用权限反例验证承诺。"
+      },
+      {
+        "id": "D",
+        "text": "替代全部真实业务对账",
+        "explanation": "契约一致不证明最终业务口径全正确。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C13-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "契约测试有价值，但不能覆盖所有业务正确性。"
+  },
+  {
+    "id": "C13-Q08",
+    "chapterId": "C13",
+    "revision": 1,
+    "type": "single",
+    "stem": "下游根据错误文案“请稍后再试”自动重试。更稳定的改进是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "把文案固定为中文就足够",
+        "explanation": "仍可能变动且含义可能模糊。"
+      },
+      {
+        "id": "B",
+        "text": "取消错误响应",
+        "explanation": "使调用方更难区分状态。"
+      },
+      {
+        "id": "C",
+        "text": "使用稳定错误代码及明确重试契约",
+        "explanation": "程序判断不依赖可改提示文案。"
+      },
+      {
+        "id": "D",
+        "text": "所有错误都循环重试",
+        "explanation": "忽略输入、权限和写入副作用。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C13-K06",
+      "C13-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "人可读说明与机器可依赖代码分别设计。"
+  }
+]

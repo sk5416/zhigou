@@ -11,6 +11,13 @@ class LearningRulesTest {
     private fun backup(s: Session = session()) = Backup(contentVersion = "v1", createdAt = 1, preferences = Preferences(), readings = listOf(Reading("C00")), sessions = listOf(SessionRow(s.id, Codec.json.encodeToString(s), 1)), attempts = emptyList(), mistakes = emptyList())
     private fun catalog(q: Question = question()) = Catalog("v1", listOf(chapter), listOf(q))
 
+    @Test fun completedSelectionExcludesAppendicesAndUnavailableChapters() {
+        val c = Catalog("v2", listOf(chapter, chapter.copy(id = "AA"), chapter.copy(id = "C01", published = false)), listOf(question()))
+        val rows = listOf(Reading("C00", completed = true), Reading("AA", completed = true), Reading("C01", completed = true), Reading("C99", completed = true))
+        assertEquals(setOf("C00"), LearningRules.completedChapters(rows, c))
+        assertTrue(LearningRules.completedChapters(listOf(Reading("C00")), c).isEmpty())
+    }
+
     @Test fun multiChoiceRequiresExactSet() {
         val q = question()
         assertTrue(LearningRules.correct(q, setOf("C", "A")))

@@ -1,0 +1,316 @@
+[
+  {
+    "id": "C11-Q01",
+    "chapterId": "C11",
+    "revision": 1,
+    "type": "single",
+    "stem": "读取模拟请求 GET /api/orders?page=1，哪项解释准确？",
+    "options": [
+      {
+        "id": "A",
+        "text": "路径本身就是数据库口令",
+        "explanation": "不能把请求路径与秘密混同。"
+      },
+      {
+        "id": "B",
+        "text": "方法、路径和查询条件表达不同信息",
+        "explanation": "共同描述请求但职责不同。"
+      },
+      {
+        "id": "C",
+        "text": "GET 自动证明数据已授权",
+        "explanation": "授权仍需服务端核查。"
+      },
+      {
+        "id": "D",
+        "text": "有参数就必须使用 POST",
+        "explanation": "方法选择不只看是否有参数。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C11-K01",
+      "C11-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "请求结构应按语义和契约阅读。"
+  },
+  {
+    "id": "C11-Q02",
+    "chapterId": "C11",
+    "revision": 1,
+    "type": "single",
+    "stem": "接口最终返回 200，但响应为登录页 HTML，页面期待 JSON。下一步应查什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只改订单列表颜色",
+        "explanation": "不能处理身份与响应契约。"
+      },
+      {
+        "id": "B",
+        "text": "重定向链、会话与响应类型",
+        "explanation": "可以定位身份失效和解析不符。"
+      },
+      {
+        "id": "C",
+        "text": "先认定订单请求成功",
+        "explanation": "状态不足以证明拿到预期业务表示。"
+      },
+      {
+        "id": "D",
+        "text": "直接把 HTML 当订单保存",
+        "explanation": "会损坏数据并掩盖错误。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C11-K03",
+      "C11-K04",
+      "C11-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "检查最终内容和经过的路径，不只看状态数字。"
+  },
+  {
+    "id": "C11-Q03",
+    "chapterId": "C11",
+    "revision": 1,
+    "type": "single",
+    "stem": "关于 Cookie 与 Session，哪项正确？",
+    "options": [
+      {
+        "id": "A",
+        "text": "两词完全同义",
+        "explanation": "一个是浏览器数据机制，一个是会话管理概念。"
+      },
+      {
+        "id": "B",
+        "text": "Cookie 只能保存数据库密码",
+        "explanation": "用途不止一种，也不应如此暴露秘密。"
+      },
+      {
+        "id": "C",
+        "text": "Cookie 可携带关联服务端会话的标识",
+        "explanation": "是一种常见配合方式，不是唯一用法。"
+      },
+      {
+        "id": "D",
+        "text": "有 Session 就不需授权",
+        "explanation": "登录状态不能替代业务范围控制。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C11-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "区分浏览器存储机制与应用会话状态。"
+  },
+  {
+    "id": "C11-Q04",
+    "chapterId": "C11",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "哪些观察能帮助定位页面与接口问题？",
+    "options": [
+      {
+        "id": "A",
+        "text": "完整传播认证头给所有协作者",
+        "explanation": "可能泄露令牌而非必要证据。"
+      },
+      {
+        "id": "B",
+        "text": "只看最后状态为绿色",
+        "explanation": "遗漏业务内容、类型及前序跳转。"
+      },
+      {
+        "id": "C",
+        "text": "请求实际 URL 与重定向",
+        "explanation": "有助发现登录跳转或错误入口。"
+      },
+      {
+        "id": "D",
+        "text": "状态、内容类型与脱敏响应片段",
+        "explanation": "可以核对预期契约与错误来源。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C11-K06",
+      "C11-K07"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "排错需要足够上下文，也要控制凭据暴露。"
+  },
+  {
+    "id": "C11-Q05",
+    "chapterId": "C11",
+    "revision": 1,
+    "type": "single",
+    "stem": "服务收到部门参数后返回其他部门订单且 HTTP 200。最准确的判断是？",
+    "options": [
+      {
+        "id": "A",
+        "text": "浏览器应自行隐藏即可",
+        "explanation": "返回数据已可能暴露，不能只靠显示限制。"
+      },
+      {
+        "id": "B",
+        "text": "HTTP 成功证明授权正确",
+        "explanation": "成功状态不证明业务范围符合要求。"
+      },
+      {
+        "id": "C",
+        "text": "应核查服务端授权，状态不等于业务正确",
+        "explanation": "需要用身份和数据范围反例验证。"
+      },
+      {
+        "id": "D",
+        "text": "只要 JSON 可解析就无需处理",
+        "explanation": "语法正确不代表业务安全。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C11-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "传输、表示与授权正确性是不同维度。"
+  },
+  {
+    "id": "C11-Q06",
+    "chapterId": "C11",
+    "revision": 1,
+    "type": "single",
+    "stem": "看到 5xx 响应时，最合适的后续行动是？",
+    "options": [
+      {
+        "id": "A",
+        "text": "立刻自动重试任何写入",
+        "explanation": "仍需判断副作用和重试条件。"
+      },
+      {
+        "id": "B",
+        "text": "断言必然是数据库口令错误",
+        "explanation": "来源可能是代理、应用或其他依赖。"
+      },
+      {
+        "id": "C",
+        "text": "确认响应来源并关联相应日志",
+        "explanation": "按实际证据缩小范围。"
+      },
+      {
+        "id": "D",
+        "text": "把所有错误替换为暂无数据",
+        "explanation": "会将服务故障伪装成正常空结果。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C11-K03",
+      "C11-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "错误类别不能替代具体定位和副作用判断。"
+  },
+  {
+    "id": "C11-Q07",
+    "chapterId": "C11",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "关于浏览器可见数据，哪些结论合理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "缓存可能让页面仍显示旧内容",
+        "explanation": "页面显示不证明本次动态请求成功。"
+      },
+      {
+        "id": "B",
+        "text": "本地请求体可见不证明网络明文",
+        "explanation": "浏览器是处理数据的端点。"
+      },
+      {
+        "id": "C",
+        "text": "HTTPS 后日志可以记录所有秘密",
+        "explanation": "传输保护不约束端点日志。"
+      },
+      {
+        "id": "D",
+        "text": "分享网络记录前应检查 Cookie 和令牌",
+        "explanation": "排错材料可能含登录凭据。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C11-K06",
+      "C11-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "端点调试、缓存与链路保护需要区分。"
+  },
+  {
+    "id": "C11-Q08",
+    "chapterId": "C11",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟契约用 200 加 success=false 表示业务失败。评审重点是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只要 200 就必须提示成功",
+        "explanation": "忽略了约定的业务失败字段。"
+      },
+      {
+        "id": "B",
+        "text": "改状态码即可保证所有权限正确",
+        "explanation": "状态设计不能替代授权逻辑。"
+      },
+      {
+        "id": "C",
+        "text": "任何响应字段都不必说明",
+        "explanation": "会让调用者自行猜测语义。"
+      },
+      {
+        "id": "D",
+        "text": "调用方是否明确一致地处理成功与失败",
+        "explanation": "契约、实现和用户反馈应匹配。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C11-K03",
+      "C11-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "契约清晰并被正确处理，比孤立状态数字更关键。"
+  }
+]

@@ -107,7 +107,7 @@ private fun mode(mode: String) = when (mode) { "test" -> "自测"; "review" -> "
     val results = remember(query, chapters) { chapters.filter { query.isBlank() || it.title.contains(query, true) || it.body.contains(query, true) } }
     LazyColumn(Modifier.padding(horizontal = 20.dp).fillMaxSize(), verticalArrangement = Arrangement.spacedBy(10.dp), contentPadding = PaddingValues(vertical = 12.dp)) {
         item { OutlinedTextField(query, { query = it }, label = { Text("搜索课程和附录") }, singleLine = true, modifier = Modifier.fillMaxWidth()) }
-        item { Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) { FilterChip(bookmarks, { bookmarks = !bookmarks }, label = { Text("只看书签") }); FilterChip(false, { selected = s.readings.filter { it.completed }.map { it.chapterId } }, label = { Text("选择已读") }) } }
+        item { Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) { FilterChip(bookmarks, { bookmarks = !bookmarks }, label = { Text("只看书签") }); FilterChip(false, { selected = LearningRules.completedChapters(s.readings, s.catalog).toList() }, label = { Text("选择已读") }) } }
         item { Button(onClick = { test(selected.toSet()) }, enabled = selected.isNotEmpty(), modifier = Modifier.fillMaxWidth()) { Text("所选 ${selected.size} 章自测 · 最多 20 题") } }
         item { Text("共用题库，仅供学习自查。勾选章节可自由组合自测。", style = MaterialTheme.typography.bodySmall) }
         results.filter { !bookmarks || s.readings.any { r -> r.chapterId == it.id && r.bookmarked } }.groupBy { it.part }.forEach { (part, group) ->

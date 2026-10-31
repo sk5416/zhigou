@@ -1,20 +1,102 @@
 {
   "checkedAt": "2026-10-31",
-  "scope": "样板章节与附录的事实核验来源，正文离线独立成立；链接仅供开发与审核追溯，不由 App 联网加载。",
+  "scope": "已交付章节与附录的事实核验来源；正文离线独立成立，不由 App 联网加载。",
   "sources": [
     {
       "title": "OWASP Transport Layer Security Cheat Sheet",
       "url": "https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Security_Cheat_Sheet.html",
-      "chapters": ["C12", "AA", "AC", "AH"],
+      "chapters": [
+        "C12",
+        "AA",
+        "AC",
+        "AH"
+      ],
       "claims": "TLS 的机密性、完整性和身份验证边界；证书校验；前后段连接分别评估。本文不指定统一协议配置或密码套件。"
     },
     {
       "title": "OWASP Password Storage Cheat Sheet",
       "url": "https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html",
-      "chapters": ["C12", "AA", "AC", "AG", "AH"],
+      "chapters": [
+        "C12",
+        "AA",
+        "AC",
+        "AG",
+        "AH"
+      ],
       "claims": "密码存储需要合适的带盐慢速密码哈希；普通快速哈希不能等同安全口令存储。本文未固定算法参数，部署需按组件与风险重新核验。"
+    },
+    {
+      "title": "Python venv documentation",
+      "url": "https://docs.python.org/3/library/venv.html",
+      "chapters": [
+        "C03"
+      ],
+      "claims": "项目依赖环境可隔离、应依据声明重建；不把虚拟环境当任意可移动目录。示例不规定 Android App 技术栈。"
+    },
+    {
+      "title": "Microsoft Azure Architecture Center: Microservices architecture style",
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/microservices",
+      "chapters": [
+        "C05",
+        "AB"
+      ],
+      "claims": "独立部署、服务边界和运行复杂度的取舍；没有将 Azure 产品或组件作为通用必需项。"
+    },
+    {
+      "title": "RFC 1034 Domain Names - Concepts and Facilities",
+      "url": "https://www.rfc-editor.org/rfc/rfc1034.html",
+      "chapters": [
+        "C10",
+        "AA"
+      ],
+      "claims": "DNS 名称与地址记录的概念；不依赖 RFC 示例中的地址仍然可用。"
+    },
+    {
+      "title": "MDN HTTP messages",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Messages",
+      "chapters": [
+        "C11"
+      ],
+      "claims": "方法、目标、请求头、请求体和响应的结构；HTTP/1.1 为示意，未把其他 HTTP 版本的线格式等同。"
+    },
+    {
+      "title": "MDN Using HTTP cookies",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies",
+      "chapters": [
+        "C11",
+        "AA"
+      ],
+      "claims": "Cookie 与应用会话机制的关系；不将 Cookie 与 Session 视为同义，不宣称某一种凭据自动安全。"
+    },
+    {
+      "title": "RFC 9110 HTTP Semantics",
+      "url": "https://www.rfc-editor.org/rfc/rfc9110.html",
+      "chapters": [
+        "C11",
+        "C13",
+        "C14"
+      ],
+      "claims": "HTTP 方法、状态、表示与幂等语义的基础。接口字段、分页及 ERP 业务效果均为模拟约定，不是 RFC 或厂商保证。"
+    },
+    {
+      "title": "Microsoft Azure Architecture Center: Retry pattern",
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/retry",
+      "chapters": [
+        "C14",
+        "AD"
+      ],
+      "claims": "区分临时故障，考虑等待、次数、总预算和幂等；不把重试与退避宣称为最终成功保证。"
+    },
+    {
+      "title": "GitHub Docs: Best practices for using webhooks",
+      "url": "https://docs.github.com/en/webhooks/using-webhooks/best-practices-for-using-webhooks",
+      "chapters": [
+        "C15",
+        "AD"
+      ],
+      "claims": "来源验证、事件识别与可靠接收的设计参考。没有把 GitHub 的具体响应时限、重发或头字段当成所有 ERP 的契约。"
     }
   ],
   "simulation": "青禾制造、员工、部门和物料同步均为虚构模拟，不代表金蝶、Salesforce 等厂商真实接口行为。",
-  "reviewStatus": "draft；来源核验不等同全部教学与题目审核完成。"
+  "reviewStatus": "2026-10-31 Codex 逐章作者自审记录见 docs/05_课程审核记录.md；非独立专家认证，变更后重新复核。"
 }

@@ -1,0 +1,315 @@
+[
+  {
+    "id": "C03-Q01",
+    "chapterId": "C03",
+    "revision": 1,
+    "type": "single",
+    "stem": "服务器上已有完整源码，哪项事实仍不能由此推出？",
+    "options": [
+      {
+        "id": "A",
+        "text": "可以阅读依赖声明",
+        "explanation": "若声明在源码中，可查其内容。"
+      },
+      {
+        "id": "B",
+        "text": "可以对比提交版本",
+        "explanation": "有版本信息时可以对比，但不代表运行。"
+      },
+      {
+        "id": "C",
+        "text": "可以检查入口文件",
+        "explanation": "源码可用于检查，但不说明执行状态。"
+      },
+      {
+        "id": "D",
+        "text": "服务已启动并可访问",
+        "explanation": "文件存在不能证明运行实例和监听状态。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C03-K01",
+      "C03-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "源码、产物、运行进程和业务可用分别验证。"
+  },
+  {
+    "id": "C03-Q02",
+    "chapterId": "C03",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟工具换机器报“缺少模块”，应优先检查什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "运行版本、依赖声明及安装环境",
+        "explanation": "能定位新旧环境差异。"
+      },
+      {
+        "id": "B",
+        "text": "删除错误输出",
+        "explanation": "会丢失诊断依据。"
+      },
+      {
+        "id": "C",
+        "text": "先改业务 SQL",
+        "explanation": "报错首先指向运行依赖。"
+      },
+      {
+        "id": "D",
+        "text": "直接升级所有库",
+        "explanation": "可能引入新的兼容问题。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C03-K02",
+      "C03-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "先按证据排查环境，再决定是否修改业务逻辑。"
+  },
+  {
+    "id": "C03-Q03",
+    "chapterId": "C03",
+    "revision": 1,
+    "type": "single",
+    "stem": "开发账号能写导出目录，服务账号不能。最合适的处理是？",
+    "options": [
+      {
+        "id": "A",
+        "text": "核对目标目录并授予必要权限",
+        "explanation": "与具体运行身份和操作匹配。"
+      },
+      {
+        "id": "B",
+        "text": "给服务账号无限权限",
+        "explanation": "超出实际写入需要。"
+      },
+      {
+        "id": "C",
+        "text": "忽略失败并提示导出成功",
+        "explanation": "会误导用户和丢失结果。"
+      },
+      {
+        "id": "D",
+        "text": "固定导出到开发者桌面",
+        "explanation": "仍依赖个人目录与权限。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C03-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "交互登录身份与后台服务身份的权限可能不同。"
+  },
+  {
+    "id": "C03-Q04",
+    "chapterId": "C03",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "环境变量保存数据库口令，哪些判断成立？",
+    "options": [
+      {
+        "id": "A",
+        "text": "放入变量后可随意打印",
+        "explanation": "仍可能泄露凭据。"
+      },
+      {
+        "id": "B",
+        "text": "它是一种配置传入方式",
+        "explanation": "使配置可与代码分离。"
+      },
+      {
+        "id": "C",
+        "text": "同名变量保证所有机器相同",
+        "explanation": "取值、加载顺序与账号环境可能不同。"
+      },
+      {
+        "id": "D",
+        "text": "进程与诊断访问仍需控制",
+        "explanation": "存放方式不会自动保证保密。"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C03-K04"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "环境变量不等于自动安全或环境一致。"
+  },
+  {
+    "id": "C03-Q05",
+    "chapterId": "C03",
+    "revision": 1,
+    "type": "single",
+    "stem": "Python 示例交付时，怎样处理虚拟环境较合理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "把开发机整个环境当通用移动包",
+        "explanation": "环境中可能有位置与平台依赖。"
+      },
+      {
+        "id": "B",
+        "text": "仅截图显示安装成功",
+        "explanation": "不能作为目标环境重建方法。"
+      },
+      {
+        "id": "C",
+        "text": "只保存库名，不记录版本条件",
+        "explanation": "可能难以重现原有组合。"
+      },
+      {
+        "id": "D",
+        "text": "按声明在目标位置重建并验证",
+        "explanation": "符合环境可重建与目标验证思路。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C03-K02",
+      "C03-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "虚拟环境隔离依赖，但一般不作为任意移动目录。"
+  },
+  {
+    "id": "C03-Q06",
+    "chapterId": "C03",
+    "revision": 1,
+    "type": "single",
+    "stem": "进程已启动，但另一台设备不能连接。下一步最恰当的是？",
+    "options": [
+      {
+        "id": "A",
+        "text": "将结果报告为正常",
+        "explanation": "缺少访问可用性的证据。"
+      },
+      {
+        "id": "B",
+        "text": "核查监听地址、端口与访问链路",
+        "explanation": "进程存在不代表跨设备可达。"
+      },
+      {
+        "id": "C",
+        "text": "先替换查询业务逻辑",
+        "explanation": "尚无证据指向业务代码。"
+      },
+      {
+        "id": "D",
+        "text": "立即关闭全部防火墙",
+        "explanation": "扩大边界且未定位原因。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C03-K03",
+      "C03-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "启动、监听、可达和业务成功是不同层次。"
+  },
+  {
+    "id": "C03-Q07",
+    "chapterId": "C03",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "哪些内容应进入模拟工具的交接说明？",
+    "options": [
+      {
+        "id": "A",
+        "text": "入口、参数和工作目录",
+        "explanation": "减少启动方式造成的差异。"
+      },
+      {
+        "id": "B",
+        "text": "运行版本与依赖声明",
+        "explanation": "支持重建与兼容判断。"
+      },
+      {
+        "id": "C",
+        "text": "完整真实口令及日志样本",
+        "explanation": "不应在普通说明里暴露秘密。"
+      },
+      {
+        "id": "D",
+        "text": "输出路径、运行账号和最小验证",
+        "explanation": "帮助核查权限及交付结果。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C03-K07",
+      "C03-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "交接既要可操作，也要控制秘密暴露。"
+  },
+  {
+    "id": "C03-Q08",
+    "chapterId": "C03",
+    "revision": 1,
+    "type": "single",
+    "stem": "已锁定依赖版本，哪项验收结论最合理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "程序永远不需要维护",
+        "explanation": "依赖可用性和安全仍会变化。"
+      },
+      {
+        "id": "B",
+        "text": "不必检查配置与目录",
+        "explanation": "版本锁定不处理这些条件。"
+      },
+      {
+        "id": "C",
+        "text": "有助重现，但仍需目标环境验证",
+        "explanation": "正确界定依赖锁定的作用。"
+      },
+      {
+        "id": "D",
+        "text": "保证任何平台都能运行",
+        "explanation": "平台、运行时和外部依赖仍可能不同。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C03-K06",
+      "C03-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "版本固定是重现条件之一，不是运行保证。"
+  }
+]

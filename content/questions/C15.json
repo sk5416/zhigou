@@ -1,0 +1,320 @@
+[
+  {
+    "id": "C15-Q01",
+    "chapterId": "C15",
+    "revision": 1,
+    "type": "single",
+    "stem": "关于 Webhook 与轮询，哪项描述正确？",
+    "options": [
+      {
+        "id": "A",
+        "text": "增量意味着一定实时",
+        "explanation": "增量范围与触发频率不同。"
+      },
+      {
+        "id": "B",
+        "text": "轮询任务高频就不会漏数",
+        "explanation": "边界和进度错误仍会遗漏。"
+      },
+      {
+        "id": "C",
+        "text": "Webhook 自动保证不重不漏",
+        "explanation": "可靠性依具体契约与处理。"
+      },
+      {
+        "id": "D",
+        "text": "前者由提供方推送，后者由调用方查询",
+        "explanation": "区分谁发起变化通知或读取。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C15-K01",
+      "C15-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "触发方式、取数范围和正确性分别判断。"
+  },
+  {
+    "id": "C15-Q02",
+    "chapterId": "C15",
+    "revision": 1,
+    "type": "single",
+    "stem": "增量多页任务只读完第一页便保存当前时间后中断，主要风险是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "未可靠处理的数据可能被新边界跳过",
+        "explanation": "进度提交早于处理确认。"
+      },
+      {
+        "id": "B",
+        "text": "只影响界面颜色",
+        "explanation": "涉及实际取数范围。"
+      },
+      {
+        "id": "C",
+        "text": "时间越新数据越完整",
+        "explanation": "新边界可能掩盖旧数据缺口。"
+      },
+      {
+        "id": "D",
+        "text": "会自动补齐所有后续页",
+        "explanation": "没有这样的保证。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C15-K03",
+      "C15-K04",
+      "C15-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "进度应对应已可靠处理的数据，不是本地时钟。"
+  },
+  {
+    "id": "C15-Q03",
+    "chapterId": "C15",
+    "revision": 1,
+    "type": "single",
+    "stem": "多条记录更新时间相同，使用 updatedAt > lastTime 有何注意点？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只改为每秒运行即可",
+        "explanation": "频率不能修复筛选边界。"
+      },
+      {
+        "id": "B",
+        "text": "要核查稳定排序和边界重复或遗漏",
+        "explanation": "可能需要受支持的复合游标与防重。"
+      },
+      {
+        "id": "C",
+        "text": "时间相同的记录只能有一条",
+        "explanation": "不能假定源系统时间精度如此。"
+      },
+      {
+        "id": "D",
+        "text": "任意加主键条件都能保证完整",
+        "explanation": "源接口需支持相应顺序和契约。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C15-K03",
+      "C15-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "游标设计依赖源端实际能力。"
+  },
+  {
+    "id": "C15-Q04",
+    "chapterId": "C15",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "哪些事件接收行为有助于可靠性？",
+    "options": [
+      {
+        "id": "A",
+        "text": "未保存任务先返回成功且只留内存",
+        "explanation": "中断可能丢失已确认事件。"
+      },
+      {
+        "id": "B",
+        "text": "处理重复和乱序",
+        "explanation": "不能假定每个事件只到一次且有序。"
+      },
+      {
+        "id": "C",
+        "text": "可靠保存待处理信息后按约定确认",
+        "explanation": "将接收与后续处理分开跟踪。"
+      },
+      {
+        "id": "D",
+        "text": "验证来源及事件类型",
+        "explanation": "避免把未经确认的请求当有效事件。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C15-K05",
+      "C15-K06"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "确认收到不等于下游完成，持久化边界要明确。"
+  },
+  {
+    "id": "C15-Q05",
+    "chapterId": "C15",
+    "revision": 1,
+    "type": "single",
+    "stem": "用重叠窗口重复读取最近十分钟更新，哪项判断合理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "结合防重并安排超窗补偿或对账",
+        "explanation": "承认窗口保证的范围。"
+      },
+      {
+        "id": "B",
+        "text": "保证任何历史修正都不会漏",
+        "explanation": "超出窗口的变化可能仍遗漏。"
+      },
+      {
+        "id": "C",
+        "text": "删除自动出现在普通更新时间查询",
+        "explanation": "取决于接口如何表示删除。"
+      },
+      {
+        "id": "D",
+        "text": "无需幂等处理",
+        "explanation": "重复读取可能导致重复副作用。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C15-K03",
+      "C15-K07",
+      "C15-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "窗口是有限补偿，不是无限正确性保证。"
+  },
+  {
+    "id": "C15-Q06",
+    "chapterId": "C15",
+    "revision": 1,
+    "type": "single",
+    "stem": "源系统删除记录后不留下更新时间或删除事件，如何发现差异？",
+    "options": [
+      {
+        "id": "A",
+        "text": "普通新增增量必然能发现",
+        "explanation": "不存在的记录可能不再返回。"
+      },
+      {
+        "id": "B",
+        "text": "评估全量对账或其他删除机制",
+        "explanation": "需要另有证据来源发现缺失。"
+      },
+      {
+        "id": "C",
+        "text": "提高轮询频率即可保证",
+        "explanation": "触发频率不能补足不可观测信息。"
+      },
+      {
+        "id": "D",
+        "text": "将本地所有记录定期删除",
+        "explanation": "会破坏正确数据而非核对差异。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C15-K07",
+      "C15-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "删除与历史变化需要明确的可观测机制。"
+  },
+  {
+    "id": "C15-Q07",
+    "chapterId": "C15",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "业务允许十分钟延迟且无 Webhook，哪些方案条件应比较？",
+    "options": [
+      {
+        "id": "A",
+        "text": "实际接口能力与可接受延迟",
+        "explanation": "选型应从需求和能力出发。"
+      },
+      {
+        "id": "B",
+        "text": "先断言无法做任何集成",
+        "explanation": "定时或查询可能满足需求。"
+      },
+      {
+        "id": "C",
+        "text": "轮询频率与源端查询压力",
+        "explanation": "影响维护与负载。"
+      },
+      {
+        "id": "D",
+        "text": "增量边界、补偿及对账",
+        "explanation": "影响结果完整性。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C15-K01",
+      "C15-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "实时不是唯一合格方式，方案应满足实际约束。"
+  },
+  {
+    "id": "C15-Q08",
+    "chapterId": "C15",
+    "revision": 1,
+    "type": "single",
+    "stem": "较旧的事件后到，直接覆盖最新物料字段可能怎样？",
+    "options": [
+      {
+        "id": "A",
+        "text": "必然能得到最新业务状态",
+        "explanation": "到达先后不等于源端版本先后。"
+      },
+      {
+        "id": "B",
+        "text": "旧状态可能覆盖新状态",
+        "explanation": "需区分事件版本及实际对象状态。"
+      },
+      {
+        "id": "C",
+        "text": "说明必须禁止所有 Webhook",
+        "explanation": "可以按标识、版本和契约处理。"
+      },
+      {
+        "id": "D",
+        "text": "只要返回成功就不会发生",
+        "explanation": "接收确认不控制更新语义。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C15-K06",
+      "C15-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "到达顺序不是业务发生或版本顺序。"
+  }
+]

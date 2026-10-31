@@ -23,6 +23,7 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
       - run: pip install -r requirements.txt
       - run: python tools/content.py check
+      - run: python tools/content.py check --reviewed
       - run: python -m unittest discover -s tools/tests -v
       - run: chmod +x gradlew && ./gradlew testDebugUnitTest lintDebug assembleDebug
       - uses: actions/upload-artifact@v4

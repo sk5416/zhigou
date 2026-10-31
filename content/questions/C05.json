@@ -1,0 +1,317 @@
+[
+  {
+    "id": "C05-Q01",
+    "chapterId": "C05",
+    "revision": 1,
+    "type": "single",
+    "stem": "权限、订单、导出在同一程序内分模块，整体部署，最符合哪种描述？",
+    "options": [
+      {
+        "id": "A",
+        "text": "无法用于正式业务",
+        "explanation": "组织方式本身不证明不可生产使用。"
+      },
+      {
+        "id": "B",
+        "text": "因为分文件就是分布式",
+        "explanation": "文件边界不等同网络边界。"
+      },
+      {
+        "id": "C",
+        "text": "模块化单体",
+        "explanation": "内部职责明确与整体部署可以同时成立。"
+      },
+      {
+        "id": "D",
+        "text": "已按微服务独立发布",
+        "explanation": "没有独立部署事实。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C05-K01",
+      "C05-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "代码模块边界和部署边界分别判断。"
+  },
+  {
+    "id": "C05-Q02",
+    "chapterId": "C05",
+    "revision": 1,
+    "type": "single",
+    "stem": "将进程内物料操作改成远程服务调用，会新增哪类判断？",
+    "options": [
+      {
+        "id": "A",
+        "text": "本地事务自动覆盖远端所有写入",
+        "explanation": "一般不能据本地事务作此保证。"
+      },
+      {
+        "id": "B",
+        "text": "网络调用总能明确知道执行结果",
+        "explanation": "响应丢失时可能结果未知。"
+      },
+      {
+        "id": "C",
+        "text": "超时、防重与跨边界一致性",
+        "explanation": "远端可能执行而调用方没收到结果。"
+      },
+      {
+        "id": "D",
+        "text": "只需增加函数注释",
+        "explanation": "未处理网络与远端失败。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C05-K03",
+      "C05-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "远程调用改变失败模型，不是函数调用换个地址。"
+  },
+  {
+    "id": "C05-Q03",
+    "chapterId": "C05",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟 60 人查询系统由两人维护，决定拆分前最应追问什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "能否完全取消权限",
+        "explanation": "简化部署不能取消相关保护。"
+      },
+      {
+        "id": "B",
+        "text": "是否使用所有流行组件",
+        "explanation": "流行不能证明适配。"
+      },
+      {
+        "id": "C",
+        "text": "服务数能否再增加",
+        "explanation": "数量本身不是价值证据。"
+      },
+      {
+        "id": "D",
+        "text": "要解决的瓶颈与维护收益是什么",
+        "explanation": "以实际约束和成本比较方案。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C05-K06",
+      "C05-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "架构复杂度需要对应明确收益。"
+  },
+  {
+    "id": "C05-Q04",
+    "chapterId": "C05",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "哪些情况可能支持进一步评估微服务？",
+    "options": [
+      {
+        "id": "A",
+        "text": "某能力有明确独立扩容需求且能维护",
+        "explanation": "有实际负载和运维条件支撑。"
+      },
+      {
+        "id": "B",
+        "text": "只因类名很多",
+        "explanation": "代码数量不是充分理由。"
+      },
+      {
+        "id": "C",
+        "text": "尚不清楚数据由谁负责",
+        "explanation": "数据边界缺失会增加风险。"
+      },
+      {
+        "id": "D",
+        "text": "稳定能力边界与独立发布团队",
+        "explanation": "可能获得自治和发布节奏收益。"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "knowledge": [
+      "C05-K04",
+      "C05-K06",
+      "C05-K08"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "满足条件才评估收益，不按单个指标机械选型。"
+  },
+  {
+    "id": "C05-Q05",
+    "chapterId": "C05",
+    "revision": 1,
+    "type": "single",
+    "stem": "六个服务共享表结构，每次必须一起发布。应怎样评价？",
+    "options": [
+      {
+        "id": "A",
+        "text": "核查拆分收益是否抵得过协同代价",
+        "explanation": "不能只按服务外观认定成功。"
+      },
+      {
+        "id": "B",
+        "text": "部署单元越多维护越容易",
+        "explanation": "存在更多配置和协调成本。"
+      },
+      {
+        "id": "C",
+        "text": "可以忽略版本兼容",
+        "explanation": "共享结构变化仍可能破坏调用者。"
+      },
+      {
+        "id": "D",
+        "text": "服务独立性已经充分证明",
+        "explanation": "共同发布说明自治收益受限。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C05-K04",
+      "C05-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "形式拆分不保证独立演进。"
+  },
+  {
+    "id": "C05-Q06",
+    "chapterId": "C05",
+    "revision": 1,
+    "type": "single",
+    "stem": "单体应用连接远端数据库，哪项说法准确？",
+    "options": [
+      {
+        "id": "A",
+        "text": "能忽略数据库凭据",
+        "explanation": "服务端账号仍需管理。"
+      },
+      {
+        "id": "B",
+        "text": "没有任何网络依赖",
+        "explanation": "数据库连接本身有依赖与失败。"
+      },
+      {
+        "id": "C",
+        "text": "存在远端失败，但不因此自动成为微服务架构",
+        "explanation": "区分通信事实与架构组织方式。"
+      },
+      {
+        "id": "D",
+        "text": "必然需要部署消息队列",
+        "explanation": "需依据业务需求选择。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C05-K01",
+      "C05-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "单体也可能有网络依赖和信任边界。"
+  },
+  {
+    "id": "C05-Q07",
+    "chapterId": "C05",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "比较整体部署与多服务方案时，应纳入哪些成本？",
+    "options": [
+      {
+        "id": "A",
+        "text": "配置、发布和日志定位",
+        "explanation": "服务增加可能提高运维负担。"
+      },
+      {
+        "id": "B",
+        "text": "仅计算第一次写代码的时间",
+        "explanation": "忽略运行和交接成本。"
+      },
+      {
+        "id": "C",
+        "text": "维护人员与数据一致性处理",
+        "explanation": "影响长期可持续性。"
+      },
+      {
+        "id": "D",
+        "text": "接口兼容及故障恢复",
+        "explanation": "跨服务交互需要验证。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C05-K06",
+      "C05-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "选型比较需要覆盖生命周期成本。"
+  },
+  {
+    "id": "C05-Q08",
+    "chapterId": "C05",
+    "revision": 1,
+    "type": "single",
+    "stem": "选择模块化单体后，最有用的后续约定是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "下次升级无条件重写",
+        "explanation": "没有收益证据的重写代价大。"
+      },
+      {
+        "id": "B",
+        "text": "承诺永不改变架构",
+        "explanation": "业务和维护条件可能变化。"
+      },
+      {
+        "id": "C",
+        "text": "记录取舍及触发重评的条件",
+        "explanation": "保留决策上下文，便于有据调整。"
+      },
+      {
+        "id": "D",
+        "text": "删除所有备选方案记录",
+        "explanation": "会让后来维护者重新猜测原因。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C05-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "架构决策应有前提与可复查条件。"
+  }
+]

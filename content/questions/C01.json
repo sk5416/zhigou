@@ -1,0 +1,312 @@
+[
+  {
+    "id": "C01-Q01",
+    "chapterId": "C01",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟 PM 能熟练写对账 SQL，却无法解释恢复备份。应怎样安排学习？",
+    "options": [
+      {
+        "id": "A",
+        "text": "降低所有章节的学习深度",
+        "explanation": "某项盲区不能代表整体水平。"
+      },
+      {
+        "id": "B",
+        "text": "保留强项，补并发和恢复",
+        "explanation": "按具体证据定位盲区，避免重复基础。"
+      },
+      {
+        "id": "C",
+        "text": "跳过整个数据库模块",
+        "explanation": "查询熟练不能证明恢复能力。"
+      },
+      {
+        "id": "D",
+        "text": "先记全部数据库产品名",
+        "explanation": "名词数量不对应当前判断缺口。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C01-K03",
+      "C01-K06"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "已有经验与工程盲区可以同时存在。"
+  },
+  {
+    "id": "C01-Q02",
+    "chapterId": "C01",
+    "revision": 1,
+    "type": "single",
+    "stem": "课程 L3 最强调哪种表现？",
+    "options": [
+      {
+        "id": "A",
+        "text": "识别缩写的英文全称",
+        "explanation": "记住名词不足以支持评审。"
+      },
+      {
+        "id": "B",
+        "text": "列风险、审查证据并核验",
+        "explanation": "对应独立评审与 AI 辅助常规应用。"
+      },
+      {
+        "id": "C",
+        "text": "精通每个协议的数学证明",
+        "explanation": "超出目标深度，不是统一要求。"
+      },
+      {
+        "id": "D",
+        "text": "脱离工具默写大型系统",
+        "explanation": "本课程不以独立手写全部代码为目标。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C01-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "学习深度应落实到可观察行为。"
+  },
+  {
+    "id": "C01-Q03",
+    "chapterId": "C01",
+    "revision": 1,
+    "type": "single",
+    "stem": "团队只有两个人，开发也负责发布。怎样处理测试和运维职责？",
+    "options": [
+      {
+        "id": "A",
+        "text": "明确由谁承担并保留验证产物",
+        "explanation": "一人多职可行，职责不能消失。"
+      },
+      {
+        "id": "B",
+        "text": "等故障出现再确定",
+        "explanation": "会留下发布与恢复责任空缺。"
+      },
+      {
+        "id": "C",
+        "text": "只交给 AI 自行承诺",
+        "explanation": "仍需有人核验和负责。"
+      },
+      {
+        "id": "D",
+        "text": "因为没有专岗而取消",
+        "explanation": "组织人数不能消除交付需要。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C01-K02"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "岗位数量与必须承担的职责不是一回事。"
+  },
+  {
+    "id": "C01-Q04",
+    "chapterId": "C01",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "哪些适合作为能力地图中的已有证据？",
+    "options": [
+      {
+        "id": "A",
+        "text": "自我评价非常懂技术",
+        "explanation": "缺少具体表现及证据。"
+      },
+      {
+        "id": "B",
+        "text": "解释一次虚构权限反例及结果",
+        "explanation": "包含判断对象和可核查依据。"
+      },
+      {
+        "id": "C",
+        "text": "安装过很多开发软件",
+        "explanation": "安装行为不能证明工程判断。"
+      },
+      {
+        "id": "D",
+        "text": "用模拟业务编号完成对账并说明口径",
+        "explanation": "能观察其实际应用与边界。"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C01-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "能力证据要具体，不以自我标签替代。"
+  },
+  {
+    "id": "C01-Q05",
+    "chapterId": "C01",
+    "revision": 1,
+    "type": "single",
+    "stem": "自测高分，但解释不清错误选项为何错，下一步最合适的是？",
+    "options": [
+      {
+        "id": "A",
+        "text": "将章节标为永久掌握",
+        "explanation": "可能是记忆或猜测，不能扩大结论。"
+      },
+      {
+        "id": "B",
+        "text": "回看解析并换场景复述",
+        "explanation": "检验是否能迁移同一判断依据。"
+      },
+      {
+        "id": "C",
+        "text": "立即跳到最复杂的部署任务",
+        "explanation": "未解决概念缺口可能增加负担。"
+      },
+      {
+        "id": "D",
+        "text": "重复点击相同答案直到满分",
+        "explanation": "强化记忆但未检验判断依据。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C01-K06",
+      "C01-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "题目得分与可迁移的理解分别观察。"
+  },
+  {
+    "id": "C01-Q06",
+    "chapterId": "C01",
+    "revision": 1,
+    "type": "single",
+    "stem": "学习 API 超时处理前，最直接的前置理解是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "全部前端动画框架",
+        "explanation": "与请求结果未知的判断没有直接依赖。"
+      },
+      {
+        "id": "B",
+        "text": "所有 ERP 产品操作",
+        "explanation": "产品熟悉不能代替通信机制。"
+      },
+      {
+        "id": "C",
+        "text": "大型集群安装细节",
+        "explanation": "不是这项知识的必要起点。"
+      },
+      {
+        "id": "D",
+        "text": "请求响应与接口契约",
+        "explanation": "先理解交互和成功含义才能判断超时。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C01-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "先修关系应解释为什么需要，而非罗列术语。"
+  },
+  {
+    "id": "C01-Q07",
+    "chapterId": "C01",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "使用 AI 学习时，哪些做法有助于核验？",
+    "options": [
+      {
+        "id": "A",
+        "text": "让同一次回答给自己打分即结案",
+        "explanation": "自我评价不是独立证据。"
+      },
+      {
+        "id": "B",
+        "text": "对重要技术说法查原始资料",
+        "explanation": "提供独立于生成解释的依据。"
+      },
+      {
+        "id": "C",
+        "text": "用虚构新场景验证判断",
+        "explanation": "避免只复述原题答案。"
+      },
+      {
+        "id": "D",
+        "text": "区分已核实事实与模拟假设",
+        "explanation": "防止把示例当成真实厂商行为。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C01-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "AI 解释是学习材料，仍需事实与观察支持。"
+  },
+  {
+    "id": "C01-Q08",
+    "chapterId": "C01",
+    "revision": 1,
+    "type": "single",
+    "stem": "一次上线后增加新依赖和数据库字段，生命周期视角要求什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只核对新增页面",
+        "explanation": "未覆盖依赖、数据及回退影响。"
+      },
+      {
+        "id": "B",
+        "text": "必须先重写整个系统",
+        "explanation": "生命周期迭代不等于无条件重写。"
+      },
+      {
+        "id": "C",
+        "text": "重新检查测试、发布和维护影响",
+        "explanation": "变更需要回到相关验证活动。"
+      },
+      {
+        "id": "D",
+        "text": "上线成功后不再管理",
+        "explanation": "运行与变更也是生命周期活动。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C01-K01",
+      "C01-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "生命周期不是一次性的单向文档交接。"
+  }
+]

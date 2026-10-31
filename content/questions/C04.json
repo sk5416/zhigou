@@ -1,0 +1,316 @@
+[
+  {
+    "id": "C04-Q01",
+    "chapterId": "C04",
+    "revision": 1,
+    "type": "single",
+    "stem": "页面标题写“测试”，配置却指向正式 ERP。应以什么判断实际影响？",
+    "options": [
+      {
+        "id": "A",
+        "text": "实际目标、凭据和操作权限",
+        "explanation": "这些事实决定访问与副作用范围。"
+      },
+      {
+        "id": "B",
+        "text": "代码目录叫 test",
+        "explanation": "目录名称不能证明配置隔离。"
+      },
+      {
+        "id": "C",
+        "text": "开发者主观认为安全",
+        "explanation": "需要可核查事实而非主观判断。"
+      },
+      {
+        "id": "D",
+        "text": "页面颜色与标题",
+        "explanation": "只能提示，不能决定写入目标。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C04-K01",
+      "C04-K03",
+      "C04-K08"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "环境标签不能替代目标与权限核验。"
+  },
+  {
+    "id": "C04-Q02",
+    "chapterId": "C04",
+    "revision": 1,
+    "type": "single",
+    "stem": "只读生产库账号用于测试，哪项判断准确？",
+    "options": [
+      {
+        "id": "A",
+        "text": "没有写权限便没有任何风险",
+        "explanation": "真实数据读取和泄露仍需评估。"
+      },
+      {
+        "id": "B",
+        "text": "必须给予管理员权限方便测试",
+        "explanation": "扩大权限与测试必要性不符。"
+      },
+      {
+        "id": "C",
+        "text": "等同虚构测试数据",
+        "explanation": "来源和敏感程度仍是生产数据。"
+      },
+      {
+        "id": "D",
+        "text": "限制写入但仍需核查读权限与数据暴露",
+        "explanation": "区分写入影响和读取风险。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C04-K02",
+      "C04-K04",
+      "C04-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "只读限制与敏感数据保护是不同控制面。"
+  },
+  {
+    "id": "C04-Q03",
+    "chapterId": "C04",
+    "revision": 1,
+    "type": "single",
+    "stem": "测试审批不写数据库，但仍使用真实通知接口。应补查什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "认为无数据库写入就安全",
+        "explanation": "忽略了外部系统动作。"
+      },
+      {
+        "id": "B",
+        "text": "只检查页面刷新速度",
+        "explanation": "与真实流程影响无直接关系。"
+      },
+      {
+        "id": "C",
+        "text": "只增加测试水印",
+        "explanation": "不阻止真实通知。"
+      },
+      {
+        "id": "D",
+        "text": "是否会发通知或触发真实流程",
+        "explanation": "外部副作用也属于隔离范围。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C04-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "隔离需要覆盖数据库之外的动作。"
+  },
+  {
+    "id": "C04-Q04",
+    "chapterId": "C04",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "哪些措施能降低测试误连生产的影响？",
+    "options": [
+      {
+        "id": "A",
+        "text": "执行前显示非敏感目标与范围",
+        "explanation": "便于核实实际影响对象。"
+      },
+      {
+        "id": "B",
+        "text": "测试账号不具备生产访问权限",
+        "explanation": "配置错误时仍可被权限边界限制。"
+      },
+      {
+        "id": "C",
+        "text": "配置缺失自动使用正式凭据",
+        "explanation": "会把错误变成生产访问。"
+      },
+      {
+        "id": "D",
+        "text": "所有环境共用管理员账号",
+        "explanation": "削弱隔离并扩大误操作影响。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B"
+    ],
+    "knowledge": [
+      "C04-K03",
+      "C04-K04",
+      "C04-K08"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "提示、配置和权限应相互补充。"
+  },
+  {
+    "id": "C04-Q05",
+    "chapterId": "C04",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟生产样本删除姓名后用于测试，最合理的判断是？",
+    "options": [
+      {
+        "id": "A",
+        "text": "可以保留所有无关字段",
+        "explanation": "不符合最小范围原则。"
+      },
+      {
+        "id": "B",
+        "text": "仍需核查必要性、授权和组合字段风险",
+        "explanation": "脱敏需按实际数据性质评估。"
+      },
+      {
+        "id": "C",
+        "text": "可直接公开全部样本",
+        "explanation": "公开范围并未因此得到授权。"
+      },
+      {
+        "id": "D",
+        "text": "已证明无法识别人",
+        "explanation": "其他组合字段仍可能识别。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C04-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "脱敏不是简单删一个字段，也不是自动公开许可。"
+  },
+  {
+    "id": "C04-Q06",
+    "chapterId": "C04",
+    "revision": 1,
+    "type": "single",
+    "stem": "测试迁移脚本在模拟库通过后，生产执行前还需要什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "取消日志以减少干扰",
+        "explanation": "会减少追踪和核验能力。"
+      },
+      {
+        "id": "B",
+        "text": "核对目标、备份、影响及恢复方案",
+        "explanation": "测试通过不代替生产变更管理。"
+      },
+      {
+        "id": "C",
+        "text": "可以直接批量执行所有库",
+        "explanation": "目标与影响范围仍需确认。"
+      },
+      {
+        "id": "D",
+        "text": "把脚本文件改名即可",
+        "explanation": "名称不改变执行风险。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C04-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "测试环境证据有适用范围，不能直接扩大。"
+  },
+  {
+    "id": "C04-Q07",
+    "chapterId": "C04",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "哪些适合作为配置样例和排错日志的内容？",
+    "options": [
+      {
+        "id": "A",
+        "text": "操作范围和关联编号",
+        "explanation": "有助追踪影响与结果。"
+      },
+      {
+        "id": "B",
+        "text": "含口令的完整连接串",
+        "explanation": "普通日志可能造成凭据泄露。"
+      },
+      {
+        "id": "C",
+        "text": "虚构地址与字段名",
+        "explanation": "用于说明结构而不暴露实际秘密。"
+      },
+      {
+        "id": "D",
+        "text": "脱敏的环境标识",
+        "explanation": "帮助确认目标同时控制暴露。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C04-K03",
+      "C04-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "可排错不意味着需要完整记录秘密。"
+  },
+  {
+    "id": "C04-Q08",
+    "chapterId": "C04",
+    "revision": 1,
+    "type": "single",
+    "stem": "配置缺失且无法确认目标系统时，应采取哪种行为？",
+    "options": [
+      {
+        "id": "A",
+        "text": "明确失败并提示缺失配置",
+        "explanation": "避免自行猜测高风险目标。"
+      },
+      {
+        "id": "B",
+        "text": "默认沿用开发者最近的生产配置",
+        "explanation": "缺少授权与目标证据。"
+      },
+      {
+        "id": "C",
+        "text": "尝试扫描并选择能连上的系统",
+        "explanation": "可能扩大访问与误连范围。"
+      },
+      {
+        "id": "D",
+        "text": "先创建一条真实记录探测",
+        "explanation": "探测本身可能造成业务副作用。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C04-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "目标不明时停止高风险动作，而非用真实写入试探。"
+  }
+]

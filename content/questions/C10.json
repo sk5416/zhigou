@@ -1,0 +1,316 @@
+[
+  {
+    "id": "C10-Q01",
+    "chapterId": "C10",
+    "revision": 1,
+    "type": "single",
+    "stem": "员工手机访问 localhost，想打开开发者电脑上的服务。首先应澄清什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "手机是否安装相同壁纸",
+        "explanation": "与回环地址含义无关。"
+      },
+      {
+        "id": "B",
+        "text": "localhost 指当前发起访问的设备",
+        "explanation": "手机会访问自身，需要实际服务地址。"
+      },
+      {
+        "id": "C",
+        "text": "数据库中是否存在订单",
+        "explanation": "尚未定位到业务数据层。"
+      },
+      {
+        "id": "D",
+        "text": "所有设备共享 localhost",
+        "explanation": "回环地址不是某台开发机的别名。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C10-K04"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "先明确请求从哪台设备发起。"
+  },
+  {
+    "id": "C10-Q02",
+    "chapterId": "C10",
+    "revision": 1,
+    "type": "single",
+    "stem": "域名已解析到某个 IP，可以据此证明什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "证书已通过校验",
+        "explanation": "TLS 身份验证属于下一层。"
+      },
+      {
+        "id": "B",
+        "text": "员工有订单查看权限",
+        "explanation": "业务授权不由 DNS 决定。"
+      },
+      {
+        "id": "C",
+        "text": "这次解析得到了相应地址记录",
+        "explanation": "证据范围止于已观察的解析结果。"
+      },
+      {
+        "id": "D",
+        "text": "Web 端口一定可达",
+        "explanation": "仍需核对网络和监听。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C10-K01",
+      "C10-K02",
+      "C10-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "名称解析成功不是整个访问链路成功。"
+  },
+  {
+    "id": "C10-Q03",
+    "chapterId": "C10",
+    "revision": 1,
+    "type": "single",
+    "stem": "服务器本机可访问，员工设备不行。下面哪种修复原则合理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "先永久关闭全部防火墙",
+        "explanation": "扩大暴露且未定位问题。"
+      },
+      {
+        "id": "B",
+        "text": "确认入口和允许来源后做必要调整",
+        "explanation": "把修复与批准的访问边界对应。"
+      },
+      {
+        "id": "C",
+        "text": "把数据库端口直接开放给员工",
+        "explanation": "可能绕开应用与数据授权。"
+      },
+      {
+        "id": "D",
+        "text": "只改页面提示为成功",
+        "explanation": "不能修复连接也会掩盖故障。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C10-K03",
+      "C10-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "可达性问题应收窄定位，不默认扩大边界。"
+  },
+  {
+    "id": "C10-Q04",
+    "chapterId": "C10",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "关于内网与 VPN，哪些判断正确？",
+    "options": [
+      {
+        "id": "A",
+        "text": "内网请求不需要任何凭据保护",
+        "explanation": "内部同样存在凭据和端点风险。"
+      },
+      {
+        "id": "B",
+        "text": "接入 VPN 自动获得管理员身份",
+        "explanation": "网络连接不授予应用管理员权限。"
+      },
+      {
+        "id": "C",
+        "text": "提供某些访问条件但不代替授权",
+        "explanation": "到达网络不等于能访问全部业务。"
+      },
+      {
+        "id": "D",
+        "text": "仍需验证身份及数据范围",
+        "explanation": "内部用户也可能越权。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C10-K05"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "网络位置和业务信任分别设计。"
+  },
+  {
+    "id": "C10-Q05",
+    "chapterId": "C10",
+    "revision": 1,
+    "type": "single",
+    "stem": "ping 成功而网页连接失败，最恰当的判断是？",
+    "options": [
+      {
+        "id": "A",
+        "text": "数据库一定损坏",
+        "explanation": "没有指向数据库的证据。"
+      },
+      {
+        "id": "B",
+        "text": "网页一定没有故障",
+        "explanation": "探测没有覆盖 Web 端口。"
+      },
+      {
+        "id": "C",
+        "text": "继续核查目标端口及实际请求路径",
+        "explanation": "不同协议和环节需要分别验证。"
+      },
+      {
+        "id": "D",
+        "text": "DNS 和授权已全部证明正常",
+        "explanation": "探测范围不足以支持该结论。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C10-K06",
+      "C10-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "探测结果只证明被测条件。"
+  },
+  {
+    "id": "C10-Q06",
+    "chapterId": "C10",
+    "revision": 1,
+    "type": "single",
+    "stem": "应用只应由同机反向代理调用，监听回环地址是否必然错误？",
+    "options": [
+      {
+        "id": "A",
+        "text": "正确就无需检查代理到应用",
+        "explanation": "仍需核对转发和可用性。"
+      },
+      {
+        "id": "B",
+        "text": "因此可取消应用身份校验",
+        "explanation": "网络隔离不替代应用控制。"
+      },
+      {
+        "id": "C",
+        "text": "必然，应一律监听所有接口",
+        "explanation": "忽略了预期入口与隔离设计。"
+      },
+      {
+        "id": "D",
+        "text": "不必然，员工应访问批准的代理入口",
+        "explanation": "回环监听可能正是合适边界。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C10-K03",
+      "C10-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "监听方式需要结合调用方和入口设计判断。"
+  },
+  {
+    "id": "C10-Q07",
+    "chapterId": "C10",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "访问排错记录应区分哪些信息？",
+    "options": [
+      {
+        "id": "A",
+        "text": "代理与应用内部端口",
+        "explanation": "避免把内部服务误作用户入口。"
+      },
+      {
+        "id": "B",
+        "text": "解析、连接、TLS 与授权的结果",
+        "explanation": "帮助分层定位而非混为一谈。"
+      },
+      {
+        "id": "C",
+        "text": "请求发起设备与目标入口",
+        "explanation": "用于解释 localhost 和访问位置。"
+      },
+      {
+        "id": "D",
+        "text": "所有账号的完整密码",
+        "explanation": "不是排错必要证据，可能泄露秘密。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C10-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "可核查的分层证据比完整秘密更有用。"
+  },
+  {
+    "id": "C10-Q08",
+    "chapterId": "C10",
+    "revision": 1,
+    "type": "single",
+    "stem": "用 IP 替代域名访问 HTTPS 后出现证书错误，如何理解？",
+    "options": [
+      {
+        "id": "A",
+        "text": "证明用户没有业务权限",
+        "explanation": "证书错误与订单数据权限不同层。"
+      },
+      {
+        "id": "B",
+        "text": "证明原域名访问一定失败",
+        "explanation": "改变了访问条件，不能直接推出。"
+      },
+      {
+        "id": "C",
+        "text": "可以永久忽略证书校验",
+        "explanation": "这会削弱服务身份验证。"
+      },
+      {
+        "id": "D",
+        "text": "访问名称及代理路由条件可能变化",
+        "explanation": "需要分别核对，而不是视为同一次测试。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C10-K02",
+      "C10-K06",
+      "C10-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "排错中改变目标名称也可能改变 TLS 与路由条件。"
+  }
+]

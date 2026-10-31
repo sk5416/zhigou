@@ -1,5 +1,5 @@
 {
-  "version": "2026.10-sample.2",
+  "version": "2026.10-foundations.1",
   "chapters": [
     {
       "id": "C00",
@@ -9,6 +9,7 @@
       "priority": "P0",
       "prerequisites": [],
       "related": [
+        "C01",
         "C02",
         "C12"
       ],
@@ -30,8 +31,13 @@
       "part": "第0篇｜导学与能力地图",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C00"
+      ],
+      "related": [
+        "C02",
+        "C03"
+      ],
       "knowledge": [
         "C01-K01",
         "C01-K02",
@@ -42,7 +48,7 @@
         "C01-K07",
         "C01-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C02",
@@ -54,7 +60,8 @@
         "C00"
       ],
       "related": [
-        "C00",
+        "C03",
+        "C10",
         "C12"
       ],
       "knowledge": [
@@ -75,8 +82,13 @@
       "part": "第1篇｜先看懂完整的软件系统",
       "depth": "L2",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C02"
+      ],
+      "related": [
+        "C04",
+        "C10"
+      ],
       "knowledge": [
         "C03-K01",
         "C03-K02",
@@ -87,7 +99,7 @@
         "C03-K07",
         "C03-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C04",
@@ -95,8 +107,12 @@
       "part": "第1篇｜先看懂完整的软件系统",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C03"
+      ],
+      "related": [
+        "C13"
+      ],
       "knowledge": [
         "C04-K01",
         "C04-K02",
@@ -107,7 +123,7 @@
         "C04-K07",
         "C04-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C05",
@@ -115,8 +131,13 @@
       "part": "第1篇｜先看懂完整的软件系统",
       "depth": "L1",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C02",
+        "C03"
+      ],
+      "related": [
+        "C14"
+      ],
       "knowledge": [
         "C05-K01",
         "C05-K02",
@@ -127,7 +148,7 @@
         "C05-K07",
         "C05-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C06",
@@ -216,9 +237,13 @@
       "depth": "L3",
       "priority": "P0",
       "prerequisites": [
-        "C02"
+        "C02",
+        "C03"
       ],
-      "related": [],
+      "related": [
+        "C11",
+        "C12"
+      ],
       "knowledge": [
         "C10-K01",
         "C10-K02",
@@ -229,7 +254,7 @@
         "C10-K07",
         "C10-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C11",
@@ -238,9 +263,13 @@
       "depth": "L3",
       "priority": "P0",
       "prerequisites": [
-        "C02"
+        "C10"
       ],
-      "related": [],
+      "related": [
+        "C12",
+        "C13",
+        "C14"
+      ],
       "knowledge": [
         "C11-K01",
         "C11-K02",
@@ -251,7 +280,7 @@
         "C11-K07",
         "C11-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C12",
@@ -264,6 +293,7 @@
       ],
       "related": [
         "C02",
+        "C13",
         "C43"
       ],
       "knowledge": [
@@ -287,7 +317,11 @@
       "prerequisites": [
         "C11"
       ],
-      "related": [],
+      "related": [
+        "C12",
+        "C14",
+        "C15"
+      ],
       "knowledge": [
         "C13-K01",
         "C13-K02",
@@ -298,7 +332,7 @@
         "C13-K07",
         "C13-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C14",
@@ -309,7 +343,10 @@
       "prerequisites": [
         "C13"
       ],
-      "related": [],
+      "related": [
+        "C15",
+        "C05"
+      ],
       "knowledge": [
         "C14-K01",
         "C14-K02",
@@ -320,7 +357,7 @@
         "C14-K07",
         "C14-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C15",
@@ -328,8 +365,14 @@
       "part": "第3篇｜网络、Web 与 API",
       "depth": "L2",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C13",
+        "C14"
+      ],
+      "related": [
+        "C11",
+        "C14"
+      ],
       "knowledge": [
         "C15-K01",
         "C15-K02",
@@ -340,7 +383,7 @@
         "C15-K07",
         "C15-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C16",
