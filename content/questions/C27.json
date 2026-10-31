@@ -1,0 +1,314 @@
+[
+  {
+    "id": "C27-Q01",
+    "chapterId": "C27",
+    "revision": 1,
+    "type": "single",
+    "stem": "HTML、CSS与JavaScript的职责应怎样区分？",
+    "options": [
+      {
+        "id": "A",
+        "text": "JavaScript就是浏览器里的Java",
+        "explanation": "两者是不同语言，不能混同。"
+      },
+      {
+        "id": "B",
+        "text": "有JavaScript便不再需要HTML结构",
+        "explanation": "脚本通常操作或生成结构，并非消除它。"
+      },
+      {
+        "id": "C",
+        "text": "结构语义、呈现布局、交互行为分别协作",
+        "explanation": "这是职责分工，实际页面需要三者配合。"
+      },
+      {
+        "id": "D",
+        "text": "HTML负责可信授权，CSS负责数据库提交",
+        "explanation": "展示技术不能承担这些服务端责任。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C27-K01"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "分清结构、样式、行为与服务端业务责任。"
+  },
+  {
+    "id": "C27-Q02",
+    "chapterId": "C27",
+    "revision": 1,
+    "type": "single",
+    "stem": "浏览器开发工具中的DOM与原始HTML有什么关系？",
+    "options": [
+      {
+        "id": "A",
+        "text": "永远逐字相同，不会被脚本改变",
+        "explanation": "脚本可以修改浏览器中的文档对象。"
+      },
+      {
+        "id": "B",
+        "text": "DOM可能包含脚本更新后的结构",
+        "explanation": "排查时要区分初始响应与运行后的页面。"
+      },
+      {
+        "id": "C",
+        "text": "DOM就是数据库事务日志",
+        "explanation": "两者系统位置和目的不同。"
+      },
+      {
+        "id": "D",
+        "text": "DOM隐藏的值不可能被用户获取",
+        "explanation": "隐藏显示不等于数据未下发。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C27-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "开发工具所见的运行状态不总是最初源文档。"
+  },
+  {
+    "id": "C27-Q03",
+    "chapterId": "C27",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "关于页面状态保存，哪些判断成立？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "localStorage的role可作为服务端管理员证明",
+        "explanation": "客户端可改，不能替代可信身份与授权。"
+      },
+      {
+        "id": "B",
+        "text": "保存在变量里就能跨设备恢复",
+        "explanation": "页面内存通常不提供该持久能力。"
+      },
+      {
+        "id": "C",
+        "text": "正式保存应确认持久结果及失败处理",
+        "explanation": "显示值变化不等于数据库已提交。"
+      },
+      {
+        "id": "D",
+        "text": "本地存储可以保留允许保留的浏览器偏好",
+        "explanation": "仍可能被用户清理或修改。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C27-K03",
+      "C27-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "状态的位置决定持久与可信边界。"
+  },
+  {
+    "id": "C27-Q04",
+    "chapterId": "C27",
+    "revision": 1,
+    "type": "single",
+    "stem": "页面必填input有required，服务端应怎样看待提交值？",
+    "options": [
+      {
+        "id": "A",
+        "text": "删除服务端校验避免重复实现",
+        "explanation": "会使直接HTTP调用绕过检查。"
+      },
+      {
+        "id": "B",
+        "text": "浏览器已验证所以可直接信任",
+        "explanation": "客户端约束可绕过或并非覆盖全部业务规则。"
+      },
+      {
+        "id": "C",
+        "text": "只检查CSS是否标红即可",
+        "explanation": "显示样式不证明值有效。"
+      },
+      {
+        "id": "D",
+        "text": "仍执行必要的类型、业务与权限校验",
+        "explanation": "前端提示提升体验，不是可信接受边界。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C27-K03",
+      "C27-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "浏览器提示不能替服务端建立信任。"
+  },
+  {
+    "id": "C27-Q05",
+    "chapterId": "C27",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "页面点击卡顿，哪些判断值得继续检查？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "脚本重计算或大量DOM更新是否阻塞主线程",
+        "explanation": "客户端执行也可能是延迟来源。"
+      },
+      {
+        "id": "B",
+        "text": "只要数据库快就一定是用户误操作",
+        "explanation": "渲染和交互也可能慢。"
+      },
+      {
+        "id": "C",
+        "text": "把函数加async即可移到独立CPU线程",
+        "explanation": "async不自动把计算迁移到后台线程。"
+      },
+      {
+        "id": "D",
+        "text": "分别观察网络等待与页面执行耗时",
+        "explanation": "先定位再选择分批、分页等方案。"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "knowledge": [
+      "C27-K05",
+      "C27-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "不要把浏览器卡顿一律归因数据库或网络。"
+  },
+  {
+    "id": "C27-Q06",
+    "chapterId": "C27",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟查询页面空白，Network没有发出查询请求，下一步更应检查哪里？",
+    "options": [
+      {
+        "id": "A",
+        "text": "立刻给数据库全部列建索引",
+        "explanation": "当前证据尚未到数据库执行层。"
+      },
+      {
+        "id": "B",
+        "text": "直接删除服务端权限判断",
+        "explanation": "并无证据证明权限造成请求未发送。"
+      },
+      {
+        "id": "C",
+        "text": "检查事件处理、输入状态和脚本异常",
+        "explanation": "先沿客户端触发路径查明未发出的原因。"
+      },
+      {
+        "id": "D",
+        "text": "只增加等待时间后记为修复",
+        "explanation": "没有解释为什么未发请求。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C27-K06",
+      "C27-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "按观察证据定位链路，避免跨层乱改。"
+  },
+  {
+    "id": "C27-Q07",
+    "chapterId": "C27",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟用户刷新后未保存备注消失，怎样解释与改进最准确？",
+    "options": [
+      {
+        "id": "A",
+        "text": "确认备注持久需求，设计保存或草稿恢复",
+        "explanation": "需要明确生命周期和确认结果，而非仅放变量。"
+      },
+      {
+        "id": "B",
+        "text": "把备注显示为绿色就代表已保存",
+        "explanation": "样式不能证明持久结果。"
+      },
+      {
+        "id": "C",
+        "text": "禁止用户刷新便视为持久化完成",
+        "explanation": "没有真正提供所需保存能力。"
+      },
+      {
+        "id": "D",
+        "text": "说明服务器必定已经删除数据",
+        "explanation": "未确认曾存服务端，不能据此推断。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C27-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "先定义保存责任，再选状态位置。"
+  },
+  {
+    "id": "C27-Q08",
+    "chapterId": "C27",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "提供页面排障证据时，哪些做法合理？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "核对语义按钮、焦点及大字小屏行为",
+        "explanation": "功能可点不等于所有交互方式可用。"
+      },
+      {
+        "id": "B",
+        "text": "用虚构数据保留必要请求与错误线索",
+        "explanation": "应在可复现与保密之间选择必要证据。"
+      },
+      {
+        "id": "C",
+        "text": "把完整Cookie和财务响应发到聊天",
+        "explanation": "可能泄露身份凭据和敏感数据。"
+      },
+      {
+        "id": "D",
+        "text": "只截正常页面就证明权限及保存正确",
+        "explanation": "截图不能替代业务与数据边界验证。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B"
+    ],
+    "knowledge": [
+      "C27-K06",
+      "C27-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "排障证据要有定位价值且不泄露秘密。"
+  }
+]

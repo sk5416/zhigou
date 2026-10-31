@@ -313,5 +313,41 @@
     "record": "docs/05_课程审核记录.md",
     "note": "旧数据回填、分阶段兼容、回退增量、RPO/RTO、备份类型、恢复核验与事务日志核对；8题无厂商通用命令；不承诺任意DDL在线回滚；SQLite备份练习不等于服务器时间点恢复；明确误删先止损和保留现场",
     "fingerprint": "96eb0789b5d3d2686072f23b659ed7876565591f37da122c518e04dfc52a931c"
+  },
+  "C27": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "结构/样式/行为、DOM/初始文档、浏览器可改状态、持久位置、主线程和开发工具排障核对；8题逐项成立；HTML片段只显示语义结构，无真实请求或保存；required非服务端信任、async非CPU自动转后台",
+    "fingerprint": "6eef32f212ef3430c8b4c6088ba11923e3efd71cd983d8e061bee24abad7d7c6"
+  },
+  "C28": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "SSR/客户端渲染/SPA混合与职责部署边界区分；两条链路、同源、兼容缓存、总维护成本核对；8题复核；不以方案名称承诺首屏或安全，不将分离等同跨域微服务；无厂商框架的绝对化推荐",
+    "fingerprint": "c49d172b347ce2d77260d9844476cda0356265f694a55f70d07da989059b324b"
+  },
+  "C29": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "校验层、原始行号/业务身份、原子/部分策略、异步受理/确认、未知结果与资源限制核对；8题复核；JSON为模拟两行结果，非厂商API；预览不永久有效；文件与错误CSV需分层处理，不提供万能清洗",
+    "fingerprint": "493dc8279b58dcc3f3d158a5e933987efe66a8f2e4a73f7562e2af706c57f1a8"
+  },
+  "C30": {
+    "status": "reviewed",
+    "reviewer": "Codex",
+    "method": "作者二次逐章复核，非独立专家认证",
+    "reviewedAt": "2026-10-31",
+    "record": "docs/05_课程审核记录.md",
+    "note": "初始/加载/空结果/失败/未知区分、旧响应竞态、取消等待、fetch错误、后端对象授权和可访问恢复核对；8题复核；页面确认和隐藏按钮非授权；不在真实系统执行越权练习，不将客户端终止当服务端撤销",
+    "fingerprint": "c5a701ee88f0ca507fac9bf2de67db01a2db2578f7eb3dffac7d7d25ab1cb2ef"
   }
 }

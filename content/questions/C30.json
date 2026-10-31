@@ -1,0 +1,314 @@
+[
+  {
+    "id": "C30-Q01",
+    "chapterId": "C30",
+    "revision": 1,
+    "type": "single",
+    "stem": "“暂无数据”适合表示哪种情况？",
+    "options": [
+      {
+        "id": "A",
+        "text": "页面尚未发起任何查询",
+        "explanation": "应提示待输入或初始状态。"
+      },
+      {
+        "id": "B",
+        "text": "请求超时且无法确认结果",
+        "explanation": "这是未知或失败，不能误报查询为空。"
+      },
+      {
+        "id": "C",
+        "text": "权限检查失败",
+        "explanation": "拒绝授权应有适当失败反馈。"
+      },
+      {
+        "id": "D",
+        "text": "查询确认成功且结果集合为空",
+        "explanation": "应说明当前查询范围，而非掩盖错误。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C30-K01",
+      "C30-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "空结果、未加载与失败必须区分。"
+  },
+  {
+    "id": "C30-Q02",
+    "chapterId": "C30",
+    "revision": 1,
+    "type": "single",
+    "stem": "前端隐藏审批按钮能直接保证什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "其他部门对象ID无法被修改",
+        "explanation": "仍需服务端对象级授权。"
+      },
+      {
+        "id": "B",
+        "text": "所有直接API请求都会被拒绝",
+        "explanation": "隐藏不控制服务端接口。"
+      },
+      {
+        "id": "C",
+        "text": "正常页面不提供该操作入口",
+        "explanation": "可以改善界面，但不建立可信授权。"
+      },
+      {
+        "id": "D",
+        "text": "批量接口自动继承正确权限",
+        "explanation": "批量也必须逐对象或按可靠范围校验。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C30-K06"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "入口可见性不是服务端权限证据。"
+  },
+  {
+    "id": "C30-Q03",
+    "chapterId": "C30",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "提交时禁用按钮后，哪些责任仍然存在？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "客户端role字段可直接作为授权",
+        "explanation": "可被修改，不能被服务端盲目信任。"
+      },
+      {
+        "id": "B",
+        "text": "服务端处理其他入口与重试的防重",
+        "explanation": "标签页、脚本和重传不受该按钮保护。"
+      },
+      {
+        "id": "C",
+        "text": "检查身份、对象、动作及当前状态",
+        "explanation": "前端限制不能取代这些可信检查。"
+      },
+      {
+        "id": "D",
+        "text": "不再需要业务请求身份",
+        "explanation": "没有稳定身份仍难正确识别重试。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C30-K03",
+      "C30-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "防误点与防重、授权不能混为一谈。"
+  },
+  {
+    "id": "C30-Q04",
+    "chapterId": "C30",
+    "revision": 1,
+    "type": "single",
+    "stem": "用户取消等待或页面超时，怎样解释后台结果最准确？",
+    "options": [
+      {
+        "id": "A",
+        "text": "应删除本地请求记录避免混乱",
+        "explanation": "会丢失后续查询与核对依据。"
+      },
+      {
+        "id": "B",
+        "text": "后台可能继续，需按契约确认结果",
+        "explanation": "取消客户端等待不自动撤销服务器操作。"
+      },
+      {
+        "id": "C",
+        "text": "可以直接换业务ID立即再提交",
+        "explanation": "可能造成重复业务动作。"
+      },
+      {
+        "id": "D",
+        "text": "所有服务端事务会同步回滚",
+        "explanation": "网络终止不能给出这种通用保证。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C30-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "等待结束不等于业务结束。"
+  },
+  {
+    "id": "C30-Q05",
+    "chapterId": "C30",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "危险操作确认弹窗应包含哪些设计？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "以红色代替全部文字说明",
+        "explanation": "颜色不能承担全部信息与可访问性。"
+      },
+      {
+        "id": "B",
+        "text": "执行前复核当前权限、对象和版本",
+        "explanation": "弹窗显示到执行间状态可能变化。"
+      },
+      {
+        "id": "C",
+        "text": "有确认按钮就不需要服务端鉴权",
+        "explanation": "误操作保护与授权是不同责任。"
+      },
+      {
+        "id": "D",
+        "text": "说明范围、后果和必要恢复入口",
+        "explanation": "用户需要知道自己确认了什么。"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C30-K07",
+      "C30-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "确认应清楚且仍由服务端保护实际动作。"
+  },
+  {
+    "id": "C30-Q06",
+    "chapterId": "C30",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟先查A再查B，A慢响应最后返回，如何避免界面错标？",
+    "options": [
+      {
+        "id": "A",
+        "text": "把所有查询超时调大",
+        "explanation": "不能解决响应与条件错配。"
+      },
+      {
+        "id": "B",
+        "text": "每次清空所有用户输入",
+        "explanation": "会破坏体验，也没有建立对应关系。"
+      },
+      {
+        "id": "C",
+        "text": "校验请求标识与当前条件，只接受匹配结果",
+        "explanation": "可用请求序号等机制忽略过期响应。"
+      },
+      {
+        "id": "D",
+        "text": "无论返回顺序都显示最后收到的结果",
+        "explanation": "最后返回不等于当前查询意图。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C30-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "异步结果需要与当前用户意图对应。"
+  },
+  {
+    "id": "C30-Q07",
+    "chapterId": "C30",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟fetch收到HTTP403，代码仅依靠catch显示错误，问题是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "403代表结果为空无需处理",
+        "explanation": "拒绝授权与成功空结果不同。"
+      },
+      {
+        "id": "B",
+        "text": "应检查响应状态并按契约处理业务结果",
+        "explanation": "网络异常、HTTP失败和业务拒绝分开。"
+      },
+      {
+        "id": "C",
+        "text": "只要JSON能解析就是提交成功",
+        "explanation": "可解析不代表状态与业务成功。"
+      },
+      {
+        "id": "D",
+        "text": "fetch必定因任何HTTP错误自动抛出",
+        "explanation": "HTTP错误通常仍返回Response。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C30-K01",
+      "C30-K02"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "收到响应和请求成功是不同判断。"
+  },
+  {
+    "id": "C30-Q08",
+    "chapterId": "C30",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "模拟权限与可用性验收，哪些证据有价值？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "隐藏按钮后宣布所有权限通过",
+        "explanation": "未实际验证接口和数据范围。"
+      },
+      {
+        "id": "B",
+        "text": "只看管理员正常完成一次审批",
+        "explanation": "不能证明其他身份被正确限制。"
+      },
+      {
+        "id": "C",
+        "text": "小屏、大字、键盘焦点及失败保留输入",
+        "explanation": "覆盖真实操作与恢复，不仅正常截图。"
+      },
+      {
+        "id": "D",
+        "text": "普通用户直接请求他人对象、批量和导出入口",
+        "explanation": "验证服务端边界，而非只看按钮。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C30-K06",
+      "C30-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "界面和可信服务端边界需要分别验证。"
+  }
+]

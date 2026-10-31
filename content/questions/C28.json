@@ -1,0 +1,317 @@
+[
+  {
+    "id": "C28-Q01",
+    "chapterId": "C28",
+    "revision": 1,
+    "type": "single",
+    "stem": "服务端渲染的核心含义是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "数据库在浏览器内生成HTML",
+        "explanation": "这混淆了服务器与客户端位置。"
+      },
+      {
+        "id": "B",
+        "text": "所有交互都不允许使用JavaScript",
+        "explanation": "服务端HTML也可以增强客户端交互。"
+      },
+      {
+        "id": "C",
+        "text": "只有这种方式才存在服务端业务",
+        "explanation": "客户端渲染也通常需要可信后端。"
+      },
+      {
+        "id": "D",
+        "text": "服务端准备HTML供浏览器呈现",
+        "explanation": "具体数据访问、鉴权和交互仍需设计。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C28-K01"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "页面生成地点不决定系统是否需要后端。"
+  },
+  {
+    "id": "C28-Q02",
+    "chapterId": "C28",
+    "revision": 1,
+    "type": "single",
+    "stem": "SPA与服务端渲染、前后端分离的关系是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "分离必定部署在不同域名",
+        "explanation": "同源入口也可路由到分离职责。"
+      },
+      {
+        "id": "B",
+        "text": "三者绝对互斥只能三选一",
+        "explanation": "可以结合初始服务端渲染和客户端接管。"
+      },
+      {
+        "id": "C",
+        "text": "描述不同维度，存在混合组合",
+        "explanation": "路由交互、渲染地点和职责边界并非同一维度。"
+      },
+      {
+        "id": "D",
+        "text": "SPA必定要求微服务数据库集群",
+        "explanation": "没有这种必然关系。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C28-K02",
+      "C28-K03",
+      "C28-K04"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "不要把架构标签混为互斥产品套餐。"
+  },
+  {
+    "id": "C28-Q03",
+    "chapterId": "C28",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "评审是否采用独立前端工程，应考虑哪些条件？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "流行框架默认比简单模板更适合",
+        "explanation": "流行度不能证明当前适配和总成本。"
+      },
+      {
+        "id": "B",
+        "text": "页面外观高级即可不用评估交接",
+        "explanation": "外观不反映维护和发布复杂度。"
+      },
+      {
+        "id": "C",
+        "text": "当前交互复杂度及多端复用收益",
+        "explanation": "应有真实需求支撑额外边界。"
+      },
+      {
+        "id": "D",
+        "text": "团队能力、部署与兼容维护成本",
+        "explanation": "收益要覆盖长期责任。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C28-K07",
+      "C28-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "技术复杂度需要证据，而不是默认堆叠。"
+  },
+  {
+    "id": "C28-Q04",
+    "chapterId": "C28",
+    "revision": 1,
+    "type": "single",
+    "stem": "前后端分离系统通过同一入口代理页面和API，哪项判断成立？",
+    "options": [
+      {
+        "id": "A",
+        "text": "可保持同源，不必因分离而额外跨源",
+        "explanation": "逻辑或工程边界不要求不同源。"
+      },
+      {
+        "id": "B",
+        "text": "同源后就不需要后端鉴权",
+        "explanation": "同源不是授权证明。"
+      },
+      {
+        "id": "C",
+        "text": "同一域名就证明是模块化单体",
+        "explanation": "域名不能决定部署和模块架构。"
+      },
+      {
+        "id": "D",
+        "text": "仍必须为每个请求跨域",
+        "explanation": "是否跨源由请求的源关系决定。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C28-K04",
+      "C28-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "请求源、工程划分和架构形态应分别判断。"
+  },
+  {
+    "id": "C28-Q05",
+    "chapterId": "C28",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "关于两种渲染方案的安全与性能，哪些判断准确？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "服务端模板天然不会越权或注入",
+        "explanation": "依然要校验输入、输出和权限。"
+      },
+      {
+        "id": "B",
+        "text": "两种方案都需可信服务端授权",
+        "explanation": "页面生成方式不消除服务端责任。"
+      },
+      {
+        "id": "C",
+        "text": "首屏表现需要按目标设备及网络测量",
+        "explanation": "包大小、查询和缓存都会影响。"
+      },
+      {
+        "id": "D",
+        "text": "客户端渲染必定比模板快",
+        "explanation": "无法脱离负载与实现作保证。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C28-K01",
+      "C28-K02",
+      "C28-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "方案名称不是安全或性能结论。"
+  },
+  {
+    "id": "C28-Q06",
+    "chapterId": "C28",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟新前端调用新字段，后端尚未升级而失败。应补什么设计？",
+    "options": [
+      {
+        "id": "A",
+        "text": "默认用户每次手动清缓存即可",
+        "explanation": "不能替代受控兼容和发布策略。"
+      },
+      {
+        "id": "B",
+        "text": "给按钮换颜色就消除错配",
+        "explanation": "视觉调整不修复契约不兼容。"
+      },
+      {
+        "id": "C",
+        "text": "接口兼容窗口、发布顺序和缓存恢复",
+        "explanation": "要说明新旧版本怎样共存及失败恢复。"
+      },
+      {
+        "id": "D",
+        "text": "无限缓存旧脚本避免发布",
+        "explanation": "会延长客户端版本错配并妨碍升级。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C28-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "独立演进需要明确的兼容责任。"
+  },
+  {
+    "id": "C28-Q07",
+    "chapterId": "C28",
+    "revision": 1,
+    "type": "single",
+    "stem": "几十人主要使用查询列表和简单表单，仅一人维护。如何比较方案？",
+    "options": [
+      {
+        "id": "A",
+        "text": "比较模板加脚本与分离API的交付维护成本",
+        "explanation": "在同样功能及质量目标下评估收益。"
+      },
+      {
+        "id": "B",
+        "text": "必须建独立SPA和多个后端服务",
+        "explanation": "当前信息不足以支持该复杂度。"
+      },
+      {
+        "id": "C",
+        "text": "人数少说明可以取消身份与备份",
+        "explanation": "规模小不能消除必要工程边界。"
+      },
+      {
+        "id": "D",
+        "text": "模板代码量少就无需验证异常状态",
+        "explanation": "简单架构仍需失败与安全验证。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C28-K07",
+      "C28-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "以真实需求比较总成本，不能用规模省略基本责任。"
+  },
+  {
+    "id": "C28-Q08",
+    "chapterId": "C28",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "选择分离方案后，验收清单应包含哪些内容？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "旧客户端访问新后端及回退边界",
+        "explanation": "需要验证版本错配而非只演示最新组合。"
+      },
+      {
+        "id": "B",
+        "text": "以CORS限制代替对象级授权",
+        "explanation": "CORS不是保护所有调用者的授权机制。"
+      },
+      {
+        "id": "C",
+        "text": "只检查前端构建完成无需测API",
+        "explanation": "构建成功不证明接口契约和运行可用。"
+      },
+      {
+        "id": "D",
+        "text": "本地代理与正式环境路径分别说明",
+        "explanation": "开发环境跑通不证明部署路径正确。"
+      }
+    ],
+    "answers": [
+      "A",
+      "D"
+    ],
+    "knowledge": [
+      "C28-K05",
+      "C28-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "工程分开后也要共同验收运行边界。"
+  }
+]

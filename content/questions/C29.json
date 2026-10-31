@@ -1,0 +1,314 @@
+[
+  {
+    "id": "C29-Q01",
+    "chapterId": "C29",
+    "revision": 1,
+    "type": "single",
+    "stem": "前端校验与服务端校验的主要分工是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "前端负责安全，服务端只存数据",
+        "explanation": "客户端可绕过，不能承担可信接受边界。"
+      },
+      {
+        "id": "B",
+        "text": "前端及时提示，服务端决定是否接受",
+        "explanation": "服务端仍执行必要业务、权限和类型检查。"
+      },
+      {
+        "id": "C",
+        "text": "前端required能约束所有HTTP客户端",
+        "explanation": "脚本或其他客户端可绕过页面约束。"
+      },
+      {
+        "id": "D",
+        "text": "服务端校验存在就不需要用户提示",
+        "explanation": "可以保留前端提示改善纠错体验。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C29-K01"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "体验层校验不替代可信边界。"
+  },
+  {
+    "id": "C29-Q02",
+    "chapterId": "C29",
+    "revision": 1,
+    "type": "single",
+    "stem": "批量导入的原始行号和row_key分别有什么价值？",
+    "options": [
+      {
+        "id": "A",
+        "text": "定位源文件与关联一行业务处理结果",
+        "explanation": "还需明确表头、空行和重试语义。"
+      },
+      {
+        "id": "B",
+        "text": "都是任意展示字段，无需稳定",
+        "explanation": "不稳定会导致错误定位和重试身份混乱。"
+      },
+      {
+        "id": "C",
+        "text": "row_key存在即保证外部ERP不会重复",
+        "explanation": "需要业务防重与外部能力，字段本身不保证。"
+      },
+      {
+        "id": "D",
+        "text": "行号可以替代跨文件业务唯一键",
+        "explanation": "同一行号在不同文件中可能表示不同业务。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C29-K03",
+      "C29-K08"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "显示位置和业务身份既相关又不同。"
+  },
+  {
+    "id": "C29-Q03",
+    "chapterId": "C29",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "模拟部分成功导入时，哪些规则需要明确？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "每行已确认成功、拒绝、未知等结果定义",
+        "explanation": "界面错误不代表所有行未写入。"
+      },
+      {
+        "id": "B",
+        "text": "accepted可以随意表示已排队或已入库",
+        "explanation": "应区分受理与持久确认，避免误导。"
+      },
+      {
+        "id": "C",
+        "text": "各状态数量关系及每行原子防重边界",
+        "explanation": "便于核对实际处理和后续恢复。"
+      },
+      {
+        "id": "D",
+        "text": "整批显示失败即可省略逐行结果",
+        "explanation": "用户无法正确补正并可能重复已成功行。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C"
+    ],
+    "knowledge": [
+      "C29-K03",
+      "C29-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "结果契约必须能指导补正而非只显示颜色。"
+  },
+  {
+    "id": "C29-Q04",
+    "chapterId": "C29",
+    "revision": 1,
+    "type": "single",
+    "stem": "上传文件扩展名与浏览器MIME均合法，服务端应如何判断？",
+    "options": [
+      {
+        "id": "A",
+        "text": "可直接放入可执行公开目录",
+        "explanation": "声明类型不能证明安全内容。"
+      },
+      {
+        "id": "B",
+        "text": "分层验证内容并限制资源、存储与访问",
+        "explanation": "文件类型检查只是防护的一部分。"
+      },
+      {
+        "id": "C",
+        "text": "不必限制解压后大小和处理耗时",
+        "explanation": "仍可能资源耗尽或恶意输入。"
+      },
+      {
+        "id": "D",
+        "text": "只换随机文件名就完成全部防护",
+        "explanation": "命名不能解决内容、权限和解析风险。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C29-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "文件接收应按内容与处理资源建立边界。"
+  },
+  {
+    "id": "C29-Q05",
+    "chapterId": "C29",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "预览校验通过后再提交，哪些判断成立？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "预览结果永久有效，无需复核",
+        "explanation": "期间状态、权限和主数据可能变化。"
+      },
+      {
+        "id": "B",
+        "text": "公开允许的归一规则并保留错误定位",
+        "explanation": "不能静默改变金额、编码等业务含义。"
+      },
+      {
+        "id": "C",
+        "text": "可把未知日期猜成最常见格式",
+        "explanation": "会改变事实，应按明确契约解析或拒绝。"
+      },
+      {
+        "id": "D",
+        "text": "提交时仍检查必要业务条件与权限",
+        "explanation": "预览不能替代真正写入边界的校验。"
+      }
+    ],
+    "answers": [
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C29-K02",
+      "C29-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "预览不是永久许可，清洗也不能伪造事实。"
+  },
+  {
+    "id": "C29-Q06",
+    "chapterId": "C29",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟1000行中997行已成功、3行被拒绝，用户修正后应如何继续？",
+    "options": [
+      {
+        "id": "A",
+        "text": "删除全部已成功业务再重新导入",
+        "explanation": "可能已被后续使用，不能随意撤销事实。"
+      },
+      {
+        "id": "B",
+        "text": "按明确重试身份处理失败行并保护已成功行",
+        "explanation": "需要逐行结果与防重，而不是整批盲目重传。"
+      },
+      {
+        "id": "C",
+        "text": "只禁用按钮一分钟即可保证不重复",
+        "explanation": "其他入口或之后重试仍可能重复。"
+      },
+      {
+        "id": "D",
+        "text": "更改文件名后全部当新业务导入",
+        "explanation": "文件名不同不代表业务意图不同。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C29-K04",
+      "C29-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "补正策略需基于真实结果与业务身份。"
+  },
+  {
+    "id": "C29-Q07",
+    "chapterId": "C29",
+    "revision": 1,
+    "type": "single",
+    "stem": "导入超时但后台可能已写入，下一步哪种处理合理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "把全部行标为拒绝并立即重传",
+        "explanation": "可能重复已成功行。"
+      },
+      {
+        "id": "B",
+        "text": "改row_key以绕过重复检查",
+        "explanation": "会削弱原有防重并放大不确定性。"
+      },
+      {
+        "id": "C",
+        "text": "保留未知状态并查询或对账后处理",
+        "explanation": "不能把无法确认当作明确失败。"
+      },
+      {
+        "id": "D",
+        "text": "无响应说明服务器未收到",
+        "explanation": "传输和处理存在结果未知窗口。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C29-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "超时仍遵循结果未知的边界。"
+  },
+  {
+    "id": "C29-Q08",
+    "chapterId": "C29",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "批量导入验收应包含哪些反例？可选多个答案。",
+    "options": [
+      {
+        "id": "A",
+        "text": "超大输入及错误报告CSV公式风险",
+        "explanation": "上传与导出都存在处理和解释边界。"
+      },
+      {
+        "id": "B",
+        "text": "表头/空行变化下的原始行号定位",
+        "explanation": "解析后重新编号可能让用户找错源行。"
+      },
+      {
+        "id": "C",
+        "text": "仅测一份成功样例足以验收",
+        "explanation": "不覆盖部分成功、资源和重复路径。"
+      },
+      {
+        "id": "D",
+        "text": "真实企业凭据必须作为教材输入",
+        "explanation": "隔离样例应使用虚构数据，不需要秘密。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B"
+    ],
+    "knowledge": [
+      "C29-K05",
+      "C29-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "数据入口与错误出口都需要边界验证。"
+  }
+]

@@ -292,6 +292,71 @@
         "C26"
       ],
       "claims": "事务日志的恢复职责、截断和收缩不同；不把活动日志当文本删除，不提供未经核对的厂商处置命令。"
+    },
+    {
+      "title": "MDN HTML basic syntax",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax",
+      "chapters": [
+        "C27"
+      ],
+      "claims": "结构、语义标签与属性；form片段只说明结构，不声称包含提交服务。"
+    },
+    {
+      "title": "MDN localStorage",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage",
+      "chapters": [
+        "C27"
+      ],
+      "claims": "浏览器本地持久状态的范围；不作为可信权限或企业密钥保管位置。"
+    },
+    {
+      "title": "MDN client-server overview",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Client-Server_overview",
+      "chapters": [
+        "C28"
+      ],
+      "claims": "服务器HTML与API数据的请求链路基础；架构总成本比较为条件化设计建议。"
+    },
+    {
+      "title": "MDN SPA glossary",
+      "url": "https://developer.mozilla.org/en-US/docs/Glossary/SPA",
+      "chapters": [
+        "C28"
+      ],
+      "claims": "单页导航及客户端交互概念，不把SPA与所有SSR组合绝对互斥。"
+    },
+    {
+      "title": "MDN constraint validation",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Constraint_validation",
+      "chapters": [
+        "C27",
+        "C29"
+      ],
+      "claims": "浏览器输入约束不能替代服务端校验，直接调用可以绕开页面。"
+    },
+    {
+      "title": "OWASP file upload",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html",
+      "chapters": [
+        "C29"
+      ],
+      "claims": "扩展/MIME不足以单独判定安全；内容、资源限制、存储与访问分层防护，示例无真实上传。"
+    },
+    {
+      "title": "OWASP authorization",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+      "chapters": [
+        "C30"
+      ],
+      "claims": "可信位置逐请求与对象检查，隐藏按钮不能保护API；与界面防误操作区分。"
+    },
+    {
+      "title": "MDN using Fetch",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch",
+      "chapters": [
+        "C30"
+      ],
+      "claims": "HTTP错误状态通常不使fetch直接reject；取消等待不证明服务器业务撤销。"
     }
   ],
   "simulation": "青禾制造、员工、部门和物料同步均为虚构模拟，不代表金蝶、Salesforce 等厂商真实接口行为。",

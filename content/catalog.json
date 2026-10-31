@@ -1,5 +1,5 @@
 {
-  "version": "2026.10-database.1",
+  "version": "2026.10-frontend.1",
   "chapters": [
     {
       "id": "C00",
@@ -695,8 +695,15 @@
       "part": "第6篇｜前端与交互的必要技术",
       "depth": "L2",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C02",
+        "C11"
+      ],
+      "related": [
+        "C28",
+        "C29",
+        "C30"
+      ],
       "knowledge": [
         "C27-K01",
         "C27-K02",
@@ -707,7 +714,7 @@
         "C27-K07",
         "C27-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C28",
@@ -715,8 +722,15 @@
       "part": "第6篇｜前端与交互的必要技术",
       "depth": "L1",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C27",
+        "C13"
+      ],
+      "related": [
+        "C05",
+        "C13",
+        "C31"
+      ],
       "knowledge": [
         "C28-K01",
         "C28-K02",
@@ -727,7 +741,7 @@
         "C28-K07",
         "C28-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C29",
@@ -735,8 +749,16 @@
       "part": "第6篇｜前端与交互的必要技术",
       "depth": "L3",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C13",
+        "C22",
+        "C27"
+      ],
+      "related": [
+        "C14",
+        "C22",
+        "C30"
+      ],
       "knowledge": [
         "C29-K01",
         "C29-K02",
@@ -747,7 +769,7 @@
         "C29-K07",
         "C29-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C30",
@@ -755,8 +777,16 @@
       "part": "第6篇｜前端与交互的必要技术",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C14",
+        "C24",
+        "C27"
+      ],
+      "related": [
+        "C14",
+        "C24",
+        "C29"
+      ],
       "knowledge": [
         "C30-K01",
         "C30-K02",
@@ -767,7 +797,7 @@
         "C30-K07",
         "C30-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C31",
