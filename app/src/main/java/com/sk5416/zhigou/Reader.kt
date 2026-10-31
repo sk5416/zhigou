@@ -3,10 +3,12 @@ package com.sk5416.zhigou
 import android.graphics.Bitmap
 import android.net.Uri
 import android.webkit.*
+import android.view.View
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.webkit.WebViewAssetLoader
@@ -28,10 +30,14 @@ import java.io.ByteArrayInputStream
             var ready by remember { mutableStateOf(false) }
             var lastSaved by remember { mutableLongStateOf(0L) }
             val latestRead by rememberUpdatedState(vm)
-            AndroidView(modifier = Modifier.weight(1f).fillMaxWidth(), factory = { context ->
+            AndroidView(modifier = Modifier.weight(1f).fillMaxWidth().clipToBounds(), factory = { context ->
                 val loader = WebViewAssetLoader.Builder().addPathHandler("/assets/", WebViewAssetLoader.AssetsPathHandler(context)).build()
                 WebView(context).apply {
                     view = this
+                    // Static documents do not need GPU effects. Software drawing avoids
+                    // blank Chromium layers when embedded in Compose on older WebViews.
+                    setLayerType(View.LAYER_TYPE_SOFTWARE, null)
+                    clipToOutline = true
                     settings.javaScriptEnabled = false
                     settings.allowFileAccess = false
                     settings.allowContentAccess = false
