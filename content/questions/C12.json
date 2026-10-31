@@ -69,7 +69,8 @@
       "B"
     ],
     "knowledge": [
-      "C12-K02"
+      "C12-K02",
+      "C12-K05"
     ],
     "difficulty": "应用",
     "ability": "场景",
@@ -147,7 +148,8 @@
       "D"
     ],
     "knowledge": [
-      "C12-K04"
+      "C12-K02",
+      "C12-K06"
     ],
     "difficulty": "基础",
     "ability": "概念",
@@ -185,7 +187,7 @@
       "A"
     ],
     "knowledge": [
-      "C12-K05"
+      "C12-K07"
     ],
     "difficulty": "应用",
     "ability": "判断",
@@ -223,7 +225,8 @@
       "C"
     ],
     "knowledge": [
-      "C12-K06"
+      "C12-K04",
+      "C12-K08"
     ],
     "difficulty": "应用",
     "ability": "场景",
@@ -262,7 +265,7 @@
       "C"
     ],
     "knowledge": [
-      "C12-K07"
+      "C12-K02"
     ],
     "difficulty": "应用",
     "ability": "判断",
@@ -300,6 +303,7 @@
       "B"
     ],
     "knowledge": [
+      "C12-K05",
       "C12-K08"
     ],
     "difficulty": "应用",

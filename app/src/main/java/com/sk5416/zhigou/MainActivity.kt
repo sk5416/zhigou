@@ -59,7 +59,7 @@ private fun mode(mode: String) = when (mode) { "test" -> "自测"; "review" -> "
             }
         }) { padding ->
             Column(Modifier.padding(padding).fillMaxSize()) {
-                if (busy) LinearProgressIndicator(Modifier.fillMaxWidth())
+                if (busy) LinearProgressIndicator(Modifier.fillMaxWidth().height(4.dp)) else Spacer(Modifier.height(4.dp))
                 if (catalog == null) { Text("正在准备离线课程…", Modifier.padding(24.dp)) }
                 else when (page) {
                     "home" -> Home(state, openChapter, openSession, { page = "courses" }, { page = "review" })

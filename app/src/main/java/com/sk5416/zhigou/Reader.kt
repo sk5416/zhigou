@@ -15,7 +15,6 @@ import java.io.ByteArrayInputStream
 
 @Composable fun Reader(c: Chapter, anchor: String, state: LearningState, dark: Boolean, vm: LearningViewModel, open: (String, String) -> Unit, practice: () -> Unit) {
     val r = state.readings.find { it.chapterId == c.id } ?: Reading(c.id)
-    val initialScroll = remember(c.id, anchor) { r.scroll }
     LaunchedEffect(c.id) { vm.read(c.id) }
     Column(Modifier.fillMaxSize()) {
         Row(Modifier.fillMaxWidth().padding(horizontal = 8.dp), horizontalArrangement = Arrangement.SpaceEvenly) {
@@ -24,6 +23,7 @@ import java.io.ByteArrayInputStream
             if (c.id.startsWith("C")) TextButton(practice) { Text("本章练习") }
         }
         key(c.id, anchor, dark, state.preferences.font) {
+            val initialScroll = remember { r.scroll }
             var view by remember { mutableStateOf<WebView?>(null) }
             var ready by remember { mutableStateOf(false) }
             var lastSaved by remember { mutableLongStateOf(0L) }
@@ -40,8 +40,14 @@ import java.io.ByteArrayInputStream
                     settings.defaultTextEncodingName = "UTF-8"
                     settings.textZoom = state.preferences.font * 100 / 18
                     setBackgroundColor(if (dark) 0xFF151C19.toInt() else 0xFFF7F8F3.toInt())
+                    val html = context.assets.open(c.html).bufferedReader().use { it.readText() }
+                    val colors = if (dark) "body{background:#151c19;color:#e0e9e2}a{color:#8bd6bb}pre,blockquote{background:#23332c}th,td{border-color:#617168}" else ""
+                    val rendered = html.replace("</head>", "<style>$colors</style></head>").toByteArray(Charsets.UTF_8)
                     webViewClient = object : WebViewClient() {
                         override fun shouldInterceptRequest(view: WebView?, request: WebResourceRequest): WebResourceResponse {
+                            if (request.url.host == "appassets.androidplatform.net" && request.url.path == "/assets/${c.html}") {
+                                return WebResourceResponse("text/html", "UTF-8", ByteArrayInputStream(rendered))
+                            }
                             return loader.shouldInterceptRequest(request.url) ?: WebResourceResponse("text/plain", "UTF-8", ByteArrayInputStream(ByteArray(0)))
                         }
                         override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest): Boolean {
@@ -57,9 +63,7 @@ import java.io.ByteArrayInputStream
                             web.postDelayed({ if (anchor.isBlank()) web.scrollTo(0, initialScroll); ready = true }, 150)
                         }
                     }
-                    val html = context.assets.open(c.html).bufferedReader().use { it.readText() }
-                    val colors = if (dark) "body{background:#151c19;color:#e0e9e2}a{color:#8bd6bb}pre,blockquote{background:#23332c}th,td{border-color:#617168}" else ""
-                    loadDataWithBaseURL("https://appassets.androidplatform.net/assets/${c.html}${if (anchor.isNotBlank()) "#${Uri.encode(anchor)}" else ""}", html.replace("</head>", "<style>$colors</style></head>"), "text/html", "UTF-8", null)
+                    loadUrl("https://appassets.androidplatform.net/assets/${c.html}${if (anchor.isNotBlank()) "#${Uri.encode(anchor)}" else ""}")
                     setOnScrollChangeListener { _, _, y, _, _ ->
                         val now = System.currentTimeMillis()
                         if (ready && now - lastSaved > 600) { lastSaved = now; latestRead.read(c.id, scroll = y) }

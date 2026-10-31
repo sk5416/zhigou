@@ -6,6 +6,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.sk5416.zhigou.data.*
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
@@ -34,21 +35,22 @@ class LearningViewModel(app: Application) : AndroidViewModel(app) {
             }
         }
     }
-    private fun run(action: suspend () -> Unit) { viewModelScope.launch {
+    private fun run(showBusy: Boolean = true, action: suspend () -> Unit) { viewModelScope.launch {
         operation.withLock {
-            busy.value = true
-            try { action() } catch (e: Exception) { error.value = e.message ?: "操作失败，请重试" }
-            finally { busy.value = false }
+            if (showBusy) busy.value = true
+            try { action() } catch (e: CancellationException) { throw e } catch (e: Exception) { error.value = e.message ?: "操作失败，请重试" }
+            finally { if (showBusy) busy.value = false }
         }
     } }
-    fun read(id: String, completed: Boolean? = null, bookmark: Boolean? = null, scroll: Int? = null) = run { repository.updateReading(id, completed, bookmark, scroll) }
-    fun preferences(p: Preferences) = run { repository.setPreferences(p) }
+    fun read(id: String, completed: Boolean? = null, bookmark: Boolean? = null, scroll: Int? = null) = run(false) { repository.updateReading(id, completed, bookmark, scroll) }
+    fun preferences(p: Preferences) = run(false) { repository.setPreferences(p) }
     fun start(mode: String, chapters: Set<String>, opened: (String) -> Unit) = run { opened(repository.start(mode, chapters).id) }
-    fun select(id: String, q: String, option: String) = run { repository.select(id, q, option) }
-    fun navigate(id: String, index: Int) = run { repository.navigate(id, index) }
+    fun select(id: String, q: String, option: String) = run(false) { repository.select(id, q, option) }
+    fun navigate(id: String, index: Int) = run(false) { repository.navigate(id, index) }
     fun submit(id: String, finish: Boolean = false) = run { repository.submit(id, finish) }
     fun export(uri: Uri) = run {
         val text = Codec.json.encodeToString(repository.snapshot())
+        require(text.toByteArray(Charsets.UTF_8).size <= 20 * 1024 * 1024) { "备份超过当前 20MB 恢复上限，未写入文件" }
         withContext(Dispatchers.IO) {
             requireNotNull(getApplication<Application>().contentResolver.openOutputStream(uri, "wt")) { "无法写入文件" }.bufferedWriter().use { it.write(text) }
         }

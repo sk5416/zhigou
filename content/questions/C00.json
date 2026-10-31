@@ -69,7 +69,8 @@
       "C"
     ],
     "knowledge": [
-      "C00-K02"
+      "C00-K02",
+      "C00-K03"
     ],
     "difficulty": "应用",
     "ability": "场景",
@@ -107,7 +108,7 @@
       "A"
     ],
     "knowledge": [
-      "C00-K03"
+      "C00-K05"
     ],
     "difficulty": "应用",
     "ability": "判断",
@@ -146,6 +147,7 @@
       "C"
     ],
     "knowledge": [
+      "C00-K02",
       "C00-K04"
     ],
     "difficulty": "基础",
@@ -184,7 +186,7 @@
       "D"
     ],
     "knowledge": [
-      "C00-K05"
+      "C00-K04"
     ],
     "difficulty": "应用",
     "ability": "判断",
@@ -222,7 +224,8 @@
       "B"
     ],
     "knowledge": [
-      "C00-K06"
+      "C00-K06",
+      "C00-K07"
     ],
     "difficulty": "应用",
     "ability": "场景",
@@ -262,7 +265,8 @@
       "D"
     ],
     "knowledge": [
-      "C00-K07"
+      "C00-K07",
+      "C00-K08"
     ],
     "difficulty": "应用",
     "ability": "判断",
@@ -300,6 +304,7 @@
       "C"
     ],
     "knowledge": [
+      "C00-K04",
       "C00-K08"
     ],
     "difficulty": "应用",

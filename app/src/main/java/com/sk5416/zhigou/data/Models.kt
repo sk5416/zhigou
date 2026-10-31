@@ -64,9 +64,9 @@ object LearningRules {
             require(s.id == row.id && s.mode in setOf("practice", "test", "review") && s.questions.isNotEmpty()) { "会话无效" }
             require(s.index in s.questions.indices && s.questions.map { it.id }.distinct().size == s.questions.size) { "会话索引无效" }
             val ids = s.questions.associateBy { it.id }
-            require(s.questions.all { q -> q.chapterId in chapters && q.revision > 0 && q.answers.isNotEmpty() && q.answers.all { a -> q.options.any { it.id == a } } }) { "会话题目无效" }
+            require(s.questions.all { q -> q.chapterId in chapters && q.revision > 0 && q.type in setOf("single", "multiple") && q.answers.isNotEmpty() && q.options.map { it.id }.distinct().size == q.options.size && (q.type != "single" || q.answers.size == 1) && q.answers.all { a -> q.options.any { it.id == a } } }) { "会话题目无效" }
             val current = catalog.questions.associateBy { it.id }
-            require(s.questions.all { q -> current[q.id]?.let { latest -> q.chapterId == latest.chapterId && q.revision <= latest.revision && (q.revision != latest.revision || q == latest) } == true }) { "备份包含不存在或不匹配的题目修订" }
+            require(s.questions.all { q -> current[q.id]?.let { latest -> q.chapterId == latest.chapterId && q.revision <= latest.revision && (q.revision != latest.revision || (q.type == latest.type && q.answers == latest.answers && q.options.map { it.id }.toSet() == latest.options.map { it.id }.toSet())) } == true }) { "备份包含不存在或不匹配的题目修订" }
             require(s.selections.all { (id, chosen) -> ids[id]?.let { q -> chosen.all { a -> q.options.any { it.id == a } } } == true }) { "作答选项无效" }
             require(s.submitted.all { it in ids } && (!s.finished || s.submitted.size == ids.size)) { "提交状态无效" }
             row.id to s

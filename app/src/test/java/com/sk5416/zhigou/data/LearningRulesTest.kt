@@ -44,6 +44,12 @@ class LearningRulesTest {
         assertEquals(original, restored)
         LearningRules.validate(restored, catalog())
     }
+    @Test fun editorialChangeDoesNotInvalidateHistoricalSnapshot() {
+        LearningRules.validate(backup(), catalog(question().copy(misconception = "修订解析文字", knowledge = listOf("K2"))))
+    }
+    @Test(expected = IllegalArgumentException::class) fun rejectChangedAnswersWithoutRevision() {
+        LearningRules.validate(backup(), catalog(question(answers = setOf("B"))))
+    }
     @Test(expected = IllegalArgumentException::class) fun rejectUnknownChapterBeforeMutation() {
         LearningRules.validate(backup().copy(readings = listOf(Reading("C99"))), catalog())
     }
