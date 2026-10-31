@@ -57,6 +57,7 @@ class ContentTests(unittest.TestCase):
         self.assertIn('id="s1"', result)
         self.assertIn('<table>', result)
         self.assertIn('Content-Security-Policy', result)
+        self.assertIn('<details><summary>本章导航</summary>', result)
 
 if __name__ == '__main__':
     unittest.main()

@@ -105,6 +105,7 @@ def render(body):
             n += 1
         lines.append(line)
     result = markdown.markdown('[TOC]\n\n' + '\n'.join(lines), extensions=['tables', 'fenced_code', 'toc', 'attr_list'])
+    result = re.sub(r'<div class="toc">.*?</div>', lambda match: '<details><summary>本章导航</summary>' + match.group(0) + '</details>', result, count=1, flags=re.S)
     return f'<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src \'none\'; img-src https://appassets.androidplatform.net; style-src \'unsafe-inline\'"><style>{CSS}</style></head><body>{result}</body></html>'
 
 def main():
