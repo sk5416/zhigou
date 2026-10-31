@@ -12,8 +12,6 @@ import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.uiautomator.By
 import androidx.test.uiautomator.UiDevice
 import androidx.test.uiautomator.Until
-import androidx.test.uiautomator.UiScrollable
-import androidx.test.uiautomator.UiSelector
 import org.junit.Assert.*
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -59,11 +57,12 @@ class UiSmokeTest {
             assertTrue(device.wait(Until.hasObject(By.text("所选 1 章自测 · 最多 20 题")), 10_000))
             device.findObject(By.text("所选 1 章自测 · 最多 20 题")).click()
             assertTrue(device.wait(Until.hasObject(By.text("自测 · 1/8")), 10_000))
-            assertTrue(UiScrollable(UiSelector().scrollable(true)).scrollTextIntoView("交卷并查看解析"))
+            assertTrue(scrollToText(device, "交卷并查看解析"))
             device.findObject(By.text("交卷并查看解析")).click()
             assertTrue(device.wait(Until.hasObject(By.textContains("还有 8 题未作答")), 10_000))
             device.findObjects(By.text("确认交卷")).last().click()
-            UiScrollable(UiSelector().scrollable(true)).scrollToBeginning(6)
+            assertTrue(device.wait(Until.gone(By.text("继续作答")), 10_000))
+            repeat(3) { device.swipe(device.displayWidth / 2, device.displayHeight / 3, device.displayWidth / 2, device.displayHeight * 4 / 5, 20) }
             assertTrue(device.wait(Until.hasObject(By.textContains("已完成 · 0/8")), 10_000))
             device.pressBack()
             assertTrue(device.wait(Until.hasObject(By.text("把知识，构成判断力。")), 10_000))
@@ -92,6 +91,17 @@ class UiSmokeTest {
         device.pressBack() // dismiss the keyboard, keeping the results on screen
         assertTrue(device.wait(Until.hasObject(By.textStartsWith("C14 ·")), 10_000))
         device.findObject(By.textStartsWith("C14 ·")).click()
+    }
+    private fun scrollToText(device: UiDevice, text: String): Boolean {
+        // Compose scroll containers need not expose the legacy SCROLLABLE selector.
+        // Exercise the real gesture and keep a strict bound instead of weakening assertions.
+        repeat(8) {
+            val node = device.findObject(By.text(text))
+            if (node != null && node.visibleBounds.height() > 20) return true
+            device.swipe(device.displayWidth / 2, device.displayHeight * 4 / 5, device.displayWidth / 2, device.displayHeight / 3, 20)
+            device.waitForIdle(1_000)
+        }
+        return false
     }
     private fun screenshot(device: UiDevice, name: String) {
         device.waitForIdle(2_000)
