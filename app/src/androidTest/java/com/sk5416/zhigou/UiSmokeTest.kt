@@ -158,7 +158,18 @@ class UiSmokeTest {
         device.pressBack()
         assertTrue(device.wait(Until.hasObject(By.textStartsWith("$chapter ·")), 10_000))
         device.findObject(By.textStartsWith("$chapter ·")).click()
-        assertTrue("$chapter must render its offline body", device.wait(Until.hasObject(By.textContains(body)), 15_000))
+        var visible = device.wait(Until.hasObject(By.textContains(body)), 15_000)
+        if (!visible) {
+            screenshot(device, "$name-initial-reader")
+            val dump = java.io.ByteArrayOutputStream(); device.dumpWindowHierarchy(dump)
+            println("NEW_LESSON_INITIAL_HIERARCHY " + dump.toString("UTF-8"))
+            // A heading anchor may place the requested phrase below a shorter WebView.
+            // Reveal at most one viewport, keeping the search-position assertion bounded.
+            val bounds = requireNotNull(device.findObject(By.clazz("android.webkit.WebView"))).visibleBounds
+            device.swipe(bounds.centerX(), bounds.top + bounds.height() * 3 / 4, bounds.centerX(), bounds.top + bounds.height() / 4, 20)
+            visible = device.wait(Until.hasObject(By.textContains(body)), 10_000)
+        }
+        assertTrue("$chapter must render its offline body within the searched section", visible)
         screenshot(device, "$name-reader")
         device.findObject(By.text("本章练习")).click()
         assertTrue("$chapter question bank must be usable offline", device.wait(Until.hasObject(By.textContains(question)), 10_000))
