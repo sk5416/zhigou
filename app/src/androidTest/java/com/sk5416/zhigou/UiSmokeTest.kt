@@ -5,6 +5,8 @@ import android.content.ContentValues
 import android.graphics.Bitmap
 import android.provider.MediaStore
 import android.os.SystemClock
+import android.os.Bundle
+import android.view.accessibility.AccessibilityNodeInfo
 import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -75,10 +77,11 @@ class UiSmokeTest {
             device.findObject(By.text("设置")).click()
             assertTrue(device.wait(Until.hasObject(By.text("深色")), 10_000))
             device.findObject(By.text("深色")).click()
-            val slider = device.findObject(By.clazz("android.widget.SeekBar"))
-            val bounds = slider.visibleBounds
-            device.click(bounds.right - 4, bounds.centerY())
-            assertTrue(device.wait(Until.hasObject(By.text("正文字号：28")), 10_000))
+            screenshot(device, "settings-before-font")
+            val slider = findFontSlider()
+            val args = Bundle().apply { putFloat(AccessibilityNodeInfo.ACTION_ARGUMENT_PROGRESS_VALUE, 28f) }
+            assertTrue("font slider must support setting its accessible value", slider.performAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_SET_PROGRESS.id, args))
+            assertTrue("font should reach the requested size 28", device.wait(Until.hasObject(By.text("正文字号：28")), 10_000))
             screenshot(device, "settings-dark")
             device.findObject(By.text("学习")).click()
             assertTrue(device.wait(Until.hasObject(By.text("继续阅读 · C14")), 10_000))
@@ -105,6 +108,16 @@ class UiSmokeTest {
             device.waitForIdle(1_000)
         }
         return false
+    }
+    private fun findFontSlider(): AccessibilityNodeInfo {
+        val queue = java.util.ArrayDeque<AccessibilityNodeInfo>()
+        queue.add(requireNotNull(InstrumentationRegistry.getInstrumentation().uiAutomation.rootInActiveWindow))
+        while (queue.isNotEmpty()) {
+            val node = queue.removeFirst()
+            if (node.className == "android.widget.SeekBar" && node.rangeInfo != null) return node
+            repeat(node.childCount) { node.getChild(it)?.let(queue::add) }
+        }
+        error("Font slider not found in accessibility tree")
     }
     private fun screenshot(device: UiDevice, name: String) {
         device.waitForIdle(2_000)
