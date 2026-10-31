@@ -1494,7 +1494,7 @@
       "prerequisites": [],
       "related": [],
       "knowledge": [],
-      "published": false
+      "published": true
     },
     {
       "id": "AB",
@@ -1505,7 +1505,7 @@
       "prerequisites": [],
       "related": [],
       "knowledge": [],
-      "published": false
+      "published": true
     },
     {
       "id": "AC",
@@ -1516,7 +1516,7 @@
       "prerequisites": [],
       "related": [],
       "knowledge": [],
-      "published": false
+      "published": true
     },
     {
       "id": "AD",
@@ -1527,7 +1527,7 @@
       "prerequisites": [],
       "related": [],
       "knowledge": [],
-      "published": false
+      "published": true
     },
     {
       "id": "AE",
@@ -1538,7 +1538,7 @@
       "prerequisites": [],
       "related": [],
       "knowledge": [],
-      "published": false
+      "published": true
     },
     {
       "id": "AF",
@@ -1549,7 +1549,7 @@
       "prerequisites": [],
       "related": [],
       "knowledge": [],
-      "published": false
+      "published": true
     },
     {
       "id": "AG",
@@ -1560,7 +1560,7 @@
       "prerequisites": [],
       "related": [],
       "knowledge": [],
-      "published": false
+      "published": true
     },
     {
       "id": "AH",
@@ -1571,7 +1571,7 @@
       "prerequisites": [],
       "related": [],
       "knowledge": [],
-      "published": false
+      "published": true
     }
   ]
 }

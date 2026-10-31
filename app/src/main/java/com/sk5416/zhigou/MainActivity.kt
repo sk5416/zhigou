@@ -88,7 +88,7 @@ private fun mode(mode: String) = when (mode) { "test" -> "自测"; "review" -> "
     val chapters = s.catalog!!.chapters.filter { it.published && it.id.startsWith("C") }
     LazyColumn(Modifier.fillMaxSize().padding(horizontal = 20.dp), verticalArrangement = Arrangement.spacedBy(14.dp), contentPadding = PaddingValues(vertical = 16.dp)) {
         item { Text("把知识，构成判断力。", style = MaterialTheme.typography.headlineSmall) }
-        item { Tile("今日从这里继续", "已读 ${s.readings.count { it.completed }} / ${chapters.size} 章 · 待复习 ${currentMistakes(s).count { !it.corrected }} 题", courses) }
+        item { Tile("今日从这里继续", "已读 ${s.readings.count { it.completed && it.chapterId.startsWith("C") }} / ${chapters.size} 章 · 待复习 ${currentMistakes(s).count { !it.corrected }} 题", courses) }
         val last = s.readings.firstOrNull { r -> chapters.any { it.id == r.chapterId } }
         val next = chapters.find { it.id == last?.chapterId } ?: chapters.firstOrNull()
         next?.let { c -> item { Tile("继续阅读 · ${c.id}", c.title) { read(c.id, "") } } }
