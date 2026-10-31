@@ -1,0 +1,321 @@
+[
+  {
+    "id": "C08-Q01",
+    "chapterId": "C08",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟程序捕获所有导入异常后返回success=true，最关键的问题是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "应该永远不捕获任何错误",
+        "explanation": "可预期错误仍应在合适边界处理。"
+      },
+      {
+        "id": "B",
+        "text": "异常被捕获就无需处理",
+        "explanation": "捕获只是取得处置机会。"
+      },
+      {
+        "id": "C",
+        "text": "失败被伪装为成功",
+        "explanation": "用户与任务状态可能被误导。"
+      },
+      {
+        "id": "D",
+        "text": "日志文件必须改名",
+        "explanation": "不是核心业务问题。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C08-K02",
+      "C08-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "不崩溃不等于业务成功。"
+  },
+  {
+    "id": "C08-Q02",
+    "chapterId": "C08",
+    "revision": 1,
+    "type": "single",
+    "stem": "堆栈中列出多个调用位置，合理阅读方式是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "完整堆栈直接显示给所有用户",
+        "explanation": "可能泄露内部实现或数据。"
+      },
+      {
+        "id": "B",
+        "text": "只看行号不看版本",
+        "explanation": "不同版本行号和逻辑可能不同。"
+      },
+      {
+        "id": "C",
+        "text": "把出现的每个文件都重写",
+        "explanation": "并非每个调用层都存在缺陷。"
+      },
+      {
+        "id": "D",
+        "text": "结合异常类型与上下文追踪调用",
+        "explanation": "作为定位线索再核验根因。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C08-K01",
+      "C08-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "堆栈是证据，不是自动修改清单。"
+  },
+  {
+    "id": "C08-Q03",
+    "chapterId": "C08",
+    "revision": 1,
+    "type": "single",
+    "stem": "输入第12行数量格式错误，最适合的用户反馈是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "展示真实数据库口令",
+        "explanation": "无助于用户修正且泄露秘密。"
+      },
+      {
+        "id": "B",
+        "text": "把整份原始财务文件写进提示",
+        "explanation": "不符合必要范围与保护要求。"
+      },
+      {
+        "id": "C",
+        "text": "给出行号、字段与可理解原因",
+        "explanation": "与输入错误处置对应。"
+      },
+      {
+        "id": "D",
+        "text": "统一说系统一切正常",
+        "explanation": "会掩盖需要修正的数据。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C08-K01",
+      "C08-K03",
+      "C08-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "错误反馈应可操作且不暴露无关秘密。"
+  },
+  {
+    "id": "C08-Q04",
+    "chapterId": "C08",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "哪些材料适合用于让AI定位模拟故障？",
+    "options": [
+      {
+        "id": "A",
+        "text": "发生时间与最小虚构输入",
+        "explanation": "缩小环境和输入范围。"
+      },
+      {
+        "id": "B",
+        "text": "所有生产凭据和完整客户数据",
+        "explanation": "不是必要的默认排错材料。"
+      },
+      {
+        "id": "C",
+        "text": "脱敏错误及关联编号",
+        "explanation": "支持追踪具体动作。"
+      },
+      {
+        "id": "D",
+        "text": "版本、步骤、预期和实际",
+        "explanation": "说明可复现条件。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C08-K05",
+      "C08-K07"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "有效报障依赖上下文，不依赖秘密堆积。"
+  },
+  {
+    "id": "C08-Q05",
+    "chapterId": "C08",
+    "revision": 1,
+    "type": "single",
+    "stem": "写入部分数据后出现异常，下一步应怎样判断？",
+    "options": [
+      {
+        "id": "A",
+        "text": "全部都成功",
+        "explanation": "同样缺少核实证据。"
+      },
+      {
+        "id": "B",
+        "text": "核查提交范围与外部实际结果",
+        "explanation": "再决定修复和补偿。"
+      },
+      {
+        "id": "C",
+        "text": "立即把整批按新编号重试",
+        "explanation": "可能重复已经成功的行。"
+      },
+      {
+        "id": "D",
+        "text": "全部都没执行",
+        "explanation": "异常不证明没有副作用。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C08-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "错误发生与业务最终状态不能简单等同。"
+  },
+  {
+    "id": "C08-Q06",
+    "chapterId": "C08",
+    "revision": 1,
+    "type": "single",
+    "stem": "日志中同一异常被每层重复记录很多次，应如何改进？",
+    "options": [
+      {
+        "id": "A",
+        "text": "把日志级别全改为正常",
+        "explanation": "会扭曲实际影响。"
+      },
+      {
+        "id": "B",
+        "text": "删掉所有失败日志",
+        "explanation": "会丢失追踪依据。"
+      },
+      {
+        "id": "C",
+        "text": "明确记录责任与关联，控制重复噪声",
+        "explanation": "保留必要线索而非掩盖错误。"
+      },
+      {
+        "id": "D",
+        "text": "一律记录所有请求秘密",
+        "explanation": "增加泄露面并不解决重复。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C08-K04",
+      "C08-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "日志质量取决于可定位和必要性，不是数量。"
+  },
+  {
+    "id": "C08-Q07",
+    "chapterId": "C08",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "异常处理应核查哪些事项？",
+    "options": [
+      {
+        "id": "A",
+        "text": "资源清理及可能已发生的写入",
+        "explanation": "异常路径也要可核验。"
+      },
+      {
+        "id": "B",
+        "text": "用户反馈与任务状态是否一致",
+        "explanation": "避免成功与失败语义冲突。"
+      },
+      {
+        "id": "C",
+        "text": "哪些错误可恢复或应向上传播",
+        "explanation": "需要明确责任边界。"
+      },
+      {
+        "id": "D",
+        "text": "任何异常都固定无限重试",
+        "explanation": "可能造成负载或重复副作用。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C08-K01",
+      "C08-K02",
+      "C08-K03",
+      "C08-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "处理异常需要行为与状态设计，不只是加捕获语句。"
+  },
+  {
+    "id": "C08-Q08",
+    "chapterId": "C08",
+    "revision": 1,
+    "type": "single",
+    "stem": "修复后页面不再报错，怎样进一步验收？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只对比页面颜色",
+        "explanation": "不能证明修复目标。"
+      },
+      {
+        "id": "B",
+        "text": "可以立即认定所有数据正确",
+        "explanation": "缺少数据与任务核查。"
+      },
+      {
+        "id": "C",
+        "text": "复现原场景并核对状态、数据及日志",
+        "explanation": "验证不再掩盖失败且正常路径未损坏。"
+      },
+      {
+        "id": "D",
+        "text": "删除原反例测试",
+        "explanation": "会失去回归保护。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C08-K03",
+      "C08-K07",
+      "C08-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "验收要证明行为正确，而不仅是错误消失。"
+  }
+]

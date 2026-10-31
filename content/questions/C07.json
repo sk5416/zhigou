@@ -1,0 +1,321 @@
+[
+  {
+    "id": "C07-Q01",
+    "chapterId": "C07",
+    "revision": 1,
+    "type": "single",
+    "stem": "一个类的rejected列表定义在类级别，多个实例都使用它。需要警惕什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "自动获得跨进程隔离",
+        "explanation": "对象机制不代替进程与存储设计。"
+      },
+      {
+        "id": "B",
+        "text": "每个实例必然有独立新列表",
+        "explanation": "类级可变属性不提供这个保证。"
+      },
+      {
+        "id": "C",
+        "text": "类名足以防止混用",
+        "explanation": "命名不能控制状态生命周期。"
+      },
+      {
+        "id": "D",
+        "text": "不同批次可能共享可变状态",
+        "explanation": "可能混入其他实例的数据。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C07-K01",
+      "C07-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "类、实例和共享状态应分开理解。"
+  },
+  {
+    "id": "C07-Q02",
+    "chapterId": "C07",
+    "revision": 1,
+    "type": "single",
+    "stem": "代码文件名为rules.py，可以据此证明什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "所有入口必然调用它",
+        "explanation": "需要核对依赖链。"
+      },
+      {
+        "id": "B",
+        "text": "其中逻辑一定已测试",
+        "explanation": "文件名没有测试证据。"
+      },
+      {
+        "id": "C",
+        "text": "只能把它作为定位线索",
+        "explanation": "还要检查真实内容与调用。"
+      },
+      {
+        "id": "D",
+        "text": "文件一定只含业务规则",
+        "explanation": "名称不保证实际职责。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C07-K03",
+      "C07-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "目录与名称是线索，不是实现证明。"
+  },
+  {
+    "id": "C07-Q03",
+    "chapterId": "C07",
+    "revision": 1,
+    "type": "single",
+    "stem": "新增批量入口绕过了网页数量校验，最合适的修复方向是？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只隐藏批量按钮",
+        "explanation": "不能阻止直接调用。"
+      },
+      {
+        "id": "B",
+        "text": "再复制一份略不同的规则",
+        "explanation": "容易继续漂移。"
+      },
+      {
+        "id": "C",
+        "text": "删除输入错误报告",
+        "explanation": "不修复绕过问题。"
+      },
+      {
+        "id": "D",
+        "text": "在可信业务边界复用明确规则并测各入口",
+        "explanation": "页面反馈与服务端保护各有作用。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C07-K04",
+      "C07-K05",
+      "C07-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "规则应在可信位置执行，并覆盖实际调用者。"
+  },
+  {
+    "id": "C07-Q04",
+    "chapterId": "C07",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "合理分层可能带来哪些帮助？",
+    "options": [
+      {
+        "id": "A",
+        "text": "保证永远不会出现授权缺陷",
+        "explanation": "结构形式不保证实现正确。"
+      },
+      {
+        "id": "B",
+        "text": "要求每个箭头都拆成独立服务",
+        "explanation": "职责边界不等于部署边界。"
+      },
+      {
+        "id": "C",
+        "text": "定位入口、业务与数据访问",
+        "explanation": "便于理解影响和测试。"
+      },
+      {
+        "id": "D",
+        "text": "在有需要时复用或替换职责",
+        "explanation": "收益要与实际规模匹配。"
+      }
+    ],
+    "answers": [
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C07-K04",
+      "C07-K05",
+      "C07-K06",
+      "C07-K07"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "分层是组织手段，不是层数越多越好。"
+  },
+  {
+    "id": "C07-Q05",
+    "chapterId": "C07",
+    "revision": 1,
+    "type": "single",
+    "stem": "一个简单函数被包进六层类，但说不出测试或替换收益，如何评价？",
+    "options": [
+      {
+        "id": "A",
+        "text": "必须继续增加抽象",
+        "explanation": "可能增加理解和维护成本。"
+      },
+      {
+        "id": "B",
+        "text": "要求说明必要性并评估简化",
+        "explanation": "以真实收益判断结构。"
+      },
+      {
+        "id": "C",
+        "text": "可以免做回归",
+        "explanation": "抽象不会自动验证行为。"
+      },
+      {
+        "id": "D",
+        "text": "层数多便更专业",
+        "explanation": "没有说明具体价值。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C07-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "不要把抽象数量当设计质量。"
+  },
+  {
+    "id": "C07-Q06",
+    "chapterId": "C07",
+    "revision": 1,
+    "type": "single",
+    "stem": "把列表移到实例初始化后，还需要核查什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "不再需要输入契约",
+        "explanation": "状态位置不改变输入前提。"
+      },
+      {
+        "id": "B",
+        "text": "数据库表可全部删除",
+        "explanation": "与持久化需求无关。"
+      },
+      {
+        "id": "C",
+        "text": "已经自动解决所有并发",
+        "explanation": "实例化不替代并发控制。"
+      },
+      {
+        "id": "D",
+        "text": "对象生命周期及实际共享方式",
+        "explanation": "同一个实例仍可能被复用。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C07-K02",
+      "C07-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "局部状态修复有明确适用范围。"
+  },
+  {
+    "id": "C07-Q07",
+    "chapterId": "C07",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "沿订单调用链排查，应关注哪些事实？",
+    "options": [
+      {
+        "id": "A",
+        "text": "核心规则和数据写入位置",
+        "explanation": "核查可信控制与副作用。"
+      },
+      {
+        "id": "B",
+        "text": "入口实际调用哪些模块",
+        "explanation": "帮助确定执行路径。"
+      },
+      {
+        "id": "C",
+        "text": "脚本与其他接口是否受改动影响",
+        "explanation": "防止遗漏其他调用者。"
+      },
+      {
+        "id": "D",
+        "text": "只统计目录层数",
+        "explanation": "不能解释行为。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C07-K03",
+      "C07-K04",
+      "C07-K06",
+      "C07-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "按实际依赖和调用追踪，而非只看文件布局。"
+  },
+  {
+    "id": "C07-Q08",
+    "chapterId": "C07",
+    "revision": 1,
+    "type": "single",
+    "stem": "采购收货与退货数量规则不同，AI想强行合成一个通用规则。应怎样处理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "先删除退货场景",
+        "explanation": "会改变需求。"
+      },
+      {
+        "id": "B",
+        "text": "先确认共同语义与差异再决定复用",
+        "explanation": "抽象要保留真实业务边界。"
+      },
+      {
+        "id": "C",
+        "text": "只要代码相似就合并",
+        "explanation": "语法相似不能证明业务语义一致。"
+      },
+      {
+        "id": "D",
+        "text": "把不同规则交给页面猜",
+        "explanation": "无法可靠执行服务端约束。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C07-K05",
+      "C07-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "复用不能以丢失业务差异为代价。"
+  }
+]

@@ -1,0 +1,317 @@
+[
+  {
+    "id": "C09-Q01",
+    "chapterId": "C09",
+    "revision": 1,
+    "type": "single",
+    "stem": "长导出任务只在内存启动后台函数，页面立即写“完成”。应怎样评审？",
+    "options": [
+      {
+        "id": "A",
+        "text": "明确受理状态、任务标识及可靠结果",
+        "explanation": "还要说明重启与失败行为。"
+      },
+      {
+        "id": "B",
+        "text": "异步天然防止任务丢失",
+        "explanation": "进程退出仍可能丢失。"
+      },
+      {
+        "id": "C",
+        "text": "必须无条件增加多个队列",
+        "explanation": "需要实际可靠性和成本条件。"
+      },
+      {
+        "id": "D",
+        "text": "页面返回便代表文件已生成",
+        "explanation": "受理与完成不同。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C09-K01",
+      "C09-K04",
+      "C09-K05"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "开始执行不等于完成并持久保存。"
+  },
+  {
+    "id": "C09-Q02",
+    "chapterId": "C09",
+    "revision": 1,
+    "type": "single",
+    "stem": "关于async/await，哪项理解合理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "不能由异步语法推断持久化或成功",
+        "explanation": "这些需要另行设计验证。"
+      },
+      {
+        "id": "B",
+        "text": "等同另一台服务器",
+        "explanation": "语法不决定物理部署。"
+      },
+      {
+        "id": "C",
+        "text": "自动让所有CPU计算并行",
+        "explanation": "协作等待不提供这个保证。"
+      },
+      {
+        "id": "D",
+        "text": "仅调用函数就证明执行完成",
+        "explanation": "还需按运行机制等待或调度。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C09-K01",
+      "C09-K02"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "异步、并行、部署和持久化是不同维度。"
+  },
+  {
+    "id": "C09-Q03",
+    "chapterId": "C09",
+    "revision": 1,
+    "type": "single",
+    "stem": "定时任务每分钟触发，但上一次需两分钟完成，应核查什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "重叠执行与防重及调度策略",
+        "explanation": "可能同时处理同一范围。"
+      },
+      {
+        "id": "B",
+        "text": "认为定时器天然禁止重叠",
+        "explanation": "取决于具体实现与配置。"
+      },
+      {
+        "id": "C",
+        "text": "取消全部日志",
+        "explanation": "会更难发现积压与重复。"
+      },
+      {
+        "id": "D",
+        "text": "只修改按钮名称",
+        "explanation": "不影响调度。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C09-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "频率安排不能代替执行状态管理。"
+  },
+  {
+    "id": "C09-Q04",
+    "chapterId": "C09",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "哪些信息有助于可靠长任务的追踪？",
+    "options": [
+      {
+        "id": "A",
+        "text": "稳定任务标识和输入摘要",
+        "explanation": "帮助区分同一意图与重复提交。"
+      },
+      {
+        "id": "B",
+        "text": "任务受理和完成的确认边界",
+        "explanation": "避免提前承诺完成。"
+      },
+      {
+        "id": "C",
+        "text": "只保留页面转圈",
+        "explanation": "无法说明重启后的状态。"
+      },
+      {
+        "id": "D",
+        "text": "持久进度、结果和错误状态",
+        "explanation": "支持恢复与用户查询。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C09-K04",
+      "C09-K05"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "可靠性依赖可恢复状态，而非动画反馈。"
+  },
+  {
+    "id": "C09-Q05",
+    "chapterId": "C09",
+    "revision": 1,
+    "type": "single",
+    "stem": "消费者写入成功但消息确认丢失，队列可能重投。需要什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "认为队列保证永不重复",
+        "explanation": "不能无条件作此承诺。"
+      },
+      {
+        "id": "B",
+        "text": "忽略成功写入状态",
+        "explanation": "会丢失核查依据。"
+      },
+      {
+        "id": "C",
+        "text": "默认每次创建新业务记录",
+        "explanation": "可能产生重复。"
+      },
+      {
+        "id": "D",
+        "text": "稳定业务标识及幂等核实",
+        "explanation": "处理重复投递的实际副作用。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C09-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "消息交付与业务恰好执行一次并不等价。"
+  },
+  {
+    "id": "C09-Q06",
+    "chapterId": "C09",
+    "revision": 1,
+    "type": "single",
+    "stem": "用户关闭等待页面，哪项结论最准确？",
+    "options": [
+      {
+        "id": "A",
+        "text": "仍需依据任务和远端状态核实",
+        "explanation": "取消语义需要契约支持。"
+      },
+      {
+        "id": "B",
+        "text": "外部ERP动作必然已取消",
+        "explanation": "用户停止等待不证明远端停止。"
+      },
+      {
+        "id": "C",
+        "text": "所有已写数据自动回滚",
+        "explanation": "不能从页面行为推断。"
+      },
+      {
+        "id": "D",
+        "text": "任务肯定永远继续",
+        "explanation": "也不能忽略实际取消支持。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C09-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "取消等待、取消任务与撤销业务分别判断。"
+  },
+  {
+    "id": "C09-Q07",
+    "chapterId": "C09",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "选择进程内后台还是持久队列，应比较什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "现有持久状态与恢复能力",
+        "explanation": "不一定必须新增独立组件。"
+      },
+      {
+        "id": "B",
+        "text": "任务丢失后果与可重做性",
+        "explanation": "决定需要的可靠性控制。"
+      },
+      {
+        "id": "C",
+        "text": "组件名称是否足够流行",
+        "explanation": "不是选型依据。"
+      },
+      {
+        "id": "D",
+        "text": "监控、重试、积压和维护成本",
+        "explanation": "收益需要覆盖新增责任。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C09-K04",
+      "C09-K06",
+      "C09-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "选型与业务影响和运行能力匹配。"
+  },
+  {
+    "id": "C09-Q08",
+    "chapterId": "C09",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟文件已生成，但完成通知丢失。更合理的设计是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "每次询问都重新生成",
+        "explanation": "可能浪费资源或重复副作用。"
+      },
+      {
+        "id": "B",
+        "text": "只根据通知断定任务失败",
+        "explanation": "通知丢失不证明产物不存在。"
+      },
+      {
+        "id": "C",
+        "text": "公开所有导出文件免登录",
+        "explanation": "会破坏结果访问边界。"
+      },
+      {
+        "id": "D",
+        "text": "通过任务标识查询真实状态与受控结果",
+        "explanation": "将通知与完成证据分开。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C09-K05",
+      "C09-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "结果应可核实，通知不是唯一事实来源。"
+  }
+]

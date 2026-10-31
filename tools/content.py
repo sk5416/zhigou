@@ -7,10 +7,22 @@ import hashlib
 import shutil
 from urllib.parse import urlsplit
 import markdown
+from markdown.extensions.fenced_code import FencedBlockPreprocessor
+from markdown.blockprocessors import HashHeaderProcessor
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / 'content'
 HEADINGS = ['结论先行', '业务场景', '核心概念', '工作原理', '企业案例', 'AI 易忽视', 'PM 评审', '微实践', '小结']
+
+def heading_records(body):
+    # Use the same pinned Markdown parser's fence/header grammar as rendering.
+    # Preserve line numbers while masking code so '# comments' stay code.
+    masked = FencedBlockPreprocessor.FENCED_BLOCK_RE.sub(lambda m: '\n' * m.group(0).count('\n'), body)
+    records = []
+    for match in HashHeaderProcessor.RE.finditer(masked):
+        line = masked[:match.start('level')].count('\n')
+        records.append({'anchor': f's{len(records)}', 'line': line})
+    return records
 
 def review_fingerprint(directory, chapter):
     cid = chapter['id']
@@ -68,7 +80,8 @@ def load_and_validate(directory=CONTENT, release=False, reviewed=False):
             c['body'] = source.read_text(encoding='utf-8')
             c['html'] = f"chapters/{c['id']}.html"
             if c['id'].startswith('C'):
-                if any(not re.search(r'^## .*' + re.escape(h), c['body'], re.M) for h in HEADINGS):
+                heading_text = '\n'.join(c['body'].splitlines()[h['line']] for h in heading_records(c['body']))
+                if any(not re.search(r'^## .*' + re.escape(h), heading_text, re.M) for h in HEADINGS):
                     raise ValueError(f"{c['id']} 缺少教学要素")
                 qs = json.loads((directory / 'questions' / f"{c['id']}.json").read_text(encoding='utf-8'))
                 if not 8 <= len(qs) <= 12:
@@ -114,7 +127,9 @@ def load_and_validate(directory=CONTENT, release=False, reviewed=False):
             if re.search(r'!\[[^\]]*\]\(https?://', c['body']) or re.search(r'<\s*(script|iframe|img|object|style)\b', c['body'], re.I):
                 raise ValueError('不允许远程图片或主动 HTML 内容')
         # Only runtime-facing fields are emitted; source-only knowledge/review fields stay in source.
-        chapters.append({k: c[k] for k in ('id', 'title', 'part', 'depth', 'priority', 'prerequisites', 'related', 'body', 'html', 'published')})
+        runtime = {k: c[k] for k in ('id', 'title', 'part', 'depth', 'priority', 'prerequisites', 'related', 'body', 'html', 'published')}
+        runtime['headings'] = heading_records(c['body'])
+        chapters.append(runtime)
     qids = [q['id'] for q in questions]
     if len(qids) != len(set(qids)):
         raise ValueError('题号重复')
@@ -127,12 +142,11 @@ def load_and_validate(directory=CONTENT, release=False, reviewed=False):
 
 CSS = '''body{font:18px/1.85 sans-serif;max-width:48em;margin:auto;padding:18px;color:#253b32;background:#f7f8f3;overflow-wrap:anywhere}h1{font-size:1.65em}h2{font-size:1.3em;margin-top:2em}a{color:#246b5b}pre,blockquote{background:#e8eee7;padding:12px;border-radius:8px}pre{overflow-x:auto}code{font-size:.9em}table{border-collapse:collapse;display:block;overflow:auto}th,td{border:1px solid #b5c8ba;padding:8px}img{max-width:100%}.toc{font-size:.9em}'''
 def render(body):
-    n = 0
+    headings = {h['line']: h['anchor'] for h in heading_records(body)}
     lines = []
-    for line in body.splitlines():
-        if line.startswith('#'):
-            line += f' {{#s{n}}}'
-            n += 1
+    for i, line in enumerate(body.splitlines()):
+        if i in headings:
+            line += ' {#' + headings[i] + '}'
         lines.append(line)
     result = markdown.markdown('[TOC]\n\n' + '\n'.join(lines), extensions=['tables', 'fenced_code', 'toc', 'attr_list'])
     result = re.sub(r'<div class="toc">.*?</div>', lambda match: '<details><summary>本章导航</summary>' + match.group(0) + '</details>', result, count=1, flags=re.S)

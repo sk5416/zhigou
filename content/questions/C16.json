@@ -1,0 +1,317 @@
+[
+  {
+    "id": "C16-Q01",
+    "chapterId": "C16",
+    "revision": 1,
+    "type": "single",
+    "stem": "编辑器文件已经保存，能确定它已进入Git提交吗？",
+    "options": [
+      {
+        "id": "A",
+        "text": "必然已经部署",
+        "explanation": "更不能证明运行版本。"
+      },
+      {
+        "id": "B",
+        "text": "必然已经推送",
+        "explanation": "本地保存不涉及远端。"
+      },
+      {
+        "id": "C",
+        "text": "必然已经提交",
+        "explanation": "保存只说明工作区内容落盘。"
+      },
+      {
+        "id": "D",
+        "text": "不能，还需看跟踪、暂存与提交状态",
+        "explanation": "这些是不同步骤。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C16-K01",
+      "C16-K02",
+      "C16-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "保存、提交、推送和发布分别核验。"
+  },
+  {
+    "id": "C16-Q02",
+    "chapterId": "C16",
+    "revision": 1,
+    "type": "single",
+    "stem": "关于Git与GitHub，哪项正确？",
+    "options": [
+      {
+        "id": "A",
+        "text": "本地版本管理与远端托管是不同能力",
+        "explanation": "可分别理解存放和协作。"
+      },
+      {
+        "id": "B",
+        "text": "两者完全同义",
+        "explanation": "一个是版本控制工具，一个是托管协作服务。"
+      },
+      {
+        "id": "C",
+        "text": "推送就是启动应用",
+        "explanation": "分享提交不等于部署。"
+      },
+      {
+        "id": "D",
+        "text": "没有网络Git不能查看任何本地历史",
+        "explanation": "本地版本历史可离线使用。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C16-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "版本控制、托管和运行是不同层。"
+  },
+  {
+    "id": "C16-Q03",
+    "chapterId": "C16",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟权限修复与大量样式改动混在一次提交，主要评审困难是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "样式改动必然破坏权限",
+        "explanation": "需要实际证据，不能直接断言。"
+      },
+      {
+        "id": "B",
+        "text": "提交后就不能再比较",
+        "explanation": "仍可比较，但理解成本可能高。"
+      },
+      {
+        "id": "C",
+        "text": "难以聚焦必要变化与验证范围",
+        "explanation": "可按可理解边界组织。"
+      },
+      {
+        "id": "D",
+        "text": "Git只能保存一个文件",
+        "explanation": "工具没有这种限制。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C16-K05",
+      "C16-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "提交边界应帮助理解与必要时撤销。"
+  },
+  {
+    "id": "C16-Q04",
+    "chapterId": "C16",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "哪些内容不能只依赖源码Git历史保护？",
+    "options": [
+      {
+        "id": "A",
+        "text": "需要单独安全保管的签名密钥",
+        "explanation": "不能当普通源码公开提交。"
+      },
+      {
+        "id": "B",
+        "text": "未跟踪的个人学习备份",
+        "explanation": "未纳入版本就不自动保留。"
+      },
+      {
+        "id": "C",
+        "text": "真实业务数据库状态",
+        "explanation": "一般不作为源码历史自动备份。"
+      },
+      {
+        "id": "D",
+        "text": "已正确提交的规则源文件",
+        "explanation": "这是版本控制可以记录的内容。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C16-K07"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "代码历史不是所有运行数据和秘密的备份。"
+  },
+  {
+    "id": "C16-Q05",
+    "chapterId": "C16",
+    "revision": 1,
+    "type": "single",
+    "stem": "暂存后又编辑同一文件，提交前应怎样做？",
+    "options": [
+      {
+        "id": "A",
+        "text": "认定后续修改自动进入提交",
+        "explanation": "不应作此假设。"
+      },
+      {
+        "id": "B",
+        "text": "删除暂存区让状态干净",
+        "explanation": "未必符合目标并可能丢失组织。"
+      },
+      {
+        "id": "C",
+        "text": "只看当前编辑器即可",
+        "explanation": "可能与暂存内容不同。"
+      },
+      {
+        "id": "D",
+        "text": "分别核对工作区和暂存差异",
+        "explanation": "确认本次提交真实包含什么。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C16-K02"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "暂存代表选定时刻的内容。"
+  },
+  {
+    "id": "C16-Q06",
+    "chapterId": "C16",
+    "revision": 1,
+    "type": "single",
+    "stem": "一个标签名为stable，合理结论是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "数据库也自动回到该时刻",
+        "explanation": "标签不恢复业务数据。"
+      },
+      {
+        "id": "B",
+        "text": "全部测试自动通过",
+        "explanation": "命名不运行验证。"
+      },
+      {
+        "id": "C",
+        "text": "后续永远不需要维护",
+        "explanation": "版本名称没有这种保证。"
+      },
+      {
+        "id": "D",
+        "text": "它提供定位，但稳定性仍需证据",
+        "explanation": "要核对对应产物和检查。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C16-K03",
+      "C16-K06",
+      "C16-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "基线标识与质量证明不能混同。"
+  },
+  {
+    "id": "C16-Q07",
+    "chapterId": "C16",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "AI开始修改前，应核对哪些事实？",
+    "options": [
+      {
+        "id": "A",
+        "text": "目标、提交内容与验证证据",
+        "explanation": "帮助保持可追踪边界。"
+      },
+      {
+        "id": "B",
+        "text": "仓库与目录是否正确",
+        "explanation": "防止在另一份副本修改。"
+      },
+      {
+        "id": "C",
+        "text": "先覆盖所有现有文件",
+        "explanation": "会破坏已有工作。"
+      },
+      {
+        "id": "D",
+        "text": "已有修改的来源和范围",
+        "explanation": "区分本批与他人或用户成果。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C16-K05",
+      "C16-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "先理解当前状态，再推进变化。"
+  },
+  {
+    "id": "C16-Q08",
+    "chapterId": "C16",
+    "revision": 1,
+    "type": "single",
+    "stem": "源码已推送，服务器仍可能运行旧版吗？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只看仓库默认分支名即可",
+        "explanation": "分支名不证明服务器使用了它。"
+      },
+      {
+        "id": "B",
+        "text": "不可能，推送必然部署",
+        "explanation": "两者并非同一动作。"
+      },
+      {
+        "id": "C",
+        "text": "只要页面能打开就证明新版",
+        "explanation": "页面状态不足以定位版本。"
+      },
+      {
+        "id": "D",
+        "text": "可能，应核对产物和实际发布记录",
+        "explanation": "运行状态需要独立证据。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C16-K04",
+      "C16-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "远端代码状态不等于目标环境运行状态。"
+  }
+]

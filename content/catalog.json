@@ -1,5 +1,5 @@
 {
-  "version": "2026.10-foundations.1",
+  "version": "2026.10-firstfive.1",
   "chapters": [
     {
       "id": "C00",
@@ -156,8 +156,13 @@
       "part": "第2篇｜读代码与掌握最少的编程基础",
       "depth": "L2",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C03"
+      ],
+      "related": [
+        "C07",
+        "C08"
+      ],
       "knowledge": [
         "C06-K01",
         "C06-K02",
@@ -168,7 +173,7 @@
         "C06-K07",
         "C06-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C07",
@@ -176,8 +181,14 @@
       "part": "第2篇｜读代码与掌握最少的编程基础",
       "depth": "L2",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C06",
+        "C02"
+      ],
+      "related": [
+        "C08",
+        "C05"
+      ],
       "knowledge": [
         "C07-K01",
         "C07-K02",
@@ -188,7 +199,7 @@
         "C07-K07",
         "C07-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C08",
@@ -196,8 +207,14 @@
       "part": "第2篇｜读代码与掌握最少的编程基础",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C06",
+        "C03"
+      ],
+      "related": [
+        "C09",
+        "C14"
+      ],
       "knowledge": [
         "C08-K01",
         "C08-K02",
@@ -208,7 +225,7 @@
         "C08-K07",
         "C08-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C09",
@@ -216,8 +233,13 @@
       "part": "第2篇｜读代码与掌握最少的编程基础",
       "depth": "L2",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C08"
+      ],
+      "related": [
+        "C14",
+        "C15"
+      ],
       "knowledge": [
         "C09-K01",
         "C09-K02",
@@ -228,7 +250,7 @@
         "C09-K07",
         "C09-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C10",
@@ -391,8 +413,14 @@
       "part": "第4篇｜Git、代码协作与可追溯变更",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C06",
+        "C08"
+      ],
+      "related": [
+        "C17",
+        "C20"
+      ],
       "knowledge": [
         "C16-K01",
         "C16-K02",
@@ -403,7 +431,7 @@
         "C16-K07",
         "C16-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C17",
@@ -411,8 +439,13 @@
       "part": "第4篇｜Git、代码协作与可追溯变更",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C16"
+      ],
+      "related": [
+        "C18",
+        "C20"
+      ],
       "knowledge": [
         "C17-K01",
         "C17-K02",
@@ -423,7 +456,7 @@
         "C17-K07",
         "C17-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C18",
@@ -431,8 +464,13 @@
       "part": "第4篇｜Git、代码协作与可追溯变更",
       "depth": "L2",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C17"
+      ],
+      "related": [
+        "C19",
+        "C04"
+      ],
       "knowledge": [
         "C18-K01",
         "C18-K02",
@@ -443,7 +481,7 @@
         "C18-K07",
         "C18-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C19",
@@ -451,8 +489,13 @@
       "part": "第4篇｜Git、代码协作与可追溯变更",
       "depth": "L2",
       "priority": "P1",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C18"
+      ],
+      "related": [
+        "C20",
+        "C00"
+      ],
       "knowledge": [
         "C19-K01",
         "C19-K02",
@@ -463,7 +506,7 @@
         "C19-K07",
         "C19-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C20",
@@ -471,8 +514,13 @@
       "part": "第4篇｜Git、代码协作与可追溯变更",
       "depth": "L3",
       "priority": "P0",
-      "prerequisites": [],
-      "related": [],
+      "prerequisites": [
+        "C17",
+        "C19"
+      ],
+      "related": [
+        "C21"
+      ],
       "knowledge": [
         "C20-K01",
         "C20-K02",
@@ -483,7 +531,7 @@
         "C20-K07",
         "C20-K08"
       ],
-      "published": false
+      "published": true
     },
     {
       "id": "C21",

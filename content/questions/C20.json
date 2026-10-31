@@ -1,0 +1,319 @@
+[
+  {
+    "id": "C20-Q01",
+    "chapterId": "C20",
+    "revision": 1,
+    "type": "single",
+    "stem": "个人开发开始让AI修复前，最先应建立什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "当前状态、目标、非目标和验收",
+        "explanation": "控制范围并保护已有工作。"
+      },
+      {
+        "id": "B",
+        "text": "默认允许重写全部项目",
+        "explanation": "容易扩大风险和评审范围。"
+      },
+      {
+        "id": "C",
+        "text": "先接触真实生产凭据",
+        "explanation": "不是定位任务的默认前提。"
+      },
+      {
+        "id": "D",
+        "text": "先清空所有未提交修改",
+        "explanation": "可能破坏已有成果。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C20-K01",
+      "C20-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "先确定任务边界，再做改动。"
+  },
+  {
+    "id": "C20-Q02",
+    "chapterId": "C20",
+    "revision": 1,
+    "type": "single",
+    "stem": "低风险文案调整与新增幂等规则，应怎样选择验证？",
+    "options": [
+      {
+        "id": "A",
+        "text": "都只运行页面截图",
+        "explanation": "幂等需要重复请求与副作用反例。"
+      },
+      {
+        "id": "B",
+        "text": "按实际风险选择有效检查",
+        "explanation": "不同变化需要不同证据。"
+      },
+      {
+        "id": "C",
+        "text": "每次都增加大量镜像实现的测试",
+        "explanation": "数量不等于覆盖。"
+      },
+      {
+        "id": "D",
+        "text": "个人项目一律不验证",
+        "explanation": "仍可能破坏重要功能和数据。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C20-K04"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "轻量工作流省去无价值流程，不省风险核验。"
+  },
+  {
+    "id": "C20-Q03",
+    "chapterId": "C20",
+    "revision": 1,
+    "type": "single",
+    "stem": "任务是修名称截断，AI同时升级框架并改表结构，应怎样评审？",
+    "options": [
+      {
+        "id": "A",
+        "text": "要求解释必要性并限定或重审范围",
+        "explanation": "额外变更应有依据和验证。"
+      },
+      {
+        "id": "B",
+        "text": "只看页面正常便接受",
+        "explanation": "未覆盖依赖和数据兼容。"
+      },
+      {
+        "id": "C",
+        "text": "改动多就是超额完成",
+        "explanation": "可能带来无关风险。"
+      },
+      {
+        "id": "D",
+        "text": "直接忽略所有表变化",
+        "explanation": "可能影响真实数据。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C20-K02",
+      "C20-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "局部目标不能授权任意扩大范围。"
+  },
+  {
+    "id": "C20-Q04",
+    "chapterId": "C20",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "一个批次结束时应留下哪些信息？",
+    "options": [
+      {
+        "id": "A",
+        "text": "未验证项、阻塞和下一步",
+        "explanation": "帮助后续接续。"
+      },
+      {
+        "id": "B",
+        "text": "必要文档与稳定基线",
+        "explanation": "使后续维护可追踪。"
+      },
+      {
+        "id": "C",
+        "text": "只依赖AI记住聊天",
+        "explanation": "上下文可能过期或丢失。"
+      },
+      {
+        "id": "D",
+        "text": "改动与实际验证结果",
+        "explanation": "支持回顾和评审。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C20-K05",
+      "C20-K06",
+      "C20-K07"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "持久事实比口头完成声明更可靠。"
+  },
+  {
+    "id": "C20-Q05",
+    "chapterId": "C20",
+    "revision": 1,
+    "type": "single",
+    "stem": "AI检查失败后提议删除断言，让状态变绿。应怎样处理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "直接改成功状态",
+        "explanation": "会隐藏实际缺陷。"
+      },
+      {
+        "id": "B",
+        "text": "只要变绿就可验收",
+        "explanation": "不能证明需求已满足。"
+      },
+      {
+        "id": "C",
+        "text": "核对断言是否合理并修复真实问题",
+        "explanation": "不能为完成外观降低要求。"
+      },
+      {
+        "id": "D",
+        "text": "覆盖历史避免看到失败",
+        "explanation": "丢失追踪证据。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C20-K04",
+      "C20-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "验证目标是发现和修复问题，不是制造绿色。"
+  },
+  {
+    "id": "C20-Q06",
+    "chapterId": "C20",
+    "revision": 1,
+    "type": "single",
+    "stem": "小步提交的合理含义是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "小提交不需要检查数据影响",
+        "explanation": "大小不决定风险。"
+      },
+      {
+        "id": "B",
+        "text": "每个月无论多少变化都一次提交",
+        "explanation": "可能混入大量不相关工作。"
+      },
+      {
+        "id": "C",
+        "text": "每改一个字符都必须新提交",
+        "explanation": "可能增加无意义噪声。"
+      },
+      {
+        "id": "D",
+        "text": "按可理解、可验证和可撤销范围组织",
+        "explanation": "边界服务审阅与维护。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C20-K03",
+      "C20-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "提交边界应围绕可解释目标。"
+  },
+  {
+    "id": "C20-Q07",
+    "chapterId": "C20",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "下一次聊天接续项目，应优先核对什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "仓库规则、需求与当前计划",
+        "explanation": "明确约束和未完事项。"
+      },
+      {
+        "id": "B",
+        "text": "文档中的已知限制与下一步",
+        "explanation": "支持按事实推进。"
+      },
+      {
+        "id": "C",
+        "text": "现有修改及已验证结果",
+        "explanation": "保护成果并避免重复工作。"
+      },
+      {
+        "id": "D",
+        "text": "重新猜测全部历史",
+        "explanation": "容易与真实状态偏离。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C20-K01",
+      "C20-K06",
+      "C20-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "接续依赖当前事实，而不是重建想象。"
+  },
+  {
+    "id": "C20-Q08",
+    "chapterId": "C20",
+    "revision": 1,
+    "type": "single",
+    "stem": "已有稳定代码提交，是否就可以忽略用户数据备份？",
+    "options": [
+      {
+        "id": "A",
+        "text": "可以，提交会包含所有用户数据",
+        "explanation": "源码历史不自动备份运行数据。"
+      },
+      {
+        "id": "B",
+        "text": "不可以，代码与数据保护分别安排",
+        "explanation": "回退需要理解各自范围。"
+      },
+      {
+        "id": "C",
+        "text": "应该把真实数据全部公开入库",
+        "explanation": "会引入不必要的数据暴露。"
+      },
+      {
+        "id": "D",
+        "text": "可以，只要标签名正确",
+        "explanation": "命名不提供数据恢复。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C20-K05",
+      "C20-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "稳定代码基线不代替个人和业务数据备份。"
+  }
+]

@@ -1,0 +1,319 @@
+[
+  {
+    "id": "C17-Q01",
+    "chapterId": "C17",
+    "revision": 1,
+    "type": "single",
+    "stem": "默认情况下，git diff与git diff --cached主要分别帮助看什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "两个都自动提交文件",
+        "explanation": "查看不等于记录提交。"
+      },
+      {
+        "id": "B",
+        "text": "两个都只看远端服务器",
+        "explanation": "它们用于本地差异比较。"
+      },
+      {
+        "id": "C",
+        "text": "未暂存差异与待提交暂存差异",
+        "explanation": "可分别核查编辑状态和提交内容。"
+      },
+      {
+        "id": "D",
+        "text": "两个都显示所有数据库变化",
+        "explanation": "Git不自动管理运行数据库状态。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C17-K01",
+      "C17-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "要明确比较的两个状态。"
+  },
+  {
+    "id": "C17-Q02",
+    "chapterId": "C17",
+    "revision": 1,
+    "type": "single",
+    "stem": "已跟踪文件含秘密，仅新增.gitignore规则会怎样？",
+    "options": [
+      {
+        "id": "A",
+        "text": "自动清除所有历史副本",
+        "explanation": "忽略不擦除既有历史。"
+      },
+      {
+        "id": "B",
+        "text": "不能据此认定秘密已停止暴露",
+        "explanation": "还需处理凭据和历史范围。"
+      },
+      {
+        "id": "C",
+        "text": "自动轮换真实凭据",
+        "explanation": "需要在相关系统另行操作。"
+      },
+      {
+        "id": "D",
+        "text": "自动撤回所有第三方下载",
+        "explanation": "不能提供这种保证。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C17-K04",
+      "C17-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "忽略、停止跟踪、历史处理和秘密轮换不同。"
+  },
+  {
+    "id": "C17-Q03",
+    "chapterId": "C17",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟提交前出现未跟踪的个人备份，最合理的做法是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "确认用途并按规则保留或忽略",
+        "explanation": "区分源码与个人产物。"
+      },
+      {
+        "id": "B",
+        "text": "改扩展名就证明无敏感内容",
+        "explanation": "名称不改变数据性质。"
+      },
+      {
+        "id": "C",
+        "text": "为了干净立即删除",
+        "explanation": "可能损失需要保留的备份。"
+      },
+      {
+        "id": "D",
+        "text": "默认全部暂存",
+        "explanation": "可能把个人数据纳入仓库。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C17-K01",
+      "C17-K04",
+      "C17-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "提交范围要按内容和用途核查。"
+  },
+  {
+    "id": "C17-Q04",
+    "chapterId": "C17",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "哪些推送前检查有实际价值？",
+    "options": [
+      {
+        "id": "A",
+        "text": "确认远端和分支目标",
+        "explanation": "避免分享到错误位置。"
+      },
+      {
+        "id": "B",
+        "text": "核对实际暂存内容与检查结果",
+        "explanation": "避免提交错范围或未验证行为。"
+      },
+      {
+        "id": "C",
+        "text": "检查本机配置、密钥和真实数据",
+        "explanation": "控制不应公开的内容。"
+      },
+      {
+        "id": "D",
+        "text": "只看提交说明写得漂亮",
+        "explanation": "说明不能替代差异审阅。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C17-K02",
+      "C17-K05",
+      "C17-K07"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "分享前核对目标和真实内容。"
+  },
+  {
+    "id": "C17-Q05",
+    "chapterId": "C17",
+    "revision": 1,
+    "type": "single",
+    "stem": "pull失败且本地有未提交修改，AI建议直接覆盖再重试。应怎样处理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "立即照做以减少冲突",
+        "explanation": "可能破坏尚未记录的成果。"
+      },
+      {
+        "id": "B",
+        "text": "把所有变化当作无关缓存",
+        "explanation": "可能是真实工作。"
+      },
+      {
+        "id": "C",
+        "text": "先强推远端",
+        "explanation": "未说明本地整合原因和影响。"
+      },
+      {
+        "id": "D",
+        "text": "先保护修改并核对整合目标",
+        "explanation": "按实际差异决定后续方式。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C17-K06",
+      "C17-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "失败不构成丢弃已有工作的理由。"
+  },
+  {
+    "id": "C17-Q06",
+    "chapterId": "C17",
+    "revision": 1,
+    "type": "single",
+    "stem": "规则文件暂存后又补了空值校验，应怎样确认本次提交？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只运行git log",
+        "explanation": "历史不能直接证明尚未提交内容。"
+      },
+      {
+        "id": "B",
+        "text": "编辑器已显示便足够",
+        "explanation": "暂存可能还是较早内容。"
+      },
+      {
+        "id": "C",
+        "text": "提交会自动包含所有未来编辑",
+        "explanation": "提交没有这种语义。"
+      },
+      {
+        "id": "D",
+        "text": "检查暂存差异是否包含新增校验",
+        "explanation": "必要时重新选择并验证。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C17-K02",
+      "C17-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "本次提交取决于实际暂存状态。"
+  },
+  {
+    "id": "C17-Q07",
+    "chapterId": "C17",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "哪些关于忽略规则的判断正确？",
+    "options": [
+      {
+        "id": "A",
+        "text": "可用于排除本机缓存和构建产物",
+        "explanation": "应按项目需求核查。"
+      },
+      {
+        "id": "B",
+        "text": "过宽规则可能漏掉必要源码",
+        "explanation": "需确认交付文件仍被跟踪。"
+      },
+      {
+        "id": "C",
+        "text": "所有配置都应无条件忽略",
+        "explanation": "构建声明或样例配置可能应入库。"
+      },
+      {
+        "id": "D",
+        "text": "已提交的秘密需要独立处置",
+        "explanation": "新增规则不完成轮换与历史处理。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C17-K04",
+      "C17-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "规则需匹配文件用途，不能一概而论。"
+  },
+  {
+    "id": "C17-Q08",
+    "chapterId": "C17",
+    "revision": 1,
+    "type": "single",
+    "stem": "fetch与pull如何理解更准确？",
+    "options": [
+      {
+        "id": "A",
+        "text": "pull一定通过强推完成",
+        "explanation": "推送与拉取整合不同。"
+      },
+      {
+        "id": "B",
+        "text": "fetch必然部署新程序",
+        "explanation": "获取版本不是发布。"
+      },
+      {
+        "id": "C",
+        "text": "获取远端信息与整合工作区分开理解",
+        "explanation": "具体行为仍需核对当前配置。"
+      },
+      {
+        "id": "D",
+        "text": "两者都保证不影响当前工作",
+        "explanation": "pull还涉及整合，需看配置和状态。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C17-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "同步命令应结合其目标和当前状态。"
+  }
+]

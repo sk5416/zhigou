@@ -91,6 +91,23 @@ class ContentTests(unittest.TestCase):
         self.assertIn('<table>', result)
         self.assertIn('Content-Security-Policy', result)
         self.assertIn('<details><summary>本章导航</summary>', result)
+    def test_code_comments_are_not_headings_or_modified(self):
+        source = '# Title\n\n```python\n# keep this comment\nvalue = 3\n```\n\n## Case\nbody'
+        self.assertEqual(content.heading_records(source), [{'anchor': 's0', 'line': 0}, {'anchor': 's1', 'line': 7}])
+        rendered = content.render(source)
+        self.assertIn('# keep this comment\nvalue = 3', rendered)
+        self.assertNotIn('comment {#', rendered)
+        self.assertIn('id="s1"', rendered)
+        self.assertNotIn('id="s2"', rendered)
+    def test_tilde_fence_and_heading_like_string_stay_code(self):
+        source = '# A\n\n~~~text\n## not a heading\n~~~\n\n## B'
+        self.assertEqual([h['line'] for h in content.heading_records(source)], [0, 6])
+        self.assertIn('## not a heading', content.render(source))
+    def test_teaching_heading_inside_code_does_not_satisfy_requirement(self):
+        f = self.directory / 'chapters/C00.md'
+        f.write_text(f.read_text(encoding='utf-8').replace('## PM 评审问题', '```text\n## PM 评审问题\n```'), encoding='utf-8')
+        with self.assertRaisesRegex(ValueError, '教学要素'):
+            content.load_and_validate(self.directory)
 
 if __name__ == '__main__':
     unittest.main()

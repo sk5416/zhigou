@@ -8,8 +8,9 @@ import kotlinx.serialization.Serializable
 @Serializable data class Chapter(
     val id: String, val title: String, val part: String, val depth: String = "", val priority: String = "",
     val prerequisites: List<String> = emptyList(), val related: List<String> = emptyList(),
-    val body: String, val html: String, val published: Boolean = true,
+    val body: String, val html: String, val published: Boolean = true, val headings: List<Heading> = emptyList(),
 )
+@Serializable data class Heading(val anchor: String, val line: Int)
 @Serializable data class Option(val id: String, val text: String, val explanation: String)
 @Serializable data class Question(
     val id: String, val chapterId: String, val revision: Int, val type: String,
@@ -43,6 +44,13 @@ import kotlinx.serialization.Serializable
 )
 
 object LearningRules {
+    fun searchAnchor(chapter: Chapter, query: String): String {
+        if (query.isBlank()) return ""
+        val offset = chapter.body.indexOf(query, ignoreCase = true)
+        if (offset < 0) return ""
+        val line = chapter.body.take(offset).count { it == '\n' }
+        return chapter.headings.lastOrNull { it.line <= line }?.anchor.orEmpty()
+    }
     fun completedChapters(readings: List<Reading>, catalog: Catalog): Set<String> {
         val available = catalog.chapters.filter { it.published && it.id.startsWith("C") }.map { it.id }.toSet()
         return readings.filter { it.completed && it.chapterId in available }.map { it.chapterId }.toSet()

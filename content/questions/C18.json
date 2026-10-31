@@ -1,0 +1,318 @@
+[
+  {
+    "id": "C18-Q01",
+    "chapterId": "C18",
+    "revision": 1,
+    "type": "single",
+    "stem": "Git合并没有文本冲突，能证明业务兼容吗？",
+    "options": [
+      {
+        "id": "A",
+        "text": "不能，还需检查调用者与契约",
+        "explanation": "文本合并不理解全部业务关系。"
+      },
+      {
+        "id": "B",
+        "text": "可以取消全部回归",
+        "explanation": "仍需按风险验证。"
+      },
+      {
+        "id": "C",
+        "text": "一定没有改动",
+        "explanation": "无冲突不代表无变化。"
+      },
+      {
+        "id": "D",
+        "text": "一定兼容",
+        "explanation": "不同文件的语义变化仍可能冲突。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C18-K03",
+      "C18-K04"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "文本可合并不等于行为正确。"
+  },
+  {
+    "id": "C18-Q02",
+    "chapterId": "C18",
+    "revision": 1,
+    "type": "single",
+    "stem": "两个分支分别修空值与增加退货规则，产生冲突，应怎样解决？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只删冲突标记不看代码",
+        "explanation": "可能留下错误组合。"
+      },
+      {
+        "id": "B",
+        "text": "只按行数较多的一边",
+        "explanation": "数量不是正确性依据。"
+      },
+      {
+        "id": "C",
+        "text": "理解双方意图并核对组合规则和测试",
+        "explanation": "保留需要的业务行为。"
+      },
+      {
+        "id": "D",
+        "text": "固定选最新日期一边",
+        "explanation": "时间不证明语义正确。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C18-K03",
+      "C18-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "冲突解决需要业务判断与证据。"
+  },
+  {
+    "id": "C18-Q03",
+    "chapterId": "C18",
+    "revision": 1,
+    "type": "single",
+    "stem": "撤销已分享提交的效果时，revert通常有什么特点？",
+    "options": [
+      {
+        "id": "A",
+        "text": "保证永远不会冲突",
+        "explanation": "反向改动也可能需要整合。"
+      },
+      {
+        "id": "B",
+        "text": "自动恢复所有外部业务",
+        "explanation": "代码历史不控制这些副作用。"
+      },
+      {
+        "id": "C",
+        "text": "自动删除他人的本地副本",
+        "explanation": "没有这样的作用。"
+      },
+      {
+        "id": "D",
+        "text": "用新提交表达撤销效果",
+        "explanation": "仍要审查结果与测试。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C18-K05",
+      "C18-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "撤销方式与其影响范围要明确。"
+  },
+  {
+    "id": "C18-Q04",
+    "chapterId": "C18",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "准备回退已上线程序，应核查哪些事项？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只要标签叫stable就直接覆盖",
+        "explanation": "标识不证明环境和数据兼容。"
+      },
+      {
+        "id": "B",
+        "text": "旧程序与当前数据库是否兼容",
+        "explanation": "结构变化可能影响回退。"
+      },
+      {
+        "id": "C",
+        "text": "配置、产物与恢复步骤",
+        "explanation": "运行回退不止源码变化。"
+      },
+      {
+        "id": "D",
+        "text": "已经发生的外部写入如何核实",
+        "explanation": "不会随旧代码自动撤销。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C18-K05",
+      "C18-K07"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "代码、数据和运行状态需要分别处理。"
+  },
+  {
+    "id": "C18-Q05",
+    "chapterId": "C18",
+    "revision": 1,
+    "type": "single",
+    "stem": "本地还有未提交成果，AI要执行可能丢弃工作区的操作，应先做什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "确认目标与范围并保护现有工作",
+        "explanation": "先弄清将影响什么。"
+      },
+      {
+        "id": "B",
+        "text": "只检查文件名是否熟悉",
+        "explanation": "不能判断内容价值。"
+      },
+      {
+        "id": "C",
+        "text": "先丢弃再询问",
+        "explanation": "可能已经不可恢复。"
+      },
+      {
+        "id": "D",
+        "text": "假定都能从历史恢复",
+        "explanation": "未提交内容未必在历史中。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C18-K02",
+      "C18-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "不能把尚未记录的成果当作可随意重建。"
+  },
+  {
+    "id": "C18-Q06",
+    "chapterId": "C18",
+    "revision": 1,
+    "type": "single",
+    "stem": "建立分支是否自动隔离真实数据库和外部ERP？",
+    "options": [
+      {
+        "id": "A",
+        "text": "是，分支会自动复制全部环境",
+        "explanation": "Git分支不提供这些资源隔离。"
+      },
+      {
+        "id": "B",
+        "text": "是，切换分支即可撤销物料创建",
+        "explanation": "业务副作用不随引用变化消失。"
+      },
+      {
+        "id": "C",
+        "text": "不是，还需独立配置和权限边界",
+        "explanation": "代码工作线与运行资源不同。"
+      },
+      {
+        "id": "D",
+        "text": "所以分支完全没有用途",
+        "explanation": "仍有组织版本变化的价值。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C18-K01",
+      "C18-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "代码隔离和运行数据隔离不同。"
+  },
+  {
+    "id": "C18-Q07",
+    "chapterId": "C18",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "共享历史重写前应考虑哪些因素？",
+    "options": [
+      {
+        "id": "A",
+        "text": "协作约定及其他人的引用",
+        "explanation": "可能影响接续工作。"
+      },
+      {
+        "id": "B",
+        "text": "与精确撤销效果的方案比较",
+        "explanation": "选择与目标匹配的方式。"
+      },
+      {
+        "id": "C",
+        "text": "未提交成果和可恢复基线",
+        "explanation": "保护已有状态。"
+      },
+      {
+        "id": "D",
+        "text": "只看日志能否更漂亮",
+        "explanation": "不足以支持改变共享历史。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "knowledge": [
+      "C18-K02",
+      "C18-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "历史操作不能脱离协作与恢复条件。"
+  },
+  {
+    "id": "C18-Q08",
+    "chapterId": "C18",
+    "revision": 1,
+    "type": "single",
+    "stem": "甲改字段类型，乙在另一文件按旧类型计算，Git自动合并成功。下一步应怎样做？",
+    "options": [
+      {
+        "id": "A",
+        "text": "以无冲突直接验收",
+        "explanation": "漏掉跨文件语义影响。"
+      },
+      {
+        "id": "B",
+        "text": "删除金额相关测试",
+        "explanation": "会掩盖风险。"
+      },
+      {
+        "id": "C",
+        "text": "核查调用链并回归类型与边界",
+        "explanation": "验证契约变化影响。"
+      },
+      {
+        "id": "D",
+        "text": "认为必然无法修复",
+        "explanation": "需要分析具体组合。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C18-K04",
+      "C18-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "跨文件语义冲突同样需要验证。"
+  }
+]

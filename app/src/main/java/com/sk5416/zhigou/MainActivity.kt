@@ -118,7 +118,7 @@ private fun mode(mode: String) = when (mode) { "test" -> "自测"; "review" -> "
                 Row {
                     if (c.id.startsWith("C")) Checkbox(c.id in selected, { selected = if (c.id in selected) selected - c.id else selected + c.id })
                     Column(Modifier.weight(1f)) {
-                        Tile("${c.id} · ${c.title}", "${c.depth} ${c.priority} · ${if (r?.completed == true) "已读" else "未读"}${if (r?.bookmarked == true) " · 已收藏" else ""}${result?.let { " · 自测 $it" } ?: ""}") { read(c.id, searchAnchor(c.body, query)) }
+                        Tile("${c.id} · ${c.title}", "${c.depth} ${c.priority} · ${if (r?.completed == true) "已读" else "未读"}${if (r?.bookmarked == true) " · 已收藏" else ""}${result?.let { " · 自测 $it" } ?: ""}") { read(c.id, LearningRules.searchAnchor(c, query)) }
                         if (query.isNotBlank()) Text(snippet(c.body, query), Modifier.padding(8.dp), style = MaterialTheme.typography.bodySmall)
                     }
                 }
@@ -128,12 +128,6 @@ private fun mode(mode: String) = when (mode) { "test" -> "自测"; "review" -> "
     }
 }
 private fun snippet(body: String, query: String): String { val i = body.indexOf(query, ignoreCase = true).coerceAtLeast(0); return body.substring((i - 24).coerceAtLeast(0), (i + 90).coerceAtMost(body.length)).replace("\n", " ") }
-private fun searchAnchor(body: String, query: String): String {
-    if (query.isBlank()) return ""
-    val index = body.indexOf(query, ignoreCase = true)
-    if (index < 0) return ""
-    return "s${(body.take(index + 1).lineSequence().count { it.startsWith("#") } - 1).coerceAtLeast(0)}"
-}
 private fun currentMistakes(s: LearningState) = s.mistakes.filter { m -> s.catalog!!.questions.any { it.id == m.questionId && it.revision == m.revision } }
 private fun latestScore(s: LearningState, chapter: String): String? {
     val session = s.sessions.firstOrNull { it.finished && it.mode == "test" && it.questions.any { q -> q.chapterId == chapter } && LearningRules.compatible(it, s.catalog!!) } ?: return null

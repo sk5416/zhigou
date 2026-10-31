@@ -1,0 +1,321 @@
+[
+  {
+    "id": "C06-Q01",
+    "chapterId": "C06",
+    "revision": 1,
+    "type": "single",
+    "stem": "在模拟 Python 输入中，数值5、文本“5”和None应怎样理解？",
+    "options": [
+      {
+        "id": "A",
+        "text": "需要明确类型与缺失含义",
+        "explanation": "显示相似不等于语义相同。"
+      },
+      {
+        "id": "B",
+        "text": "None在任何业务里都等于零",
+        "explanation": "缺失可能与真实零不同。"
+      },
+      {
+        "id": "C",
+        "text": "看到数字字符就已验证格式",
+        "explanation": "仍需输入解析和边界校验。"
+      },
+      {
+        "id": "D",
+        "text": "三者都可直接相加",
+        "explanation": "文本、数值和空值的操作规则不同。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C06-K01",
+      "C06-K02"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "输入外观不能代替类型与业务契约。"
+  },
+  {
+    "id": "C06-Q02",
+    "chapterId": "C06",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟规则允许数量为0，但不允许缺失。哪种判断最有针对性？",
+    "options": [
+      {
+        "id": "A",
+        "text": "把缺失统一补成0",
+        "explanation": "会丢掉本来需要报告的问题。"
+      },
+      {
+        "id": "B",
+        "text": "明确区分None与数值0",
+        "explanation": "避免把合法零当缺失。"
+      },
+      {
+        "id": "C",
+        "text": "只检查字段名长度",
+        "explanation": "不验证数量含义。"
+      },
+      {
+        "id": "D",
+        "text": "任何假值都当缺失",
+        "explanation": "可能同时拒绝合法零。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C06-K02",
+      "C06-K03"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "空值规则应与业务允许值分开。"
+  },
+  {
+    "id": "C06-Q03",
+    "chapterId": "C06",
+    "revision": 1,
+    "type": "single",
+    "stem": "C06示例约定数量已为数值或None，实际却收到文本“3”。应怎样评审？",
+    "options": [
+      {
+        "id": "A",
+        "text": "把异常默认为导入成功",
+        "explanation": "会掩盖超出契约的输入。"
+      },
+      {
+        "id": "B",
+        "text": "补查入口解析及错误报告",
+        "explanation": "不能依赖数值比较隐式完成校验。"
+      },
+      {
+        "id": "C",
+        "text": "直接保证代码会自动转换",
+        "explanation": "示例没有这样的解析逻辑。"
+      },
+      {
+        "id": "D",
+        "text": "把所有文本变成零",
+        "explanation": "可能错误改变业务数据。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C06-K01",
+      "C06-K05",
+      "C06-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "示例输入前提不等于真实入口已保证。"
+  },
+  {
+    "id": "C06-Q04",
+    "chapterId": "C06",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "走读一个导入函数时，应核对哪些内容？",
+    "options": [
+      {
+        "id": "A",
+        "text": "它调用的其他函数及外部动作",
+        "explanation": "需要确认状态变化和失败影响。"
+      },
+      {
+        "id": "B",
+        "text": "函数名含validate便证明不写库",
+        "explanation": "名称不能证明副作用。"
+      },
+      {
+        "id": "C",
+        "text": "每条记录的分支去向",
+        "explanation": "避免无解释漏行。"
+      },
+      {
+        "id": "D",
+        "text": "参数前提和返回含义",
+        "explanation": "定义如何正确调用和解释结果。"
+      }
+    ],
+    "answers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C06-K04",
+      "C06-K05",
+      "C06-K06"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "函数契约、控制流与副作用要一起看。"
+  },
+  {
+    "id": "C06-Q05",
+    "chapterId": "C06",
+    "revision": 1,
+    "type": "single",
+    "stem": "模拟100行中10行被跳过且没有原因，仅有成功列表。最主要的缺口是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "列表颜色不够醒目",
+        "explanation": "不解决记录去向。"
+      },
+      {
+        "id": "B",
+        "text": "缺少逐行结果及拒绝依据",
+        "explanation": "无法区分无效输入与程序遗漏。"
+      },
+      {
+        "id": "C",
+        "text": "应把成功数量改为100",
+        "explanation": "会伪造业务结果。"
+      },
+      {
+        "id": "D",
+        "text": "循环次数一定太少",
+        "explanation": "数量本身不是原因证据。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C06-K04",
+      "C06-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "汇总数量不能代替每行可追溯性。"
+  },
+  {
+    "id": "C06-Q06",
+    "chapterId": "C06",
+    "revision": 1,
+    "type": "single",
+    "stem": "逐条物料都扫描另一份完整列表找编码，数据增长后应先做什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "直接断言所有循环都错误",
+        "explanation": "循环可能合理，需看规模与算法。"
+      },
+      {
+        "id": "B",
+        "text": "无条件新增微服务",
+        "explanation": "没有对应性能证据。"
+      },
+      {
+        "id": "C",
+        "text": "测量规模、查找次数和瓶颈",
+        "explanation": "再判断索引或批量匹配等方式。"
+      },
+      {
+        "id": "D",
+        "text": "只更换变量名称",
+        "explanation": "不改变查找工作量。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C06-K06",
+      "C06-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "性能取舍需要具体规模与测量。"
+  },
+  {
+    "id": "C06-Q07",
+    "chapterId": "C06",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "哪些输入适合作为正数量导入规则的边界用例？",
+    "options": [
+      {
+        "id": "A",
+        "text": "缺数量和零",
+        "explanation": "检验缺失与非正数路径。"
+      },
+      {
+        "id": "B",
+        "text": "文本数量和空白编码",
+        "explanation": "检验真实入口是否满足前提。"
+      },
+      {
+        "id": "C",
+        "text": "只重复同一条正常记录",
+        "explanation": "覆盖不足，且可能有重复业务含义。"
+      },
+      {
+        "id": "D",
+        "text": "负数与重复业务编码",
+        "explanation": "需按明确业务规则验证拒绝与防重。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C06-K02",
+      "C06-K03",
+      "C06-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "用例应覆盖不同边界，不能只是重复成功路径。"
+  },
+  {
+    "id": "C06-Q08",
+    "chapterId": "C06",
+    "revision": 1,
+    "type": "single",
+    "stem": "示例函数返回accepted和rejected两个列表，就证明可以直接上线吗？",
+    "options": [
+      {
+        "id": "A",
+        "text": "证明负数在任何业务都非法",
+        "explanation": "这只是本模拟的业务约束。"
+      },
+      {
+        "id": "B",
+        "text": "证明所有类型都已校验",
+        "explanation": "示例明确没有完整类型解析。"
+      },
+      {
+        "id": "C",
+        "text": "仍需核查错误原因、防重与写入边界",
+        "explanation": "示例是走读材料而非完整导入实现。"
+      },
+      {
+        "id": "D",
+        "text": "证明拒绝原因一定齐全",
+        "explanation": "只分列表不等于逐行详细报告。"
+      }
+    ],
+    "answers": [
+      "C"
+    ],
+    "knowledge": [
+      "C06-K05",
+      "C06-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "读懂局部逻辑不等于已验证完整交付。"
+  }
+]

@@ -1,0 +1,319 @@
+[
+  {
+    "id": "C19-Q01",
+    "chapterId": "C19",
+    "revision": 1,
+    "type": "single",
+    "stem": "Issue、PR和Review最合理的关系是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "Review替代全部测试",
+        "explanation": "评价仍需对应验证。"
+      },
+      {
+        "id": "B",
+        "text": "Issue关闭自动部署程序",
+        "explanation": "协作状态不等于运行状态。"
+      },
+      {
+        "id": "C",
+        "text": "只要创建PR就证明已验收",
+        "explanation": "评审入口不自动提供结果。"
+      },
+      {
+        "id": "D",
+        "text": "问题、整合改动与评审证据可相互关联",
+        "explanation": "帮助不在聊天中的维护者理解。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C19-K01",
+      "C19-K02",
+      "C19-K03"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "协作产物支撑追溯，不自动赋予质量结论。"
+  },
+  {
+    "id": "C19-Q02",
+    "chapterId": "C19",
+    "revision": 1,
+    "type": "single",
+    "stem": "一份变更说明只写“优化安全性”，最应补充什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "所有聊天过程原样复制",
+        "explanation": "可能冗长且仍缺最终行为。"
+      },
+      {
+        "id": "B",
+        "text": "删除未验证项",
+        "explanation": "会误导完成状态。"
+      },
+      {
+        "id": "C",
+        "text": "只增加流行术语",
+        "explanation": "不能说明实际风险。"
+      },
+      {
+        "id": "D",
+        "text": "触发问题、实际变化和验证范围",
+        "explanation": "让评审者判断修复是否成立。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C19-K04",
+      "C19-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "说明应围绕最终行为和证据。"
+  },
+  {
+    "id": "C19-Q03",
+    "chapterId": "C19",
+    "revision": 1,
+    "type": "single",
+    "stem": "自动检查全绿，但只构建了APK，没有设备测试，应怎样报告？",
+    "options": [
+      {
+        "id": "A",
+        "text": "说明构建通过及设备未验证",
+        "explanation": "如实限定证据范围。"
+      },
+      {
+        "id": "B",
+        "text": "构建结果没有任何价值",
+        "explanation": "仍证明该构建条件下可生成产物。"
+      },
+      {
+        "id": "C",
+        "text": "将未运行测试写成跳过即通过",
+        "explanation": "跳过不等于验证。"
+      },
+      {
+        "id": "D",
+        "text": "所有设备行为均已通过",
+        "explanation": "超出运行范围。"
+      }
+    ],
+    "answers": [
+      "A"
+    ],
+    "knowledge": [
+      "C19-K05",
+      "C19-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "通过声明不能大于实际检查范围。"
+  },
+  {
+    "id": "C19-Q04",
+    "chapterId": "C19",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "发布记录需要关联哪些内容？",
+    "options": [
+      {
+        "id": "A",
+        "text": "具体提交与实际构建产物",
+        "explanation": "帮助确定发布对象。"
+      },
+      {
+        "id": "B",
+        "text": "升级、数据与配置影响",
+        "explanation": "支持正确接续和恢复。"
+      },
+      {
+        "id": "C",
+        "text": "只写stable名称",
+        "explanation": "名称本身没有验证证据。"
+      },
+      {
+        "id": "D",
+        "text": "用户行为变化和已知限制",
+        "explanation": "帮助使用者理解版本。"
+      }
+    ],
+    "answers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "knowledge": [
+      "C19-K06",
+      "C19-K07"
+    ],
+    "difficulty": "基础",
+    "ability": "概念",
+    "misconception": "版本是可追踪交付基线，不只是数字。"
+  },
+  {
+    "id": "C19-Q05",
+    "chapterId": "C19",
+    "revision": 1,
+    "type": "single",
+    "stem": "开发包只有少量课程，却被标为完整MVP，主要问题是什么？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只需换一个标签颜色",
+        "explanation": "不改变真实交付范围。"
+      },
+      {
+        "id": "B",
+        "text": "课程目录存在就算全交付",
+        "explanation": "目录不等于正文和题库。"
+      },
+      {
+        "id": "C",
+        "text": "版本号不够长",
+        "explanation": "命名长度不解决内容缺口。"
+      },
+      {
+        "id": "D",
+        "text": "发布状态与约定门槛不一致",
+        "explanation": "应明确开发版及未完成范围。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C19-K06",
+      "C19-K08"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "完成状态要与实际功能、内容和验收对应。"
+  },
+  {
+    "id": "C19-Q06",
+    "chapterId": "C19",
+    "revision": 1,
+    "type": "single",
+    "stem": "Review已经通过，后续新增依赖后还需要检查吗？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只改发布说明即可",
+        "explanation": "说明不验证实现。"
+      },
+      {
+        "id": "B",
+        "text": "需要按新影响验证依赖和行为",
+        "explanation": "评审证据有版本与范围。"
+      },
+      {
+        "id": "C",
+        "text": "不需要，结论永久有效",
+        "explanation": "变更可能改变原假设。"
+      },
+      {
+        "id": "D",
+        "text": "必须先重写所有代码",
+        "explanation": "检查不等于无条件重写。"
+      }
+    ],
+    "answers": [
+      "B"
+    ],
+    "knowledge": [
+      "C19-K03",
+      "C19-K05"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "审核针对具体状态，变化后需要重新核查。"
+  },
+  {
+    "id": "C19-Q07",
+    "chapterId": "C19",
+    "revision": 1,
+    "type": "multiple",
+    "stem": "哪些内容适合写进最终PR说明？",
+    "options": [
+      {
+        "id": "A",
+        "text": "被放弃的每个尝试都详细罗列",
+        "explanation": "通常淹没最终实现，除非影响取舍。"
+      },
+      {
+        "id": "B",
+        "text": "实际运行的验证与未验证项",
+        "explanation": "提供有边界证据。"
+      },
+      {
+        "id": "C",
+        "text": "实际问题及修复后的行为",
+        "explanation": "让评审对象明确。"
+      },
+      {
+        "id": "D",
+        "text": "重要兼容变化与限制",
+        "explanation": "支持升级和维护判断。"
+      }
+    ],
+    "answers": [
+      "B",
+      "C",
+      "D"
+    ],
+    "knowledge": [
+      "C19-K04",
+      "C19-K05",
+      "C19-K07"
+    ],
+    "difficulty": "应用",
+    "ability": "场景",
+    "misconception": "写给不了解原聊天的维护者。"
+  },
+  {
+    "id": "C19-Q08",
+    "chapterId": "C19",
+    "revision": 1,
+    "type": "single",
+    "stem": "版本号已更新，但下载产物仍来自旧提交，应怎样处理？",
+    "options": [
+      {
+        "id": "A",
+        "text": "只重复修改数字",
+        "explanation": "不会修正产物来源。"
+      },
+      {
+        "id": "B",
+        "text": "以新名称作为唯一依据",
+        "explanation": "名称不能改变产物内容。"
+      },
+      {
+        "id": "C",
+        "text": "页面能开就不用核对",
+        "explanation": "旧版也可能能打开。"
+      },
+      {
+        "id": "D",
+        "text": "核对构建追溯与实际产物后再发布",
+        "explanation": "确保提交、说明和下载对象一致。"
+      }
+    ],
+    "answers": [
+      "D"
+    ],
+    "knowledge": [
+      "C19-K06"
+    ],
+    "difficulty": "应用",
+    "ability": "判断",
+    "misconception": "发布记录必须和真实产物对应。"
+  }
+]

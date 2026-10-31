@@ -4,6 +4,19 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class LearningRulesTest {
+    @Test fun bodySearchUsesCompiledHeadingIndexAfterCodeComments() {
+        val text = "# 标题\n\n```python\n# comment\n```\n\n## 案例\nunique正文"
+        val c = Chapter("C06", "代码", "编程", body = text, html = "C06.html", headings = listOf(Heading("s0", 0), Heading("s1", 6)))
+        assertEquals("s1", LearningRules.searchAnchor(c, "UNIQUE"))
+        assertEquals("s0", LearningRules.searchAnchor(c, "comment"))
+        assertEquals("s0", LearningRules.searchAnchor(c, "标题"))
+        assertEquals("", LearningRules.searchAnchor(c, "missing"))
+        assertEquals("", LearningRules.searchAnchor(c, ""))
+    }
+    @Test fun missingHeadingIndexDoesNotInventAnAnchor() {
+        val c = Chapter("C06", "代码", "编程", body = "# 标题\n正文", html = "C06.html")
+        assertEquals("", LearningRules.searchAnchor(c, "正文"))
+    }
     private fun question(id: String = "C00-Q01", chapter: String = "C00", rev: Int = 1, answers: Set<String> = setOf("A", "C")) =
         Question(id, chapter, rev, "multiple", "test", listOf(Option("A", "one", "yes"), Option("B", "two", "no"), Option("C", "three", "yes")), answers, listOf("K1"), "基础", "判断", "误区")
     private val chapter = Chapter("C00", "导学", "导学", body = "content", html = "C00.html")

@@ -95,6 +95,97 @@
         "AD"
       ],
       "claims": "来源验证、事件识别与可靠接收的设计参考。没有把 GitHub 的具体响应时限、重发或头字段当成所有 ERP 的契约。"
+    },
+    {
+      "title": "Python tutorial: More control flow tools",
+      "url": "https://docs.python.org/3/tutorial/controlflow.html",
+      "chapters": [
+        "C06"
+      ],
+      "claims": "变量控制流、迭代与函数阅读的基础；正数量规则与解析前提为模拟，不宣称覆盖真实ERP导入。"
+    },
+    {
+      "title": "Python tutorial: Classes",
+      "url": "https://docs.python.org/3/tutorial/classes.html",
+      "chapters": [
+        "C07"
+      ],
+      "claims": "类、实例及共享可变属性的区别；业务分层是条件化设计建议，不是Python强制目录结构。"
+    },
+    {
+      "title": "Python tutorial: Errors and exceptions",
+      "url": "https://docs.python.org/3/tutorial/errors.html",
+      "chapters": [
+        "C08"
+      ],
+      "claims": "语法与运行异常、捕获传播及堆栈阅读；错误示例明确标错，不把捕获视为成功。"
+    },
+    {
+      "title": "Python Logging HOWTO",
+      "url": "https://docs.python.org/3/howto/logging.html",
+      "chapters": [
+        "C08"
+      ],
+      "claims": "日志级别与运行事件记录；关联号、脱敏与报障例子均为虚构，不提供真实生产日志。"
+    },
+    {
+      "title": "Python asyncio: Coroutines and tasks",
+      "url": "https://docs.python.org/3/library/asyncio-task.html",
+      "chapters": [
+        "C09"
+      ],
+      "claims": "async/await与调度、等待、取消的边界。模拟client不是厂商SDK，不声称进程内任务具备持久性。"
+    },
+    {
+      "title": "Pro Git: Recording changes",
+      "url": "https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository",
+      "chapters": [
+        "C16",
+        "C17",
+        "C20"
+      ],
+      "claims": "工作区、暂存、提交、差异检查的基础；命令是隔离练习示意，不是在用户仓库自动执行的授权。"
+    },
+    {
+      "title": "Git gitignore reference",
+      "url": "https://git-scm.com/docs/gitignore",
+      "chapters": [
+        "C17"
+      ],
+      "claims": "忽略规则不清除已跟踪文件历史；停止跟踪、凭据轮换与历史处理分开。"
+    },
+    {
+      "title": "Pro Git: Basic branching and merging",
+      "url": "https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging",
+      "chapters": [
+        "C18"
+      ],
+      "claims": "分支与文本合并的基础；语义兼容和数据恢复仍需额外验证。"
+    },
+    {
+      "title": "Git revert reference",
+      "url": "https://git-scm.com/docs/git-revert",
+      "chapters": [
+        "C18"
+      ],
+      "claims": "通过新提交撤销既有提交效果及可能冲突；不把代码撤销扩展为数据库或外部动作自动恢复。"
+    },
+    {
+      "title": "GitHub pull requests reference",
+      "url": "https://docs.github.com/en/pull-requests/reference/pull-requests",
+      "chapters": [
+        "C19"
+      ],
+      "claims": "提出、讨论及评审整合改动的协作入口；不将托管状态当质量或运行证明。"
+    },
+    {
+      "title": "Pro Git: Tagging",
+      "url": "https://git-scm.com/book/en/v2/Git-Basics-Tagging",
+      "chapters": [
+        "C19",
+        "C20"
+      ],
+      "claims": "标签定位版本基线；稳定性、产物与发布验证是独立证据。"
     }
   ],
   "simulation": "青禾制造、员工、部门和物料同步均为虚构模拟，不代表金蝶、Salesforce 等厂商真实接口行为。",

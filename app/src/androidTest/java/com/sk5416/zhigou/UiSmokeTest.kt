@@ -42,6 +42,18 @@ class UiSmokeTest {
             device.findObject(By.text("课程")).click()
             assertTrue(device.wait(Until.hasObject(By.text("搜索课程和附录")), 10_000))
             screenshot(device, "courses")
+            // This phrase occurs only in C06 body, after a fenced Python comment.
+            // It verifies that search and the renderer agree on actual heading anchors.
+            val codeSearch = device.findObject(By.clazz("android.widget.EditText"))
+            codeSearch.click()
+            codeSearch.text = "错误行不能静默丢弃"
+            device.pressBack()
+            assertTrue(device.wait(Until.hasObject(By.textStartsWith("C06 ·")), 10_000))
+            device.findObject(By.textStartsWith("C06 ·")).click()
+            assertTrue("body search must land on the C06 case after its code block", device.wait(Until.hasObject(By.textContains("错误行不能静默丢弃。")), 15_000))
+            screenshot(device, "code-search-reader")
+            device.pressBack()
+            assertTrue(device.wait(Until.hasObject(By.text("搜索课程和附录")), 10_000))
             openTimeoutChapter(device)
             assertTrue(device.wait(Until.hasObject(By.textContains("调用超时只说明")), 15_000))
             screenshot(device, "c14-reader")
