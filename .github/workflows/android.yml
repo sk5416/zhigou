@@ -68,7 +68,9 @@ jobs:
           target: default
           arch: x86_64
           disable-animations: true
-          script: ./gradlew connectedDebugAndroidTest
+          script: |
+            ./gradlew connectedDebugAndroidTest
+            adb pull /sdcard/Android/data/com.sk5416.zhigou/files/screenshots device-screenshots
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -76,3 +78,4 @@ jobs:
           path: |
             app/build/reports/androidTests/
             app/build/outputs/androidTest-results/
+            device-screenshots/

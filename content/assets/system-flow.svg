@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="240" viewBox="0 0 720 240">
+<rect width="720" height="240" rx="16" fill="#e8eee7"/>
+<g fill="#246b5b"><rect x="20" y="60" width="145" height="90" rx="12"/><rect x="205" y="60" width="145" height="90" rx="12"/><rect x="390" y="60" width="145" height="90" rx="12"/><rect x="575" y="60" width="125" height="90" rx="12"/></g>
+<g fill="white" font-family="sans-serif" font-size="20" text-anchor="middle"><text x="92" y="112">浏览器</text><text x="277" y="112">HTTPS 入口</text><text x="462" y="112">应用进程</text><text x="637" y="112">数据库</text></g>
+<g fill="#246b5b" font-size="28"><text x="172" y="114">→</text><text x="357" y="114">→</text><text x="542" y="114">→</text></g>
+<text x="360" y="205" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#253b32">沿请求链路逐段核验身份、权限、连接与故障</text>
+</svg>

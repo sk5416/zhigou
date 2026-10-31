@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-10-31",
+  "scope": "样板章节与附录的事实核验来源，正文离线独立成立；链接仅供开发与审核追溯，不由 App 联网加载。",
+  "sources": [
+    {
+      "title": "OWASP Transport Layer Security Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Security_Cheat_Sheet.html",
+      "chapters": ["C12", "AA", "AC", "AH"],
+      "claims": "TLS 的机密性、完整性和身份验证边界；证书校验；前后段连接分别评估。本文不指定统一协议配置或密码套件。"
+    },
+    {
+      "title": "OWASP Password Storage Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html",
+      "chapters": ["C12", "AA", "AC", "AG", "AH"],
+      "claims": "密码存储需要合适的带盐慢速密码哈希；普通快速哈希不能等同安全口令存储。本文未固定算法参数，部署需按组件与风险重新核验。"
+    }
+  ],
+  "simulation": "青禾制造、员工、部门和物料同步均为虚构模拟，不代表金蝶、Salesforce 等厂商真实接口行为。",
+  "reviewStatus": "draft；来源核验不等同全部教学与题目审核完成。"
+}

@@ -4,6 +4,7 @@ import argparse
 import json
 import re
 import html
+import shutil
 from urllib.parse import urlsplit
 import markdown
 
@@ -73,8 +74,10 @@ def load_and_validate(directory=CONTENT, release=False):
                 if parsed.scheme == 'zhigou':
                     if parsed.path.strip('/') not in index:
                         raise ValueError('章内链接不存在')
-                elif not target.startswith('#') and not parsed.scheme and not (source.parent / target).is_file():
-                    raise ValueError('本地资源不存在')
+                elif not target.startswith('#') and not parsed.scheme:
+                    resource = (source.parent / parsed.path).resolve()
+                    if not resource.is_relative_to(directory.resolve()) or not resource.is_file():
+                        raise ValueError('本地资源不存在或超出内容目录')
                 elif parsed.scheme not in ('', 'zhigou', 'https'):
                     raise ValueError('不允许的资源协议')
             if re.search(r'!\[[^\]]*\]\(https?://', c['body']) or re.search(r'<\s*(script|iframe|img|object|style)\b', c['body'], re.I):
@@ -113,6 +116,8 @@ def main():
     if args.command == 'build':
         dest = ROOT / 'app/build/generated/courseAssets'
         (dest / 'chapters').mkdir(parents=True, exist_ok=True)
+        if (CONTENT / 'assets').exists():
+            shutil.copytree(CONTENT / 'assets', dest / 'assets', dirs_exist_ok=True)
         for c in catalog['chapters']:
             if c['published']:
                 (dest / c['html']).write_text(render(c['body']), encoding='utf-8')

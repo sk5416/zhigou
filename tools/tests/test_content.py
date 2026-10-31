@@ -47,6 +47,11 @@ class ContentTests(unittest.TestCase):
         file.write_text(file.read_text(encoding='utf-8') + '\n![remote](https://example.com/x.png)', encoding='utf-8')
         with self.assertRaisesRegex(ValueError, '远程图片'):
             content.load_and_validate(self.directory)
+    def test_local_resource_cannot_escape_content_directory(self):
+        file = self.directory / 'chapters/C02.md'
+        file.write_text(file.read_text(encoding='utf-8') + '\n![escape](../../outside.png)', encoding='utf-8')
+        with self.assertRaisesRegex(ValueError, '超出内容目录'):
+            content.load_and_validate(self.directory)
     def test_render_has_anchors_tables_and_csp(self):
         result = content.render('# A\n\n## B\n\n| x | y |\n|---|---|\n| 1 | 2 |')
         self.assertIn('id="s1"', result)
