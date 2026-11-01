@@ -32,6 +32,13 @@ object ReaderProbe {
             if (!loaded) android.os.SystemClock.sleep(100)
         }
         assertTrue("offline WebView document must finish loading", loaded)
+        val frame = CountDownLatch(1)
+        scenario.onActivity {
+            web!!.postVisualStateCallback(1, object : WebView.VisualStateCallback() {
+                override fun onComplete(requestId: Long) { frame.countDown() }
+            })
+        }
+        assertTrue("rendered document state must be ready", frame.await(15, TimeUnit.SECONDS))
         scenario.onActivity { activity ->
             web = requireNotNull(find(activity.window.decorView))
             before = web!!.scrollY; height = web!!.height
