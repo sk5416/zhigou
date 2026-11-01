@@ -22,6 +22,16 @@ object ReaderProbe {
         var before = 0
         var height = 0
         var web: WebView? = null
+        val deadline = android.os.SystemClock.uptimeMillis() + 15_000
+        var loaded = false
+        while (!loaded && android.os.SystemClock.uptimeMillis() < deadline) {
+            scenario.onActivity { activity ->
+                web = find(activity.window.decorView)
+                loaded = web?.let { it.progress == 100 && it.contentHeight > 0 && it.url?.startsWith("https://appassets.androidplatform.net/") == true } == true
+            }
+            if (!loaded) android.os.SystemClock.sleep(100)
+        }
+        assertTrue("offline WebView document must finish loading", loaded)
         scenario.onActivity { activity ->
             web = requireNotNull(find(activity.window.decorView))
             before = web!!.scrollY; height = web!!.height
