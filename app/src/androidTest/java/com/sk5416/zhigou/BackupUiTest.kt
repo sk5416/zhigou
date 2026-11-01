@@ -49,6 +49,7 @@ class BackupUiTest {
         resolver.openOutputStream(broken)!!.use { it.write("{broken fixture".toByteArray()) }
         try {
             ActivityScenario.launch(MainActivity::class.java).use {
+                try {
                 assertTrue(device.wait(Until.hasObject(By.text("设置")), 20_000))
                 device.findObject(By.text("设置")).click()
                 assertTrue(device.wait(Until.hasObject(By.text("导出学习备份")), 10_000))
@@ -84,7 +85,7 @@ class BackupUiTest {
                 same(expected, repo.snapshot())
                 device.findObject(By.text("知道了")).click()
                 choose(device, brokenName)
-                assertTrue(device.wait(Until.hasObject(By.text("文件不是有效的知构备份，未修改当前数据")), 10_000))
+                assertTrue("corrupt-document error must appear after returning from DocumentsUI", device.wait(Until.hasObject(By.text("文件不是有效的知构备份，未修改当前数据")), 10_000))
                 capture(device, "backup-corrupt")
                 same(expected, repo.snapshot())
                 device.findObject(By.text("知道了")).click()
@@ -93,12 +94,12 @@ class BackupUiTest {
                 device.pressBack()
                 assertTrue(device.wait(Until.hasObject(By.text("导出学习备份")), 10_000))
                 same(expected, repo.snapshot())
+                } catch (e: Throwable) {
+                    // Capture while the failing activity/window still exists, before use closes it.
+                    WindowEvidence.capture(device, "backup-failure")
+                    throw e
+                }
             }
-        } catch (e: Throwable) {
-            WindowEvidence.capture(device, "backup-failure")
-            val dump = java.io.ByteArrayOutputStream(); device.dumpWindowHierarchy(dump)
-            println("PICKER_FAILURE_HIERARCHY " + dump.toString("UTF-8"))
-            throw e
         } finally {
             resolver.delete(broken, null, null)
             // These files and learning.db are test fixtures on a disposable emulator.

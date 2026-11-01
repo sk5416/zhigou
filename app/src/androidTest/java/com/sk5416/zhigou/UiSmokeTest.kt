@@ -33,7 +33,7 @@ class UiSmokeTest {
             screenshot(device, "home")
             device.findObject(By.text("继续阅读 · C00")).click()
             assertTrue(device.wait(Until.hasObject(By.text("本章练习")), 10_000))
-            // Wait for the local WebView and inspect its accessible text without enabling JavaScript.
+            // Inspect the rendered local document without enabling JavaScript.
             ReaderProbe.assertText(scenario, "C00", "结论先行")
             screenshot(device, "reader")
             device.findObject(By.text("本章练习")).click()
