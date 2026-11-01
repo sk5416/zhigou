@@ -13,7 +13,7 @@ import org.junit.Assert.*
 object ReaderProbe {
     fun assertText(scenario: ActivityScenario<MainActivity>, chapter: String, text: String) {
         fun find(view: View): WebView? {
-            if (view is WebView) return view
+            if (view is WebView) return view.takeIf { it.isShown && android.net.Uri.parse(it.url.orEmpty()).path == "/assets/chapters/$chapter.html" }
             if (view is ViewGroup) for (i in 0 until view.childCount) find(view.getChildAt(i))?.let { return it }
             return null
         }
