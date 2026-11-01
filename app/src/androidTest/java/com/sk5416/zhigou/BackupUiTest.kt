@@ -25,6 +25,7 @@ class BackupUiTest {
     @Test fun systemPickerRoundTripCancelAndCorruptDocument() = runBlocking {
         val context = ApplicationProvider.getApplicationContext<Context>()
         val device = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation())
+        WindowEvidence.prepare(device)
         val db = Room.databaseBuilder(context, LearningDatabase::class.java, "learning.db").build()
         val repo = Repository(context, db)
         repo.initialize(); repo.clear()
@@ -94,6 +95,7 @@ class BackupUiTest {
                 same(expected, repo.snapshot())
             }
         } catch (e: Throwable) {
+            WindowEvidence.capture(device, "backup-failure")
             val dump = java.io.ByteArrayOutputStream(); device.dumpWindowHierarchy(dump)
             println("PICKER_FAILURE_HIERARCHY " + dump.toString("UTF-8"))
             throw e

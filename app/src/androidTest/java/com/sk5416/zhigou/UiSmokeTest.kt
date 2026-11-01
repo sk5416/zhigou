@@ -22,9 +22,11 @@ import org.junit.runner.RunWith
 class UiSmokeTest {
     @Test fun launchReadPracticeAndSearchOffline() {
         val device = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation())
+        WindowEvidence.prepare(device)
         device.executeShellCommand("svc wifi disable")
         device.executeShellCommand("svc data disable")
         ActivityScenario.launch(MainActivity::class.java).use {
+            try {
             device.wait(Until.hasObject(By.text("开始学习")), 10_000)
             device.findObject(By.text("开始学习"))?.click()
             assertTrue("home should be visible", device.wait(Until.hasObject(By.text("把知识，构成判断力。")), 20_000))
@@ -149,6 +151,10 @@ class UiSmokeTest {
             device.findObject(By.text("继续阅读 · C14")).click()
             assertTrue(device.wait(Until.hasObject(By.text("本章练习")), 10_000))
             screenshot(device, "dark-reader")
+            } catch (e: Throwable) {
+                WindowEvidence.capture(device, "smoke-failure")
+                throw e
+            }
         }
     }
     private fun openNewLesson(device: UiDevice, query: String, chapter: String, body: String, question: String, name: String) {
