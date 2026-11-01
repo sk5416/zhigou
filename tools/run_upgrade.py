@@ -1,4 +1,4 @@
-"""Install real dev.7, seed learning.db, then install current APK with -r (no uninstall)."""
+"""Install real dev.8, seed learning.db, then install current APK with -r (no uninstall)."""
 import json
 import subprocess
 import sys
@@ -20,16 +20,16 @@ def main():
         result = subprocess.run(['adb', 'install', '-r', str(path)], capture_output=True, text=True, check=True)
         if 'Success' not in result.stdout: raise RuntimeError(result.stdout + result.stderr)
     uid_before = adb('shell', 'stat', '-c', '%u', '/data/data/' + PACKAGE)
-    phase('seed', '7')
+    phase('seed', '8')
     result = subprocess.run(['adb', 'install', '-r', str(current)], capture_output=True, text=True, check=True)
     if 'Success' not in result.stdout: raise RuntimeError(result.stdout + result.stderr)
     uid_after = adb('shell', 'stat', '-c', '%u', '/data/data/' + PACKAGE)
     if uid_before != uid_after: raise RuntimeError('Application UID changed during covering install')
-    phase('verify', '8')
+    phase('verify', '9')
     path = Path('.artifacts/upgrade-report.json'); path.parent.mkdir(exist_ok=True)
-    path.write_text(json.dumps({'status': 'passed', 'fromVersionCode': 7, 'toVersionCode': 8, 'uidBefore': uid_before, 'uidAfter': uid_after,
+    path.write_text(json.dumps({'status': 'passed', 'fromVersionCode': 8, 'toVersionCode': 9, 'uidBefore': uid_before, 'uidAfter': uid_after,
         'install': 'adb install -r; no uninstall between seed and verify', 'databaseVersions': [1, 1],
-        'scope': 'actual dev.7 APK to dev.8 APK, reading/bookmarks/sessions/attempts/mistakes/preferences',
+        'scope': 'actual dev.8 APK to dev.9 APK, reading/bookmarks/sessions/attempts/mistakes/preferences',
         'notCovered': ['Room schema migration (no schema change)', 'release signing key', 'physical device']}, indent=2) + '\n', encoding='utf-8')
 
 if __name__ == '__main__': main()

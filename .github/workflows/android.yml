@@ -86,12 +86,12 @@ jobs:
           ln -s "$ANDROID_HOME/cmdline-tools/15859902" "$ANDROID_HOME/cmdline-tools/latest"
           "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --version
       - run: chmod +x gradlew
-      - name: Build genuine dev.7 upgrade baseline
+      - name: Build genuine dev.8 upgrade baseline
         run: |
-          mkdir "$RUNNER_TEMP/zhigou-dev7"
-          git archive f2a2c6ff7215ef13558cc6018d1dfe9dd9994295 | tar -x -C "$RUNNER_TEMP/zhigou-dev7"
-          chmod +x "$RUNNER_TEMP/zhigou-dev7/gradlew"
-          "$RUNNER_TEMP/zhigou-dev7/gradlew" -p "$RUNNER_TEMP/zhigou-dev7" assembleDebug
+          mkdir "$RUNNER_TEMP/zhigou-dev8"
+          git archive c1e14a923843906af80e504183fba13ef6425fb9 | tar -x -C "$RUNNER_TEMP/zhigou-dev8"
+          chmod +x "$RUNNER_TEMP/zhigou-dev8/gradlew"
+          "$RUNNER_TEMP/zhigou-dev8/gradlew" -p "$RUNNER_TEMP/zhigou-dev8" assembleDebug
       - uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: ${{ matrix.api }}
@@ -113,7 +113,7 @@ jobs:
             adb shell wm dismiss-keyguard
             ./gradlew connectedDebugAndroidTest || { adb pull /sdcard/Pictures/zhigou-tests device-screenshots || true; exit 1; }
             adb pull /sdcard/Pictures/zhigou-tests device-screenshots
-            python tools/run_upgrade.py "$RUNNER_TEMP/zhigou-dev7/app/build/outputs/apk/debug/app-debug.apk" app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
+            python tools/run_upgrade.py "$RUNNER_TEMP/zhigou-dev8/app/build/outputs/apk/debug/app-debug.apk" app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
             python tools/run_process_recovery.py
             python tools/run_interrupted_writes.py
             python tools/run_background_recovery.py

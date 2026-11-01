@@ -27,17 +27,16 @@ import java.io.ByteArrayInputStream
         }
         key(c.id, anchor, dark, state.preferences.font) {
             val initialScroll = remember { r.scroll }
-            var view by remember { mutableStateOf<WebView?>(null) }
+            var released by remember { mutableStateOf(false) }
             var ready by remember { mutableStateOf(false) }
             var lastSaved by remember { mutableLongStateOf(0L) }
             val latestRead by rememberUpdatedState(vm)
             AndroidView(modifier = Modifier.weight(1f).fillMaxWidth().clipToBounds(), factory = { context ->
                 val loader = WebViewAssetLoader.Builder().addPathHandler("/assets/", WebViewAssetLoader.AssetsPathHandler(context)).build()
                 WebView(context).apply {
-                    view = this
                     // Static documents do not need GPU effects. Software drawing avoids
                     // blank Chromium layers when embedded in Compose on older WebViews.
-                    setLayerType(View.LAYER_TYPE_SOFTWARE, null)
+                    if (android.os.Build.VERSION.SDK_INT <= 29) setLayerType(View.LAYER_TYPE_SOFTWARE, null)
                     clipToOutline = true
                     settings.javaScriptEnabled = false
                     settings.allowFileAccess = false
@@ -67,7 +66,7 @@ import java.io.ByteArrayInputStream
                         }
                         override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) { ready = false }
                         override fun onPageFinished(web: WebView, url: String?) {
-                            web.postDelayed({ if (anchor.isBlank()) web.scrollTo(0, initialScroll); ready = true }, 150)
+                            web.postDelayed({ if (!released) { if (anchor.isBlank()) web.scrollTo(0, initialScroll); ready = true } }, 150)
                         }
                     }
                     loadUrl("https://appassets.androidplatform.net/assets/${c.html}${if (anchor.isNotBlank()) "#${Uri.encode(anchor)}" else ""}")
@@ -76,8 +75,13 @@ import java.io.ByteArrayInputStream
                         if (ready && now - lastSaved > 600) { lastSaved = now; latestRead.read(c.id, scroll = y) }
                     }
                 }
+            }, onRelease = { web ->
+                released = true
+                if (ready) latestRead.read(c.id, scroll = web.scrollY)
+                web.setOnScrollChangeListener(null)
+                web.stopLoading()
+                web.destroy()
             })
-            DisposableEffect(Unit) { onDispose { view?.let { web -> if (ready) vm.read(c.id, scroll = web.scrollY); web.stopLoading(); web.destroy() } } }
         }
         val chapters = state.catalog!!.chapters.filter { it.published }
         val i = chapters.indexOfFirst { it.id == c.id }

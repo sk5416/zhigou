@@ -9,7 +9,7 @@ from run_process_recovery import adb, PACKAGE, RUNNER
 
 def phase(name):
     output = adb('shell', 'am', 'instrument', '-w', '-e', 'class', PACKAGE + '.UpgradeTest',
-                 '-e', 'upgradePhase', name, '-e', 'expectedVersion', '8', RUNNER)
+                 '-e', 'upgradePhase', name, '-e', 'expectedVersion', '9', RUNNER)
     if 'OK (1 test)' not in output: raise RuntimeError(output)
 
 def tree():
