@@ -158,6 +158,11 @@ class UiSmokeTest {
         device.pressBack()
         assertTrue(device.wait(Until.hasObject(By.textStartsWith("$chapter ·")), 10_000))
         device.findObject(By.textStartsWith("$chapter ·")).click()
+        if (android.os.Build.VERSION.SDK_INT >= 33) {
+            // Chromium may publish the heading before its list subtree; discard stale AX nodes.
+            device.waitForIdle(1_000)
+            InstrumentationRegistry.getInstrumentation().uiAutomation.clearCache()
+        }
         var visible = device.wait(Until.hasObject(By.textContains(body)), 15_000)
         if (!visible) {
             screenshot(device, "$name-initial-reader")
@@ -167,6 +172,7 @@ class UiSmokeTest {
             // Reveal at most one viewport, keeping the search-position assertion bounded.
             val bounds = requireNotNull(device.findObject(By.clazz("android.webkit.WebView"))).visibleBounds
             device.swipe(bounds.centerX(), bounds.top + bounds.height() * 3 / 4, bounds.centerX(), bounds.top + bounds.height() / 4, 20)
+            if (android.os.Build.VERSION.SDK_INT >= 33) InstrumentationRegistry.getInstrumentation().uiAutomation.clearCache()
             visible = device.wait(Until.hasObject(By.textContains(body)), 10_000)
         }
         assertTrue("$chapter must render its offline body within the searched section", visible)
