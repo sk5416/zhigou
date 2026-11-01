@@ -25,8 +25,12 @@ Android17上截图有正文、WebView无正文子节点的事实只能证明可�
 ## 当前验证
 
 - cb0531c的[运行41261336888](https://github.com/sk5416/zhigou/actions/runs/41261336888)：API29全阶段通过；Android17常规设备方法完成，但宿主升级脚本读取`/data/data`目录属主被拒绝。改为PackageManager查询UID，仍要求升级前后UID一致及真实旧包记录保留；不能将读取权限失败写成升级已通过。命令依据[AOSP包管理命令实现](https://android.googlesource.com/platform/frameworks/base/+/bcb4d3cf6385/services/core/java/com/android/server/pm/PackageManagerShellCommand.java)，核验日期2026-11-01。
+- 5ada8ff的[运行41261424915](https://github.com/sk5416/zhigou/actions/runs/41261424915)：API29通过；Android17阅读等六方法通过，BackupUiTest在损坏文件提示检查失败（第87行），所以不能认定系统文件问题已稳定解决。发现备份失败采集位于ActivityScenario.use外、页面关闭之后，旧的时钟窗口不能证明失败时原窗口状态；f887173将采集移入use内，在关闭之前保留现场。
 
 - 内容结构/审核匹配/完整课程检查通过：81单元、584题；Python28项通过。
-- 本地Debug与Release各21项单测、Lint和应用构建通过；最终测试APK与Lint再次构建通过。日志为`.artifacts/dev9-build.log`、`.artifacts/dev9-release.log`和`.artifacts/dev9-final-build.log`。双系统设备结果待追加。
+- 本地Debug与Release各21项单测、Lint和应用构建通过；最终测试APK与Lint再次构建通过。日志为`.artifacts/dev9-build.log`、`.artifacts/dev9-release.log`和`.artifacts/dev9-final-build.log`。
+- 85bc714的[运行41261819016](https://github.com/sk5416/zhigou/actions/runs/41261819016)构建及双系统全阶段通过，各7个常规方法且无失败/错误/跳过。dev.8→dev.9真实覆盖安装、已提交恢复、三个中断点及后台第二题/选择恢复均通过。各29张截图与全部报告存`.artifacts/dev9-api29`、`.artifacts/dev9-api37`。人工查看API37损坏提示、架构表格、深色大字和后台选择正常；原生8处查询均有匹配且delta=0。
+- 最终f887173的[关闭前采集复查41262083323](https://github.com/sk5416/zhigou/actions/runs/41262083323)构建及双系统全阶段再次通过，各7方法、0失败/错误/跳过及四类宿主报告成功；各29张截图和报告存`.artifacts/dev9-final29`、`.artifacts/dev9-final37`。已查看最终损坏提示、C72正文和后台恢复，无新增视觉问题。
+- 两轮成功不抹去5ada8ff的偶发失败，未定位的提示节点读取问题及网页读屏继续保留；后续在新现场或实机依据证据接续，不凭重复通过次数认定根因修复。
 - 开发包`.artifacts/知构-0.1.0-dev.9.apk`，SHA256为`dba0bd8f76406f6129d1cf74526a291d67aa31bd0832ea53b8623b6f77699484`；开发证书与dev.8相同。核对包名、code9、min29/target35及无INTERNET权限。aapt不支持本机中文文件名，改在英文目录联接核对同散列的原APK；首次路径错误不记检查通过。
 - 正式签名、独立备份和实机门槛保持开放，不随本轮渲染修改自动关闭。
