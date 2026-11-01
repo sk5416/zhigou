@@ -25,7 +25,7 @@ class UiSmokeTest {
         WindowEvidence.prepare(device)
         device.executeShellCommand("svc wifi disable")
         device.executeShellCommand("svc data disable")
-        ActivityScenario.launch(MainActivity::class.java).use {
+        ActivityScenario.launch(MainActivity::class.java).use { scenario ->
             try {
             device.wait(Until.hasObject(By.text("开始学习")), 10_000)
             device.findObject(By.text("开始学习"))?.click()
@@ -34,7 +34,7 @@ class UiSmokeTest {
             device.findObject(By.text("继续阅读 · C00")).click()
             assertTrue(device.wait(Until.hasObject(By.text("本章练习")), 10_000))
             // Wait for the local WebView and inspect its accessible text without enabling JavaScript.
-            assertTrue("offline HTML should render", device.wait(Until.hasObject(By.textContains("结论先行")), 15_000))
+            ReaderProbe.assertText(scenario, "结论先行")
             screenshot(device, "reader")
             device.findObject(By.text("本章练习")).click()
             assertTrue(device.wait(Until.hasObject(By.textContains("管理员演示订单查询")), 10_000))
@@ -52,7 +52,7 @@ class UiSmokeTest {
             device.pressBack()
             assertTrue(device.wait(Until.hasObject(By.textStartsWith("C06 ·")), 10_000))
             device.findObject(By.textStartsWith("C06 ·")).click()
-            assertTrue("body search must land on the C06 case after its code block", device.wait(Until.hasObject(By.textContains("错误行不能静默丢弃。")), 15_000))
+            ReaderProbe.assertText(scenario, "错误行不能静默丢弃。")
             screenshot(device, "code-search-reader")
             device.pressBack()
             assertTrue(device.wait(Until.hasObject(By.text("搜索课程和附录")), 10_000))
@@ -62,7 +62,7 @@ class UiSmokeTest {
             device.pressBack()
             assertTrue(device.wait(Until.hasObject(By.textStartsWith("C24 ·")), 10_000))
             device.findObject(By.textStartsWith("C24 ·")).click()
-            assertTrue("new database lesson must show its local SQL", device.wait(Until.hasObject(By.textContains("UPDATE stock")), 15_000))
+            ReaderProbe.assertText(scenario, "UPDATE stock")
             screenshot(device, "database-reader")
             val relation = requireNotNull(device.findObject(By.text("C26")))
             assertTrue("related chapter code should fit on one line on a small screen", relation.visibleBounds.width() >= relation.visibleBounds.height())
@@ -79,7 +79,7 @@ class UiSmokeTest {
             device.pressBack()
             assertTrue(device.wait(Until.hasObject(By.textStartsWith("C27 ·")), 10_000))
             device.findObject(By.textStartsWith("C27 ·")).click()
-            assertTrue("HTML teaching snippet must display as code", device.wait(Until.hasObject(By.textContains("project-code")), 15_000))
+            ReaderProbe.assertText(scenario, "project-code")
             screenshot(device, "frontend-reader")
             device.findObject(By.text("本章练习")).click()
             assertTrue(device.wait(Until.hasObject(By.textContains("HTML、CSS与JavaScript的职责")), 10_000))
@@ -94,7 +94,7 @@ class UiSmokeTest {
             device.pressBack()
             assertTrue(device.wait(Until.hasObject(By.textStartsWith("C36 ·")), 10_000))
             device.findObject(By.textStartsWith("C36 ·")).click()
-            assertTrue("architecture decision table must be available offline", device.wait(Until.hasObject(By.textContains("ADR-007")), 15_000))
+            ReaderProbe.assertText(scenario, "ADR-007")
             screenshot(device, "architecture-reader")
             device.findObject(By.text("本章练习")).click()
             assertTrue(device.wait(Until.hasObject(By.textContains("ADR最主要保存什么")), 10_000))
@@ -103,10 +103,10 @@ class UiSmokeTest {
             assertTrue(device.wait(Until.hasObject(By.text("把知识，构成判断力。")), 10_000))
             device.findObject(By.text("课程")).click()
             assertTrue(device.wait(Until.hasObject(By.text("搜索课程和附录")), 10_000))
-            openNewLesson(device, "登录不等于拥有所有数据", "C43", "登录不等于拥有所有数据", "认证与授权的区别是什么", "security")
-            openNewLesson(device, "原型证明部分可行", "C72", "原型证明部分可行", "原型与可交接应用主要差在哪", "complete")
+            openNewLesson(scenario, device, "登录不等于拥有所有数据", "C43", "登录不等于拥有所有数据", "认证与授权的区别是什么", "security")
+            openNewLesson(scenario, device, "原型证明部分可行", "C72", "原型证明部分可行", "原型与可交接应用主要差在哪", "complete")
             openTimeoutChapter(device)
-            assertTrue(device.wait(Until.hasObject(By.textContains("调用超时只说明")), 15_000))
+            ReaderProbe.assertText(scenario, "调用超时只说明")
             screenshot(device, "c14-reader")
             device.findObject(By.text("标记已读")).click()
             assertTrue(device.wait(Until.hasObject(By.text("已读 ✓")), 10_000))
@@ -157,31 +157,14 @@ class UiSmokeTest {
             }
         }
     }
-    private fun openNewLesson(device: UiDevice, query: String, chapter: String, body: String, question: String, name: String) {
+    private fun openNewLesson(scenario: ActivityScenario<MainActivity>, device: UiDevice, query: String, chapter: String, body: String, question: String, name: String) {
         val search = device.findObject(By.clazz("android.widget.EditText"))
         search.click()
         search.text = query
         device.pressBack()
         assertTrue(device.wait(Until.hasObject(By.textStartsWith("$chapter ·")), 10_000))
         device.findObject(By.textStartsWith("$chapter ·")).click()
-        if (android.os.Build.VERSION.SDK_INT >= 33) {
-            // Chromium may publish the heading before its list subtree; discard stale AX nodes.
-            device.waitForIdle(1_000)
-            InstrumentationRegistry.getInstrumentation().uiAutomation.clearCache()
-        }
-        var visible = device.wait(Until.hasObject(By.textContains(body)), 15_000)
-        if (!visible) {
-            screenshot(device, "$name-initial-reader")
-            val dump = java.io.ByteArrayOutputStream(); device.dumpWindowHierarchy(dump)
-            println("NEW_LESSON_INITIAL_HIERARCHY " + dump.toString("UTF-8"))
-            // A heading anchor may place the requested phrase below a shorter WebView.
-            // Reveal at most one viewport, keeping the search-position assertion bounded.
-            val bounds = requireNotNull(device.findObject(By.clazz("android.webkit.WebView"))).visibleBounds
-            device.swipe(bounds.centerX(), bounds.top + bounds.height() * 3 / 4, bounds.centerX(), bounds.top + bounds.height() / 4, 20)
-            if (android.os.Build.VERSION.SDK_INT >= 33) InstrumentationRegistry.getInstrumentation().uiAutomation.clearCache()
-            visible = device.wait(Until.hasObject(By.textContains(body)), 10_000)
-        }
-        assertTrue("$chapter must render its offline body within the searched section", visible)
+        ReaderProbe.assertText(scenario, body)
         screenshot(device, "$name-reader")
         device.findObject(By.text("本章练习")).click()
         assertTrue("$chapter question bank must be usable offline", device.wait(Until.hasObject(By.textContains(question)), 10_000))
