@@ -11,7 +11,7 @@ import org.junit.Assert.*
 
 /** Queries Chromium's rendered document, without JavaScript or reading the source asset. */
 object ReaderProbe {
-    fun assertText(scenario: ActivityScenario<MainActivity>, text: String) {
+    fun assertText(scenario: ActivityScenario<MainActivity>, chapter: String, text: String) {
         fun find(view: View): WebView? {
             if (view is WebView) return view
             if (view is ViewGroup) for (i in 0 until view.childCount) find(view.getChildAt(i))?.let { return it }
@@ -27,7 +27,7 @@ object ReaderProbe {
         while (!loaded && android.os.SystemClock.uptimeMillis() < deadline) {
             scenario.onActivity { activity ->
                 web = find(activity.window.decorView)
-                loaded = web?.let { it.progress == 100 && it.contentHeight > 0 && it.url?.startsWith("https://appassets.androidplatform.net/") == true } == true
+                loaded = web?.let { it.isShown && it.progress == 100 && it.contentHeight > 0 && android.net.Uri.parse(it.url.orEmpty()).path == "/assets/chapters/$chapter.html" } == true
             }
             if (!loaded) android.os.SystemClock.sleep(100)
         }
